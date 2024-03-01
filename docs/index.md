@@ -14,7 +14,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 ```{eval-rst}
 .. grid:: 1 2 3 3
 
-    .. grid-item-card:: 🛠 Core Reference
+    .. grid-item-card:: Core Reference
         :margin: 2 2 auto auto
         :link-type: ref
         :link: reference-index
@@ -24,7 +24,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         +++
         :ref:`Click to begin <reference-index>`
 
-    .. grid-item-card:: ⚡ API Reference
+    .. grid-item-card:: API Reference
         :margin: 2 2 auto auto
         :link-type: ref
         :link: api-rpc
@@ -34,7 +34,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         +++
         :ref:`Click to begin <api-rpc>`
 
-    .. grid-item-card:: 📑 Core Guides
+    .. grid-item-card:: Core Guides
         :margin: 2 2 auto auto
         :link-type: ref
         :link: guide-index
@@ -44,7 +44,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         +++
         :ref:`Click to begin <guide-index>`
 
-    .. grid-item-card:: 🚀 Core Examples
+    .. grid-item-card:: Core Examples
         :margin: 2 2 auto auto
         :link-type: ref
         :link: examples-index
@@ -64,7 +64,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         +++
         :ref:`Click to begin <dimecore-arguments-and-commands>`
 
-    .. grid-item-card:: 📖 Glossary
+    .. grid-item-card:: Glossary
         :margin: 2 2 auto auto
         :link-type: ref
         :link: resources-glossary

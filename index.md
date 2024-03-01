@@ -17,7 +17,7 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
 
 .. grid:: 1 3 3 3
 
-    .. grid-item-card:: 👤 Dimecoin Core Docs
+    .. grid-item-card:: Dimecoin Core Docs
         :margin: 2 2 auto auto
         :link-type: ref
         :link: user:user-index
@@ -27,7 +27,7 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
         +++
         :ref:`Click to begin <user:user-index>`
 
-    .. grid-item-card:: ⚙ Electrum-Dime Docs
+    .. grid-item-card:: Electrum-Dime Docs
         :margin: 2 2 auto auto
         :link-type: ref
         :link: core-index
@@ -37,7 +37,7 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
         +++
         :ref:`Click to begin <core-index>`
 
-.. grid-item-card:: 🚀 ElectrumX-Dime Docs
+.. grid-item-card:: ElectrumX-Dime Docs
      :margin: 2 2 auto auto
      :link-type: ref
      :link: platform:platform-index
