@@ -54,7 +54,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         +++
         :ref:`Click to begin <examples-index>`
 
-    .. grid-item-card:: ⚙ Dimecoin Core
+    .. grid-item-card:: Dimecoin Core
         :margin: 2 2 auto auto
         :link-type: ref
         :link: dimecore-arguments-and-commands
