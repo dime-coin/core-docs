@@ -4,7 +4,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # Clone the DIPs repository and process DIPs so they are rendered properly
 if not os.path.exists('_external_repo'):
-    subprocess.check_call(['git', 'clone', '', '_dips'])
+    # subprocess.check_call(['git', 'clone', '_dips'])
     subprocess.check_call(['./scripts/dip-format.sh'])
     subprocess.check_call('cd _dips/ && find . -name ".git" -prune -o -print -exec cp --parents \{} ../docs/dips/ \;', shell=True)
     subprocess.check_call('cd', shell=True)
