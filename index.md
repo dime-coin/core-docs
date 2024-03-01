@@ -1,4 +1,3 @@
-```{eval-rst}
 .. meta::
    :description: The Dimecoin Documentation provides tutorials and information on Dimecoin, the open source peer-to-peer cryptocurrency with a strong focus on the payments industry. 
    :keywords: dime,dimecoin, cryptocurrency, blockchain, documentation, guide, masternodes, mining, staking, wallets, merchants, quark, fast, secure, digital currency
@@ -37,16 +36,15 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
         +++
         :ref:`Click to begin <core-index>`
 
-.. grid-item-card:: ElectrumX-Dime Docs
-     :margin: 2 2 auto auto
-     :link-type: ref
-     :link: platform:platform-index
+    .. grid-item-card:: ElectrumX-Dime Docs
+         :margin: 2 2 auto auto
+         :link-type: ref
+         :link: platform:platform-index
 
-     Everything you need to know about ElectrumX-Dime Server.
-     
-     +++
-     `Click to begin <https://electrumx-docs.dimecoinnetwork.com>`_
-
+         Everything you need to know about ElectrumX-Dime Server.
+         
+         +++
+         `Click to begin <https://electrumx-docs.dimecoinnetwork.com>`_
 
 .. _core-reference:
 
@@ -56,11 +54,4 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
    :hidden:
 
    docs/index
-```
 
-```{eval-rst}
-.. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
-   :class: no-scaled-link
-   :align: center
-   :width: 90%
-```
