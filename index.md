@@ -19,13 +19,11 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
 
     .. grid-item-card:: Dimecoin Core Docs
         :margin: 2 2 auto auto
-        :link-type: ref
-        :link: user:user-index
         
         Learn what Dimecoin Core is and how it works. Topics include how to obtain and store Dimecoin, technical details, how-to stake dimecoin, masternode setup, and more.
         
         +++
-        :ref:`Click to begin <user:user-index>`
+        :ref:`View Docs <#>`
 
     .. grid-item-card:: Electrum-Dime Docs
         :margin: 2 2 auto auto
@@ -35,17 +33,17 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
         Find technical details about Electrum-Dime. Electrum-Dime is a lightweight client used to transact on the Dimecoin blockchain. 
         
         +++
-        :ref:`Click to begin <core-index>`
+        :ref:`View Docs <#>`
 
     .. grid-item-card:: ElectrumX-Dime Docs
-         :margin: 2 2 auto auto
-         :link-type: ref
-         :link: platform:platform-index
+      :margin: 2 2 auto auto
 
-         Everything you need to know about ElectrumX-Dime Server.
-         
-         +++
-         `Click to begin <https://electrumx-docs.dimecoinnetwork.com>`_
+      Everything you need to know about ElectrumX-Dime Server.
+      
+      +++
+      `View Docs <https://electrumx-docs.dimecoinnetwork.com>`_   
+
+
 
 .. _core-reference:
 
