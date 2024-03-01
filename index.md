@@ -59,7 +59,7 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
 ```
 
 ```{eval-rst}
-.. image:: https://github.com/dime-coin/branding-assets/blob/44b41ab8c9b7f279465fdb68ab07ade6b82447f7/master-files/Logobreakdown2.png
+.. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
    :class: no-scaled-link
    :align: center
    :width: 90%
