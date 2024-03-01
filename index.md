@@ -41,7 +41,10 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
       Everything you need to know about ElectrumX-Dime Server.
       
       +++
-      `View Docs <https://electrumx-docs.dimecoinnetwork.com>`_   
+      .. raw:: html
+
+         <a href="https://electrumx-docs.dimecoinnetwork.com" target="_blank">View Docs</a>
+
 
 
 
