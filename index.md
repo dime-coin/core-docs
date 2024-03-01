@@ -1,3 +1,4 @@
+```{eval-rst}
 .. meta::
    :description: The Dimecoin Documentation provides tutorials and information on Dimecoin, the open source peer-to-peer cryptocurrency with a strong focus on the payments industry. 
    :keywords: dime,dimecoin, cryptocurrency, blockchain, documentation, guide, masternodes, mining, staking, wallets, merchants, quark, fast, secure, digital currency
@@ -54,4 +55,11 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
    :hidden:
 
    docs/index
+```
 
+```{eval-rst}
+.. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
+   :class: no-scaled-link
+   :align: center
+   :width: 90%
+```
