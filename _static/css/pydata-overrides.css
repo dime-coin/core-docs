@@ -101,11 +101,15 @@ tbody tr:nth-child(even) { background-color: var(--table-bg-color-even); }
 }
 
 /* Adjust sphinx-design card */
+.sd-card {
+  transition: all 0.3s ease-in-out;
+}
+
 .sd-card:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Example shadow effect */
-  transform: scale(1.02); /* Slightly scale up */
+  transform: scale(1.02); 
   transition: transform 0.2s, box-shadow 0.2s;
-  border: #034ea2; /* Smooth transition */
+  border: 1px solid var(--dime-midnight-blue); 
 }
 
 /* These are hacks to hide the pydata-theme search popup behind the readthedocs
