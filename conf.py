@@ -122,3 +122,6 @@ def external_link_role(name, rawtext, text, lineno, inliner, options={}, content
 def setup(app):
     app.add_js_file('js/pydata-search-close.js')
     roles.register_local_role('extlink', external_link_role)
+
+def setup(app):
+    app.add_js_file('js/custom-hover.js')  
