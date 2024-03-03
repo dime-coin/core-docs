@@ -67,3 +67,6 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
    :align: center
    :width: 90%
 ```
+.. raw:: html
+
+    <div class="custom-spacing"></div>
