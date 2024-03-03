@@ -65,6 +65,10 @@ a.headerlink {
   position: relative;
 }
 
+.custom-spacing {
+  margin-top: 2em; 
+}
+
 select {
   width: 100%;
   padding: 10px;
