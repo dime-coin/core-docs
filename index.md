@@ -47,6 +47,8 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
 
             <a href="https://electrumx-docs.dimecoinnetwork.com" target="_blank">View Docs</a>
 
+<br><br><br><br>
+
 .. _core-reference:
 
 .. toctree::
