@@ -147,8 +147,8 @@ dimecore/wallet-configuration-file
 :hidden:
 
 resources/glossary
-Mainnet Block Explorer <https:///>
-Dimecoin Whitepaper <https://>
+Mainnet Block Explorer <https://chainz.cryptoid.info/dime/>
+Dimecoin Legacy Whitepaper <https://>
 Bitcoin Whitepaper <https://bitcoin.org/bitcoin.pdf>
 Previous Version of Docs <https://>
 ```
