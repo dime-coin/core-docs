@@ -29,8 +29,6 @@ Check out the `official Dimecoin website <https://www.dimecoinnetwork.com/>`__ t
 
     .. grid-item-card:: Electrum-Dime Docs
         :margin: 2 2 auto auto
-        :link-type: ref
-        :link: core-index
         
         Find technical details about Electrum-Dime. Electrum-Dime is a lightweight client used to transact on the Dimecoin blockchain. 
         
