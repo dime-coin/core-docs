@@ -13,7 +13,9 @@ https://.
 ## Contributing
 
 This documentation is written in primarily in
-[RST](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html/).
+[markdown](https://www.markdownguide.org/) and uses the [myst-parser
+extension](https://myst-parser.readthedocs.io/en/latest/index.html) for
+compatibility with [reStructuredText](https://docutils.sourceforge.io/rst.html).
 It is designed to be built with [Sphinx](https://www.sphinx-doc.org/) and hosted
 by [Read the Docs](https://readthedocs.org/). Feel free to [open an
 issue](https://github.com/dime-coin/core-docs/issues/) or submit PRs
