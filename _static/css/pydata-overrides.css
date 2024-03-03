@@ -105,6 +105,10 @@ tbody tr:nth-child(even) { background-color: var(--table-bg-color-even); }
   transition: all 0.3s ease-in-out;
 }
 
+.sd-card a:hover {
+  text-decoration: underline; /* Ensures the link underlines on hover */
+}
+
 .sd-card:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Example shadow effect */
   transform: scale(1.02); 
