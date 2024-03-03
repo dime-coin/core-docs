@@ -105,6 +105,13 @@ tbody tr:nth-child(even) { background-color: var(--table-bg-color-even); }
   border-color: var(--pst-color-primary)
 }
 
+.grid-item-card:hover {
+  border: 1px solid var(--pst-color-primary); /* Light grey background on hover */
+  cursor: pointer; /* Change cursor to indicate clickable */
+  /* Add more styles as desired */
+}
+
+
 /* These are hacks to hide the pydata-theme search popup behind the readthedocs
 sphinx search extension interface.
 */
