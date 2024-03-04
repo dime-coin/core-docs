@@ -1,6 +1,6 @@
 # Blockchain
 
-The following subsections briefly document Dimecoin's blockchain arhitecture.
+The following subsections briefly document Dimecoin's blockchain arhitecture. 
 
 <div class="custom-spacing"></div>
 
@@ -17,9 +17,6 @@ Focuses on the serialization of blocks within the blockchain, a crucial process 
 - [Coinbase](blockchain.md#coinbase): Learn about the coinbase transaction, the first transaction in a block that awards miners & stakers with new Dimecoin.
 - [Supply](blockchain.md#supply): Learn about how Dimecoin's supply works
 - [Treasury](blockchain.md#treasury): 
--
-
-For a deeper dive into each topic, click on the links provided.
 
 ```{eval-rst}
 .. meta::
