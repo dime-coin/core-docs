@@ -299,6 +299,10 @@ Initial Block Download (IBD) refers to the method employed by a new or long-disc
 
 An input in a transaction which contains three fields: an outpoint, a signature script, and a sequence number. The outpoint references a previous output and the signature script allows spending it.
 
+### Internal byte order
+
+The standard order in which hash digests are displayed as strings—the same format used in serialized blocks and transactions.
+
 ### Key Pair
 
 A private key and its derived public key.
