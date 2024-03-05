@@ -2,7 +2,7 @@
 .. _core-index:
 ```
 
-# Core docs
+# Core Docs
 
 Welcome to the Dimecoin Core developer documentation. You'll find sections for
 [reference information](reference/introduction.md), [API
@@ -81,7 +81,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 :hidden:
 
 reference/introduction
-reference/block-chain
+reference/blockchain
 reference/transactions
 reference/wallets
 reference/p2p-network
@@ -108,7 +108,7 @@ api/zmq
 
 guide/introduction
 guide/dime-features
-guide/block-chain
+guide/blockchain
 guide/transactions
 guide/contracts
 guide/wallets
