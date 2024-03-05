@@ -150,7 +150,6 @@ resources/glossary
 Mainnet Block Explorer <https://chainz.cryptoid.info/dime/>
 Dimecoin Legacy Whitepaper <https://>
 Bitcoin Whitepaper <https://bitcoin.org/bitcoin.pdf>
-<!-- Previous Version of Docs <https://> -->
 ```
 
 Questions about Dimecoin development are best asked in one of the [Dimecoin development
