@@ -50,11 +50,11 @@ A complete list of Bitcoin opcodes can be found on the Bitcoin Wiki [Script Page
 
 ### Signature Script Modification
 
-![Warning icon](../../img/icons/icon_warning.svg) **<span id="signature_script_modification_warning">Signature script modification warning</span>:** [Signature scripts](../resources/glossary.md#signature-script) are not signed, so anyone can modify them. This means signature scripts should only contain data and [data-pushing opcode](../resources/glossary.md#data-pushing-opcode) which can't be modified without causing the pubkey script to fail. Placing non-data-pushing opcodes in the signature script currently makes a transaction non-standard, and future consensus rules may forbid such transactions altogether. (Non-data-pushing opcodes are already forbidden in signature scripts when spending a [P2SH pubkey script](../resources/glossary.md#p2sh-pubkey-script).)
+**<span id="signature_script_modification_warning">Warning: Signature Script Modification -</span>:** [Signature scripts](../resources/glossary.md#signature-script) are not signed, so anyone can modify them. This means signature scripts should only contain data and [data-pushing opcode](../resources/glossary.md#data-pushing-opcode) which can't be modified without causing the pubkey script to fail. Placing non-data-pushing opcodes in the signature script currently makes a transaction non-standard, and future consensus rules may forbid such transactions altogether. (Non-data-pushing opcodes are already forbidden in signature scripts when spending a [P2SH pubkey script](../resources/glossary.md#p2sh-pubkey-script).)
 
 ### Multisig Signature Order
 
-![Warning icon](../../img/icons/icon_warning.svg) **`OP_CHECKMULTISIG` warning:** The [multisig](../resources/glossary.md#multisig) verification process described above requires that signatures in the signature script be provided in the same order as their corresponding public keys in the pubkey script or redeem script. For example, the following combined signature and pubkey script will produce the stack and comparisons shown:
+**`OP_CHECKMULTISIG` Warning:** The [multisig](../resources/glossary.md#multisig) verification process described above requires that signatures in the signature script be provided in the same order as their corresponding public keys in the pubkey script or redeem script. For example, the following combined signature and pubkey script will produce the stack and comparisons shown:
 
 ``` text
 OP_0 <A sig> <B sig> OP_2 <A pubkey> <B pubkey> <C pubkey> OP_3
