@@ -65,13 +65,12 @@ html_sidebars = {
 
 html_theme_options = {
     "external_links": [
-        {"name": "Platform docs", "url": "https://docs.dash.org/projects/platform/en/latest/docs/index.html"},
-        {"name": "User docs", "url": "https://docs.dash.org/"},        
-        {"name": "Dash.org", "url": "https://www.dash.org"},
-        {"name": "Forum", "url": "https://www.dash.org/forum"},
+        {"name": "Electrum-Dime Docs", "url": "https://electrum-docs.dimecoinnetwork.com"},
+        {"name": "ElectrumXDime Docs", "url": "https://electrumx-docs.dimecoinnetwork.com/"},        
+        {"name": "Web Home", "url": "https://www.dimecoinnetwork.com"},
     ],
     "use_edit_page_button": True,
-    "github_url": "https://github.com/dashpay/docs-core",
+    "github_url": "https://github.com/dime-coin/core-docs",
     "show_toc_level": 2,
     "show_nav_level": 1,
     "favicons": [
