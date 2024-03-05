@@ -4,7 +4,6 @@ The following subsections briefly document Dimecoin's blockchain arhitecture.
   
 **[Block Headers](blockchain.md#block-headers)**  
 This section covers the structure of block headers and their significance in the blockchain. Topics include:
-- [Versions](blockchain.md#block-versions): Overview of Dimecoin releases.
 - [Merkle Trees](blockchain.md#merkle-trees): Explore how Merkle trees ensure secure and efficient transaction verification in blockchain technology.
 - [Target nBits](blockchain.md#target-nbits): Discover the role of Target nBits in defining the difficulty level for blockchain mining operations.
 
@@ -49,22 +48,6 @@ e6d5c4b3a2f19876e5d4c3b2a1f0e9d8 ... Merkle root
 18b1a2c3 ........................... Target: 0x1a2b3c * 256**(0x1e-3)
 87654321 ........................... Nonce
 ```
-
-### Block Versions
-
-* **Version X.X** was used by Dimecoin for the [genesis block](../resources/glossary.md#genesis-block) only.
-
-* **Version X.X** blocks were introduced in Dimecoin Core 0.11.2 (March 2015) as a
-  soft fork (Block 244,834 was the first version 3 block).
-
-  When the [fork](../resources/glossary.md#fork) reached full enforcement, it required strict [DER encoding](https://en.wikipedia.org/wiki/X.690#DER_encoding) of all [ECDSA signatures](../resources/glossary.md#ecdsa-signatures) in new blocks as described in [BIP66](https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki). Transactions that do not use strict DER encoding had previously been non-standard since Dimecoin Core 0.8.0.
-
-* **Version X.X** blocks specified in [BIP65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) and introduced in Bitcoin Core 0.11.2 (November 2015) as a [soft fork](../resources/glossary.md#soft-fork) became active in December 2015.  These blocks now support the new `OP_CHECKLOCKTIMEVERIFY` [opcode](../resources/glossary.md#opcode) described in that BIP.
-
-The mechanism used for the version 2, 3, and 4 upgrades is commonly called IsSuperMajority() after the function added to Dimecoin Core to manage those soft forking changes. See [BIP34](https://github.com/bitcoin/bips/blob/master/bip-0034.mediawiki) for a full description of this method.
-
-As of this writing, a newer method called *version bits* is being designed to manage future soft forking changes, although it's not known whether version 4 will be the last soft fork to use the IsSuperMajority() function. Draft [BIP9](https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki) describes the version bits design as of this writing, although it is still being actively edited and may substantially change while in the draft state.
-
 ### Merkle Trees
 
 The [merkle root](../resources/glossary.md#merkle-root) is constructed using all the [TXIDs](../resources/glossary.md#transaction-identifiers) of transactions in this block, but first the TXIDs are placed in order as required by the [consensus rules](../resources/glossary.md#consensus-rules):
