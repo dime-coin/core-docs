@@ -120,9 +120,9 @@ equal to 1 MB. All fields described below are counted towards the serialized siz
 
 | Bytes    | Name         | Data Type        | Description |
 | - | - | - | - |
-| 80       | block header | block_header     | The [block header](../resources/glossary.md#block-header) in the format described in the [block header section](../reference/block-chain-block-headers.md).
+| 80       | block header | block_header     | The [block header](../resources/glossary.md#block-header) in the format described in the [block header section](blockchain.md#block-headers).
 | *Varies* | txn_count    | [compactSize uint](../resources/glossary.md#compactsize) | The total number of transactions in this block, including the coinbase transaction.
-| *Varies* | txns         | [raw transaction](../resources/glossary.md#raw-transaction)  | Every transaction in this block, one after another, in raw transaction format.  Transactions must appear in the data stream in the same order their TXIDs appeared in the first row of the merkle tree.  See the [merkle tree section](../reference/block-chain-block-headers.md#merkle-trees) for details.
+| *Varies* | txns         | [raw transaction](../resources/glossary.md#raw-transaction)  | Every transaction in this block, one after another, in raw transaction format.  Transactions must appear in the data stream in the same order their TXIDs appeared in the first row of the merkle tree.  See the [merkle tree section](blockchain.md#merkle-trees) for details.
 
 ### Coinbase
 

@@ -53,15 +53,15 @@ Acknowledgments and Credits
 
 The Dimecoin project stands on the shoulders of giants, incorporating a wealth of knowledge, innovation, and technology developed by the broader cryptocurrency community. We extend our deepest gratitude to the following projects and their contributors, whose pioneering work has helped shape Dimecoin into what it is today:
 
-Bitcoin: As the original cryptocurrency, Bitcoin's foundational technology, concepts, and codebase have been instrumental in the development of Dimecoin. We have adapted and built upon Bitcoin's protocol to meet our unique requirements and objectives, ensuring robust security, decentralization, and scalability in our network.
+**Bitcoin**: As the original cryptocurrency, Bitcoin's foundational technology, concepts, and codebase have been instrumental in the development of Dimecoin. We have adapted and built upon Bitcoin's protocol to meet our unique requirements and objectives, ensuring robust security, decentralization, and scalability in our network.
 
-Peercoin: Known for introducing Proof-of-Stake to the cryptocurrency world, Peercoin's innovations have inspired aspects of Dimecoin's consensus mechanisms. We appreciate Peercoin's contributions to making blockchain technology more energy-efficient and sustainable.
+**Peercoin**: Known for introducing Proof-of-Stake to the cryptocurrency world, Peercoin's innovations have inspired aspects of Dimecoin's consensus mechanisms. We appreciate Peercoin's contributions to making blockchain technology more energy-efficient and sustainable.
 
-Dash: Dash's focus on privacy, speed, and governance has influenced several features within Dimecoin. We are particularly inspired by Dash's implementation of masternodes and governance protocols, which have guided our approach to achieving a more secure, efficient, and user-centric digital currency.
+**Dash**: Dash's focus on privacy, speed, and governance has influenced several features within Dimecoin. We are particularly inspired by Dash's implementation of masternodes and governance protocols, which have guided our approach to achieving a more secure, efficient, and user-centric digital currency.
 
-Namecoin: As the first fork of Bitcoin, Namecoin introduced key innovations in blockchain technology that extend beyond mere currency. We commend Namecoin for its pioneering work in using blockchain for domain name registration and other non-financial applications, which has opened our eyes to the broader potential of blockchain technology.
+**Namecoin**: As the first fork of Bitcoin, Namecoin introduced key innovations in blockchain technology that extend beyond mere currency. We commend Namecoin for its pioneering work in using blockchain for domain name registration and other non-financial applications, which has opened our eyes to the broader potential of blockchain technology.
 
-Feathercoin: With its innovative advancements in blockchain security protocols and community engagement, Feathercoin has demonstrated the importance of adaptability and resilience in the cryptocurrency space. We value Feathercoin's contributions to fostering a more inclusive and secure digital ecosystem.
+**Feathercoin**: With its innovative advancements in blockchain security protocols and community engagement, Feathercoin has demonstrated the importance of adaptability and resilience in the cryptocurrency space. We value Feathercoin's contributions to fostering a more inclusive and secure digital ecosystem.
 
 In addition to these codebase contributions, we also recognize the wealth of information and documentation provided by both the Bitcoin and Dash communities. Their extensive resources have been invaluable in our research, development, and education efforts, enabling us to better understand the intricacies of blockchain technology and cryptocurrency.
 
