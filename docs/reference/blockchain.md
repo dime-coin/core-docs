@@ -83,7 +83,7 @@ If a block only has a coinbase transaction and one other transaction, the TXIDs 
 
 If a block has three or more transactions, intermediate [merkle tree](../resources/glossary.md#merkle-tree) rows are formed. The TXIDs are placed in order and paired, starting with the coinbase transaction's TXID. Each pair is concatenated together as 64 raw bytes and SHA256(SHA256()) hashed to form a second row of hashes. If there are an odd (non-even) number of TXIDs, the last TXID is concatenated with a copy of itself and hashed. If there are more than two hashes in the second row, the process is repeated to create a third row (and, if necessary, repeated further to create additional rows). Once a row is obtained with only two hashes, those hashes are concatenated and hashed to produce the merkle root.
 
-![Example Merkle Tree Construction](../../img/dev/en-merkle-tree-construction.png)
+![Example Merkle Tree Construction](../../img/dev/en-merkle-tree-construction.svg)
 
 TXIDs and intermediate hashes are always in [internal byte order](../resources/glossary.md#internal-byte-order) when they're concatenated, and the resulting merkle root is also in internal byte order when it's placed in the [block header](../resources/glossary.md#block-header).
 
@@ -91,11 +91,11 @@ TXIDs and intermediate hashes are always in [internal byte order](../resources/g
 
 The [target threshold](../resources/glossary.md#target) is a 256-bit unsigned integer which a [header](../resources/glossary.md#header) hash must be equal to or below in order for that header to be a valid part of the [block chain](../resources/glossary.md#block-chain). However, the header field *[nBits](../resources/glossary.md#nbits)* provides only 32 bits of space, so the [target](../resources/glossary.md#target) number uses a less precise format called "compact" which works like a base-256 version of scientific notation:
 
-![Converting nBits Into A Target Threshold](../../img/dev/en-nbits-overview.png)
+![Converting nBits Into A Target Threshold](../../img/dev/en-nbits-overview.svg)
 
 As a base-256 number, nBits can be quickly parsed as bytes the same way you might parse a decimal number in base-10 scientific notation:
 
-![Quickly Converting nBits](../../img/dev/en-nbits-quick-parse.png)
+![Quickly Converting nBits](../../img/dev/en-nbits-quick-parse.svg)
 
 The target threshold was initially intended to be an unsigned integer, yet the original nBits implementation derived characteristics from a signed data class. This peculiarity permits the target threshold to assume negative values if the high bit of the significand is activated. However, this scenario is impractical as the header hash operates as an unsigned number, making it impossible to match or fall below a negative target threshold. Dimecoin Core addresses this inconsistency through two approaches:
 
@@ -137,7 +137,7 @@ block.
 
 ### Supply
 
-Dimecoin's supply is inflationary until about the year 2346. As of the consensus updates in October 2023, the rate is set at about 1.4% for the first year, with a transitioning to a daily decay that results in an effective annual reduction of 8% in block rewards. By 2348, the supply will approximately cap, adding an estimated 104,709,968,124.82 coins from December 2024 to 2346. These estimates may fluctuate due to changes in mining difficulty, daily block averages, and other variables.
+Dimecoin's supply is inflationary until about the year 2346. As of the consensus updates in October 2023, the rate is set at about 1.4% for the first year, and transitioning to a daily decay that results in an effective annual reduction of 8% in block rewards. By 2348, the supply will approximately cap, adding an estimated 104,709,968,124.82 coins from December 2024 to 2346. These estimates may fluctuate due to changes in mining difficulty, daily block averages, and other variables.
 
 
 ### Treasury
