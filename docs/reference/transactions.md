@@ -12,7 +12,7 @@ The following section briefly documents Dimecoin core's transaction details.
   :description: A breakdown of Dimecoin transaction structure
 ```
 
-## Opcodes
+## OpCodes
 
 The [opcodes](../resources/glossary.md#opcode) used in the pubkey scripts of standard [transactions](../resources/glossary.md#transaction) are:
 
