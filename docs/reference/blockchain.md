@@ -42,16 +42,16 @@ The hashes are in [internal byte order](../resources/glossary.md#internal-byte-o
 An example [header](../resources/glossary.md#header) in hex:
 
 ``` text
-02000000 ........................... Block version: 2
+01000000 ........................... Block version: 1
 
-b6ff0b1b1680a2862a30ca44d346d9e8
-910d334beb48ca0c0000000000000000 ... Hash of previous block's header
-9d10aa52ee949386ca9385695f04ede2
-70dda20810decd12bc9b048aaab31471 ... Merkle root
+7f3e8b1a2b9e5a3c4d6f7a8b9cb2a1f4
+e6d5c4b3a2f19876e5d4c3b2a1f0e9d8 ... Hash of previous block's header
+3c2d1e0f1a2b3c4d5e6f7a8b9cb2a1f4
+e6d5c4b3a2f19876e5d4c3b2a1f0e9d8 ... Merkle root
 
-24d95a54 ........................... Unix time: 1415239972
-30c31b18 ........................... Target: 0x1bc330 * 256**(0x18-3)
-fe9f0864 ........................... Nonce
+5a3c2d1e ........................... Unix time: 1609459200
+18b1a2c3 ........................... Target: 0x1a2b3c * 256**(0x1e-3)
+87654321 ........................... Nonce
 ```
 
 ### Block Versions
