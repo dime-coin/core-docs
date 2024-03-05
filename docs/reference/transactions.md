@@ -11,7 +11,6 @@ The following section briefly documents Dimecoin core's transaction details.
   :title: Transactions, OpCodes, Raw Transaction Format
   :description: A breakdown of Dimecoin transaction structure
 ```
-
 ## OpCodes
 
 The [opcodes](../resources/glossary.md#opcode) used in the pubkey scripts of standard [transactions](../resources/glossary.md#transaction) are:
