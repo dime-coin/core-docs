@@ -1,13 +1,9 @@
 # Blockchain
 
 The following subsections briefly document Dimecoin's blockchain arhitecture. 
-
-<div class="custom-spacing"></div>
-
-<div class="custom-spacing"></div>
-
+  
 **[Block Headers](blockchain.md#block-headers)**  
-This section covers the structure of block headers and their significance in the blockchain. Subtopics include:
+This section covers the structure of block headers and their significance in the blockchain. Topics include:
 - [Versions](blockchain.md#block-versions): Overview of Dimecoin releases.
 - [Merkle Trees](blockchain.md#merkle-trees): Explore how Merkle trees ensure secure and efficient transaction verification in blockchain technology.
 - [Target nBits](blockchain.md#target-nbits): Discover the role of Target nBits in defining the difficulty level for blockchain mining operations.
@@ -15,7 +11,7 @@ This section covers the structure of block headers and their significance in the
 **[Serialized Blocks](blockchain.md#serialized-blocks)**  
 Focuses on the serialization of blocks within the blockchain, a crucial process for block propagation and storage. See:
 - [Coinbase](blockchain.md#coinbase): Learn about the coinbase transaction, the first transaction in a block that awards miners & stakers with new Dimecoin.
-- [Supply](blockchain.md#supply): Learn about how Dimecoin's supply works
+- [Supply](blockchain.md#supply): Learn about how Dimecoin's supply works.
 - [Treasury](blockchain.md#treasury): Check out how Dimecoin's treasury is structured, including a breakdown of block rewards.
 
 ```{eval-rst}
@@ -165,6 +161,6 @@ The following table details how the block subsidy and fees are allocated between
 
 | Payee | Block subsidy | Transaction fees | Description |
 | ----- | :-----: | :-------: | -|
-| Foundation | 10% | - | Payment for maintenance/expansion of the ecosystem (Core development, marketing, integration, etc.)
+| Foundation | 10% | - | Payment for growth of the network (core dev, marketing, integration, etc.)
 | Miner/Staker | 45% |- | Payment for creating new blocks
-| Masternode | 45% | -% | Payment for masternode services
+| Masternode | 45% | - | Payment for masternode services
