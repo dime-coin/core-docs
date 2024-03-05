@@ -659,11 +659,11 @@ The value of cryptocurrency moved from one entity to another on a blockchain net
 
 Usually very small fees given to the miners involved in successfully approving a transaction on the blockchain. This fee can vary depending on the difficulty involved in a transaction and overall network capabilities at that moment in time. If an exchange is involved in facilitating that transaction, it could also take a cut of the overall transaction fee.
 
-### Transaction identifiers
+### Transaction Identifiers
 
 Identifiers used to uniquely identify a particular transaction; specifically, the sha256d hash of the transaction. Also known as TXIDs.
 
-### Transaction version number
+### Transaction Version Number
 
 A version number prefixed to transactions to allow upgrading.
 
