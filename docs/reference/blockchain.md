@@ -16,7 +16,7 @@ This section covers the structure of block headers and their significance in the
 Focuses on the serialization of blocks within the blockchain, a crucial process for block propagation and storage. See:
 - [Coinbase](blockchain.md#coinbase): Learn about the coinbase transaction, the first transaction in a block that awards miners & stakers with new Dimecoin.
 - [Supply](blockchain.md#supply): Learn about how Dimecoin's supply works
-- [Treasury](blockchain.md#treasury): 
+- [Treasury](blockchain.md#treasury): Check out how Dimecoin's treasury is structured, including a breakdown of block rewards.
 
 ```{eval-rst}
 .. meta::
