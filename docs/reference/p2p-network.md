@@ -219,7 +219,7 @@ The [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) is compromi
 | 1 or 3   | prefilledtxn<br>_length | CompactSize       | As used to encode array lengths elsewhere | The number of prefilled transactions in `prefilledtxn` (i.e. block tx count - `shortids`<br>`_length`)
 | _Varies_ | prefilledtxn     | List of Prefilled<br>Transactions | As defined by `Prefilled`<br>`Transaction` definition below | Used to provide the coinbase transaction and a select few which we expect a peer may be missing
 
-#### **Short Transaction ID calculation**
+#### **Short Transaction ID Calculation**
 
 Short transaction IDs are used to represent a transaction without sending a full 256-bit hash. They are calculated as follows,
 
