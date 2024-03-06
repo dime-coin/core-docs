@@ -322,8 +322,8 @@ A [`blocktxn` message](docs/reference/p2p-network.md#blocktxn) response must con
 
 The structure of `BlockTransactionsRequest` is defined below.
 
-| Bytes    | Name            | Data Type            | Description|
-|----------|-----------------|----------------------|----------|------|
+| Bytes    | Name            | Data Type            |Encoding    | Description|
+|----------|-----------------|----------------------|------------|------------|
 | 32       | blockhash       | Binary blob          | The output from a double-SHA256 of the block header, as used elsewhere | The blockhash of the block which the transactions being requested are in
 | _Varies_ | indexes_length  | CompactSize uint     | As used to encode array lengths elsewhere | The number of transactions requested
 | _Varies_ | indexes         | CompactSize uint[]   | Differentially encoded | Vector of compactSize containing the indexes of the transactions being requested in the block.
