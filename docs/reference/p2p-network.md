@@ -345,8 +345,6 @@ The format and maximum size limitations of the [`getdata` message](docs/referenc
 
 ### getheaders
 
-_Added in protocol version 70077._
-
 The [`getheaders` message](docs/reference/p2p-network.md#getheaders) requests a [`headers` message](docs/reference/p2p-network.md#headers) that provides block headers starting from a particular point in the [block chain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the [headers](../resources/glossary.md#header) it hasn’t seen yet.
 
 The [`getheaders` message](docs/reference/p2p-network.md#getheaders) is nearly identical to the [`getblocks` message](docs/reference/p2p-network.md#getblocks), with one minor difference: the `inv` reply to the [`getblocks` message](docs/reference/p2p-network.md#getblocks) will include no more than 500 [block header](../resources/glossary.md#block-header) hashes; the `headers` reply to the [`getheaders` message](docs/reference/p2p-network.md#getheaders) will include as many as 2,000 block headers.
@@ -432,7 +430,7 @@ There is no payload in a [`mempool` message](docs/reference/p2p-network.md#mempo
 
 ### merkleblock
 
-_Added in protocol version 70001 as described by BIP37._
+_Added in protocol version 70001 (Bitcoin) as described by BIP37._
 
 The [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the inventory type `MSG_MERKLEBLOCK`.  It is only part of the reply: if any matching transactions are found, they will be sent separately as [`tx` messages](docs/reference/p2p-network.md#tx). As of Dash Core 0.17.0 [`islock` messages](docs/reference/p2p-network-instantsend-messages.md#islock) for matching transactions are sent if present.
 
@@ -543,7 +541,7 @@ After you fully process the merkle root node according to the instructions in th
 
 ### notfound
 
-_Added in protocol version 70001._
+_Added in protocol (Bitcoin) version 70001._
 
 The [`notfound` message](docs/reference/p2p-network.md#notfound) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested an object the receiving [node](../resources/glossary.md#node) does not have available for relay. (Nodes are not expected to relay historic transactions which are no longer in the memory pool or relay set. Nodes may also have pruned spent transactions from older [blocks](../resources/glossary.md#block), making them unable to send those blocks.)
 
@@ -602,7 +600,7 @@ d91f4854 ........................... Epoch time: 1414012889
 
 ### filteradd
 
-*Added in Bitcoin protocol version 70001 as described by BIP37.*
+*Added in protocol version 70001 (Bitcoin) as described by BIP37.*
 
 The [`filteradd` message](docs/reference/p2p-network.md#filteradd) tells the receiving [peer](../resources/glossary.md#peer) to add a single element to a previously-set [bloom filter](../resources/glossary.md#bloom-filter), such as a new [public key](../resources/glossary.md#public-key). The element is sent directly to the receiving peer; the peer then uses the parameters set in the [`filterload` message](docs/reference/p2p-network.md#filterload) to add the element to the bloom filter.
 
@@ -815,8 +813,6 @@ The format of the [`pong` message](docs/reference/p2p-network.md#pong) is identi
 
 ### sendcmpct
 
-*Added in Bitcoin protocol version 70209 of Dash Core as described by BIP152*
-
 The [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) tells the receiving [peer](../resources/glossary.md#peer) whether or not to announce new [blocks](../resources/glossary.md#block) using a [`cmpctblock` message](docs/reference/p2p-network-data-messages.md#cmpctblock). It also sends the compact block protocol version it supports. The [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) is defined as a message containing a 1-byte integer followed by a 8-byte integer. The first integer is interpreted as a boolean and should have a value of either 1 or 0. The second integer is be interpreted as a little-endian version number.
 
 Upon receipt of a [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) with the first and second integers set to 1, the [node](../resources/glossary.md#node) should announce new blocks by sending a [`cmpctblock` message](docs/reference/p2p-network-data-messages.md#cmpctblock).
@@ -917,18 +913,18 @@ If a [`version` message](docs/reference/p2p-network.md#version) is accepted, the
 
 | Bytes    | Name                  | Data<br>Type        | Required/<br>Optional                        | Description
 |----------|-----------------------|------------------|------------------------------------------|-------------
-| 4        | version               | int32_t          | Required | The highest protocol version understood by the transmitting node.  See the [protocol version section](docs/reference/p2p-network-protocol-versions.md).
+| 4        | version               | int32_t          | Required | The highest protocol version understood by the transmitting node.  See the [protocol version section](docs/reference/p2p-network.md#protocol-versions).
 | 8        | services              | uint64_t         | Required | The services supported by the transmitting node encoded as a bitfield.  See the list of service codes below.
 | 8        | timestamp             | int64_t          | Required | The current Unix epoch time according to the transmitting node's clock.  Because nodes will reject blocks with timestamps more than two hours in the future, this field can help other nodes to determine that their clock is wrong.
-| 8        | addr_recv services    | uint64_t         | Required | *Added in protocol version 106.* <br><br>The services supported by the receiving node as perceived by the transmitting node.  Same format as the 'services' field above. Dimecoin Core will attempt to provide accurate information.
-| 16       | addr_recv IP address  | char             | Required | *Added in protocol version 106.* <br><br>The IPv6 address of the receiving node as perceived by the transmitting node in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses). Dimecoin Core will attempt to provide accurate information.
-| 2        | addr_recv port        | uint16_t         | Required | *Added in protocol version 106.* <br><br>The port number of the receiving node as perceived by the transmitting node in **big endian byte order**.
+| 8        | addr_recv services    | uint64_t         | Required | *Added in protocol version 106 (Bitcoin).* <br><br>The services supported by the receiving node as perceived by the transmitting node.  Same format as the 'services' field above. Dimecoin Core will attempt to provide accurate information.
+| 16       | addr_recv IP address  | char             | Required | *Added in protocol version 106 (Bitcoin).* <br><br>The IPv6 address of the receiving node as perceived by the transmitting node in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses). Dimecoin Core will attempt to provide accurate information.
+| 2        | addr_recv port        | uint16_t         | Required | *Added in protocol version 106 (Bitcoin).* <br><br>The port number of the receiving node as perceived by the transmitting node in **big endian byte order**.
 | 8        | addr_trans services   | uint64_t         | Required | The services supported by the transmitting node.  Should be identical to the 'services' field above.
 | 16       | addr_trans IP address | char             | Required | The IPv6 address of the transmitting node in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses).  Set to ::ffff:127.0.0.1 if unknown.
 | 2        | addr_trans port       | uint16_t         | Required | The port number of the transmitting node in **big endian byte order**.
 | 8        | nonce                 | uint64_t         | Required | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt of a [`version` message](docs/reference/p2p-network.md#version) with a nonce it previously sent.
 | *Varies* | user_agent bytes      | compactSize uint | Required | Number of bytes in following user\_agent field.  If 0x00, no user agent field is sent.
-| *Varies* | user_agent            | string           | Required if user_agent bytes > 0 | *Renamed in protocol version 60000.* <br><br>User agent as defined by BIP14. Previously called subVer.<br><br>Dimecoin Core limits the length to 256 characters.
+| *Varies* | user_agent            | string           | Required if user_agent bytes > 0 | *Renamed in protocol version 60000 (Bitcoin).* <br><br>User agent as defined by BIP14. Previously called subVer.<br><br>Dimecoin Core limits the length to 256 characters.
 | 4        | start_height          | int32_t          | Required | The height of the transmitting node's best block chain or, in the case of an SPV client, best block header chain.
 | 1        | relay                 | bool             | Optional | *Added in Bitcoin protocol version 70001 as described by BIP37.* <br><br>Transaction relay flag.  If 0x00, no [`inv` messages](docs/reference/p2p-network-data-messages.md#inv) or [`tx` messages](docs/reference/p2p-network-data-messages.md#tx) announcing new transactions should be sent to this client until it sends a [`filterload` message](docs/reference/p2p-network.md#filterload) or [`filterclear` message](docs/reference/p2p-network.md#filterclear).  If the relay field is not present or is set to 0x01, this node wants [`inv` messages](docs/reference/p2p-network#inv) and [`tx` messages](docs/reference/p2p-network-data-messages.md#tx) announcing new transactions.
 | 1        | mn_connection         | bool             | Optional | If 0x00, the connection is from a non-masternode. If 0x01, the connection is from a masternode.
