@@ -52,6 +52,7 @@ Specification Disclaimer
 ------------------------
 
 This documentation serves to educate users and developers about how Dimecoin works, but it is not intended as a specification. Dimecoin's security hinges on consensus; deviations, regardless of their origin—be it a program bug, an error in this documentation, or anomalies in network software—can compromise or entirely undermine that security. The accurate measure of consensus behavior is the real-time operation of the network maintaining consensus. Given the network's diverse inputs and environments, fully capturing every aspect of their behavior in any documentation is impossible.
+
 -----------------------------
 Acknowledgments and Credits
 -----------------------------
