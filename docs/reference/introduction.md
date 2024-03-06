@@ -14,7 +14,7 @@ To make the best use of this documentation, you may want to install the most rec
 Any questions about Dimecoin development are best asked in one of the [Dimecoin's communites](https://www.dimecoinnetwork.com/socials/). There you will be able to find active contributors to the project. Find an error or have suggestions related to this documentation? You can submit change requests via the "Edit this Page" button at the top-right of each page.
 
 In the following documentation, some strings have been shortened or wrapped:
-"`[...]`" indicates extra data was removed, and lines ending in a single backslash "\\" are continued below.
+"`[...]`" indicates extra data was removed, and lines ending in a single backslash "`\\`" are continued below.
 
 ### Specification Disclaimer
 
