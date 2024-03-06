@@ -1,7 +1,7 @@
 ```{eval-rst}
 .. meta::
   :title: Wallets
-  :description: Dash has two deterministic wallet formats – single chain wallets and hierarchical deterministic (HD) wallets.
+  :description: Dimecoin has two deterministic wallet formats – single chain wallets (legacy) and hierarchical deterministic (HD) wallets.
 ```
 
 # Wallets
