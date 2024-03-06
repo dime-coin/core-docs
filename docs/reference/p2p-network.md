@@ -102,13 +102,13 @@ The currently-available type identifiers are:
 | 3               | MSG_FILTERED_BLOCK | The hash is of a block header; identical to `MSG_BLOCK`. When used in a [`getdata` message](docs/reference/p2p-network.md#getdata), this indicates the response should be a [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) rather than a [`block` message](docs/reference/p2p-network.md#block) (but this only works if a bloom filter was previously configured).  **Only for use in [`getdata` messages](docs/reference/p2p-network.md#getdata).**
 | 6               | MSG_SPORK                            | The hash is Spork ID.
 | 20               | MSG_CMPCT_BLOCK                                     | The hash is of a block header; identical to `MSG_BLOCK`. When used in a [`getdata` message](docs/reference/p2p-network.md#getdata), this indicates the response should be a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock). **Only for use in [`getdata` messages](docs/reference/p2p-network.md#getdata).**
-| 21               | MSG_QUORUM_FINAL_COMMITMENT                | The hash is a long-living masternode quorum final commitment.<br>_Added in 0.13.0_
-| 23               | MSG_QUORUM_CONTRIB                                     | The hash is a long-living masternode quorum contribution.<br>_Added in 0.14.0_
-| 24               | MSG_QUORUM_COMPLAINT                                     | The hash is a long-living masternode quorum complaint.<br>_Added in 0.14.0_
-| 25               | MSG_QUORUM_JUSTIFICATION                   | The hash is a long-living masternode quorum justification.<br>_Added in 0.14.0_
-| 26               | MSG_QUORUM_PREMATURE_COMMITMENT    | The hash is a long-living masternode quorum premature commitment.<br>_Added in 0.14.0_
-| 28               | MSG_QUORUM_RECOVERED_SIG                        | The hash is a long-living masternode quorum recovered signature. <br><br>**Note**: Only relayed to other masternodes in the same quorum and nodes that have sent a [`qwatch` message](docs/reference/p2p-network-quorum-messages.md#qwatch) as of Dash Core 0.17.0<br>_Added in 0.14.0_
-| 29               | MSG_CLSIG                                     | The hash is a ChainLock signature.<br>_Added in 0.14.0_
+| 21               | MSG_QUORUM_FINAL_COMMITMENT                | The hash is a long-living masternode quorum final commitment.<br>
+| 23               | MSG_QUORUM_CONTRIB                                     | The hash is a long-living masternode quorum contribution.<br>
+| 24               | MSG_QUORUM_COMPLAINT                                     | The hash is a long-living masternode quorum complaint.<br>
+| 25               | MSG_QUORUM_JUSTIFICATION                   | The hash is a long-living masternode quorum justification.<br>
+| 26               | MSG_QUORUM_PREMATURE_COMMITMENT    | The hash is a long-living masternode quorum premature commitment.<br>
+| 28               | MSG_QUORUM_RECOVERED_SIG                        | The hash is a long-living masternode quorum recovered signature. <br><br>**Note**: Only relayed to other masternodes in the same quorum and nodes that have sent a [`qwatch` message](docs/reference/p2p-network-quorum-messages.md#qwatch) as of Dash Core 0.17.0<br>
+| 29               | MSG_CLSIG                                     | The hash is a ChainLock signature.<br>
 
 ### block
 
@@ -119,8 +119,6 @@ The [`block` message](docs/reference/p2p-network.md#block) transmits a single [s
 2. **Unsolicited:** Some miners will send unsolicited [`block` messages](docs/reference/p2p-network.md#block) broadcasting their newly-mined blocks to all of their [peers](../resources/glossary.md#peer). Many [mining](../resources/glossary.md#mining) pools do the same thing, although some may be misconfigured to send the block from multiple nodes, possibly sending the same block to some peers more than once.
 
 ### blocktxn
-
-_Added in protocol version 70005 of Dimecoin Core as described by BIP152_
 
 The [`blocktxn` message](docs/reference/p2p-network.md#blocktxn) sends requested [block](../resources/glossary.md#block) [transactions](../resources/glossary.md#transaction) to a node which previously requested them with a [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn). It is defined as a message containing a serialized `BlockTransactions` message.
 
@@ -313,8 +311,6 @@ d39f608a7775b537729884d4e6633bb2
 ```
 
 ### getblocktxn
-
-_Added in protocol version 70005 of Dimecoin Core as described by BIP152_
 
 The [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn) requests a [`blocktxn` message](docs/reference/p2p-network.md#blocktxn) for any transactions that it has not seen after a compact block is received. It is defined as a message containing a serialized `BlockTransactionsRequest` message. Upon receipt of a properly-formatted [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn), [nodes](../resources/glossary.md#node) which recently provided the sender of such a message with a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) for the block hash identified in this message must respond with either an appropriate [`blocktxn` message](docs/reference/p2p-network.md#blocktxn), or a full block message.
 
