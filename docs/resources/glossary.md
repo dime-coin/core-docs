@@ -74,6 +74,10 @@ The method used in Dimecoin for converting 160-bit hashes into P2PKH and P2SH ad
 
 The Hierarchical Deterministic (HD) key creation and transfer protocol (BIP32), which allows creating child keys from parent keys in a hierarchy. Wallets using the HD protocol are called HD wallets.
 
+#### BIP70 payment protocol
+
+The protocol defined in BIP70 (and other BIPs) which lets spenders get signed payment details from receivers.
+
 #### Bitcoin
 
 The very first cryptocurrency. It was created in 2008 by an individual or group of individuals operating under the name Satoshi Nakamoto. It was intended to be a peer-to-peer, decentralized electronic cash system.
