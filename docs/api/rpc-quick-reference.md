@@ -4,6 +4,9 @@
   :title: RPC API Quick Reference
   :description: A quick reference guide for all the RPCs in Dimecoin.
 ```
+> ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
+>
+> ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
 ## Quick Reference
 
