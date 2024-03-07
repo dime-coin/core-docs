@@ -387,7 +387,7 @@ Result:
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
 * [GetWalletInfo](../api/rpc-wallet.md#getwalletinfo): provides information about the wallet.
 
-## GetBlockCount
+### GetBlockCount
 
 The [`getblockcount` RPC](../api/rpc-blockchain.md#getblockcount) returns the number of blocks in the local best blockchain.
 
@@ -542,7 +542,7 @@ Result:
 ```{eval-rst}
 .. _api-rpc-blockchain-getblockheaders:
 ```
-## GetChainTips
+### GetChainTips
 
 The [`getchaintips` RPC](../api/remote-procedure-calls-blockchain.md#getchaintips) returns information about the highest-height block (tip) of each local block chain.
 
@@ -883,7 +883,7 @@ Result:
 * [GetMemPoolDescendants](../api/rpc-blockchain.md#getmempooldescendants): returns all in-mempool descendants for a transaction in the mempool.
 * [GetRawMemPool](../api/rpc-blockchain.md#getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
 
-## GetMemPoolInfo
+### GetMemPoolInfo
 
 The [`getmempoolinfo` RPC](../api/rpc-blockchain.md#getmempoolinfo) returns information about the node's current transaction memory pool.
 
