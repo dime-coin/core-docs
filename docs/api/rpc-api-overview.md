@@ -1,14 +1,14 @@
 ```{eval-rst}
 .. _api-rpc:
 .. meta::
-  :title: Remote Procedure Calls API
+  :title: RPC API Overview
   :description: Dimecoin Core provides an RPC interface for administrative tasks, wallet operations, and network/blockchain queries, with client libraries available in multiple languages and a built-in dimecoin-cli program for command-line and RPC API interaction. 
 ```
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-## Remote Procedure Calls
+## RPC API 
 
 ### Overview
 
@@ -20,7 +20,7 @@ Dimecoin Core also ships with its own compiled C++ RPC client, `dimecoin-cli,` l
 
 The remainder of this section describes the Dimecoin Core RPC protocol in detail.
 
-> Dimecoin Core Configuration
+> **Dimecoin Core Configuration**
 >
 > The following subsections reference setting configuration values. See the [Examples Page](../examples/introduction.md) for more information about setting Dimecoin Core configuration values.
 
