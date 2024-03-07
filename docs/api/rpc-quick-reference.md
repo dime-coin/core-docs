@@ -47,7 +47,6 @@
 * [Masternode](../api/remote-procedure-calls-dime.md#masternode): provides a set of commands for managing masternodes and displaying information about them. 
 * [MasternodeList](../api/remote-procedure-calls-dime.md#masternodelist): returns a list of masternodes in different modes.
 * [MnSync](../api/remote-procedure-calls-dime.md#mnsync): returns the sync status, updates to the next step or resets it entirely.
-* [CoinJoin](../api/remote-procedure-calls-dime.md#coinjoin): controls the CoinJoin process.
 * [SentinelPing](../api/remote-procedure-calls-dime#sentinelping): returns version of sentinel and its state.
 * [Spork](../api/remote-procedure-calls-dime.md#spork): shows information about the current state of sporks.
 * [SporkUpdate](../api/remote-procedure-calls-dime.md#sporkupdate): updates the value of the provided spork.
@@ -55,7 +54,7 @@
 
 ### [Generating RPCs](../api/remote-procedure-calls-generating.md)
 
-* [GenerateBlock](../api/remote-procedure-calls-generating.md#generateblock) mines a block with a set of ordered transactions immediately to a specified address or descriptor (before the RPC call returns).
+* [GenerateBlock](../api/remote-procedure-calls-generating.md#generateblock): mines a block with a set of ordered transactions immediately to a specified address or descriptor (before the RPC call returns).
 * [GenerateToAddress](../api/remote-procedure-calls-generating.md#generatetoaddress): mines blocks immediately to a specified address.
 
 ### [Mining RPCs](../api/remote-procedure-calls-mining.md)
@@ -99,7 +98,7 @@
 * [SignRawTransactionWithKey](../api/remote-procedure-calls-raw-transactions.md#signrawtransactionwithkey): signs a transaction in the serialized transaction format using private keys provided in the call.
 * [TestMempoolAccept](../api/remote-procedure-calls-raw-transactions.md#testmempoolaccept): returns the results of mempool acceptance tests indicating if raw transaction (serialized, hex-encoded) would be accepted by mempool.
 
-## [Utility RPCs](../api/remote-procedure-calls-util.md)
+### [Utility RPCs](../api/remote-procedure-calls-util.md)
 
 * [CreateMultiSig](../api/remote-procedure-calls-util.md#createmultisig): creates a P2SH multi-signature address.
 * [EstimateSmartFee](../api/remote-procedure-calls-util.md#estimatesmartfee): estimates the transaction fee per kilobyte that needs to be paid for a transaction to begin confirmation within a certain number of blocks and returns the number of blocks for which the estimate is valid.
