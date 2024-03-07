@@ -76,10 +76,11 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Core Reference
 :hidden:
 
+resources/glossary
 reference/introduction
 reference/blockchain
 reference/transactions
@@ -89,7 +90,7 @@ reference/improvement-proposals
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :titlesonly:
 :caption: Core API Reference
 :hidden:
@@ -101,7 +102,7 @@ api/zmq
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Core Guides
 :titlesonly:
 :hidden:
@@ -118,7 +119,7 @@ guide/mining
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Core Examples
 :hidden:
 
@@ -131,7 +132,7 @@ examples/receiving-zmq-notifications
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :titlesonly: 
 :caption: Dimecoin Core Wallet
 :hidden:
@@ -141,12 +142,11 @@ dimecore/wallet-configuration-file
 ```
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :titlesonly:
 :caption: Additional Resources
 :hidden:
 
-resources/glossary
 Mainnet Block Explorer <https://chainz.cryptoid.info/dime/>
 Dimecoin Legacy Whitepaper <https://>
 Bitcoin Whitepaper <https://bitcoin.org/bitcoin.pdf>
