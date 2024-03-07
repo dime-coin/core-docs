@@ -161,7 +161,7 @@ A transaction may have multiple [inputs](../resources/glossary.md#input) and [ou
 
 ### JSON-RPC Responses
 
-When retrieving transaction data via Dimecoin Core RPCs (e.g. the [`getrawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#getrawtransaction)), the transaction data is returned in the following format.
+When retrieving transaction data via Dimecoin Core RPCs (e.g. the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction)), the transaction data is returned in the following format.
 
 Transaction Structure 
 
@@ -485,7 +485,7 @@ ac835b69acdba709707c5cccdfcc342eacc87d6db0cc676896a01fe433a0620ae4411f5da2e5444c
 8fa023938f750a283b39b1bff17b2ad11f
 ```
 
-The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#decoderawtransaction).
+The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction).
 
 ```json JSON Representation
 {
@@ -633,7 +633,7 @@ d9d82547efca2206ec1d9f5dcf2776624bc0a58b12ed3b00000000000000000000ffffae22e9734e
 9014b947d8f7
 ```
 
-The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#decoderawtransaction).
+The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction).
 
 ```json
 {
@@ -781,7 +781,7 @@ d89bf2b8b984eae2fa9fa6ac19e862459cb7cf79390000a73d8c1e640d29e2257042a39bbbac8d86
 9d25d8aa2cff5962ece6
 ```
 
-The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#decoderawtransaction).
+The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction).
 
 ```json JSON Representation
 {
@@ -904,7 +904,7 @@ f22ff7e3b9b3db7d0c4a7e120abb4952c3574a18de34fa29828f9fe3f52bd0b1fac17acd04f77519
 53438f1dd1e14ba6adeb8351b78c9eb59bf4
 ```
 
-The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#decoderawtransaction).
+The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction).
 
 ```json JSON Representation
 {
@@ -1060,7 +1060,7 @@ a3dac55848abcd2bac30bf780318792bcdf32f7729443846c9fdc57050a131cd12c0e54a16f6265e
 000000000000
 ```
 
-The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#decoderawtransaction).
+The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction).
 
 ```json JSON Representation
 {
@@ -1226,7 +1226,7 @@ c5b22b21ed8caf3bcfb90212a8ee6517afeb04ec5a9af7064c7df1f92b01b7cc71e7f76f6dbc
 1fcd8a551d896581455a37a33f8ef6202145bc1561a404798dffd339b105b5716937e4086f04
 ```
 
-The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/remote-procedure-calls-raw-transactions.md#decoderawtransaction)
+The JSON representation of a raw transaction can be obtained with the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction) or the [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction)
 
 ```json JSON Representation
 {

@@ -6,7 +6,7 @@
 
 Welcome to the Dimecoin Core developer documentation. You'll find sections for
 [reference information](reference/introduction.md), [API
-details](api/remote-procedure-calls.md), [guides](guide/introduction.md),
+details](api/rpc-api-overview.md), [guides](guide/introduction.md),
 [examples](examples/introduction.md) and [Dimecoin Core wallet
 information](dashcore/wallet-arguments-and-commands.md) to help you start
 working with Dimecoin as quickly as possible. Let's jump right in!
@@ -95,7 +95,7 @@ reference/improvement-proposals
 :hidden:
 
 api/dime-core-apis-hash-byte-order
-api/remote-procedure-calls
+api/rpc-api-overview
 api/http-rest
 api/zmq
 ```
