@@ -120,7 +120,7 @@
 * [GetAddressInfo](../api/remote-procedure-calls-wallet.md#getaddressinfo): returns information about the given dimecoin address. 
 * [GetAddressesByLabel](../api/remote-procedure-calls-wallet.md#getaddressesbylabel): returns a list of every address assigned to a particular label.
 * [GetBalance](../api/remote-procedure-calls-wallet.md#getbalance): gets the balance in decimal dime across all accounts or for a particular account.
-* [GetBalances](../api/remote-procedure-calls-wallet.md#getbalances): returns an object with all balances denominated in DASH.
+* [GetBalances](../api/remote-procedure-calls-wallet.md#getbalances): returns an object with all balances denominated in DIME.
 * [GetNewAddress](../api/remote-procedure-calls-wallet.md#getnewaddress): returns a new dimecoin address for receiving payments. If an account is specified, payments received with the address will be credited to that account.
 * [GetRawChangeAddress](../api/remote-procedure-calls-wallet.md#getrawchangeaddress): returns a new dimecoin address for receiving change. This is for use with raw transactions, not normal use.
 * [GetReceivedByAddress](../api/remote-procedure-calls-wallet.md#getreceivedbyaddress): returns the total amount received by the specified address in transactions with the specified number of confirmations. It does not count coinbase transactions.
