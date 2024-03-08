@@ -2,7 +2,7 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-# Transactions
+## Transactions
 
 The following section briefly documents Dimecoin core's transaction details.
 
@@ -11,7 +11,7 @@ The following section briefly documents Dimecoin core's transaction details.
   :title: Transactions, OpCodes, Raw Transaction Format
   :description: A breakdown of Dimecoin transaction structure
 ```
-## OpCodes
+### OpCodes
 
 The [opcodes](../resources/glossary.md#opcode) used in the pubkey scripts of standard [transactions](../resources/glossary.md#transaction) are:
 
@@ -45,13 +45,13 @@ The [opcodes](../resources/glossary.md#opcode) used in the pubkey scripts of sta
 
 A complete list of Bitcoin opcodes can be found on the Bitcoin Wiki [Script Page](https://en.bitcoin.it/wiki/Script), with an authoritative list in the `opcodetype` enum of the Dimecoin Core [script header file](https://github.com/dime-coin/dimecoin/blob/master/src/script/script.h).
 
-## Signature Scripts
+### Signature Scripts
 
-### Signature Script Modification
+#### Signature Script Modification
 
 **<span id="signature_script_modification_warning">Warning: Signature Script Modification -</span>:** [Signature scripts](../resources/glossary.md#signature-script) are not signed, so anyone can modify them. This means signature scripts should only contain data and [data-pushing opcode](../resources/glossary.md#data-pushing-opcode) which can't be modified without causing the pubkey script to fail. Placing non-data-pushing opcodes in the signature script currently makes a transaction non-standard, and future consensus rules may forbid such transactions altogether. (Non-data-pushing opcodes are already forbidden in signature scripts when spending a [P2SH pubkey script](../resources/glossary.md#p2sh-pubkey-script).)
 
-### Multisig Signature Order
+#### Multisig Signature Order
 
 **`OP_CHECKMULTISIG` Warning:** The [multisig](../resources/glossary.md#multisig) verification process described above requires that signatures in the signature script be provided in the same order as their corresponding public keys in the pubkey script or redeem script. For example, the following combined signature and pubkey script will produce the stack and comparisons shown:
 
@@ -88,11 +88,11 @@ OP_0            A pubkey
 Failure, aborted: two signature matches required but none found so
                   far, and there's only one pubkey remaining
 ```
-## Address Conversion
+### Address Conversion
 
 The hashes used in P2PKH and [P2SH outputs](../resources/glossary.md#p2sh-output) are commonly encoded as Dimecoin [addresses](../resources/glossary.md#address).  This is the procedure to encode those hashes and decode the addresses.
 
-### Conversion Process
+#### Conversion Process
 
 First, get your hash.  For P2PKH, you RIPEMD-160(SHA256()) hash a ECDSA [public key](../resources/glossary.md#public-key) derived from your 256-bit ECDSA [private key](../resources/glossary.md#private-key) (random data). For P2SH, you RIPEMD-160(SHA256()) hash a [redeem script](../resources/glossary.md#redeem-script) serialized in the format used in [raw transactions](../resources/glossary.md#raw-transaction) (described in a [following sub-section](../reference/transactions-raw-transaction-format.md)).  Taking the resulting hash:
 
@@ -112,7 +112,7 @@ First, get your hash.  For P2PKH, you RIPEMD-160(SHA256()) hash a ECDSA [public 
 
 4. Append the checksum to the version and hash, and encode it as a [base58](../resources/glossary.md#base58) string: `BASE58(version . hash . checksum)`
 
-### Example Code
+#### Example Code
 
 Dimecoin's base58 encoding, called [Base58Check](../resources/glossary.md#base58check) may not match other implementations. Tier Nolan provided the following example encoding algorithm to the Bitcoin Wiki [Base58Check encoding](https://en.bitcoin.it/wiki/Base58Check_encoding) page under the [Creative Commons Attribution 3.0 license](https://creativecommons.org/licenses/by/3.0/):
 
@@ -140,7 +140,7 @@ Dimecoin's own code can be traced using the [base58 header file](https://github.
 
 To convert addresses back into hashes, reverse the base58 encoding, extract the checksum, repeat the steps to create the checksum and compare it against the extracted checksum, and then remove the version byte.
 
-## Raw Transaction Format
+### Raw Transaction Format
 
 Dimecoin transactions are broadcast between [peers](../resources/glossary.md#peer) in a serialized byte format, called [raw format](../resources/glossary.md#raw-format). It is this form of a transaction which is SHA256(SHA256()) hashed to create the [TXID](../resources/glossary.md#transaction-identifiers) and, ultimately, the [merkle root](../resources/glossary.md#merkle-root) of a [block](../resources/glossary.md#block) containing the transaction---making the transaction format part of the [consensus rules](../resources/glossary.md#consensus-rules).
 
@@ -159,7 +159,7 @@ A raw transaction has the following top-level format:
 
 A transaction may have multiple [inputs](../resources/glossary.md#input) and [outputs](../resources/glossary.md#output), so the txIn and txOut structures may recur within a transaction. [CompactSize unsigned integers](../resources/glossary.md#compactsize) are a form of variable-length integers; they are described in the [CompactSize section](../reference/transactions-compactsize-unsigned-integers.md).
 
-### JSON-RPC Responses
+#### JSON-RPC Responses
 
 When retrieving transaction data via Dimecoin Core RPCs (e.g. the [`getrawtransaction` RPC](../api/rpc-raw-transactions.md#getrawtransaction)), the transaction data is returned in the following format.
 
@@ -178,7 +178,7 @@ Transaction Structure
 
 **<span id="txin"></span>**
 
-### TxIn: A Transaction Input (Non-Coinbase)
+#### TxIn: A Transaction Input (Non-Coinbase)
 
 Each non- [coinbase](../resources/glossary.md#coinbase) [input](../resources/glossary.md#input) spends an outpoint from a previous transaction. (Coinbase inputs are described separately after the example section below.)
 
@@ -191,7 +191,7 @@ Each non- [coinbase](../resources/glossary.md#coinbase) [input](../resources/glo
 
 **<span id="outpoint"></span>**
 
-### Outpoint: The Specific Part Of A Specific Output
+#### Outpoint: The Specific Part Of A Specific Output
 
 Because a single transaction can include multiple [outputs](../resources/glossary.md#output), the [outpoint](../resources/glossary.md#outpoint) structure includes both a [TXID](../resources/glossary.md#transaction-identifiers) and an output index number to refer to specific output.
 
@@ -202,7 +202,7 @@ Because a single transaction can include multiple [outputs](../resources/glossar
 
 **<span id="txout"></span>**
 
-### TxOut: A Transaction Output
+#### TxOut: A Transaction Output
 
 Each [output](../resources/glossary.md#output) spends a certain number of dimecoins, placing them under control of anyone who can satisfy the provided [pubkey script](../resources/glossary.md#pubkey-script).
 
@@ -252,7 +252,7 @@ The sample raw transaction itemized below is the one created in the [Simple Raw 
 
 **<span id="coinbase"></span>**
 
-### Coinbase Input: The Input Of The First Transaction In A Block
+#### Coinbase Input: The Input Of The First Transaction In A Block
 
 The first transaction in a [block](../resources/glossary.md#block), called the [coinbase transaction](../resources/glossary.md#coinbase-transaction), must have exactly one input, called a [coinbase](../resources/glossary.md#coinbase). The coinbase [input](../resources/glossary.md#input) currently has the following format.
 
@@ -299,7 +299,7 @@ An itemized [coinbase transaction](../resources/glossary.md#coinbase-transaction
 |
 | 00000000 ............................ Locktime
 ```
-## Special Transactions
+### Special Transactions
 
 The [Special Transactions](../resources/glossary.md#special-transactions) framework established by [DIP2](https://github.com/dashpay/dips/blob/master/dip-0002.md) enabled the implementation of new on-chain features and [consensus](../resources/glossary.md#consensus) mechanisms. These transactions provide the flexibility to expand beyond the financial uses of classical transactions. DIP2 transactions modified classical transactions by:
 
@@ -325,7 +325,7 @@ Classical (financial) transactions have a `type` of 0 while special transactions
 .. _ref-txs-proregtx:
 ```
 
-### ProRegTx
+#### ProRegTx
 
 *Adopted from Dash Core which was added in protocol version 70213 of Dash Core as described by [DIP3](https://github.com/dashpay/dips/blob/master/dip-0003.md)*
 
@@ -468,7 +468,7 @@ ProRegTx Payload
 | .......................................... Signature (Empty)
 ```
 
-### Example ProRegTx
+#### Example ProRegTx
 
 ```Text Raw Transaction hex
 03000100013ea08d68bd3038b8ea3d92d43fa38047522896724b04f246827d74b703bd3f2801000000
@@ -553,7 +553,7 @@ The JSON representation of a raw transaction can be obtained with the [`getrawtr
 .. _ref-txs-proupservtx:
 ```
 
-## ProUpServTx
+### ProUpServTx
 
 *Adopted from Dash Core which was added in protocol version 70213 of Dash Core as described by [DIP3](https://github.com/dashpay/dips/blob/master/dip-0003.md)*
 
@@ -618,7 +618,7 @@ ProUpServTx Payload
 | 789beed8ef7e8839695a334c2e1bd37c ......... BLS Signature (96 bytes)
 ```
 
-### Example ProUpServTx
+#### Example ProUpServTx
 
 ```Text Raw Transaction hex
 0300020001f88750ccc24410679d87ee63df5c8dfd901329aa1fe60a74c183d560eee5218d01000000
@@ -694,7 +694,7 @@ The JSON representation of a raw transaction can be obtained with the [`getrawtr
 .. _ref-txs-proupregtx:
 ```
 
-## ProUpRegTx
+### ProUpRegTx
 
 *Adopted from Dash Core which was added in protocol version 70213 of Dash Core as described by [DIP3](https://github.com/dashpay/dips/blob/master/dip-0003.md)*
 
@@ -765,7 +765,7 @@ ProRegTx Payload
 | a73d347841a58768b94c771819dc2bbce3 ....... Signature
 ```
 
-### Example ProUpRegTx
+#### Example ProUpRegTx
 
 ```Text Raw Transaction hex
 0300030001f9485c88c87c282dc4de6b826afbba91c49aaa5bc75a0c0110465988573b5fd501000000
@@ -839,7 +839,7 @@ The JSON representation of a raw transaction can be obtained with the [`getrawtr
 .. _ref-txs-prouprevtx:
 ```
 
-## ProUpRevTx
+### ProUpRevTx
 
 *Adopted from Dash Core which was added in protocol version 70213 of Dash Core as described by [DIP3](https://github.com/dashpay/dips/blob/master/dip-0003.md)*
 
@@ -891,7 +891,7 @@ ProUpRevTx Payload
 | 05877d82ff7d1af00ae2d303dea5eb3b ......... BLS Signature (96 bytes)
 ```
 
-### Example ProUpRevTx
+#### Example ProUpRevTx
 
 ```text Raw transaction hex
 03000400016f8a813df204873df003d6efc44e1906eaf6180a762513b1c91252826ce05916000000006b483045022100
@@ -964,7 +964,7 @@ The JSON representation of a raw transaction can be obtained with the [`getrawtr
 .. _ref-txs-cbtx:
 ```
 
-## CbTx
+### CbTx
 
 *Adopted from Dash Core which was added in protocol version 70213 of Dash Core as described by [DIP4](https://github.com/dashpay/dips/blob/master/dip-0004.md)*
 
@@ -1045,7 +1045,7 @@ Coinbase Transaction Payload
 | 0000000000000000 ......................... Credit pool balance (0.0 DIME)
 ```
 
-### Example CbTx
+#### Example CbTx
 
 ```Text Raw Transaction hex
 03000500010000000000000000000000000000000000000000000000000000000000000000ffffffff
@@ -1132,11 +1132,11 @@ The JSON representation of a raw transaction can be obtained with the [`getrawtr
 .. _ref-txs-qctx:
 ```
 
-## QcTx
+### QcTx
 
 *Adopted from Dash Core which was added in protocol version 70213 of Dash Core as described by [DIP6](https://github.com/dashpay/dips/blob/master/dip-0006.md)*
 
-> 🚧 Note
+> **Note**
 >
 > This special transaction has no inputs and no outputs and thus also pays no fee.
 
@@ -1212,7 +1212,7 @@ Quorum Commitment Transaction Payload
 | | e0d4f461a2ba0e32a711197ca559dacf ....... BLS Signature (96 bytes)
 ```
 
-### Example QcTx
+#### Example QcTx
 
 ```Text Raw Transaction hex
 03000600000000000000fd49010100d3710b000100016deffc783c55e385653fe687fb5ec594
@@ -1272,7 +1272,7 @@ The JSON representation of a raw transaction can be obtained with the [`getrawtr
 
 ```
 
-## CompactSize Unsigned Integers
+### CompactSize Unsigned Integers
 
 The [raw transaction](../resources/glossary.md#raw-transaction) format and several peer-to-peer network messages use a type of variable-length integer to indicate the number of bytes in a following piece of data.
 
