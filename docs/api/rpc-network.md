@@ -1,12 +1,15 @@
 ```{eval-rst}
 .. meta::
   :title: Network RPCs
-  :description: A list of all network connection related remote procedure calls in Dash Core.
+  :description: A list of all network connection related remote procedure calls in Dimecoin Core.  
 ```
+> ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
+>
+> ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-# Network RPCs
+## Network RPCs
 
-## AddNode
+### AddNode
 
 The [`addnode` RPC](../api/rpc-network.md#addnode) attempts to add or remove a node from the addnode list, or to try a connection to a node once.
 
@@ -28,65 +31,21 @@ _Result---`null` plus error on failed remove_
 | -------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `result` | null | Required<br>(exactly 1) | Always JSON `null` whether the node was added, removed, tried-and-connected, or tried-and-not-connected.  The JSON-RPC error field will be set only if you try adding a node that was already added or removing a node that is not on the addnodes list |
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0*
 
 Try connecting to the following node.
 
 ```bash
-dash-cli -testnet addnode 192.0.2.113:19999 onetry
+dimecoin-cli -mainnet addnode 147.43.22.113:11391 onetry
 ```
 
-Result (no output from `dash-cli` because result is set to `null`).
+Result (no output from `dimecoin-cli` because result is set to `null`).
 
 *See also*
 
 * [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
 
-## AddPeerAddress
-
-The [`addpeeraddress` RPC](../api/rpc-network.md#addpeeraddress) adds the address
-of a potential peer to the address manager. **This RPC is for testing only.**
-
-*Parameter #1---IP address of node to add*
-
-| Name | Type | Presence | Description |
-| ---- | ---- | -------- | ----------- |
-| `address` | string | Required<br>(exactly 1) | The IP address of the peer |
-
-*Parameter #2---port of the node to add*
-
-| Name | Type | Presence | Description |
-| ---- | ---- | -------- | ----------- |
-| `port` | number | Required<br>(exactly 1) | The port of the peer |
-
-*Result---a list of added nodes*
-
-| Name | Type | Presence | Description |
-| ---- | ---- | -------- | ----------- |
-| `result`          | object | Required<br>(exactly 1) | An object describing if the address was successfully added |
-| →<br>`success`    | bool   | Required<br>(exactly 1) | Whether the peer address was successfully added to the address manager |
-
-*Example from Dash Core 20.0.0*
-
-Try connecting to the following node.
-
-```bash
-dash-cli addpeeraddress "1.2.3.4" 9999
-```
-
-Result:
-
-```json
-{
-  "success": true
-}
-```
-
-*See also: none*
-
-## ClearBanned
-
-*Added in Bitcoin Core 0.12.0*
+### ClearBanned
 
 The [`clearbanned` RPC](../api/rpc-network.md#clearbanned) clears list of banned nodes.
 
@@ -98,55 +57,22 @@ _Result---`null` on success_
 | -------- | ---- | ----------------------- | ------------------------------------- |
 | `result` | null | Required<br>(exactly 1) | JSON `null` when the list was cleared |
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0*
 
 Clears the ban list.
 
 ```bash
-dash-cli clearbanned
+dimecoin-cli clearbanned
 ```
 
-Result (no output from `dash-cli` because result is set to `null`).
+Result (no output from `dimecoin-cli` because result is set to `null`).
 
 *See also*
 
 * [ListBanned](../api/rpc-network.md#listbanned): lists all manually banned IPs/Subnets.
 * [SetBan](../api/rpc-network.md#setban): attempts add or remove a IP/Subnet from the banned list.
-* [ClearDiscouraged](../api/rpc-network.md#cleardiscouraged): clears list of discouraged nodes.
 
-## ClearDiscouraged
-
-*Added in Dash Core 19.0.0*
-
-The [`cleardiscouraged` RPC](../api/rpc-network.md#cleardiscouraged) clears all discouraged nodes.
-
-*Parameters: none*
-
-_Result---`null` on success_
-
-| Name     | Type | Presence                | Description                           |
-| -------- | ---- | ----------------------- | ------------------------------------- |
-| `result` | null | Required<br>(exactly 1) | JSON `null` when the list was cleared |
-
-*Example from Dash Core 19.0.0*
-
-Clears the ban list.
-
-```bash
-dash-cli cleardiscouraged
-```
-
-Result (no output from `dash-cli` because result is set to `null`).
-
-*See also*
-
-* [ListBanned](../api/rpc-network.md#listbanned): lists all manually banned IPs/Subnets.
-* [ClearBanned](../api/rpc-network.md#clearbanned): clears list of banned nodes.
-* [SetBan](../api/rpc-network.md#setban): attempts add or remove a IP/Subnet from the banned list.
-
-## DisconnectNode
-
-*Added in Bitcoin Core 0.12.0*
+### DisconnectNode
 
 The [`disconnectnode` RPC](../api/rpc-network.md#disconnectnode) immediately disconnects from a specified node.
 
@@ -168,42 +94,42 @@ _Result---`null` on success or error on failed disconnect_
 | -------- | ---- | ----------------------- | ------------------------------------------ |
 | `result` | null | Required<br>(exactly 1) | JSON `null` when the node was disconnected |
 
-*Example from Dash Core 0.15.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 Disconnects following node by address.
 
 ```bash
-dash-cli -testnet disconnectnode 192.0.2.113:19999
+dimecoin-cli -mainnet disconnectnode 147.43.22.113:11391
 ```
 
-Result (no output from `dash-cli` because result is set to `null`).
+Result (no output from `dimecoin-cli` because result is set to `null`).
 
 Disconnects following node by id.
 
 ```bash
-dash-cli -testnet disconnectnode "" 3
+dimecoin-cli -mainnet disconnectnode "" 3
 ```
 
-Result (no output from `dash-cli` because result is set to `null`).
+Result (no output from `dimecoin-cli` because result is set to `null`).
 
 *See also*
 
 * [AddNode](../api/rpc-network.md#addnode): attempts to add or remove a node from the addnode list, or to try a connection to a node once.
 * [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
 
-## GetAddedNodeInfo
+### GetAddedNodeInfo
 
 The [`getaddednodeinfo` RPC](../api/rpc-network.md#getaddednodeinfo) returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
 
-Prior to Dash Core 0.12.3, this dummy parameter was required for historical purposes but not used:
+Prior to Dimecoin Core 2.0.0.0, this dummy parameter was required for historical purposes but not used:
 
 *DEPRECATED Parameter #1---whether to display connection information*
 
 | Name    | Type   | Presence                  | Description                   |
 | ------- | ------ | ------------------------- | ----------------------------- |
-| *Dummy* | *bool* | _Required<br>(exactly 1)_ | *Removed in Dash Core 0.12.3* |
+| *Dummy* | *bool* | _Required<br>(exactly 1)_ | *Removed in Dimecoin Core 2.0.0.0* |
 
-Beginning with Dash Core 0.12.3, this is the single (optional) parameter:
+Beginning with Dimecoin Core 2.0.0.0, this is the single (optional) parameter:
 
 *Parameter #1---what node to display information about*
 
@@ -224,10 +150,10 @@ Beginning with Dash Core 0.12.3, this is the single (optional) parameter:
 | → → → →<br>`address`   | string | Required<br>(exactly 1) | An IP address and port number of the node.  If the node was added using a DNS address, this will be the resolved IP address                                                                                                      |
 | → → → →<br>`connected` | string | Required<br>(exactly 1) | Whether or not the local node is connected to this addnode using this IP address.  Valid values are:<br>• `false` for not connected<br>• `inbound` if the addnode connected to us<br>• `outbound` if we connected to the addnode |
 
-*Example from Dash Core 0.12.3*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli getaddednodeinfo
+dimecoin-cli getaddednodeinfo
 ```
 
 Result (real hostname and IP address replaced with [RFC5737](http://tools.ietf.org/html/rfc5737) reserved address):
@@ -235,24 +161,23 @@ Result (real hostname and IP address replaced with [RFC5737](http://tools.ietf.o
 ```json
 [
   {
-    "addednode": "192.0.2.113:19999",
+    "addednode": "147.43.22.113:11391",
     "connected": true,
     "addresses": [
       {
-        "address": "192.0.2.113:19999",
+        "address": "147.43.22.113:11391",
         "connected": "outbound"
       }
     ]
   }
 ]
 ```
-
 *See also*
 
 * [AddNode](../api/rpc-network.md#addnode): attempts to add or remove a node from the addnode list, or to try a connection to a node once.
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 
-## GetConnectionCount
+### GetConnectionCount
 
 The [`getconnectioncount` RPC](../api/rpc-network.md#getconnectioncount) returns the number of connections to other nodes.
 
@@ -264,64 +189,23 @@ The [`getconnectioncount` RPC](../api/rpc-network.md#getconnectioncount) returns
 | -------- | ------------ | ----------------------- | -------------------------------------------------------------------------- |
 | `result` | number (int) | Required<br>(exactly 1) | The total number of connections to other nodes (both inbound and outbound) |
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0 : 8 is currently the default max connection amount for node seeding purposes*
 
 ```bash
-dash-cli -testnet getconnectioncount
+dimecoin-cli -mainnet getconnectioncount
 ```
-
 Result:
 
 ```text
-14
+8
 ```
-
 *See also*
 
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
 
-## GetNodeAddresses
-
-The [`getnodeaddresses` RPC](../api/rpc-network.md#getnodeaddresses) returns the known addresses which can potentially be used to find new nodes in the network.
-
-*Parameter #1---count*
-
-| Name    | Type         | Presence             | Description                                                                                                    |
-| ------- | ------------ | -------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `count` | number (int) | Optional<br>(0 or 1) | The number of addresses to return. Limited to the smaller of 2500 or 23% of all known addresses (default = 1). |
-
-*Result---the current bytes in, bytes out, and current time*
-
-| Name            | Type         | Presence                | Description                                                |
-| --------------- | ------------ | ----------------------- | ---------------------------------------------------------- |
-| `result`        | array        | Required<br>(exactly 1) | An array containing information about the known addresses. |
-| →<br>`time`     | number (int) | Required<br>(exactly 1) | The epoch time of when the node was last seen (in Unix)    |
-| →<br>`services` | number (int) | Required<br>(exactly 1) | The services offered                                       |
-| →<br>`address`  | string       | Required<br>(exactly 1) | The address of the node                                    |
-| →<br>`port`     | number (int) | Required<br>(exactly 1) | The port of the node                                       |
-
-*Example from Dash Core 18.0.0*
-
-```bash
-dash-cli -testnet getnodeaddresses
-```
-
-Result:
-
-```json
-[
-  {
-    "time": 1634187034,
-    "services": 1029,
-    "address": "34.214.102.160",
-    "port": 19999
-  }
-]
-```
-
-## GetNetTotals
+### GetNetTotals
 
 The [`getnettotals` RPC](../api/rpc-network.md#getnettotals) returns information about network traffic, including bytes in, bytes out, and the current time.
 
@@ -343,19 +227,19 @@ The [`getnettotals` RPC](../api/rpc-network.md#getnettotals) returns information
 | → →<br>`bytes_left_in_cycle`     | number (int)        | Required<br>(exactly 1) | Amount of bytes left in current time cycle.  `0` is displayed if no upload target is set                                     |
 | → →<br>`time_left_in_cycle`      | number (int)        | Required<br>(exactly 1) | Seconds left in current time cycle.  `0` is displayed if no upload target is set                                             |
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli getnettotals
+dimecoin-cli getnettotals
 ```
 
 Result:
 
 ```json
 {
-  "totalbytesrecv": 4661588,
-  "totalbytessent": 2899423,
-  "timemillis": 1507815162756,
+  "totalbytesrecv": 14648877947,
+  "totalbytessent": 679218045,
+  "timemillis": 1709936767876,
   "uploadtarget": {
     "timeframe": 86400,
     "target": 0,
@@ -366,13 +250,12 @@ Result:
   }
 }
 ```
-
 *See also*
 
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 
-## GetNetworkInfo
+### GetNetworkInfo
 
 The [`getnetworkinfo` RPC](../api/rpc-network.md#getnetworkinfo) returns information about the node's connection to the network.
 
@@ -383,65 +266,52 @@ The [`getnetworkinfo` RPC](../api/rpc-network.md#getnetworkinfo) returns informa
 | Name                                   | Type          | Presence                | Description                                                                                                                                                                                                                                       |
 | -------------------------------------- | ------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `result`                               | object        | Required<br>(exactly 1) | Information about this node's connection to the network                                                                                                                                                                                           |
-| →<br>`version`                         | number        | Required<br>(exactly 1) | This node's version of Dash Core in its internal integer format.  For example, Dash Core 0.12.2 has the integer version number 120200                                                                                                             |
+| →<br>`version`                         | number        | Required<br>(exactly 1) | This node's version of Dimecoin Core in its internal integer format.  For example, Dimecoin Core 2.3.0.0 has the integer version number 2030000                                                                                                             |
 | →<br>`buildversion`                    | string        | Required<br>(exactly 1) | The node's build version including RC info or commit as relevant                                                                                                                                                                                  |
 | →<br>`subversion`                      | string        | Required<br>(exactly 1) | The user agent this node sends in its [`version` message](../reference/p2p-network-control-messages.md#version)                                                                                                                                          |
 | →<br>`protocolversion`                 | number (int)  | Required<br>(exactly 1) | The protocol version number used by this node.  See the [protocol versions section](../reference/p2p-network-protocol-versions.md) for more information                                                                                                  |
 | →<br>`localservices`                   | string (hex)  | Required<br>(exactly 1) | The services supported by this node as advertised in its [`version` message](../reference/p2p-network-control-messages.md#version)                                                                                                                       |
-| →<br>`localservicesnames`              | array         | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br>An array of strings describing the services offered, in human-readable form.                                                                                                                                     |
+| →<br>`localservicesnames`              | array         | Required<br>(exactly 1) | An array of strings describing the services offered, in human-readable form.                                                                                                                                     |
 | → →<br>SERVICE_NAME                    | string        | Required<br>(exactly 1) | The service name.                                                                                                                                                                                                                                 |
-| →<br>`localrelay`                      | bool          | Required<br>(exactly 1) | *Added in Bitcoin Core 0.13.0*<br><br>The services supported by this node as advertised in its [`version` message](../reference/p2p-network-control-messages.md#version)                                                                                 |
+| →<br>`localrelay`                      | bool          | Required<br>(exactly 1) | The services supported by this node as advertised in its [`version` message](../reference/p2p-network-control-messages.md#version)                                                                                 |
 | →<br>`timeoffset`                      | number (int)  | Required<br>(exactly 1) | The offset of the node's clock from the computer's clock (both in UTC) in seconds.  The offset may be up to 4200 seconds (70 minutes)                                                                                                             |
 | →<br>`networkactive`                   | bool          | Required<br>(exactly 1) | Set to `true` if P2P networking is enabled.  Set to `false` if P2P networking is disabled. Enabling/disabling done via [SetNetworkActive](../api/rpc-network.md#setnetworkactive)                                     |
 | →<br>`connections`                     | number (int)  | Required<br>(exactly 1) | The total number of open connections (both outgoing and incoming) between this node and other nodes                                                                                                                                               |
-| →<br>`inboundconnections`              | number (int)  | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br><br>The number of inbound connections                                                                                                                                                                            |
-| →<br>`outboundconnections`             | number (int)  | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br><br>The number of outbound connections                                                                                                                                                                           |
-| →<br>`mnconnections`                   | number (int)  | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br><br>The number of verified masternode connections                                                                                                                                                                |
-| →<br>`inboundmnconnections`            | number (int)  | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br><br>The number of inbound verified masternode connections                                                                                                                                                        |
-| →<br>`outboundmnconnections`           | number (int)  | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br><br>The number of outbound verified masternode connections                                                                                                                                                       |
-| →<br>`socketevents`                    | string        | Required<br>(exactly 1) | _Added in Dash Core 0.16.0_<br><br>The socket events mode, either `epoll`, `poll`, or `select`                                                                                                                                                  |
+| →<br>`inboundconnections`              | number (int)  | Required<br>(exactly 1) | The number of inbound connections                                                                                                                                                                            |
 | →<br>`networks`                        | array         | Required<br>(exactly 1) | An array with three objects: one describing the IPv4 connection, one describing the IPv6 connection, and one describing the Tor hidden service (onion) connection                                                                                 |
 | → →<br>Network                         | object        | Optional<br>(0 to 3)    | An object describing a network.  If the network is unroutable, it will not be returned                                                                                                                                                            |
 | → → →<br>`name`                        | string        | Required<br>(exactly 1) | The name of the network.  Either `ipv4`, `ipv6`, or `onion`                                                                                                                                                                                       |
-| → → →<br>`limited`                     | bool          | Required<br>(exactly 1) | Set to `true` if only connections to this network are allowed according to the `-onlynet` Dash Core command-line/configuration-file parameter.  Otherwise set to `false`                                                                          |
+| → → →<br>`limited`                     | bool          | Required<br>(exactly 1) | Set to `true` if only connections to this network are allowed according to the `-onlynet` Dimecoin Core command-line/configuration-file parameter.  Otherwise set to `false`                                                                          |
 | → → →<br>`reachable`                   | bool          | Required<br>(exactly 1) | Set to `true` if connections can be made to or from this network.  Otherwise set to `false`                                                                                                                                                       |
 | → → →<br>`proxy`                       | string        | Required<br>(exactly 1) | The hostname and port of any proxy being used for this network.  If a proxy is not in use, an empty string                                                                                                                                        |
 | → → →<br>`proxy_randomize_credentials` | bool          | Required<br>(exactly 1) | *Added in Bitcoin Core 0.11.0*<br><br>Set to `true` if randomized credentials are set for this proxy. Otherwise set to `false`                                                                                                                    |
 | →<br>`relayfee`                        | number (DASH) | Required<br>(exactly 1) | The minimum relay fee per kilobyte for transactions in order for this node to accept it into its memory pool                                                                                                                                      |
-| →<br>`incrementalfee`                  | number (DASH) | Required<br>(exactly 1) | *Added in Dash Core 0.12.3*<br><br>The minimum fee increment for mempool limiting or BIP 125 replacement in DASH/kB                                                                                                                               |
+| →<br>`incrementalfee`                  | number (DASH) | Required<br>(exactly 1) | *Added in Dimecoin Core 0.12.3*<br><br>The minimum fee increment for mempool limiting or BIP 125 replacement in DASH/kB                                                                                                                               |
 | →<br>`localaddresses`                  | array         | Required<br>(exactly 1) | An array of objects each describing the local addresses this node believes it listens on                                                                                                                                                          |
 | → →<br>Address                         | object        | Optional<br>(0 or more) | An object describing a particular address this node believes it listens on                                                                                                                                                                        |
 | → → →<br>`address`                     | string        | Required<br>(exactly 1) | An IP address or .onion address this node believes it listens on.  This may be manually configured, auto detected, or based on [`version` messages](../reference/p2p-network-control-messages.md#version) this node received from its peers              |
 | → → →<br>`port`                        | number (int)  | Required<br>(exactly 1) | The port number this node believes it listens on for the associated `address`.  This may be manually configured, auto detected, or based on [`version` messages](../reference/p2p-network-control-messages.md#version) this node received from its peers |
 | → → →<br>`score`                       | number (int)  | Required<br>(exactly 1) | The number of incoming connections during the uptime of this node that have used this `address` in their [`version` message](../reference/p2p-network-control-messages.md#version)                                                                       |
-| →<br>`warnings`                        | string        | Required<br>(exactly 1) | *Added in Bitcoin Core 0.11.0*<br><br>A plain-text description of any network warnings. If there are no warnings, an empty string will be returned.                                                                                               |
+| →<br>`warnings`                        | string        | Required<br>(exactly 1) | A plain-text description of any network warnings. If there are no warnings, an empty string will be returned.                                                                                               |
 
-*Example from Dash Core 18.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli getnetworkinfo
+dimecoin-cli getnetworkinfo
 ```
 
 Result (actual addresses have been replaced with [RFC5737](http://tools.ietf.org/html/rfc5737) reserved addresses):
 
 ```json
 {
-  "version": 170003,
-  "buildversion": "v0.17.0.3-649273e70",
-  "subversion": "/Dash Core:0.17.0.3/",
-  "protocolversion": 70220,
-  "localservices": "0000000000000445",
-  "localservicesnames": [
-    "NETWORK",
-    "BLOOM",
-    "COMPACT_FILTERS",
-    "NETWORK_LIMITED"
-  ],
+  "version": 2030000,
+  "subversion": "/dimecoin:2.3.0/",
+  "protocolversion": 70008,
+  "localservices": "000000000100040d",
   "localrelay": true,
-  "timeoffset": 0,
+  "timeoffset": -1,
   "networkactive": true,
   "connections": 8,
-  "socketevents": "epoll",
   "networks": [
     {
       "name": "ipv4",
@@ -463,37 +333,22 @@ Result (actual addresses have been replaced with [RFC5737](http://tools.ietf.org
       "reachable": false,
       "proxy": "",
       "proxy_randomize_credentials": false
-    },
-    {
-      "name": "",
-      "limited": false,
-      "reachable": true,
-      "proxy": "",
-      "proxy_randomize_credentials": false
-    },
-    {
-      "name": "",
-      "limited": false,
-      "reachable": true,
-      "proxy": "",
-      "proxy_randomize_credentials": false
     }
   ],
-  "relayfee": 0.00001000,
-  "incrementalfee": 0.00001000,
+  "relayfee": 0.01000,
+  "incrementalfee": 0.01000,
   "localaddresses": [
   ],
-  "warnings": "Warning: unknown new rules activated (versionbit 3)"
+  "warnings": ""
 }
 ```
-
 *See also*
 
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
 * [SetNetworkActive](../api/rpc-network.md#setnetworkactive): disables/enables all P2P network activity.
 
-## GetPeerInfo
+### GetPeerInfo
 
 The [`getpeerinfo` RPC](../api/rpc-network.md#getpeerinfo) returns data about each connected network node.
 
@@ -508,14 +363,9 @@ The [`getpeerinfo` RPC](../api/rpc-network.md#getpeerinfo) returns data about ea
 | → →<br>`id`                     | number (int)        | Required<br>(exactly 1) | The node's index number in the local node address database                                                                                                                                                                                                                           |
 | → →<br>`addr`                   | string              | Required<br>(exactly 1) | The IP address and port number used for the connection to the remote node                                                                                                                                                                                                            |
 | → →<br>`addrlocal`              | string              | Optional<br>(0 or 1)    | Our IP address and port number according to the remote node.  May be incorrect due to error or lying.  Most SPV nodes set this to `127.0.0.1:9999`                                                                                                                                   |
-| → →<br>`network`                | string              | Optional<br>(0 or 1)    | **Added in Dash Core 20.0.0**<br>The network being used (ipv4, ipv6, onion, not_publicly_routable)                                                                                                                    |
-| → →<br>`mapped_as`              | string              | Optional<br>(0 or 1)    | _Added in Dash Core 18.0.0_<br>The AS in the BGP route to the peer used for diversifying peer selection                                                                                                                                                                            |
 | → →<br>`addrbind`               | string              | Optional<br>(0 or 1)    | Bind address of the connection to the peer                                                                                                                                                                                                                                           |
 | → →<br>`services`               | string (hex)        | Required<br>(exactly 1) | The services advertised by the remote node in its [`version` message](../reference/p2p-network-control-messages.md#version)                                                                                                                                                                 |
-| → →<br>`servicesnames`          | array               | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br>An array of strings describing the services offered, in human-readable form.                                                                                                                                                                        |
-| → → →<br>SERVICE_NAME           | string              | Required<br>(exactly 1) | The service name if it is recognised.                                                                                                                                                                                                                                                |
-| → →<br>`verified_proregtx_hash` | string (hex)        | Optional<br>(0 or 1)    | The ProRegTx of the masternode                                                                                                                                                                                                                                                       |
-| → →<br>`verified_pubkey_hash`   | string (hex)        | Optional<br>(0 or 1)    | The hashed operator public key of the masternode                                                                                                                                                                                                                                     |
+
 | → →<br>`lastsend`               | number (int)        | Required<br>(exactly 1) | The Unix epoch time when we last successfully sent data to the TCP socket for this node                                                                                                                                                                                              |
 | → →<br>`lastrecv`               | number (int)        | Required<br>(exactly 1) | The Unix epoch time when we last received data from this node                                                                                                                                                                                                                        |
 | → →<br>`bytessent`              | number (int)        | Required<br>(exactly 1) | The total number of bytes we've sent to this node                                                                                                                                                                                                                                    |
@@ -529,24 +379,22 @@ The [`getpeerinfo` RPC](../api/rpc-network.md#getpeerinfo) returns data about ea
 | → →<br>`subver`                 | string              | Required<br>(exactly 1) | The user agent this node sends in its [`version` message](../reference/p2p-network-control-messages.md#version).  This string will have been sanitized to prevent corrupting the JSON results.  May be an empty string                                                                      |
 | → →<br>`inbound`                | bool                | Required<br>(exactly 1) | Set to `true` if this node connected to us (inbound); set to `false` if we connected to this node (outbound)                                                                                                                                                                         |
 | → →<br>`addnode`                | bool                | Required<br>(exactly 1) | Set to `true` if this node was added via the [`addnode` RPC](../api/rpc-network.md#addnode).                                                                                                                                                                   |
-| → →<br>`masternode`             | bool                | Required<br>(exactly 1) | *Added in Dash Core 0.16.0*<br>Whether connection was due to masternode connection attempt                                                                                                                                                                                           |
-| → →<br>`startingheight`         | number (int)        | Required<br>(exactly 1) | The height of the remote node's block chain when it connected to us as reported in its [`version` message](../reference/p2p-network-control-messages.md#version)                                                                                                                            |
-| → →<br>`banscore`               | number (int)        | Required<br>(exactly 1) | The ban score we've assigned the node based on any misbehavior it's made.  By default, Dash Core disconnects when the ban score reaches `100`                                                                                                                                        |
+| → →<br>`startingheight`         | number (int)        | Required<br>(exactly 1) | The height of the remote node's blockchain when it connected to us as reported in its [`version` message](../reference/p2p-network-control-messages.md#version)                                                                                                                            |
+| → →<br>`banscore`               | number (int)        | Required<br>(exactly 1) | The ban score we've assigned the node based on any misbehavior it's made.  By default, Dimecoin Core disconnects when the ban score reaches `100`                                                                                                                                        |
 | → →<br>`synced_headers`         | number (int)        | Required<br>(exactly 1) | The highest-height header we have in common with this node based the last P2P [`headers` message](../reference/p2p-network-data-messages.md#headers) it sent us.  If a [`headers` message](../reference/p2p-network-data-messages.md#headers) has not been received, this will be set to `-1`      |
 | → →<br>`synced_blocks`          | number (int)        | Required<br>(exactly 1) | The highest-height block we have in common with this node based on P2P [`inv` messages](../reference/p2p-network-data-messages.md#inv) this node sent us.  If no block [`inv` messages](../reference/p2p-network-data-messages.md#inv) have been received from this node, this will be set to `-1` |
 | → →<br>`inflight`               | array               | Required<br>(exactly 1) | An array of blocks which have been requested from this peer.  May be empty                                                                                                                                                                                                           |
 | → → →<br>Blocks                 | number (int)        | Optional<br>(0 or more) | The height of a block being requested from the remote peer                                                                                                                                                                                                                           |
 | → →<br>`whitelisted`            | bool                | Required<br>(exactly 1) | Set to `true` if the remote peer has been whitelisted; otherwise, set to `false`.  Whitelisted peers will not be banned if their ban score exceeds the maximum (100 by default).  By default, peers connecting from localhost are whitelisted                                        |
-| → →<br>`permissions`            | array               | Required<br>(exactly 1) | _Added in Dash Core 18.0.0_<br>Any special permissions that have been granted to this peer                                                                                                                                                                                         |
-| → →<br>`bytessent_per_msg`      | string : <br>object | Required<br>(exactly 1) | *Added in Bitcoin Core 0.13.0*<br><br>Information about total sent bytes aggregated by message type                                                                                                                                                                                  |
+| → →<br>`bytessent_per_msg`      | string : <br>object | Required<br>(exactly 1) | Information about total sent bytes aggregated by message type                                                                                                                                                                                  |
 | → → →<br>Message Type           | number (int)        | Required<br>(1 or more) | Total sent bytes aggregated by message type. One field for every used message type                                                                                                                                                                                                   |
 | → →<br>`bytesrecv_per_msg`      | string : <br>object | Required<br>(exactly 1) | *Added in Bitcoin Core 0.13.0*<br><br>Information about total received bytes aggregated by message type                                                                                                                                                                              |
 | → → →<br>Message Type           | number (int)        | Required<br>(1 or more) | Total received bytes aggregated by message type. One field for every used message type                                                                                                                                                                                               |
 
-*Example from Dash Core 18.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli -testnet getpeerinfo
+dimecoin-cli -mainnet getpeerinfo
 ```
 
 Result (edited to show only a single entry, with IP addresses changed to  
@@ -554,77 +402,61 @@ Result (edited to show only a single entry, with IP addresses changed to
 
 ```json
 [
-   {
-    "id": 1332,
-    "addr": "[2a00:1398:4:2a03:215:5dff:fed6:1032]:55788",
-    "addrbind": "[2406:9840:f:8a4:1c82:234d:617c:e875]:9999",
-    "addrlocal": "[2406:9840:f:8a4:1c82:234d:617c:e875]:9999",
-    "network": "ipv6",
-    "services": "0000000000000001",
-    "servicesnames": [
-      "NETWORK"
-    ],
+  {
+    "id": 51,
+    "addr": "25.31.126.30:11931",
+    "addrlocal": "42.76.160.67:50780",
+    "addrbind": "182.178.3.14:50780",
+    "services": "000000000100040d",
     "relaytxes": true,
-    "lastsend": 1690400596,
-    "lastrecv": 1690400484,
-    "bytessent": 87759,
-    "bytesrecv": 3836,
-    "conntime": 1690393760,
-    "timeoffset": 4,
-    "pingtime": 0.289504,
-    "minping": 0.223147,
-    "version": 70215,
-    "subver": "/dsn.tm.kit.edu/dash:0.14.0.2/",
-    "inbound": true,
+    "lastsend": 1709937478,
+    "lastrecv": 1709937478,
+    "bytessent": 78171543,
+    "bytesrecv": 936013475,
+    "conntime": 1709864306,
+    "timeoffset": -1,
+    "pingtime": 0.095316,
+    "minping": 0.093957,
+    "version": 70008,
+    "subver": "/dimecoin:2.3.0/",
+    "inbound": false,
     "addnode": false,
-    "masternode": false,
-    "startingheight": -1,
+    "startingheight": 5781425,
     "banscore": 0,
-    "synced_headers": -1,
-    "synced_blocks": -1,
+    "synced_headers": 5782938,
+    "synced_blocks": 5782938,
     "inflight": [
     ],
     "whitelisted": false,
-    "permissions": [
-    ],
     "bytessent_per_msg": {
-      "addr": 29992,
-      "getheaders": 1085,
-      "inv": 52767,
-      "ping": 1824,
-      "pong": 1824,
-      "sendcmpct": 33,
-      "senddsq": 25,
-      "sendheaders": 24,
-      "verack": 24,
-      "version": 161
-    },
-    "bytesrecv_per_msg": {
+      "addr": 385,
+      "checkpoint": 128001,
+      "dseg": 65,
       "getaddr": 24,
-      "ping": 1824,
-      "pong": 1824,
+      "getdata": 76468394,
+      "getheaders": 806598,
+      "getsporks": 48,
+      "headers": 84962,
+      "inv": 639952,
+      "mnp": 704,
+      "mnw": 3220,
+      "ping": 19520,
+      "pong": 19520,
       "verack": 24,
-      "version": 140
+      "version": 126
     }
   }
 ]
 ```
-
 *See also*
 
 * [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
 
-## ListBanned
-
-*Added in Bitcoin Core 0.12.0*
+### ListBanned
 
 The [`listbanned` RPC](../api/rpc-network.md#listbanned) lists all ***manually banned*** IPs/Subnets.
-
-> 📘 Changes regarding misbehaving peers
->
-> Dash Core 18.1.0 introduced changes to how misbehaving peers are treated. As a result they are no longer included in this RPC response. See the [release notes](https://github.com/dashpay/dash/blob/v18.1.0/doc/release-notes.md#changes-regarding-misbehaving-peers) for additional details.
 
 *Parameters: none*
 
@@ -638,10 +470,10 @@ The [`listbanned` RPC](../api/rpc-network.md#listbanned) lists all ***manually b
 | → →<br>`banned_until`   | number<br>(int) | Required<br>(exactly 1)     | The Unix epoch time when the entry was added to the ban list                                                                                                                                                                         |
 | → →<br>`ban_created`    | number<br>(int) | Required<br>(exactly 1)     | The Unix epoch time until the IP/Subnet is banned                                                                                                                                                                                    |
 
-*Examples from Dash Core 18.1.0*
+*Examples from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli listbanned
+dimecoin-cli listbanned
 ```
 
 Result:
@@ -666,7 +498,7 @@ Result:
 * [SetBan](../api/rpc-network.md#setban): attempts add or remove a IP/Subnet from the banned list.
 * [ClearBanned](../api/rpc-network.md#clearbanned): clears list of banned nodes.
 
-## Ping
+### Ping
 
 The [`ping` RPC](../api/rpc-network.md#ping) sends a P2P ping message to all connected nodes to measure ping time. Results are provided by the [`getpeerinfo` RPC](../api/rpc-network.md#getpeerinfo) pingtime and pingwait fields as decimal seconds. The P2P [`ping` message](../reference/p2p-network-control-messages.md#ping) is handled in a queue with all other commands, so it measures processing backlog, not just network ping.
 
@@ -678,10 +510,10 @@ _Result---`null`_
 | -------- | ---- | -------- | ------------------ |
 | `result` | null | Required | Always JSON `null` |
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli -testnet ping
+dimecoin-cli -mainnet ping
 ```
 
 (Success: no result printed.)
@@ -689,20 +521,20 @@ dash-cli -testnet ping
 Get the results using the [`getpeerinfo` RPC](../api/rpc-network.md#getpeerinfo):
 
 ```bash
-dash-cli -testnet getpeerinfo | grep ping
+dimecoin-cli -mainnet getpeerinfo | grep ping
 ```
 
 Results:
 
 ```json
-        "pingtime" : 0.11790800,
-        "pingtime" : 0.22673400,
-        "pingtime" : 0.16451900,
-        "pingtime" : 0.12465200,
-        "pingtime" : 0.13267900,
-        "pingtime" : 0.23983300,
-        "pingtime" : 0.16764700,
-        "pingtime" : 0.11337300,
+      "pingtime": 0.167647,
+      "pingtime": 0.164519,
+      "pingtime": 0.226734,
+      "pingtime": 0.117908,
+      "pingtime": 0.113373,
+      "pingtime": 0.239833,
+      "pingtime": 0.132679,
+      "pingtime": 0.124652 
 ```
 
 *See also*
@@ -710,9 +542,7 @@ Results:
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 * [P2P Ping Message](../reference/p2p-network-control-messages.md#ping)
 
-## SetBan
-
-*Added in Bitcoin Core 0.12.0*
+### SetBan
 
 The [`setban` RPC](../api/rpc-network.md#setban) attempts add or remove a IP/Subnet from the banned list.
 
@@ -746,24 +576,22 @@ _Result---`null` on success_
 | -------- | ---- | ----------------------- | ------------------ |
 | `result` | null | Required<br>(exactly 1) | Always JSON `null` |
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0*
 
 Ban the following node.
 
 ```bash
-dash-cli -testnet setban 192.0.2.113 add 2592000
+dimecoin-cli -mainnet setban 147.22.2.111 add 1591000
 ```
 
-Result (no output from `dash-cli` because result is set to `null`).
+Result (no output from `dimecoin-cli` because result is set to `null`).
 
 *See also*
 
 * [ListBanned](../api/rpc-network.md#listbanned): lists all manually banned IPs/Subnets.
 * [ClearBanned](../api/rpc-network.md#clearbanned): clears list of banned nodes.
 
-## SetNetworkActive
-
-*Added in Bitcoin Core 0.14.0*
+### SetNetworkActive
 
 The [`setnetworkactive` RPC](../api/rpc-network.md#setnetworkactive) disables/enables all P2P network activity.
 
@@ -779,13 +607,13 @@ _Result---`null` or error on failure_
 | -------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------- |
 | `result` | null | Required<br>(exactly 1) | JSON `null`.  The JSON-RPC error field will be set only if you entered an invalid parameter |
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli setnetworkactive true
+dimecoin-cli setnetworkactive true
 ```
 
-Result (no output from `dash-cli` because result is set to `null`).
+Result (no output from `dimecoin-cli` because result is set to `null`).
 
 *See also*
 
