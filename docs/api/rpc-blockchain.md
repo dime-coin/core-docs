@@ -1,4 +1,5 @@
 ```{eval-rst}
+.. _api-rpc-blockchain:
 .. meta::
   :title: Blockchain RPCs
   :description: A list of all the Blockchain RPCs in Dimecoin.

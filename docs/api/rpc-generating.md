@@ -1,4 +1,5 @@
 ```{eval-rst}
+.. _api-rpc-generating:
 .. meta::
   :title: Generating RPCs
   :description: A list of all mining-related remote procedure calls in Dimecoin Core.

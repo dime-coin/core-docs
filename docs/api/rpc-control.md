@@ -1,4 +1,5 @@
 ```{eval-rst}
+.. _api-rpc-control:
 .. meta::
   :title: Control RPCs
   :description: A list of all the Control RPCs in Dimecoin.

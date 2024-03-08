@@ -1,4 +1,5 @@
 ```{eval-rst}
+.. _api-rpc-dime:
 .. meta::
   :title: Dimecoin RPCs
   :description: A list of remote procedure calls that classify under Dimecoin RPCs.

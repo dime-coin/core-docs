@@ -12,13 +12,13 @@
 
 ### [Blockchain RPCs](../api/rpc-blockchain.md)
 
-* [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best block chain.
+* [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best blockchain.
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
-* [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the block chain. 
-* [GetBlockCount](../api/rpc-blockchain.md#getblockcount): returns the number of blocks in the local best block chain.
-* [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best block chain.
+* [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain. 
+* [GetBlockCount](../api/rpc-blockchain.md#getblockcount): returns the number of blocks in the local best blockchain.
+* [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
 * [GetBlockHeader](../api/rpc-blockchain.md#getblockheader): gets a block header with a particular header hash from the local block database either as a JSON object or as a serialized block header.
-* [GetChainTips](../api/rpc-blockchain.md#getchaintips): returns information about the highest-height block (tip) of each local block chain.
+* [GetChainTips](../api/rpc-blockchain.md#getchaintips): returns information about the highest-height block (tip) of each local blockchain.
 * [GetDifficulty](../api/rpc-blockchain.md#getdifficulty): returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 * [GetMemPoolAncestors](../api/rpc-blockchain.md#getmempoolancestors): returns all in-mempool ancestors for a transaction in the mempool. 
 * [GetMemPoolDescendants](../api/rpc-blockchain.md#getmempooldescendants): returns all in-mempool descendants for a transaction in the mempool. 
@@ -31,8 +31,8 @@
 * [PreciousBlock](../api/rpc-blockchain.md#preciousblock): treats a block as if it were received before others with the same work.
 * [SaveMemPool](../api/rpc-blockchain.md#savemempool): dumps the mempool to disk.
 * [SendCheckPoint](../api/rpc-blockchain.md#sendcheckpoint): sends a synchronized checkpoint. used for ACP implementation
-* [VerifyChain](../api/rpc-blockchain.md#verifychain): verifies each entry in the local block chain database.
-* [VerifyTxOutProof](../api/rpc-blockchain.md#verifytxoutproof): verifies that a proof points to one or more transactions in a block, returning the transactions the proof commits to and throwing an RPC error if the block is not in our best block chain.
+* [VerifyChain](../api/rpc-blockchain.md#verifychain): verifies each entry in the local blockchain database.
+* [VerifyTxOutProof](../api/rpc-blockchain.md#verifytxoutproof): verifies that a proof points to one or more transactions in a block, returning the transactions the proof commits to and throwing an RPC error if the block is not in our best blockchain.
 
 ### [Control RPCs](../api/rpc-control.md)
 
@@ -67,7 +67,7 @@
 * [GetNetworkHashPS](../api/rpc-mining.md#getnetworkhashps): returns the estimated network hashes per second based on the last n blocks.
 * [PrioritiseTransaction](../api/rpc-mining.md#prioritisetransaction): adds virtual priority or fee to a transaction, allowing it to be accepted into blocks mined by this node (or miners which use this node) with a lower priority or fee. (It can also remove virtual priority or fee, requiring the transaction have a higher priority or fee to be accepted into a locally-mined block.)
 * [SetGenerate] (../api/rpc-mining.md#setgenerate): enables cpu mining. only applicable for testnet
-* [SubmitBlock](../api/rpc-mining.md#submitblock): accepts a block, verifies it is a valid addition to the block chain, and broadcasts it to the network. Extra parameters are ignored by Dimecoin Core but may be used by mining pools or other programs.
+* [SubmitBlock](../api/rpc-mining.md#submitblock): accepts a block, verifies it is a valid addition to the blockchain, and broadcasts it to the network. Extra parameters are ignored by Dimecoin Core but may be used by mining pools or other programs.
 
 ### [Network RPCs](../api/rpc-network.md)
 
@@ -136,7 +136,7 @@
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 * [ImportPrunedFunds](../api/rpc-wallet.md#importprunedfunds): imports funds without the need of a rescan. Meant for use with pruned wallets.
 * [ImportPubKey](../api/rpc-wallet.md#importpubkey): imports a public key (in hex) that can be watched as if it were in your wallet but cannot be used to spend
-* [ImportWallet](../api/rpc-wallet.md#importwallet): imports private keys from a file in wallet dump file format. These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the block chain for transactions affecting the newly-added keys, which may take several minutes.
+* [ImportWallet](../api/rpc-wallet.md#importwallet): imports private keys from a file in wallet dump file format. These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
 * [KeyPoolRefill](../api/rpc-wallet.md#keypoolrefill): fills the cache of unused pre-generated keys (the keypool).
 * [ListAddressGroupings](../api/rpc-wallet.md#listaddressgroupings): lists groups of addresses that may have had their common ownership made public by common use as inputs in the same transaction or from being used as change from a previous transaction.
 * [ListLabels](../api/rpc-wallet.md#listlabels): returns the list of all labels, or labels that are assigned to addresses with a specific purpose.
