@@ -116,10 +116,10 @@ Name | Type | Presence | Description
 → → → →<br>`value` | number (DIME) | Optional<br>(exactly 1) | The number of Dash paid to this output.  May be `0`.<br><br>Only present if `spentindex` enabled
 → → → →<br>`valueSat` | number (dimecoins) | Optional<br>(exactly 1) | The number of dimecoins paid to this output.  May be `0`.<br><br>Only present if `spentindex` enabled
 → → → → →<br>`addresses` | string : array | Optional<br>(0 or 1) | The P2PKH or P2SH addresses used in this transaction, or the computed P2PKH address of any pubkeys in this transaction.  This array will not be returned for `nulldata` or `nonstandard` script types.<br><br>Only present if `spentindex` enabled
-→ → → → → →<br>Address | string | Required<br>(1 or more) | A P2PKH or P2SH address
+→ → → → → →<br>`Address` | string | Required<br>(1 or more) | A P2PKH or P2SH address
 → → → →<br>`sequence` | numeric | Required<br>(exactly 1) | The input sequence number
 → →<br>`vout` | array | Required<br>(exactly 1) | An array of objects each describing an output vector (vout) for this transaction.  Output objects will have the same order within the array as they have in the transaction, so the first output listed will be output 0
-→ → →<br>Output | object | Required<br>(1 or more) | An object describing one of this transaction's outputs
+→ → →<br>`Output` | object | Required<br>(1 or more) | An object describing one of this transaction's outputs
 → → → →<br>`value` | number (DIME) | Required<br>(exactly 1) | The number of Dash paid to this output.  May be `0`
 → → → →<br>`valueSat` | number (dimecoins) | Required<br>(exactly 1) | The number of dimecoins paid to this output.  May be `0`
 → → → →<br>`n` | numeric | Required<br>(exactly 1) | The output index number of this output within this transaction
@@ -152,7 +152,7 @@ dimecoin-cli -mainnet getblock \
             0
 ```
 Result (wrapped):
-                                                                |
+                                                                
 ``` text
 0100000001000000000000000000000000000000000000000000000000000000\
 0000000000ffffffff21032851560421d290650881022f9cea04000054686542\
@@ -297,7 +297,7 @@ Name | Type | Presence | Description
 →<br>`initialblockdownload` | boolean | Required<br>(exactly 1) | An estimate of whether this node is in [Initial Block Download](../guide/p2p-network-initial-block-download.md) mode (*debug information*)
 →<br>`chainwork` | string (hex) | Required<br>(exactly 1) | The estimated number of block header hashes checked from the genesis block to this block, encoded as big-endian hex
 →<br>`size_on_disk` | numeric | Required<br>(exactly 1) | The estimated size of the block and undo files on disk
-→<br>`softforks` | object | Required<br>(exactly 1) | **Revised significantly in Dimecoin Core 20.0.0**<br><br>An object with each key describing a current or previous soft fork
+→<br>`softforks` | object | Required<br>(exactly 1) | An object with each key describing a current or previous soft fork
 → →<br>Softfork | object | Required<br>(0 or more) | The name of a specific softfork
 → → →<br>`type`          | string  | Required | One of "buried", "bip9"
 → → →<br>`bip9`          | object  | Optional | Status of bip9 softforks (only for "bip9" type)
