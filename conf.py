@@ -60,7 +60,8 @@ html_css_files = [
 
 html_sidebars = {
     "index": ["sidebar-main.html"],
-    "**": ["sidebar-nav-bs"]
+    "**": ["sidebar-sub-nav.html"],
+  
 }
 
 html_theme_options = {
