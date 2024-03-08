@@ -95,8 +95,9 @@ reference/improvement-proposals
 :caption: Core API Reference
 :hidden:
 
-api/dime-core-apis-hash-byte-order
 api/rpc-api-overview
+api/rpc-quick-reference
+api/rpc-blockchain
 api/http-rest
 api/zmq
 ```
