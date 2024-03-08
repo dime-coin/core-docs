@@ -22,7 +22,7 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | string (hex) | Required<br>(exactly 1) | The hash of the block header from the most recent block on the best blockchain, encoded as hex in RPC byte order
 
-Example from Dimecoin Core 0.12.2*
+Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet getbestblockhash
@@ -629,7 +629,6 @@ Result:
 
 ``` json
 {
-{
   "time": 1709850029,
   "txcount": 7286862,
   "window_final_block_hash": "5ff07ab9ae8dc45e52261e4b1382a3ced2b45846232d2f9c6499459c00f4b047",
@@ -638,8 +637,6 @@ Result:
   "window_interval": 1945561,
   "txrate": 0.03272732132274444
 }
-}
-
 ```
 *See also: none*
 

@@ -1,5 +1,5 @@
 ```{eval-rst}
-.. _api-rpc:
+.. _api-rpc-overview:
 .. meta::
   :title: RPC API Overview
   :description: Dimecoin Core provides an RPC interface for administrative tasks, wallet operations, and network/blockchain queries, with client libraries available in multiple languages and a built-in dimecoin-cli program for command-line and RPC API interaction. 
