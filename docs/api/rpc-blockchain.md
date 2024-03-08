@@ -90,7 +90,7 @@ Name | Type | Presence | Description
 →<br>`previousblockhash` | string (hex) | Optional<br>(0 or 1) | The hash of the header of the previous block, encoded as hex in RPC byte order.  Not returned for genesis block
 →<br>`nextblockhash` | string (hex) | Optional<br>(0 or 1) | The hash of the next block on the best blockchain, if known, encoded as hex in RPC byte order
 
-*Result (if verbosity was `2`---a JSON block with full transaction details*
+*Result (if verbosity was `2`---a JSON block with full transaction details*)
 
 Name | Type | Presence | Description
 --- | --- | --- | ---
@@ -1251,7 +1251,6 @@ Result ():
 ``` json
 true
 ```
-
 *See also*
 
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.

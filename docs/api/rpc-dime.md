@@ -598,7 +598,6 @@ sync updated to MASTERNODE_SYNC_GOVERNANCE
 ``` bash
 dimecoin-cli -mainnet mnsync reset
 ```
-
 Result:
 
 ```text
@@ -634,7 +633,6 @@ The [`spork` RPC](#spork) shows information about the current state of sporks.
 ``` bash
 dimecoin-cli -mainnet spork show
 ```
-
 Result:
 
 ``` json
