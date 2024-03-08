@@ -1,46 +1,15 @@
 ```{eval-rst}
 .. meta::
   :title: Control RPCs
-  :description: A list of all the Control RPCs in Dash.
+  :description: A list of all the Control RPCs in Dimecoin.
 ```
-
-# Control RPCs
-
-## Debug
-
-The [`debug` RPC](../api/rpc-control.md#debug) changes the debug category from the console.
-
->❗️
+> ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
-> Breaking change(s) in Dash Core 18.0. See parameter and/or response information for details.
+> ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-*Parameter #1---debug category*
+## Control RPCs
 
-Name | Type | Presence | Description
---- | --- | --- | ---
-Debug category | string | Required<br>(1 or more) | The debug category to activate. Use a `+` to specify multiple categories. Categories will be one of the following:<br>• `0` - Disables all categories <br>• `1` or `all` - Enables all categories <br>• `addrman` <br>• `bench` <br>• `cmpctblock` <br>• `coindb` <br>• `walletdb` (**renamed from `db` in Dash Core 18.0.0**)<br>• `estimatefee` <br>• `http` <br>• `i2p` <br>• `leveldb` <br>• `mempool` <br>• `mempoolrej` <br>• `net` <br>• `netconn` <br>• `proxy` <br>• `prune` <br>• `qt` <br>• `rand` <br>• `reindex` <br>• `rpc` <br>• `selectcoins` <br>• `tor` <br>• `validation` <br>• `zmq` <br>• `dash` (all subcategories)<br><br>The `dash` sub-categories can be enabled individually:<br>• `chainlocks` <br>• `coinjoin` <br>• `creditpool` <br>• `ehf` <br>• `gobject` <br>• `instantsend` <br>• `llmq` <br>• `llmq-dkg` <br>• `llmq-sigs` <br>• `mnpayments` <br>• `mnsync` <br>• `spork` <br><br><br>Note: No error will be thrown even if the specified category doesn't match any of the above
-
-Note: `libevent` logging is configured on startup and cannot be modified by this RPC during runtime.
-
-*Example from Dash Core 20.0.1*
-
-```bash
-dash-cli -testnet debug "net+mempool"
-```
-
-Result:
-
-```text
-Debug mode: net+mempool
-```
-
-*See also*
-
-* [Logging](../api/rpc-control.md#logging): gets and sets the logging configuration
-
-## GetMemoryInfo
-
-*Added in Dash Core 0.12.3 / Bitcoin Core 0.14.0*
+### GetMemoryInfo
 
 The [`getmemoryinfo` RPC](../api/rpc-control.md#getmemoryinfo) returns information about memory usage.
 
@@ -48,7 +17,7 @@ The [`getmemoryinfo` RPC](../api/rpc-control.md#getmemoryinfo) returns informati
 
 Name | Type | Presence | Description
 --- | --- | --- | ---
-mode| string | Optional<br>Default: `stats` | *Added in Dash Core 0.15.0*<br><br>Determines what kind of information is returned.<br>- `stats` returns general statistics about memory usage in the daemon.<br>- `mallocinfo` returns an XML string describing low-level heap state (only available if compiled with glibc 2.10+).
+mode| string | Optional<br>Default: `stats` | Determines what kind of information is returned.<br>- `stats` returns general statistics about memory usage in the daemon.<br>- `mallocinfo` returns an XML string describing low-level heap state (only available if compiled with glibc 2.10+).
 
 *Result---information about memory usage*
 
@@ -63,10 +32,10 @@ Name | Type | Presence | Description
 →→<br>`chunks_used` | number (int) | Required<br>(exactly 1) | Number allocated chunks
 →→<br>`chunks_free` | number (int) | Required<br>(exactly 1) | Number unused chunks
 
-*Example from Dash Core 0.12.3*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli getmemoryinfo
+dimecoin-cli getmemoryinfo
 ```
 
 Result:
@@ -74,73 +43,28 @@ Result:
 ```json
 {
   "locked": {
-    "used": 1146240,
-    "free": 426624,
-    "total": 1572864,
-    "locked": 1572864,
-    "chunks_used": 16368,
-    "chunks_free": 7
+    "used": 32,
+    "free": 262112,
+    "total": 262144,
+    "locked": 0,
+    "chunks_used": 1,
+    "chunks_free": 1
   }
 }
 ```
-
 *See also*
 
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
 
-## GetRPCInfo
+### Help
 
-*Added in Dash Core 18.0.0*
-
-The [`getrpcinfo` RPC](#getrpcinfo) returns details about the RPC server.
-
-*Parameters: none*
-
-*Result---information about the RPC server*
-
-Name | Type | Presence | Description
---- | --- | --- | ---
-`result` | object | Required<br>(exactly 1) | An object containing information about the RPC server
-→<br>`active_commands` | array of objects | Required<br>(exactly 1) | An object containing information about active RPC commands
-→→<br>Active command | object | Optional<br>(0 or more) | Information about a currently active command
-→→→<br>`method` | number (int) | Required<br>(exactly 1) | Name of the command
-→→→<br>`duration` | number (int) | Required<br>(exactly 1) | Number of microseconds the command has been active
-
-*Example from Dash Core 18.0.0*
-
-```bash
-dash-cli getrpcinfo
-```
-
-Result:
-
-```json
-{
-  "active_commands": [
-    {
-      "method": "generate",
-      "duration": 5226138
-    },
-    {
-      "method": "getrpcinfo",
-      "duration": 5
-    }
-  ]
-}
-
-```
-
-*See also: none*
-
-## Help
-
-The [`help` RPC](../api/rpc-control.md#help) lists all available public RPC commands, or gets help for the specified RPC.  Commands which are unavailable will not be listed, such as wallet RPCs if wallet support is disabled.
+The [`help` RPC](../api/rpc-control.md#help) lists all available public RPC commands, or gets help for the specified RPC. Commands which are unavailable will not be listed, such as wallet RPCs if wallet support is disabled.
 
 *Parameter #1---the name of the RPC to get help for*
 
 Name | Type | Presence | Description
 --- | --- | --- | ---
-RPC | string | Optional<br>(0 or 1) | The name of the RPC to get help for.  If omitted, Dash Core 0.10x will display an alphabetical list of commands; Dash Core 0.11.0 will display a categorized list of commands
+RPC | string | Optional<br>(0 or 1) | The name of the RPC to get help for. If omitted, Dimecoin Core will display an alphabetical list of commands; Dimecoin Core will display a categorized list of commands
 
 *Parameter #2---the name of the subcommand to get help for*
 
@@ -152,26 +76,25 @@ Sub-command | string | Optional<br>(0 or 1) | The subcommand to get help on. Ple
 
 Name | Type | Presence | Description
 --- | --- | --- | ---
-`result` | string | Required<br>(exactly 1) | The help text for the specified RPC or the list of commands.  The `dash-cli` command will parse this text and format it as human-readable text
+`result` | string | Required<br>(exactly 1) | The help text for the specified RPC or the list of commands.  The `dimecoin-cli` command will parse this text and format it as human-readable text
 
-*Example from Dash Core 0.17.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 Command to get help about the [`help` RPC](../api/rpc-control.md#help):
 
 ```bash
-dash-cli -testnet help help
+dimecoin-cli -mainnet help help
 ```
 
 Result:
 
 ```text
-help ( "command" "subcommand" )
+help ( "command" )
 
 List all commands, or get help for a specified command.
 
 Arguments:
 1. "command"     (string, optional) The command to get help on
-2. "subcommand"  (string, optional) The subcommand to get help on. Please note that not all subcommands support this at the moment
 
 Result:
 "text"     (string) The help text
@@ -181,13 +104,9 @@ Result:
 
 * The [RPC Quick Reference](../api/remote-procedure-call-quick-reference.md)
 
-## Logging
+### Logging
 
 The [`logging` RPC](../api/rpc-control.md#logging) gets and sets the logging configuration. When called without an argument, returns the list of categories with status that are currently being debug logged or not. When called with arguments, adds or removes categories from debug logging and return the lists above. The arguments are evaluated in order "include", "exclude". If an item is both included and excluded, it will thus end up being excluded.
-
->❗️
->
-> Breaking change(s) in Dash Core 18.0. See parameter and/or response information for details.
 
 *Parameter #1---include categories*
 
@@ -205,9 +124,9 @@ The categories are:
 
 | Type | Category |
 | - | - |
-| Special | • `0` or `none` - Disables all categories <br>• `1` or `all` - Enables all categories <br>• `dash` - Enables/disables all Dash categories |
-| Standard | `addrman`, `bench` <br>`cmpctblock`, `coindb`, `estimatefee`, `http`, `i2p`, `leveldb`, `libevent`, `mempool`, `mempoolrej`, `net`, `netconn`, `proxy`, `prune`, `qt`, `rand`, `reindex`, `rpc`, `selectcoins`, `tor`, `walletdb` (**renamed from `db` in Dash Core 18.0.0**), `validation`, `zmq`|
-| Dash | `chainlocks`, `coinjoin`, `creditpool`, `ehf`, `gobject`, `instantsend`, `llmq`, `llmq-dkg`, `llmq-sigs`, `mnpayments`, `mnsync`, `spork` |
+| Special | • `0` or `none` - Disables all categories <br>• `1` or `all` - Enables all categories <br>• `dimecoin` - enables/disables all Dimecoin categories |
+| Standard | `addrman`, `bench` <br>`cmpctblock`, `coindb`, `estimatefee`, `http`, `leveldb`, `libevent`, `mempool`, `mempoolrej`, `net`, `proxy`, `qt`, `rand`, `reindex`, `rpc`, `selectcoins`, `tor`, `db`, `zmq`|
+| Dimecoin | `gobject`, `instantsend`, `mnpayments`, `mnsync`, `spork` |
 
 *Result---a list of the logging categories that are active*
 
@@ -215,12 +134,12 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | object | Required<br>(exactly 1) | A JSON object show a list of the logging categories that are active
 
-*Example from Dash Core 20.0.1*
+*Example from Dimecoin Core 2.3.0.0*
 
 Include a category in logging
 
 ```bash
-dash-cli -testnet logging '["llmq", "spork"]'
+dimecoin-cli -mainnet logging '["spork"]'
 ```
 
 Result:
@@ -233,7 +152,7 @@ Result:
   "http": false,
   "bench": false,
   "zmq": false,
-  "walletdb": false,
+  "db": false,
   "rpc": false,
   "estimatefee": false,
   "addrman": false,
@@ -248,28 +167,19 @@ Result:
   "coindb": false,
   "qt": false,
   "leveldb": false,
-  "validation": false,
-  "i2p": false,
-  "chainlocks": false,
-  "gobject": false,
-  "instantsend": false,
-  "llmq": true,
-  "llmq-dkg": false,
-  "llmq-sigs": false,
-  "mnpayments": false,
-  "mnsync": false,
-  "coinjoin": false,
+  "kernel": false,
   "spork": true,
-  "netconn": false,
-  "creditpool": false,
-  "ehf": false
+  "mnsync": false,
+  "masternode": false,
+  "gobject": false,
+  "mnpayments": false
 }
 ```
 
-Excluding a previously included category (without including any new ones):
+Exclude a previously included category (without including a new one):
 
 ```bash
-dash-cli -testnet logging '[]' '["spork"]'
+dimecoin-cli -mainnet logging '[]' '["spork"]'
 ```
 
 Result:
@@ -282,7 +192,7 @@ Result:
   "http": false,
   "bench": false,
   "zmq": false,
-  "walletdb": false,
+  "db": false,
   "rpc": false,
   "estimatefee": false,
   "addrman": false,
@@ -297,21 +207,12 @@ Result:
   "coindb": false,
   "qt": false,
   "leveldb": false,
-  "validation": false,
-  "i2p": false,
-  "chainlocks": false,
-  "gobject": false,
-  "instantsend": false,
-  "llmq": true,
-  "llmq-dkg": false,
-  "llmq-sigs": false,
-  "mnpayments": false,
-  "mnsync": false,
-  "coinjoin": false,
+  "kernel": false,
   "spork": false,
-  "netconn": false,
-  "creditpool": false,
-  "ehf": false
+  "mnsync": false,
+  "masternode": false,
+  "gobject": false,
+  "mnpayments": false
 }
 ```
 
@@ -319,9 +220,9 @@ Result:
 
 * [Debug](../api/rpc-control.md#debug): changes the debug category from the console.
 
-## Stop
+### Stop
 
-The [`stop` RPC](../api/rpc-control.md#stop) safely shuts down the Dash Core server.
+The [`stop` RPC](../api/rpc-control.md#stop) safely shuts down the Dimecoin Core server.
 
 *Parameters: none*
 
@@ -329,23 +230,23 @@ The [`stop` RPC](../api/rpc-control.md#stop) safely shuts down the Dash Core ser
 
 Name | Type | Presence | Description
 --- | --- | --- | ---
-`result` | string | Required<br>(exactly 1) | The string \Dash Core server stopping\""
+`result` | string | Required<br>(exactly 1) | The string \Dimecoin Core server stopping\""
 
-*Example from Dash Core 0.12.2*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli -testnet stop
+dimecoin-cli -mainnet stop
 ```
 
 Result:
 
 ```text
-Dash Core server stopping
+Dimecoin Core server stopping...
 ```
 
 *See also: none*
 
-## Uptime
+### Uptime
 
 The [`uptime` RPC](../api/rpc-control.md#uptime) returns the total uptime of the server.
 
@@ -357,16 +258,16 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | number (int) | Required<br>(exactly 1) | The number of seconds that the server has been running
 
-*Example from Dash Core 0.15.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dash-cli -testnet uptime
+dimecoin-cli -mainnet uptime
 ```
 
 Result:
 
 ```text
-5500
+3060
 ```
 
 *See also: none*
