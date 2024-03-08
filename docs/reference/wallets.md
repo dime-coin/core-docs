@@ -7,15 +7,15 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-# Wallets
+## Wallets
 
-## Deterministic Wallet Formats
+### Deterministic Wallet Formats
 
-### Type 1: Single Chain Wallets
+#### Type 1: Single Chain Wallets
 
 A Type 1 deterministic [wallet](../resources/glossary.md#wallet) is the simpler of the two, which can create a single series of keys from a single seed. A primary weakness is that if the seed is leaked, all funds are compromised, and wallet sharing is extremely limited.
 
-### Type 2: Hierarchical Deterministic (HD) Wallets
+#### Type 2: Hierarchical Deterministic (HD) Wallets
 
 ![Overview Of Hierarchical Deterministic Key Derivation](../../img/dev/en-hd-overview.svg)
 
