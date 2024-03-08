@@ -102,9 +102,9 @@ html_theme_options = {
 }
 
 html_context = {
-    "github_user": "Dhop14",
+    "github_user": "dime-coin",
     "github_repo": "core-docs",
-    "github_version": "20.0.0",
+    "github_version": "main",
     "doc_path": "",
 }
 
