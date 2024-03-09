@@ -8,7 +8,7 @@ Welcome to the Dimecoin Core developer documentation. You'll find sections for
 [reference information](reference/introduction.md), [API
 details](api/rpc-api-overview.md), [guides](guide/introduction.md),
 [examples](examples/introduction.md) and [Dimecoin Core wallet
-information](dashcore/wallet-arguments-and-commands.md) to help you start
+information](dimecore/wallet-arguments-and-commands.md) to help you start
 working with Dimecoin as quickly as possible. Let's jump right in!
 
 ```{eval-rst}
@@ -76,7 +76,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :caption: Core Reference
 :hidden:
 
@@ -90,20 +90,18 @@ reference/improvement-proposals
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 :caption: Core API Reference
 :hidden:
 
 api/rpc-api-overview
-api/rpc-quick-reference
-api/rpc-blockchain
 api/http-rest
 api/zmq
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :caption: Core Guides
 :titlesonly:
 :hidden:
@@ -120,7 +118,7 @@ guide/mining
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :caption: Core Examples
 :hidden:
 
@@ -133,7 +131,7 @@ examples/receiving-zmq-notifications
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly: 
 :caption: Dimecoin Core Wallet
 :hidden:
@@ -143,7 +141,7 @@ dimecore/wallet-configuration-file
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 :caption: Additional Resources
 :hidden:
