@@ -4,6 +4,7 @@
   :title: RPC API Quick Reference
   :description: A quick reference guide for all the RPCs in Dimecoin.
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -14,15 +15,15 @@
 
 * [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best blockchain.
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
-* [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain. 
+* [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
 * [GetBlockCount](../api/rpc-blockchain.md#getblockcount): returns the number of blocks in the local best blockchain.
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
 * [GetBlockHeader](../api/rpc-blockchain.md#getblockheader): gets a block header with a particular header hash from the local block database either as a JSON object or as a serialized block header.
 * [GetChainTips](../api/rpc-blockchain.md#getchaintips): returns information about the highest-height block (tip) of each local blockchain.
 * [GetDifficulty](../api/rpc-blockchain.md#getdifficulty): returns the proof-of-work difficulty as a multiple of the minimum difficulty.
-* [GetMemPoolAncestors](../api/rpc-blockchain.md#getmempoolancestors): returns all in-mempool ancestors for a transaction in the mempool. 
-* [GetMemPoolDescendants](../api/rpc-blockchain.md#getmempooldescendants): returns all in-mempool descendants for a transaction in the mempool. 
-* [GetMemPoolEntry](../api/rpc-blockchain.md#getmempoolentry): returns mempool data for given transaction (must be in mempool). 
+* [GetMemPoolAncestors](../api/rpc-blockchain.md#getmempoolancestors): returns all in-mempool ancestors for a transaction in the mempool.
+* [GetMemPoolDescendants](../api/rpc-blockchain.md#getmempooldescendants): returns all in-mempool descendants for a transaction in the mempool.
+* [GetMemPoolEntry](../api/rpc-blockchain.md#getmempoolentry): returns mempool data for given transaction (must be in mempool).
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
 * [GetRawMemPool](../api/rpc-blockchain.md#getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
 * [GetTxOut](../api/rpc-blockchain.md#gettxout): returns details about an unspent transaction output (UTXO).
@@ -36,18 +37,18 @@
 
 ### [Control RPCs](../api/rpc-control.md)
 
-* [GetMemoryInfo](../api/rpc-control.md#getmemoryinfo): returns information about memory usage. 
+* [GetMemoryInfo](../api/rpc-control.md#getmemoryinfo): returns information about memory usage.
 * [Help](../api/rpc-control.md#help): lists all available public RPC commands, or gets help for the specified RPC.  Commands which are unavailable will not be listed, such as wallet RPCs if wallet support is disabled.
-* [Logging](../api/rpc-control.md#logging): gets and sets the logging configuration 
+* [Logging](../api/rpc-control.md#logging): gets and sets the logging configuration
 * [Stop](../api/rpc-control.md#stop): safely shuts down the Dimecoin Core server.
-* [Uptime](../api/rpc-control.md#uptime): returns the total uptime of the server. 
+* [Uptime](../api/rpc-control.md#uptime): returns the total uptime of the server.
 
 ### [Dimecoin RPCs](../api/remote-procedure-calls-dime.md)
 
 * [GetGovernanceInfo](../api/remote-procedure-calls-dime.md#getgovernanceinfo): returns an object containing governance parameters.
 * [GetSuperblockBudget](../api/remote-procedure-calls-dime.md#getsuperblockbudget): returns the absolute maximum sum of superblock payments allowed. (superblock not used)
-* [GObject](../api/remote-procedure-calls-dime.md#gobject): provides a set of commands for managing governance objects and displaying information about them. 
-* [Masternode](../api/remote-procedure-calls-dime.md#masternode): provides a set of commands for managing masternodes and displaying information about them. 
+* [GObject](../api/remote-procedure-calls-dime.md#gobject): provides a set of commands for managing governance objects and displaying information about them.
+* [Masternode](../api/remote-procedure-calls-dime.md#masternode): provides a set of commands for managing masternodes and displaying information about them.
 * [MasternodeList](../api/remote-procedure-calls-dime.md#masternodelist): returns a list of masternodes in different modes.
 * [MnSync](../api/remote-procedure-calls-dime.md#mnsync): returns the sync status, updates to the next step or resets it entirely.
 * [SentinelPing](../api/remote-procedure-calls-dime#sentinelping): returns version of sentinel and its state.
@@ -58,7 +59,6 @@
 ### [Generating RPCs](../api/rpc-generating.md)
 
 * [GenerateBlock](../api/rpc-generating.md#generateblock): mines a block with a set of ordered transactions immediately to a specified address or descriptor (before the RPC call returns).
-* [GenerateToAddress](../api/rpc-generating.md#generatetoaddress): mines blocks immediately to a specified address.
 
 ### [Mining RPCs](../api/rpc-mining.md)
 
@@ -74,7 +74,7 @@
 * [AddNode](../api/rpc-network.md#addnode): attempts to add or remove a node from the addnode list, or to try a connection to a node once.
 * [ClearBanned](../api/rpc-network.md#clearbanned): clears list of banned nodes.
 * [DisconnectNode](../api/rpc-network.md#disconnectnode): immediately disconnects from a specified node.
-* [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed. 
+* [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
 * [GetConnectionCount](../api/rpc-network.md#getconnectioncount): returns the number of connections to other nodes.
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
@@ -95,7 +95,7 @@
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [DecodeScript](../api/rpc-raw-transactions.md#decodescript): decodes a hex-encoded P2SH redeem script.
 * [FinalizePSBT](../api/rpc-raw-transactions.md#finalizepsbt): finalizes the inputs of a PSBT. The PSBT produces a network serialized transaction if the transaction is fully signed.
-* [FundRawTransaction](../api/rpc-raw-transactions.md#fundrawtransaction): adds inputs to a transaction until it has enough in value to meet its out value. 
+* [FundRawTransaction](../api/rpc-raw-transactions.md#fundrawtransaction): adds inputs to a transaction until it has enough in value to meet its out value.
 * [GetRawTransaction](../api/rpc-raw-transactions.md#getrawtransaction): gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dimecoin Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Dimecoin Core startup settings.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
 * [SignRawTransactionWithKey](../api/rpc-raw-transactions.md#signrawtransactionwithkey): signs a transaction in the serialized transaction format using private keys provided in the call.
@@ -105,7 +105,7 @@
 
 * [CreateMultiSig](../api/rpc-utility.md#createmultisig): creates a P2SH multi-signature address.
 * [EstimateSmartFee](../api/rpc-utility.md#estimatesmartfee): estimates the transaction fee per kilobyte that needs to be paid for a transaction to begin confirmation within a certain number of blocks and returns the number of blocks for which the estimate is valid.
-* [GetStakingStatus](../api/rpc-utility#getstakingstatus): returns various staking information 
+* [GetStakingStatus](../api/rpc-utility#getstakingstatus): returns various staking information
 * [SignMessageWithPrivKey](../api/rpc-utility.md#signmessagewithprivkey): signs a message with a given private key.
 * [ValidateAddress](../api/rpc-utility.md#validateaddress): returns information about the given dimecoin address.
 * [VerifyMessage](../api/rpc-utility.md#verifymessage): verifies a signed message.
@@ -116,11 +116,11 @@
 
 * [AbandonTransaction](../api/rpc-wallet.md#abandontransaction): marks an in-wallet transaction and all its in-wallet descendants as abandoned. This allows their inputs to be respent.
 * [AbortRescan](../api/rpc-wallet.md#abortrescan): stops current wallet rescan.
-* [AddMultiSigAddress](../api/rpc-wallet.md#addmultisigaddress): adds a P2SH multisig address to the wallet. 
+* [AddMultiSigAddress](../api/rpc-wallet.md#addmultisigaddress): adds a P2SH multisig address to the wallet.
 * [BackupWallet](../api/rpc-wallet.md#backupwallet): safely copies `wallet.dat` to the specified file, which can be a directory or a path with filename.
 * [DumpPrivKey](../api/rpc-wallet.md#dumpprivkey): returns the wallet-import-format (WIP) private key corresponding to an address. (But does not remove it from the wallet.)
 * [EncryptWallet](../api/rpc-wallet.md#encryptwallet): encrypts the wallet with a passphrase.  This is only to enable encryption for the first time. After encryption is enabled, you will need to enter the passphrase to use private keys.
-* [GetAddressInfo](../api/rpc-wallet.md#getaddressinfo): returns information about the given dimecoin address. 
+* [GetAddressInfo](../api/rpc-wallet.md#getaddressinfo): returns information about the given dimecoin address.
 * [GetAddressesByLabel](../api/rpc-wallet.md#getaddressesbylabel): returns a list of every address assigned to a particular label.
 * [GetBalance](../api/rpc-wallet.md#getbalance): gets the balance in decimal dime across all accounts or for a particular account.
 * [GetBalances](../api/rpc-wallet.md#getbalances): returns an object with all balances denominated in DIME.
@@ -146,7 +146,7 @@
 * [ListSinceBlock](../api/rpc-wallet.md#listsinceblock): gets all transactions affecting the wallet which have occurred since a particular block, plus the header hash of a block at a particular depth.
 * [ListTransactions](../api/rpc-wallet.md#listtransactions): returns the most recent transactions that affect the wallet.
 * [ListUnspent](../api/rpc-wallet.md#listunspent): returns an array of unspent transaction outputs belonging to this wallet.
-* [ListWallets](../api/rpc-wallet.md#listwallets): returns a list of currently loaded wallets. 
+* [ListWallets](../api/rpc-wallet.md#listwallets): returns a list of currently loaded wallets.
 * [LockUnspent](../api/rpc-wallet.md#lockunspent): temporarily locks or unlocks specified transaction outputs. A locked transaction output will not be chosen by automatic coin selection when spending dimecoin. Locks are stored in memory only, so nodes start with zero locked outputs and the locked output list is always cleared when a node stops or fails.
 * [RemovePrunedFunds](../api/rpc-wallet.md#removeprunedfunds): deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds.
 * [RescanBlockChain](../api/rpc-wallet.md#rescanblockchain): rescans the local blockchain for wallet related transactions.
@@ -164,10 +164,10 @@
 
 **Note:** the wallet RPCs are only available if Dimecoin Core was built with [wallet support](../resources/glossary.md#wallet-support), which is the default.
 
-* [GetAccount](../api/rpc-wallet-deprecated.md#getaccount): returns the name of the account associated with the given address. **_Deprecated_**
-* [GetAccountAddress](../api/rpc-wallet-deprecated.md#getaccountaddress): returns the current dimecoin address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address. **_Deprecated_**
-* [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account. **_Deprecated_**
-* [SetAccount](../api/rpc-wallet-deprecated.md#setaccount): puts the specified address in the given account. **_Deprecated_**
+* [GetAccount](../api/rpc-wallet-deprecated.md#getaccount): returns the name of the account associated with the given address. ***Deprecated_**
+* [GetAccountAddress](../api/rpc-wallet-deprecated.md#getaccountaddress): returns the current dimecoin address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address. ***Deprecated_**
+* [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account. ***Deprecated_**
+* [SetAccount](../api/rpc-wallet-deprecated.md#setaccount): puts the specified address in the given account. ***Deprecated_**
 
 ### [ZeroMQ (ZMQ) RPCs](../api/rpc-zmq.md)
 

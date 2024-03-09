@@ -3,6 +3,7 @@
   :title: Raw Transaction RPCs
   :description: A list of remote procedure calls in Dimecoin Core that are used to work with raw transactions and partially signed transactions (PSBT).
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -13,26 +14,27 @@
 
 The [`combinepsbt` RPC](../api/rpc-raw-transactions.md#combinepsbt) combines multiple partially-signed Dimecoin transactions into one transaction. Implements the Combiner role. This should be used only with `createrawtransaction` and `fundrawtransaction`. `createpsbt` should be used for new applications.
 
-_Parameter #1---txs_
+*Parameter #1---txs_
 
 | Name         | Type   | Presence                | Description                                                 |
 | ------------ | ------ | ----------------------- | ----------------------------------------------------------- |
 | Transactions | string | Required<br>(exactly 1) | An array of base64 strings of partially signed transactions |
 | → psbt       | string | Required<br>(exactly 1) | A base64 string of a PSBT                                   |
 
-_Result---psbt_
+*Result---psbt*
 
 | Name     | Type   | Presence                | Description                                     |
 | -------- | ------ | ----------------------- | ----------------------------------------------- |
 | `result` | string | Required<br>(Exactly 1) | The base64-encoded partially signed transaction |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
 dimecoin-cli -mainnet combinepsbt "mybase64_1", "mybase64_2", "mybase64_3"
 
 ```
-_See also:_
+
+*See also:*
 
 * [CreatePSBT](../api/rpc-raw-transactions.md#createpsbt): creates a transaction in the Partially Signed Transaction (PST) format.
 * [DecodePSBT](../api/rpc-raw-transactions.md#decodepsbt): returns a JSON object representing the serialized, base64-encoded partially signed Dimecoin transaction.
@@ -44,19 +46,19 @@ The [`combinerawtransaction` RPC](../api/rpc-raw-transactions.md#combinerawtrans
 
 The combined transaction may be another partially signed transaction or a fully signed transaction.
 
-_Parameter #1---txs_
+*Parameter #1---txs*
 
 | Name | Type   | Presence | Description                                                  |
 | ---- | ------ | -------- | ------------------------------------------------------------ |
 | txs  | string | Required | A json array of hex strings of partially signed transactions |
 
-_Result---hex-encoded raw transaction with signature(s)_
+*Result---hex-encoded raw transaction with signature(s)*
 
 | Name     | Type   | Presence                | Description                                                                    |
 | -------- | ------ | ----------------------- | ------------------------------------------------------------------------------ |
 | `result` | string | Required<br>(Exactly 1) | The resulting raw transaction in serialized transaction format encoded as hex. |
 
-_Example: inputs below are for illustration purposes only_
+*Example: inputs below are for illustration purposes only*
 
 The following example shows a fully signed two input transaction being assembled  
 by combining two partially signed transactions. The first hex-encoded string is  
@@ -83,7 +85,8 @@ db552ec58d017e10abf38acb8341de0fe7f2ee7ca2de30412fead4dd6a659b3bd5ed87a399\
 66a1801db01ed716
 
 ```
-_See also:_
+
+*See also:*
 
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
@@ -95,30 +98,30 @@ _See also:_
 
 The [`converttopsbt` RPC](../api/rpc-raw-transactions.md#converttopsbt) converts a network serialized transaction to a PSBT. This should be used only with `createrawtransaction` and `fundrawtransaction`. `createpsbt` and `walletcreatefundedpsbt` should be used for new applications.
 
-_Parameter #1---hexstring_
+*Parameter #1---hexstring*
 
 | Name | Type   | Presence | Description                         |
 | ---- | ------ | -------- | ----------------------------------- |
 | hex  | string | Required | The hex string of a raw transaction |
 
-_Parameter #2---permitsigdata_
+*Parameter #2---permitsigdata*
 
 | Name | Type | Presence | Description                                                                                                                                 |
 | ---- | ---- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | data | bool | Optional | If true, any signatures in the input will be discarded and conversion will continue. If false, RPC will fail if any signatures are present. |
 
-_Parameter #3---iswitness_
+*Parameter #3---iswitness*
 | Name | Type | Presence | Description                                                                                                                                 |
 | data | bool | optional | Whether the transaction hex is a serialized witness transaction. If iswitness is not present, heuristic tests will be used in decoding.
 If true, only witness deserializaion will be tried. If false, only non-witness deserialization wil be tried. Only has an effect if permitsigdata is true.              |
 
-_Result---psbt_
+*Result---psbt*
 
 | Name     | Type   | Presence                | Description                                       |
 | -------- | ------ | ----------------------- | ------------------------------------------------- |
 | `result` | string | Required<br>(Exactly 1) | The resulting raw transaction is a base64-encoded |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
 dimecoin-cli -mainnet converttopsbt 02000000016b490886c0198b028c6c5cb145c4eb3b1055a224a7a105aadeff41b69ec91e060100000000ffffffff0200205fa0120000001976a914485485425fa99504ec1638ac4213f3cfc9f32ef388acc0a8f9be010000001976a914811eacc14db8ebb5b64486dc43400c0226b428a488ac00000000
@@ -126,11 +129,11 @@ dimecoin-cli -mainnet converttopsbt 02000000016b490886c0198b028c6c5cb145c4eb3b10
 
 Result:
 
-```
+```bash
 cHNidP8BAHcCAAAAAWtJCIbAGYsCjGxcsUXE6zsQVaIkp6EFqt7/QbaeyR4GAQAAAAD/////AgAgX6ASAAAAGXapFEhUhUJfqZUE7BY4rEIT88/J8y7ziKzAqPm+AQAAABl2qRSBHqzBTbjrtbZEhtxDQAwCJrQopIisAAAAAAAAAAA=
 ```
 
-_See also:_
+*See also:*
 
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [CreatePSBT](../api/rpc-raw-transactions.md#createpsbt): creates a transaction in the Partially Signed Transaction (PST) format.
@@ -146,7 +149,7 @@ The [`createpsbt` RPC](../api/rpc-raw-transactions.md#createpsbt) creates a tran
 
 Implements the Creator role.
 
-_Parameter #1---Inputs_
+*Parameter #1---Inputs*
 
 | Name              | Type         | Presence                | Description                                                                                                |
 | ----------------- | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -156,7 +159,7 @@ _Parameter #1---Inputs_
 | → →<br>`vout`     | number (int) | Required<br>(exactly 1) | The output index number (vout) of the outpoint to be spent; the first output in a transaction is index `0` |
 | → →<br>`Sequence` | number (int) | Optional<br>(0 or 1)    | The sequence number to use for the input                                                                   |
 
-_Parameter #2---Outputs_
+*Parameter #2---Outputs*
 
 | Name           | Type                   | Presence                | Description                                                                                               |
 | -------------- | ---------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -165,19 +168,19 @@ _Parameter #2---Outputs_
 | → →<br>Address | string : number (DIME) | Optional<br>(0 or 1)    | A key-value pair. The key (string) is the Dimecoin address, the value (float or string) is the amount in DIME |
 | → →<br>Data    | `data` : string (hex)  | Optional<br>(0 or 1)    | A key-value pair. The key must be `data`, the value is hex encoded data                                   |
 
-_Parameter #3---locktime_
+*Parameter #3---locktime*
 
 | Name     | Type          | Presence             | Description                                                                                                            |
 | -------- | ------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Locktime | numeric (int) | Optional<br>(0 or 1) | Indicates the earliest time a transaction can be added to the blockchain. Non-0 value also locktime-activates inputs. |
 
-_Result---the raw transaction in base64_
+*Result---the raw transaction in base64*
 
 | Name   | Type   | Presence                | Description                                           |
 | ------ | ------ | ----------------------- | ----------------------------------------------------- |
 | Result | string | Required<br>(Exactly 1) | The resulting raw transaction (base64-encoded string) |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
 dimecoin-cli -mainnet createpsbt "[{\"txid\":\"3452c87e1785ed5f4e98d17s40b6543114d86f282824a51bd624985d236c71178\",\"vout\":0}]" "[{\"data\":\"00010203\"}]"
@@ -185,11 +188,11 @@ dimecoin-cli -mainnet createpsbt "[{\"txid\":\"3452c87e1785ed5f4e98d17s40b654311
 
 Result:
 
-```
+```bash
 eFDleP7BAEICADGDFGXgRxzbShUlivVFKgoLyhk0RCCYLZKCYTl/tYRd+yGImBBBBBBAD/////AQAAAAAAAAAABmoEAAECAwSDFGRRREWE=
 ```
 
-_See also_
+*See also*
 
 * [CombinePSBT](../api/rpc-raw-transactions.md#combinepsbt): combine multiple partially-signed Dimecoin transactions into one transaction.
 * [ConvertToPSBT](../api/rpc-raw-transactions.md#converttopsbt): converts a network serialized transaction to a PSBT.
@@ -200,7 +203,7 @@ _See also_
 
 The [`createrawtransaction` RPC](../api/rpc-raw-transactions.md#createrawtransaction) creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 
-_Parameter #1---Inputs_
+*Parameter #1---Inputs*
 
 | Name              | Type         | Presence                | Description                                                                                                |
 | ----------------- | ------------ | ----------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -210,7 +213,7 @@ _Parameter #1---Inputs_
 | → →<br>`vout`     | number (int) | Required<br>(exactly 1) | The output index number (vout) of the outpoint to be spent; the first output in a transaction is index `0` |
 | → →<br>`Sequence` | number (int) | Optional<br>(0 or 1)    | The sequence number to use for the input                               |
 
-_Parameter #2---Outputs_
+*Parameter #2---Outputs*
 
 | Name           | Type                   | Presence                | Description                                                                                               |
 | -------------- | ---------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -219,19 +222,19 @@ _Parameter #2---Outputs_
 | → →<br>Address | string : number (DIME) | Optional<br>(0 or 1)    | A key-value pair. The key (string) is the Dimecoin address, the value (float or string) is the amount in DIME |
 | → →<br>Data    | `data` : string (hex)  | Optional<br>(0 or 1)    | A key-value pair. The key must be `data`, the value is hex encoded data                                   |
 
-_Parameter #3---locktime_
+*Parameter #3---locktime*
 
 | Name     | Type          | Presence             | Description                                                               |
 | -------- | ------------- | -------------------- | ------------------------------------------------------------------------- |
 | Locktime | numeric (int) | Optional<br>(0 or 1) | Indicates the earliest time a transaction can be added to the blockchain |
 
-_Result---the unsigned raw transaction in hex_
+*Result---the unsigned raw transaction in hex*
 
 | Name     | Type   | Presence                | Description                                                                                                                                                                                                                      |
 | -------- | ------ | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `result` | string | Required<br>(Exactly 1) | The resulting unsigned raw transaction in serialized transaction format encoded as base-64.  If the transaction couldn't be generated, this will be set to JSON `null` and the JSON-RPC error field may contain an error message |
 
-_Example_
+*Example*
 
 ```bash
 dimecoin-cli -mainnet createrawtransaction '''
@@ -261,7 +264,7 @@ Result:
 acc0a8f9be010000001976a914811eacc14db8ebb5b64486dc43400c0226b428a488ac00000000
 ```
 
-_See also_
+*See also*
 
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
@@ -273,13 +276,13 @@ _See also_
 
 The [`decodepsbt` RPC](../api/rpc-raw-transactions.md#decodepsbt) returns a JSON object representing the serialized, base64-encoded partially signed Dimecoin transaction.
 
-_Parameter #1---The PSBT base64 string_
+*Parameter #1---The PSBT base64 string*
 
 | Name   | Type   | Presence                | Description            |
 | ------ | ------ | ----------------------- | ---------------------- |
 | `psbt` | string | Required<br>(exactly 1) | The PSBT base64 string |
 
-_Result---the decoded transaction_
+*Result---the decoded transaction*
 
 | Name                             | Type         | Presence                | Description                                                                                                                                                                                                                                                                             |
 | -------------------------------- | ------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -319,7 +322,7 @@ _Result---the decoded transaction_
 | → → →→→<br>`path`                | object       | Optional<br>(0 or more) | The public key's path                                                                                                                                                                                                                                                                   |
 | →<br>`fee`                       | number (int) | Optional<br>(0 or 1)    | The transaction fee paid if all UTXOs slots in the PSBT have been filled                                                                                                                                                                                                                |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 Decode a one-input, one-output transaction:
 
@@ -431,13 +434,13 @@ Result:
 
 The [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction) decodes a serialized transaction hex string into a JSON object describing the transaction.
 
-_Parameter #1---serialized transaction in hex_
+*Parameter #1---serialized transaction in hex*
 
 | Name                   | Type         | Presence                | Description                                                |
 | ---------------------- | ------------ | ----------------------- | ---------------------------------------------------------- |
 | Serialized Transaction | string (hex) | Required<br>(exactly 1) | The transaction to decode in serialized transaction format |
 
-_Result---the decoded transaction_
+*Result---the decoded transaction*
 
 | Name                    | Type           | Presence                | Description                                                                                                                                                                                                                                                                                                                      |
 | ----------------------- | -------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -473,7 +476,7 @@ _Result---the decoded transaction_
 | → → → →<br>`addresses`  | string : array | Optional<br>(0 or 1)    | The P2PKH or P2SH addresses used in this transaction, or the computed P2PKH address of any pubkeys in this transaction.  This array will not be returned for `nulldata` or `nonstandard` script types                                                                                                                            |
 | → → → → →<br>Address    | string         | Required<br>(1 or more) | A P2PKH or P2SH address                                                                                                                                                                                                                                                                                                          |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 Decode a signed one-input, two-output transaction:
 
@@ -539,7 +542,8 @@ Result:
   ]
 }
 ```
-_See also_
+
+*See also*
 
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
@@ -550,13 +554,13 @@ _See also_
 
 The [`decodescript` RPC](../api/rpc-raw-transactions.md#decodescript) decodes a hex-encoded P2SH redeem script.
 
-_Parameter #1---a hex-encoded redeem script_
+*Parameter #1---a hex-encoded redeem script*
 
 | Name          | Type         | Presence                | Description                                                    |
 | ------------- | ------------ | ----------------------- | -------------------------------------------------------------- |
 | Redeem Script | string (hex) | Required<br>(exactly 1) | The redeem script to decode as a hex-encoded serialized script |
 
-_Result---the decoded script_
+*Result---the decoded script*
 
 | Name             | Type         | Presence                | Description                                                                                                                                                                                                                                   |
 | ---------------- | ------------ | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -566,8 +570,9 @@ _Result---the decoded script_
 | →<br>`reqSigs`   | number (int) | Optional<br>(0 or 1)    | The number of signatures required; this is always `1` for P2PK or P2PKH within P2SH.  It may be greater than 1 for P2SH multisig.  This value will not be returned for `nonstandard` script types (see the `type` key above)                  |
 | →<br>`addresses` | array        | Optional<br>(0 or 1)    | A P2PKH addresses used in this script, or the computed P2PKH addresses of any pubkeys in this script.  This array will not be returned for `nonstandard` script types                                                                         |
 | → →<br>Address   | string       | Required<br>(1 or more) | A P2PKH address                                                                                                                                                                                                                               |
-| →<br>`p2sh`      | string (hex) | Required<br>(exactly 1) | The P2SH address of this redeem script                                                                                                                                                                                                        |
-_Example from Dimecoin Core 2.3.0.0_
+| →<br>`p2sh`      | string (hex) | Required<br>(exactly 1) | The P2SH address of this redeem script |
+
+*Example from Dimecoin Core 2.3.0.0*
 
 A 2-of-3 P2SH multisig pubkey script:
 
@@ -594,7 +599,7 @@ Result:
 }
 ```
 
-_See also_
+*See also*
 
 * [CreateMultiSig](../api/rpc-utility.md#createmultisig): creates a P2SH multi-signature address.
 
@@ -603,19 +608,19 @@ _See also_
 The [`finalizepsbt` RPC](../api/rpc-raw-transactions.md#finalizepsbt) finalizes the inputs of a PSBT. The PSBT produces a network serialized transaction if the transaction is fully signed. This can broadcast with `sendrawtransaction`. Otherwise, a PSBT will be created which has the `final_scriptSig` fields filled for inputs that are complete.  
 Implements the Finalizer and Extractor roles.
 
-_Parameter #1---psbt_
+*Parameter #1---psbt*
 
 | Name | Type   | Presence | Description               |
 | ---- | ------ | -------- | ------------------------- |
 | psbt | string | Required | A base64 string of a PSBT |
 
-_Parameter #2---extract_
+*Parameter #2---extract*
 
 | Name | Type | Presence | Description                                                                                                                                |
 | ---- | ---- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | data | bool | Optional | If true, and the transaction is complete, extract and return the complete transaction in normal network serialization instead of the PSBT. |
 
-_Result---psbt_
+*Result---psbt*
 
 | Name           | Type         | Presence                | Description                                                      |
 | -------------- | ------------ | ----------------------- | ---------------------------------------------------------------- |
@@ -623,7 +628,7 @@ _Result---psbt_
 | → <br>hex      | string (hex) | Optional<br>(0 or 1)    | The hex-encoded network transaction if extracted (present if `complete` is `true`)                |
 | → <br>complete | bool         | Required<br>(Exactly 1) | If the transaction has a complete set of signatures              |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
 dimecoin-cli -mainnet finalizepsbt cHNidP8BAEICAAAAAXgRxzbShUlivVFKgoLyhk0RCCYLZKCYTl/tYRd+yGImAAAAAAD/////AQAAAAAAAAAABmoEAAECAwAAAAAAAQDhAgAAAAGUi7dQLNEVUajA9jcftG9LmDpAZzvVlgQVcitxL418QgEAAABqRzBEAiBP5PxIjJVfKGxSyEjseVC0DsR24bQ0xq3WhrR0vd4JqQIgYiLSkf2do0FAiqikcg9aaVmZdxWh3fgYfnUne2v8rn4BIQPGfYaUQxWDiup+yA05C10JuRtiSDNw1Jedpcz3p993qf7///8CtOfGCQAAAAAZdqkUzvxGSQTAOBTAGQbhl9x1mnReR+6IrADKmjsAAAAAGXapFD75vL6S93yPrdBWbup/+NR/Ir3giKxVSAgAAQdqRzBEAiAF1fgBDg2M/WAeYTYzCkEiSSrDVzcYoe8wwrw/MbdgOQIgJzoYBQ9hAm6jqk2cLFitUd1/iL1ku8w9unadjNfsCdoBIQJn2pETmk8U2X6veADqnny5/6j8Iy7Oizij0SeJHm9x6AAA
@@ -638,7 +643,7 @@ Result:
 }
 ```
 
-_See also:_
+*See also:*
 
 * [CreatePSBT](../api/rpc-raw-transactions.md#createpsbt): creates a transaction in the Partially Signed Transaction (PST) format.
 * [CombinePSBT](../api/rpc-raw-transactions.md#combinepsbt): combine multiple partially-signed Dimecoin transactions into one transaction.
@@ -658,20 +663,20 @@ in the wallet using importaddress or addmultisigaddress (to calculate fees).
 You can see whether this is the case by checking the "solvable" field in the listunspent output.
 Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported for watch-only
 
-_Parameter #1---The hex string of the raw transaction_
+*Parameter #1---The hex string of the raw transaction*
 
 | Name       | Type         | Presence                | Description                           |
 | ---------- | ------------ | ----------------------- | ------------------------------------- |
 | Hex string | string (hex) | Required<br>(exactly 1) | The hex string of the raw transaction |
 
-_Parameter #2---Additional options_
+*Parameter #2---Additional options*
 
 Note: For backwards compatibility, passing in a `true` instead of an object will result in `{"includeWatching": true}`.
 
 | Name                           | Type               | Presence                | Description|
 | ------------------------------ | ------------------ | ----------------------- | ---------- |
 | Options                        | Object             | Optional<br>(0 or 1)    | Additional options |
-| → <br>`changeAddress`          | string             | Optional<br>(0 or 1)    | The address to receive the change. If not set, the address is chosen from address pool                                                                            
+| → <br>`changeAddress`          | string             | Optional<br>(0 or 1)    | The address to receive the change. If not set, the address is chosen from address pool |
 | → <br>`changePosition`         | nummeric (int)     | Optional<br>(0 or 1)    | The index of the change output. If not set, the change position is randomly chosen |
 | → <br>`change_type`            | string             | Optional<br>(0 or 1)    | The output type to use. Only valid if changeAddress is not specified.              |
 | `includeWatching`              | bool               | Optional<br>(0 or 1)    | Inputs from watch-only addresses are also considered. The default is `false` for non-watching-only wallets and `true` for watching-only wallets                                                                           |
@@ -682,7 +687,7 @@ Note: For backwards compatibility, passing in a `true` instead of an object will
 | → <br>`conf_target`            | numberic (int)     | Optional<br>(0 or 1)    | Confirmation target (in blocks), or fee rate (for DIME/kB or dimecoin/B estimate modes) |
 | → <br>`estimate_mode`          | string             | Optional<br>(0 or 1)    | The fee estimate mode, must be one of (case insensitive):<br>`unset`<br>`economical`<br>`conservative`<br>`DIME/kB`<br>`dimecoin/B` |
 
-_Result---information about the created transaction_
+*Result---information about the created transaction*
 
 | Name            | Type               | Presence                | Description                                                                            |
 | --------------- | ------------------ | ----------------------- | -------------------------------------------------------------------------------------- |
@@ -691,7 +696,7 @@ _Result---information about the created transaction_
 | → <br>fee       | numeric (dimecoins)| Required<br>(Exactly 1) | Fee in DIME the resulting transaction pays                                              |
 | → <br>changepos | numeric (int)      | Required<br>(Exactly 1) | The position of the added change output, or `-1` if no change output was added         |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
 dimecoin-cli -mainnet fundrawtransaction 01000000000100205fa012000000\
@@ -708,7 +713,7 @@ Result:
 }
 ```
 
-_See also_
+*See also*
 
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
@@ -732,37 +737,37 @@ As of Dimecoin Core 2.0.0.0, transactions with unspent outputs will no longer be
 >
 > If you begin using `txindex=1` after downloading the blockchain, you must rebuild your indexes by starting Dimecoin Core with the option  `-reindex`.  This may take several hours to complete, during which time your node will not process new blocks or transactions. This reindex only needs to be done once.
 
-_Parameter #1---the TXID of the transaction to get_
+*Parameter #1---the TXID of the transaction to get*
 
 | Name | Type         | Presence                | Description                                                          |
 | ---- | ------------ | ----------------------- | -------------------------------------------------------------------- |
 | TXID | string (hex) | Required<br>(exactly 1) | The TXID of the transaction to get, encoded as hex in RPC byte order |
 
-_Parameter #2---whether to get the serialized or decoded transaction_
+*Parameter #2---whether to get the serialized or decoded transaction*
 
 | Name    | Type | Presence             | Description                                                                                                                                                                                                                                |
 | ------- | ---- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | verbose | bool | Optional<br>(0 or 1) |Set to `false` (the default) to return the serialized transaction as hex.  Set to `true` to return a decoded transaction in JSON.  Before 0.12.3, use `0` and `1`, respectively |
 
-_Parameter #3---hash of a block to look in for the transaction_
+*Parameter #3---hash of a block to look in for the transaction*
 
 | Name       | Type | Presence             | Description                                                                                   |
 | ---------- | ---- | -------------------- | --------------------------------------------------------------------------------------------- |
 | blockhash  | string | Optional<br>(0 or 1) | The hash of the block in which to look for the transaction |
 
-_Result (if transaction not found)---`null`_
+*Result (if transaction not found)---`null`*
 
 | Name     | Type | Presence                | Description                                                                                                                                                                                                                                                  |
 | -------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `result` | null | Required<br>(exactly 1) | If the transaction wasn't found, the result will be JSON `null`.  This can occur because the transaction doesn't exist in the blockchain or memory pool, or because it isn't part of the transaction index.  See the Dimecoin Core `-help` entry for `-txindex` |
 
-_Result (if verbose=`false`)---the serialized transaction_
+*Result (if verbose=`false`)---the serialized transaction*
 
 | Name     | Type         | Presence                | Description                                                                          |
 | -------- | ------------ | ----------------------- | ------------------------------------------------------------------------------------ |
 | `result` | string (hex) | Required<br>(exactly 1) | If the transaction was found, this will be the serialized transaction encoded as hex |
 
-_Result (if verbose=`true`)---the decoded transaction_
+*Result (if verbose=`true`)---the decoded transaction*
 
 | Name                        | Type           | Presence                | Description                                                                                                                                                                                                                                                                                                                      |
 | --------------------------- | -------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -803,8 +808,9 @@ _Result (if verbose=`true`)---the decoded transaction_
 | →<br>`height`               | number (int)   | Optional<br>(0 or 1)    |  If the transaction has been included in a block on the local best blockchain, this is the block height where the transaction was mined.  Otherwise, this is `-1`. Not shown for mempool transactions. |
 | →<br>`confirmations`        | number (int)   | Optional<br>(0 or 1)    | If the transaction has been included in a block on the local best blockchain, this is how many confirmations it has.  Otherwise, this is `0`. Not shown for mempool transactions. |
 | →<br>`time`                 | number (int)   | Optional<br>(0 or 1)    | If the transaction has been included in a block on the local best blockchain, this is the block header time of that block (may be in the future)                                                                                                                                                                                |
-| →<br>`blocktime`            | number (int)   | Optional<br>(0 or 1)    | This field is currently identical to the time field described above                                                                                                                                                                                                                                                              |
-_Examples from Dimecoin Core 2.3.0.0_
+| →<br>`blocktime`            | number (int)   | Optional<br>(0 or 1)    | This field is currently identical to the time field described above|
+
+*Examples from Dimecoin Core 2.3.0.0*
 
 A classical transaction in serialized transaction format:
 
@@ -979,7 +985,7 @@ Result:
 }
 ```
 
-_See also_
+*See also*
 
 * [GetTransaction](../api/rpc-wallet.md#gettransaction): gets detailed information about an in-wallet transaction.
 
@@ -987,25 +993,25 @@ _See also_
 
 The [`sendrawtransaction` RPC](../api/rpc-raw-transactions.md#sendrawtransaction) validates a transaction and broadcasts it to the peer-to-peer network.
 
-_Parameter #1---a serialized transaction to broadcast_
+*Parameter #1---a serialized transaction to broadcast*
 
 | Name        | Type         | Presence                | Description                                            |
 | ----------- | ------------ | ----------------------- | ------------------------------------------------------ |
 | Transaction | string (hex) | Required<br>(exactly 1) | The serialized transaction to broadcast encoded as hex |
 
-_Parameter #2--whether to allow high fees_
+*Parameter #2--whether to allow high fees*
 
 | Name         | Type   | Presence             | Description                                                                                                                                                                                                                                                                                                                            |
 | ------------ | ------ | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `allowhighfees` | number | Optional<br>(0 or 1) | Reject transactions whose fee rate is higher than the specified value, expressed in DIME/kB.
+| `allowhighfees` | number | Optional<br>(0 or 1) | Reject transactions whose fee rate is higher than the specified value, expressed in DIME/kB.|
 
-_Result---a TXID or error message_
+*Result---a TXID or error message*
 
 | Name     | Type              | Presence                | Description                                                                                                                                                                                                                                                                                                                          |
 | -------- | ----------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `result` | null/string (hex) | Required<br>(exactly 1) | If the transaction was accepted by the node for broadcast, this will be the TXID of the transaction encoded as hex in RPC byte order.  If the transaction was rejected by the node, this will set to `null`, the JSON-RPC error field will be set to a code, and the JSON-RPC message field may contain an informative error message |
 
-_Examples from Dimecoin Core 2.3.0.0_
+*Examples from Dimecoin Core 2.3.0.0*
 
 Broadcast a signed transaction:
 
@@ -1026,7 +1032,7 @@ Result:
 2f124cb550d9967b81914b544dea3783de23e85d67a9816f9bada665ecfe1cd5
 ```
 
-_See also_
+*See also*
 
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
@@ -1037,20 +1043,20 @@ _See also_
 
 The [`signrawtransactionwithkey` RPC](#signrawtransactionwithkey) signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
 
-_Parameter #1---the transaction to sign_
+*Parameter #1---the transaction to sign*
 
 | Name        | Type         | Presence                | Description                                         |
 | ----------- | ------------ | ----------------------- | --------------------------------------------------- |
 | Transaction | string (hex) | Required<br>(exactly 1) | The transaction to sign as a serialized transaction |
 
-_Parameter #2---private keys for signing_
+*Parameter #2---private keys for signing*
 
 | Name         | Type            | Presence                | Description                                                                                                                                                                                                                                                  |
 | ------------ | --------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Private Keys | array           | Required<br>(exactly 1) | An array holding private keys.  If any keys are provided, only they will be used to sign the transaction (even if the wallet has other matching keys).  If this array is empty or not used, and wallet support is enabled, keys from the wallet will be used |
 | →<br>Key     | string (base58) | Required<br>(1 or more) | A private key in base58check format to use to create a signature for this transaction                                                                                                                                                                        |
 
-_Parameter #3---unspent transaction output details_
+*Parameter #3---unspent transaction output details*
 
 | Name                  | Type         | Presence                | Description                                                                                            |
 | --------------------- | ------------ | ----------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -1062,13 +1068,13 @@ _Parameter #3---unspent transaction output details_
 | → →<br>`redeemScript` | string (hex) | Optional<br>(0 or 1)    | If the pubkey script was a script hash, this must be the corresponding redeem script                   |
 | → →<br>`amount`       | numeric      | Required<br>(exactly 1) | The amount of Dimecoin spent                                                                               |
 
-_Parameter #4---signature hash type_
+*Parameter #4---signature hash type*
 
 | Name    | Type   | Presence             | Description                                                                                                                                                                                                                                                                                                                                                |
 | :------ | :----- | :------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SigHash | string | Optional<br>(0 or 1) | The type of signature hash to use for all of the signatures performed. You must use separate calls to the [`signrawtransaction` RPC](../api/rpc-raw-transactions.md#signrawtransactionwithkey) if you want to use different signature hash types for different signatures.  The allowed values are: `ALL`, `NONE`, `SINGLE`, `ALL \| ANYONECANPAY`,`NONE \| ANYONECANPAY`, and `SINGLE \| ANYONECANPAY` |
 
-_Result---the transaction with any signatures made_
+*Result---the transaction with any signatures made*
 
 | Name            | Type         | Presence                | Description                                                                                                                                                                                            |
 | --------------- | ------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1076,7 +1082,7 @@ _Result---the transaction with any signatures made_
 | →<br>`hex`      | string (hex) | Required<br>(exactly 1) | The resulting serialized transaction encoded as hex with any signatures made inserted.  If no signatures were made, this will be the same transaction provided in parameter #1                         |
 | →<br>`complete` | bool         | Required<br>(exactly 1) | The value `true` if transaction is fully signed; the value `false` if more signatures are required. Once `true` the transaction can be sent using the [`sendrawtransaction` RPC](#sendrawtransaction). |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 Sign the raw transaction hex generated from the [`createrawtransaction` RPC](#createrawtransaction):
 
@@ -1096,7 +1102,7 @@ Result:
 }
 ```
 
-_See also_
+*See also*
 
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
@@ -1107,19 +1113,19 @@ _See also_
 
 The [`testmempoolaccept` RPC](../api/rpc-raw-transactions.md#testmempoolaccept) returns the results of mempool acceptance tests indicating if raw transaction (serialized, hex-encoded) would be accepted by mempool.
 
-_Parameter #1---raw txs_
+*Parameter #1---raw txs*
 
 | Name     | Type  | Presence                | Description                                                                  |
 | -------- | ----- | ----------------------- | ---------------------------------------------------------------------------- |
 | `rawtxs` | array | Required<br>(exactly 1) | An array of hex strings of raw transactions (the length must be one for now) |
 
-_Parameter #2---set max fee rate_
+*Parameter #2---set max fee rate*
 
 | Name         | Type   | Presence             | Description                                                                                                                                                                                                                                                                             |
 | ------------ | ------ | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `allowhighfees` | number | Optional<br>(0 or 1) | Reject transactions whose fee rate is higher than the specified value, expressed in DIME/kB. |
 
-_Result---mempool acceptance test results_
+*Result---mempool acceptance test results*
 
 | Name                 | Type         | Presence                | Description                                                                                            |
 | -------------------- | ------------ | ----------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -1128,7 +1134,7 @@ _Result---mempool acceptance test results_
 | →<br>`allowed`       | bool         | Required<br>(exactly 1) | If the mempool allows this tx to be inserted                                                           |
 | →<br>`reject-reason` | string       | Optional<br>(0 or 1)    | A rejection string that is only present when 'allowed' is false.                                       |
 
-_Example from Dimecoin Core 2.3.0.0_
+*Example from Dimecoin Core 2.3.0.0*
 
 ```bash
 dimecoin-cli -mainnet testmempoolaccept [\"020000000234a2863f9781a7200330e700e684804bb2407d225c4e940c9cfb772f22fc0748000000006a47304402203b5a7899b6be2f33d30c1a71940c51f38074f4224a1ad6dee03dcc65f8646072022050d711115cd7291c2f094e3a3cfda14441721b1438e406b963b5660274ba4475012103e2fe477e31365d784d98514c7c9294283620d4a9775f01da5d3ba52f4c7286f5feffffff34a2863f9781a7200330e700e684804bb2407d225c4e940c9cfb772f22fc0748010000006a473044022018901985d2c94492111a45ed51bac88e02f1bb4a8382eacf5f474d70878c19f4022046e309e548f95a64b05e8ef70fae0ff86bf83cbed3055591580e0b5f5597c3a2012103109325a92f9e6d31d2ebd0595d471275ae8d635db2a0c42358f387e1af69c14dfeffffff020f530f00000000001976a9145799a5df43d34b05cdf03347af9102b67a6d154a88ac00e1f505000000001976a91464d51a27c8b8434458bac0193039bae55ca023c388ac151c0900\"]
@@ -1146,7 +1152,7 @@ Result:
 ]
 ```
 
-_See also_
+*See also*
 
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.

@@ -1,11 +1,12 @@
 ```{eval-rst}
 .. _resources-glossary:
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-# Glossary
+### Glossary
 
 The following section is dedicated to the key terms, concepts, and jargon related to the project, technology, and industry surrounding Dimecoin. Its primary purpose is to provide readers with clear, concise definitions of specific terminology they might encounter throughout our documentation. This is especially helpful for new users, developers, or participants who may need to become more familiar with the specialized language used in discussions of Dimecoin and its related technology.
 
@@ -196,6 +197,7 @@ A score indicating the number of blocks on the best block chain that would need 
 When a transaction is made, all nodes on the network verify that it is valid on the blockchain, and if so, they have a consensus.
 
 #### Consensus Process
+
 Refers to those nodes that are responsible for maintaining the blockchain ledger so that a consensus can be reached when a transaction is made.
 
 #### Consensus Rules
@@ -252,7 +254,7 @@ Some nodes download a blockchain’s entire history in order to enforce and vali
 
 #### Genesis Block
 
-The first block in the Dimecoin blockchain. Occurred December, 23, 2013. 
+The first block in the Dimecoin blockchain. Occurred December, 23, 2013.
 
 #### Halving
 
@@ -320,7 +322,7 @@ Part of a transaction which indicates the earliest time or earliest block when t
 
 #### Long-Living Masternode Quorum
 
-Long-Living Masternode Quorums (LLMQs) are a Dash innovation that Dimecoin has implemented which enables masternodes to perform threshold signing of consensus-related messages (e.g. InstantSend transactions). LLMQs provide a more scalable, general use quorum system than the ephemeral ones used prior to Dash Core version 0.14.
+Long-Living Masternode Quorums (LLMQs) are a Dash innovation that Dimecoin plans to implement which enables masternodes to perform threshold signing of consensus-related messages (e.g. InstantSend transactions). LLMQs provide a more scalable, general use quorum system than the ephemeral ones used prior to Dash Core version 0.14.
 
 #### LWMA-3
 
@@ -536,7 +538,7 @@ Complete transactions in their binary format; often represented using hexadecima
 
 #### Replace-By-Fee
 
-NOT IMPLEMENTED IN DASH. Replacing one version of an unconfirmed transaction with a different version of the transaction that pays a higher transaction fee. May use BIP125 signaling.
+Replacing one version of an unconfirmed transaction with a different version of the transaction that pays a higher transaction fee. May use BIP125 signaling.
 
 #### Redeem Script
 
@@ -679,6 +681,7 @@ A version number prefixed to transactions to allow upgrading.
 When a transaction is proposed, it is unconfirmed until the network has examined the blockchain to ensure that there are no other transactions pending involving that same coin. In the unconfirmed state, the transaction has not been appended to the blockchain.
 
 #### Unspent Transaction Output
+
 This refers to the amount of cryptocurrency sent to an entity but not sent on elsewhere. These amounts are considered unspent and are the data stored in the blockchain.
 
 #### Unencrypted Wallet
@@ -716,5 +719,3 @@ A data interchange format designed to allow exporting and importing a single pri
 #### Watch-Only Address
 
 An address or pubkey script stored in the wallet without the corresponding private key, allowing the wallet to watch for outputs but not spend them.
-
-

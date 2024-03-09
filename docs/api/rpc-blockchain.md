@@ -4,6 +4,7 @@
   :title: Blockchain RPCs
   :description: A list of all the Blockchain RPCs in Dimecoin.
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -27,6 +28,7 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getbestblockhash
 ```
+
 Result:
 
 ``` text
@@ -90,7 +92,7 @@ Name | Type | Presence | Description
 →<br>`previousblockhash` | string (hex) | Optional<br>(0 or 1) | The hash of the header of the previous block, encoded as hex in RPC byte order.  Not returned for genesis block
 →<br>`nextblockhash` | string (hex) | Optional<br>(0 or 1) | The hash of the next block on the best blockchain, if known, encoded as hex in RPC byte order
 
-*Result (if verbosity was `2`---a JSON block with full transaction details*)
+*Result (if verbosity was `2`---a JSON block with full transaction details)*
 
 Name | Type | Presence | Description
 --- | --- | --- | ---
@@ -117,14 +119,14 @@ Name | Type | Presence | Description
 → → → → →<br>`asm` | string | Required<br>(exactly 1) | The signature script in decoded form with non-data-pushing opcodes listed
 → → → → →<br>`hex` | string (hex) | Required<br>(exactly 1) | The signature script encoded as hex
 → → → →<br>`coinbase` | string (hex) | Optional<br>(0 or 1) | The coinbase (similar to the hex field of a scriptSig) encoded as hex.  Only present if this is a coinbase transaction
-→ → → →<br>`value` | number (DIME) | Optional<br>(exactly 1) | The number of Dash paid to this output.  May be `0`.<br><br>Only present if `spentindex` enabled
+→ → → →<br>`value` | number (DIME) | Optional<br>(exactly 1) | The number of Dimecoin paid to this output.  May be `0`.<br><br>Only present if `spentindex` enabled
 → → → →<br>`valueSat` | number (dimecoins) | Optional<br>(exactly 1) | The number of dimecoins paid to this output.  May be `0`.<br><br>Only present if `spentindex` enabled
 → → → → →<br>`addresses` | string : array | Optional<br>(0 or 1) | The P2PKH or P2SH addresses used in this transaction, or the computed P2PKH address of any pubkeys in this transaction.  This array will not be returned for `nulldata` or `nonstandard` script types.<br><br>Only present if `spentindex` enabled
 → → → → → →<br>`Address` | string | Required<br>(1 or more) | A P2PKH or P2SH address
 → → → →<br>`sequence` | numeric | Required<br>(exactly 1) | The input sequence number
 → →<br>`vout` | array | Required<br>(exactly 1) | An array of objects each describing an output vector (vout) for this transaction.  Output objects will have the same order within the array as they have in the transaction, so the first output listed will be output 0
 → → →<br>`Output` | object | Required<br>(1 or more) | An object describing one of this transaction's outputs
-→ → → →<br>`value` | number (DIME) | Required<br>(exactly 1) | The number of Dash paid to this output.  May be `0`
+→ → → →<br>`value` | number (DIME) | Required<br>(exactly 1) | The number of Dimecoin paid to this output.  May be `0`
 → → → →<br>`valueSat` | number (dimecoins) | Required<br>(exactly 1) | The number of dimecoins paid to this output.  May be `0`
 → → → →<br>`n` | numeric | Required<br>(exactly 1) | The output index number of this output within this transaction
 → → → →<br>`scriptPubKey` | object | Required<br>(exactly 1) | An object describing the pubkey script
@@ -155,8 +157,9 @@ dimecoin-cli -mainnet getblock \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91 \
             0
 ```
+
 Result (wrapped):
-                                                                
+
 ``` text
 0100000001000000000000000000000000000000000000000000000000000000\
 0000000000ffffffff21032851560421d290650881022f9cea04000054686542\
@@ -171,6 +174,7 @@ Get the same block in JSON:
 dimecoin-cli -mainnet getblock \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91
 ```
+
 Result:
 
 ``` json
@@ -205,6 +209,7 @@ Get the same block in JSON with transaction details:
 dimecoin-cli -mainnet getblock \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91 2
 ```
+
 Result:
 
 ``` json
@@ -275,6 +280,7 @@ Result:
   "nextblockhash": "000000000000b30ef27147bcc0829c540d0bd01076f9727d9a3a3c4c2e1f0d1d"
 }
 ```
+
 *See also*
 
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
@@ -328,6 +334,7 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getblockchaininfo
 ```
+
 Result:
 
 ``` json
@@ -385,6 +392,7 @@ Result:
   "warnings": ""
 }
 ```
+
 *See also*
 
 * [GetMiningInfo](../api/rpc-mining.md#getmininginfo): returns various mining-related information.
@@ -414,6 +422,7 @@ Result:
 ``` text
 5781103
 ```
+
 *See also*
 
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
@@ -446,6 +455,7 @@ Result:
 ``` text
 00000000539760ef8dd9d933743b6281e8337359ecfa35917f924e52156c7566
 ```
+
 *See also*
 
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
@@ -502,18 +512,21 @@ dimecoin-cli -mainnet getblockheader \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91 \
             false
 ```
+
 Result (wrapped):
 
 ``` text
 00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91\
 
 ```
+
 Get the same block in JSON:
 
 ``` bash
 dimecoin-cli -mainnet getblockheader \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91
 ```
+
 Result:
 
 ``` json
@@ -535,6 +548,7 @@ Result:
   "nextblockhash": "000000000000b30ef27147bcc0829c540d0bd01076f9727d9a3a3c4c2e1f0d1d"
 }
 ```
+
 *See also*
 
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
@@ -546,6 +560,7 @@ Result:
 ```{eval-rst}
 .. _api-rpc-blockchain-getblockheaders:
 ```
+
 ### GetChainTips
 
 The [`getchaintips` RPC](../api/remote-procedure-calls-blockchain.md#getchaintips) returns information about the highest-height block (tip) of each local block chain.
@@ -560,7 +575,7 @@ Name | Type | Presence | Description
 →<br>Tip | object | Required<br>(1 or more) | An object describing a particular chain tip.  The first object will always describe the active chain (the local best block chain)
 → →<br>`height` | number (int) | Required<br>(exactly 1) | The height of the highest block in the chain.  A new node with only the genesis block will have a single tip with height of 0
 → →<br>`hash` | string (hex) | Required<br>(exactly 1) | The hash of the highest block in the chain, encoded as hex in RPC byte order
-→<br>`difficulty` | number (real) | Required<br>(exactly 1) | The difficulty of the highest-height block in the best block chain (Added in Dash Core 0.12.1)
+→<br>`difficulty` | number (real) | Required<br>(exactly 1) | The difficulty of the highest-height block in the best block chain
 →<br>`chainwork` | string (hex) | Required<br>(exactly 1) | The estimated number of block header hashes checked from the genesis block to this block, encoded as big-endian hex
 → →<br>`branchlen` | number (int) | Required<br>(exactly 1) | The number of blocks that are on this chain but not on the main chain.  For the local best block chain, this will be `0`; for all other chains, it will be at least `1`
 → →<br>`forkpoint` | string (hex) | Required<br>(exactly 1) | Block hash of the last common block between this tip and the main chain
@@ -569,8 +584,9 @@ Name | Type | Presence | Description
 *Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
-dash-cli -testnet getchaintips
+dimecoin-cli -testnet getchaintips
 ```
+
 ``` json
 [
   {
@@ -584,6 +600,7 @@ dash-cli -testnet getchaintips
   }
 ]
 ```
+
 *See also*
 
 * [GetBestBlockHash](../api/remote-procedure-calls-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best block chain.
@@ -625,6 +642,7 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getchaintxstats
 ```
+
 Result:
 
 ``` json
@@ -638,6 +656,7 @@ Result:
   "txrate": 0.03272732132274444
 }
 ```
+
 *See also: none*
 
 ### GetCheckPoint
@@ -651,7 +670,8 @@ The `getcheckpoint` RPC returns info of latest syncronized checkpoint.
 ``` bash
 dimecoin-cli -mainnet getcheckpoint
 ```
-Result: 
+
+Result:
 
 ``` text
 {
@@ -660,6 +680,7 @@ Result:
   "timestamp": 1709854037
 }
 ```
+
 ### GetDifficulty
 
 The [`getdifficulty` RPC](../api/rpc-blockchain.md#getdifficulty) returns the proof-of-work difficulty as a multiple of the minimum difficulty.
@@ -677,12 +698,14 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getdifficulty
 ```
+
 Result:
 
 ``` text
   "proof-of-work": 7000.711921042552,
   "proof-of-stake": 13105918.85568522
 ```
+
 *See also*
 
 * [GetNetworkHashPS](../api/rpc-mining.md#getnetworkhashps): returns the estimated network hashes per second based on the last n blocks.
@@ -691,6 +714,7 @@ Result:
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempoolancestors:
 ```
+
 ### GetMemPoolAncestors
 
 The [`getmempoolancestors` RPC](../api/rpc-blockchain.md#getmempoolancestors) returns all in-mempool ancestors for a transaction in the mempool.
@@ -732,10 +756,10 @@ Name | Type | Presence | Description
 → →<br>`ancestorsize` | numeric | Required<br>(exactly 1) | The size of in-mempool ancestors (including this one)
 → →<br>`ancestorfees` | numeric | Required<br>(exactly 1) | The modified fees (see `modifiedfee` above) of in-mempool ancestors (including this one)
 → →<br>`fees` | object | Optional<br>(0 or 1) | Object containing fee information
-→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DASH
-→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DASH
-→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DASH
-→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DASH
+→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DIME
+→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DIME
+→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DIME
+→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DIME
 → →<br>`depends` | array | Required<br>(exactly 1) | An array holding TXIDs of unconfirmed transactions this transaction depends upon (parent transactions).  Those transactions must be part of a block before this transaction can be added to a block, although all transactions may be included in the same block.  The array may be empty
 → → →<br>Depends TXID | string | Optional (0 or more) | The TXIDs of any unconfirmed transactions this transaction depends upon, encoded as hex in RPC byte order
 → →<br>`spentby` | array | Required<br>(exactly 1) |  An array of unconfirmed transactions spending outputs from this transaction
@@ -749,6 +773,7 @@ Name | Type | Presence | Description
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempooldescendants:
 ```
+
 ### GetMemPoolDescendants
 
 The [`getmempooldescendants` RPC](../api/rpc-blockchain.md#getmempooldescendants) returns all in-mempool descendants for a transaction in the mempool.
@@ -790,10 +815,10 @@ Name | Type | Presence | Description
 → →<br>`ancestorsize` | numeric | Required<br>(exactly 1) | The size of in-mempool ancestors (including this one)
 → →<br>`ancestorfees` | numeric | Required<br>(exactly 1) | The modified fees (see `modifiedfee` above) of in-mempool ancestors (including this one)
 → →<br>`fees` | object | Optional<br>(0 or 1) | Object containing fee information
-→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DASH
-→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DASH
-→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DASH
-→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DASH
+→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DIME
+→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DIME
+→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DIME
+→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DIME
 → →<br>`depends` | array | Required<br>(exactly 1) | An array holding TXIDs of unconfirmed transactions this transaction depends upon (parent transactions).  Those transactions must be part of a block before this transaction can be added to a block, although all transactions may be included in the same block.  The array may be empty
 → → →<br>Depends TXID | string | Optional (0 or more) | The TXIDs of any unconfirmed transactions this transaction depends upon, encoded as hex in RPC byte order
 → →<br>`spentby` | array | Required<br>(exactly 1) |  An array of unconfirmed transactions spending outputs from this transaction
@@ -809,6 +834,7 @@ Name | Type | Presence | Description
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempoolentry:
 ```
+
 ### GetMemPoolEntry
 
 The [`getmempoolentry` RPC](../api/rpc-blockchain.md#getmempoolentry) returns mempool data for given transaction (must be in mempool).
@@ -836,10 +862,10 @@ Name | Type | Presence | Description
 →<br>`ancestorsize` | numeric | Required<br>(exactly 1) | The size of in-mempool ancestors (including this one)
 →<br>`ancestorfees` | numeric | Required<br>(exactly 1) | The modified fees (see `modifiedfee` above) of in-mempool ancestors (including this one)
 → →<br>`fees` | object | Optional<br>(0 or 1) | Object containing fee information
-→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DASH
-→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DASH
-→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DASH
-→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DASH
+→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DIME
+→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DIME
+→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DIME
+→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DIME
 →<br>`depends` | array | Required<br>(exactly 1) | An array holding TXIDs of unconfirmed transactions this transaction depends upon (parent transactions).  Those transactions must be part of a block before this transaction can be added to a block, although all transactions may be included in the same block.  The array may be empty
 → →<br>Depends TXID | string | Optional (0 or more) | The TXIDs of any unconfirmed transactions this transaction depends upon, encoded as hex in RPC byte order
 →<br>`spentby` | array | Required<br>(exactly 1) |  An array of unconfirmed transactions spending outputs from this transaction
@@ -850,6 +876,7 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli getmempoolentry 1c789d3697b0036af0176d0bed968d27dc72733310e406a37e08ec8f48883ff0
 ```
+
 Result:
 
 ``` json
@@ -878,6 +905,7 @@ Result:
   ]
 }
 ```
+
 *See also*
 
 * [GetMemPoolAncestors](../api/rpc-blockchain.md#getmempoolancestors): returns all in-mempool ancestors for a transaction in the mempool.
@@ -900,7 +928,7 @@ Name | Type | Presence | Description
 →<br>`usage` | numeric | Required<br>(exactly 1) | Total memory usage for the mempool in bytes
 →<br>`maxmempool` | numeric | Required<br>(exactly 1) | Maximum memory usage for the mempool in bytes
 →<br>`mempoolminfee` | number | Required<br>(exactly 1) | The lowest fee per kilobyte paid by any transaction in the memory pool
-→<br>`mempoolminfee` | number | Required<br>(exactly 1) | Minimum fee rate in DASH/kB for tx to be accepted. Is the maximum of minrelaytxfee and minimum mempool fee
+→<br>`mempoolminfee` | number | Required<br>(exactly 1) | Minimum fee rate in DIME/kB for tx to be accepted. Is the maximum of minrelaytxfee and minimum mempool fee
 →<br>`minrelaytxfee` | numeric | Required<br>(exactly 1) | Current minimum relay fee for transactions
 
 *Example from Dimecoin Core 2.3.0.0*
@@ -908,6 +936,7 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getmempoolinfo
 ```
+
 Result:
 
 ``` json
@@ -920,6 +949,7 @@ Result:
   "minrelaytxfee": 0.01000
 }
 ```
+
 *See also*
 
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
@@ -929,6 +959,7 @@ Result:
 ```{eval-rst}
 .. _api-rpc-blockchain-getrawmempool:
 ```
+
 ### GetRawMemPool
 
 The [`getrawmempool` RPC](../api/rpc-blockchain.md#getrawmempool) returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
@@ -953,8 +984,8 @@ Name | Type | Presence | Description
 `result` | object | Required<br>(exactly 1) | A object containing transactions currently in the memory pool.  May be empty
 →<br>TXID | string : object | Optional<br>(0 or more) | The TXID of a transaction in the memory pool, encoded as hex in RPC byte order
 → →<br>`size` | numeric | Required<br>(exactly 1) | The size of the serialized transaction in bytes
-→ →<br>`fee` | amount (DIME) | Required<br>(exactly 1) | The transaction fee paid by the transaction in decimal Dash
-→ →<br>`modifiedfee` | amount (DIME) | Required<br>(exactly 1) | The transaction fee with fee deltas used for mining priority in decimal Dash
+→ →<br>`fee` | amount (DIME) | Required<br>(exactly 1) | The transaction fee paid by the transaction in decimal Dimecoin
+→ →<br>`modifiedfee` | amount (DIME) | Required<br>(exactly 1) | The transaction fee with fee deltas used for mining priority in decimal Dimecoin
 → →<br>`time` | numeric | Required<br>(exactly 1) | The time the transaction entered the memory pool, Unix epoch time format
 → →<br>`height` | numeric | Required<br>(exactly 1) | The block height when the transaction entered the memory pool
 → →<br>`descendantcount` | numeric | Required<br>(exactly 1) | The number of in-mempool descendant transactions (including this one)
@@ -964,10 +995,10 @@ Name | Type | Presence | Description
 → →<br>`ancestorsize` | numeric | Required<br>(exactly 1) | The size of in-mempool ancestors (including this one)
 → →<br>`ancestorfees` | numeric | Required<br>(exactly 1) | The modified fees (see `modifiedfee` above) of in-mempool ancestors (including this one)
 → →<br>`fees` | object | Optional<br>(0 or 1) | Object containing fee information
-→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DASH
-→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DASH
-→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DASH
-→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DASH
+→→→<br>`base` | number | Optional<br>(0 or 1) | Transaction fee in DIME
+→→→<br>`modified` | number | Optional<br>(0 or 1) | Transaction fee with fee deltas used for mining priority in DIME
+→→→<br>`ancestor` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool ancestors (including this one) in DIME
+→→→<br>`descendent` | number | Optional<br>(0 or 1) | Modified fees (see above) of in-mempool descendants (including this one) in DIME
 → →<br>`depends` | array | Required<br>(exactly 1) | An array holding TXIDs of unconfirmed transactions this transaction depends upon (parent transactions).  Those transactions must be part of a block before this transaction can be added to a block, although all transactions may be included in the same block.  The array may be empty
 → → →<br>Depends TXID | string | Optional (0 or more) | The TXIDs of any unconfirmed transactions this transaction depends upon, encoded as hex in RPC byte order
 → →<br>`spentby` | array | Required<br>(exactly 1) | An array of unconfirmed transactions spending outputs from this transaction
@@ -980,6 +1011,7 @@ The default (`false`):
 ``` bash
 dimecoin-cli getrawmempool
 ```
+
 Result:
 
 ``` json
@@ -993,6 +1025,7 @@ Verbose output (`true`):
 ``` bash
 dimecoin-cli getrawmempool true
 ```
+
 Result:
 
 ``` json
@@ -1023,6 +1056,7 @@ Result:
   }
 }
 ```
+
 *See also*
 
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
@@ -1058,7 +1092,7 @@ Name | Type | Presence | Description
 `result` | object/null | Required<br>(exactly 1) | Information about the output.  If output wasn't found, if it was spent, or if an error occurred, this will be JSON `null`
 →<br>`bestblock` | string (hex) | Required<br>(exactly 1) | The hash of the header of the block on the local best blockchain which includes this transaction.  The hash will encoded as hex in RPC byte order.  If the transaction is not part of a block, the string will be empty
 →<br>`confirmations` | numeric | Required<br>(exactly 1) | The number of confirmations received for the transaction containing this output or `0` if the transaction hasn't been confirmed yet
-→<br>`value` | number (DIME) | Required<br>(exactly 1) | The amount of Dash spent to this output.  May be `0`
+→<br>`value` | number (DIME) | Required<br>(exactly 1) | The amount of Dimecoin spent to this output.  May be `0`
 →<br>`scriptPubKey` | string : object | Optional<br>(0 or 1) | An object with information about the pubkey script.  This may be `null` if there was no pubkey script
 → →<br>`asm` | string | Required<br>(exactly 1) | The pubkey script in decoded form with non-data-pushing opcodes listed
 → →<br>`hex` | string (hex) | Required<br>(exactly 1) | The pubkey script encoded as hex
@@ -1078,6 +1112,7 @@ dimecoin-cli -mainnet gettxout \
   84e0bb9b5efecb46dec47d7e22d91f7bab6c4231acdbe165f8bc85d74d526067 \
   0 true
 ```
+
 Result:
 
 ``` json
@@ -1097,6 +1132,7 @@ Result:
   "coinbase": false
 }
 ```
+
 *See also*
 
 * [GetRawTransaction](../api/rpc-raw-transactions.md#getrawtransaction): gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dimecoin Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Dimecoin Core startup settings.
@@ -1106,11 +1142,10 @@ Result:
 
 The [`gettxoutproof` RPC](../api/rpc-blockchain.md#gettxoutproof) returns a hex-encoded proof that one or more specified transactions were included in a block.
 
-
-**NOTE:**
-By default this function only works when there is an
-unspent output in the UTXO set for this transaction. To make it always work,
-you need to maintain a transaction index, using the `-txindex` command line option, or specify the block in which the transaction is included in manually (by block header hash).
+>**NOTE:**
+>By default this function only works when there is an
+>unspent output in the UTXO set for this transaction. To make it always work,
+>you need to maintain a transaction index, using the `-txindex` command line option, or specify the block >in which the transaction is included in manually (by block header hash).
 
 *Parameter #1---the transaction hashes to prove*
 
@@ -1160,13 +1195,14 @@ Name | Type | Presence | Description
 →<br>`hash_serialized_2` | string (hex) | Optional<br>(exactly 1) |  The serialized hash (only present if 'hash_serialized_2' hash_type is chosen)
 →<br>`muhash` | string (hex) | Optional<br>(exactly 1) | A SHA256(SHA256()) The serialized hash (only present if 'muhash' hash_type is chosen).
 →<br>`disk_size` | numeric | Required<br>(exactly 1) | The estimated size of the chainstate on disk
-→<br>`total_amount` | number (DIME) | Required<br>(exactly 1) | The total amount of Dash in the UTXO set
+→<br>`total_amount` | number (DIME) | Required<br>(exactly 1) | The total amount of Dimecoin in the UTXO set
 
 *Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet gettxoutsetinfo
 ```
+
 Result:
 
 ``` json
@@ -1181,6 +1217,7 @@ Result:
   "total_amount": 3117947018953.76811
 }
 ```
+
 *See also*
 
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
@@ -1213,6 +1250,7 @@ The [`savemempool` RPC](../api/rpc-blockchain.md#savemempool) dumps the mempool 
 ``` bash
 dimecoin-cli savemempool
 ```
+
 Result (no output from dimecoin-cli, returns `null`).
 
 ### VerifyChain
@@ -1244,6 +1282,7 @@ Verify the most recent 1000 blocks using the most detailed check:
 ``` bash
 dimecoin-cli -mainnet verifychain 4 1000
 ```
+
 A window will pop up as it scans the blocks. When done the result should display as follows:
 
 Result ():
@@ -1251,6 +1290,7 @@ Result ():
 ``` json
 true
 ```
+
 *See also*
 
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
@@ -1289,6 +1329,7 @@ Result:
 "243ceb732dae2a027d94b046bf7e9861295863bf575d7e2f482fbd122a719e9c"
 ]
 ```
+
 *See also*
 
 * [GetTxOutProof](../api/rpc-blockchain.md#gettxoutproof): returns a hex-encoded proof that one or more specified transactions were included in a block.

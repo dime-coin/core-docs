@@ -2,20 +2,22 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-# Blockchain
+## Blockchain
 
-The following subsections briefly document Dimecoin's blockchain arhitecture. 
+The following subsections briefly document Dimecoin's blockchain arhitecture.
   
 **[Block Headers](blockchain.md#block-headers)**  
 This section covers the structure of block headers and their significance in the blockchain. Topics include:
-- [Merkle Trees](blockchain.md#merkle-trees): Explore how Merkle trees ensure secure and efficient transaction verification in blockchain technology.
-- [Target nBits](blockchain.md#target-nbits): Discover the role of Target nBits in defining the difficulty level for blockchain mining operations.
+
+* [Merkle Trees](blockchain.md#merkle-trees): Explore how Merkle trees ensure secure and efficient transaction verification in blockchain technology.
+* [Target nBits](blockchain.md#target-nbits): Discover the role of Target nBits in defining the difficulty level for blockchain mining operations.
 
 **[Serialized Blocks](blockchain.md#serialized-blocks)**  
 Focuses on the serialization of blocks within the blockchain, a crucial process for block propagation and storage. See:
-- [Coinbase](blockchain.md#coinbase): Learn about the coinbase transaction, the first transaction in a block that awards miners & stakers with new Dimecoin.
-- [Supply](blockchain.md#supply): Learn about how Dimecoin's supply works.
-- [Treasury](blockchain.md#treasury): Check out how Dimecoin's treasury is structured, including a breakdown of block rewards.
+
+* [Coinbase](blockchain.md#coinbase): Learn about the coinbase transaction, the first transaction in a block that awards miners & stakers with new Dimecoin.
+* [Supply](blockchain.md#supply): Learn about how Dimecoin's supply works.
+* [Treasury](blockchain.md#treasury): Check out how Dimecoin's treasury is structured, including a breakdown of block rewards.
 
 ```{eval-rst}
 .. meta::
@@ -52,6 +54,7 @@ e6d5c4b3a2f19876e5d4c3b2a1f0e9d8 ... Merkle root
 18b1a2c3 ........................... Target: 0x1a2b3c * 256**(0x1e-3)
 87654321 ........................... Nonce
 ```
+
 ### Merkle Trees
 
 The [merkle root](../resources/glossary.md#merkle-root) is constructed using all the [TXIDs](../resources/glossary.md#transaction-identifiers) of transactions in this block, but first the TXIDs are placed in order as required by the [consensus rules](../resources/glossary.md#consensus-rules):
@@ -88,25 +91,25 @@ The target threshold was initially intended to be an unsigned integer, yet the o
 
 Some examples taken from the Dimecoin Core test cases:
 
-| nBits      |  Target          | Notes
-|------------|------------------|----------------
-| 0x01003456 | &nbsp;0x00       |
-| 0x01123456 | &nbsp;0x12       |
-| 0x02008000 | &nbsp;0x80       |
-| 0x05009234 | &nbsp;0x92340000 |
-| 0x04923456 | -0x12345600      | High bit set (0x80 in 0x92).
-| 0x04123456 | &nbsp;0x12345600 | Inverse of above; no high bit.
+|nBits      |  Target          | Notes
+|-----------|------------------|----------------
+|0x01003456 | &nbsp;0x00       |N/A
+|0x01123456 | &nbsp;0x12       |N/A
+|0x02008000 | &nbsp;0x80       |N/A
+|0x05009234 | &nbsp;0x92340000 |N/A
+|0x04923456 | &nbsp;0x12345600 | High bit set (0x80 in 0x92).
+|0x04123456 | &nbsp;0x12345600 | Inverse of above; no high bit.
 
 Difficulty 1, the minimum allowed [difficulty](../resources/glossary.md#difficulty), is represented on [mainnet](../resources/glossary.md#mainnet) and the current [testnet](../resources/glossary.md#testnet) by the nBits value 0x1e0ffff0. Regtest mode uses a different difficulty 1 value---0x207fffff, the highest possible value below uint32_max which can be encoded; this allows near-instant building of blocks in [regression test mode](../resources/glossary.md#regression-test-mode).
 
-# Serialized Blocks
+## Serialized Blocks
 
 Under current [consensus rules](../resources/glossary.md#consensus-rules), a
 [block](../resources/glossary.md#block) is not valid unless its serialized size is less than or
 equal to 1 MB. All fields described below are counted towards the serialized size.
 
-| Bytes    | Name         | Data Type        | Description |
-| - | - | - | - |
+| Bytes    | Name         | Data Type        | Description
+| - | - | - | -
 | 80       | block header | block_header     | The [block header](../resources/glossary.md#block-header) in the format described in the [block header section](blockchain.md#block-headers).
 | *Varies* | txn_count    | [compactSize uint](../resources/glossary.md#compactsize) | The total number of transactions in this block, including the coinbase transaction.
 | *Varies* | txns         | [raw transaction](../resources/glossary.md#raw-transaction)  | Every transaction in this block, one after another, in raw transaction format.  Transactions must appear in the data stream in the same order their TXIDs appeared in the first row of the merkle tree.  See the [merkle tree section](blockchain.md#merkle-trees) for details.
@@ -122,16 +125,15 @@ block.
 
 Dimecoin's supply is inflationary until about the year 2346. As of the consensus updates in October 2023, the rate is set at about 1.4% for the first year, and transitioning to a daily decay that results in an effective annual reduction of 8% in block rewards. By 2348, the supply will approximately cap, adding an estimated 104,709,968,124.82 coins from December 2024 to 2346. These estimates may fluctuate due to changes in mining difficulty, daily block averages, and other variables.
 
-
 ### Treasury
 
 In October of 2023, a hybrid consensus mechanism was implemented successfully. Here is a breakdown of block subsidy allocation.
 
-| Subsidy allocation | Purpose |
-|-|-|
-| 45% | Mining / Staking Reward |
-| 45% | Masternode Reward       |
-| 10% | Foundation Pay          |
+| Subsidy allocation | Purpose
+|-|-
+| 45% | Mining / Staking Reward
+| 45% | Masternode Reward
+| 10% | Foundation Pay
 
 ### Block Reward
 
@@ -146,8 +148,8 @@ of the block subsidy with the remainder allocated to the Dimecoin Foundation.
 
 The following table details how the block subsidy and fees are allocated between miners/stakers, masternodes, and the foundation pays.
 
-| Payee | Block subsidy | Transaction fees | Description |
-| ----- | :-----: | :-------: | -|
-| Foundation | 10% | - | Payment for growth of the network (core dev, marketing, integration, etc.)
-| Miner/Staker | 45% |- | Payment for creating new blocks
-| Masternode | 45% | - | Payment for masternode services
+| Payee        | Block subsidy | Transaction fees | Description
+| -----        | :-----:       | :-------: | -----
+| Foundation   | 10% |-        | Payment for growth of the network (core dev, marketing, integration, etc.)
+| Miner/Staker | 45% |-        | Payment for creating new blocks
+| Masternode   | 45% |-        | Payment for masternode services

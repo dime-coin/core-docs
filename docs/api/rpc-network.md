@@ -3,6 +3,7 @@
   :title: Network RPCs
   :description: A list of all network connection related remote procedure calls in Dimecoin Core.  
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -25,7 +26,7 @@ The [`addnode` RPC](../api/rpc-network.md#addnode) attempts to add or remove a n
 | --------- | ------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `command` | string | Required<br>(exactly 1) | What to do with the IP address above.  Options are:<br>• `add` to add a node to the addnode list.  Up to 8 nodes can be added additional to the default 8 nodes. Not limited by `-maxconnections`<br>• `remove` to remove a node from the list.  If currently connected, this will disconnect immediately<br>• `onetry` to immediately attempt connection to the node even if the outgoing connection slots are full; this will only attempt the connection once |
 
-_Result---`null` plus error on failed remove_
+*Result---`null` plus error on failed remove_
 
 | Name     | Type | Presence                | Description                                                                                                                                                                                                                                             |
 | -------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,7 +52,7 @@ The [`clearbanned` RPC](../api/rpc-network.md#clearbanned) clears list of banned
 
 *Parameters: none*
 
-_Result---`null` on success_
+*Result---`null` on success_
 
 | Name     | Type | Presence                | Description                           |
 | -------- | ---- | ----------------------- | ------------------------------------- |
@@ -80,7 +81,7 @@ The [`disconnectnode` RPC](../api/rpc-network.md#disconnectnode) immediately dis
 
 | Name      | Type   | Presence                | Description                                                                                                                    |
 | --------- | ------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `address` | string | Required<br>(exactly 1) | The node you want to disconnect from as a string in the form of `<IP address>:<port>`.<br><br>*Updated in Bitcoin Core 0.14.1* |
+| `address` | string | Required<br>(exactly 1) | The node you want to disconnect from as a string in the form of `<IP address>:<port>`.<br> |
 
 *Parameter #2---nodeid*
 
@@ -88,7 +89,7 @@ The [`disconnectnode` RPC](../api/rpc-network.md#disconnectnode) immediately dis
 | ------ | ------ | -------- | -------------------------------------------- |
 | nodeid | number | Optional | The node ID (see `getpeerinfo` for node IDs) |
 
-_Result---`null` on success or error on failed disconnect_
+*Result---`null` on success or error on failed disconnect_
 
 | Name     | Type | Presence                | Description                                |
 | -------- | ---- | ----------------------- | ------------------------------------------ |
@@ -127,7 +128,7 @@ Prior to Dimecoin Core 2.0.0.0, this dummy parameter was required for historical
 
 | Name    | Type   | Presence                  | Description                   |
 | ------- | ------ | ------------------------- | ----------------------------- |
-| *Dummy* | *bool* | _Required<br>(exactly 1)_ | *Removed in Dimecoin Core 2.0.0.0* |
+| *Dummy* | *bool* | *Required<br>(exactly 1)_ | *Removed in Dimecoin Core 2.0.0.0* |
 
 Beginning with Dimecoin Core 2.0.0.0, this is the single (optional) parameter:
 
@@ -172,6 +173,7 @@ Result (real hostname and IP address replaced with [RFC5737](http://tools.ietf.o
   }
 ]
 ```
+
 *See also*
 
 * [AddNode](../api/rpc-network.md#addnode): attempts to add or remove a node from the addnode list, or to try a connection to a node once.
@@ -194,11 +196,13 @@ The [`getconnectioncount` RPC](../api/rpc-network.md#getconnectioncount) returns
 ```bash
 dimecoin-cli -mainnet getconnectioncount
 ```
+
 Result:
 
 ```text
 8
 ```
+
 *See also*
 
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
@@ -250,6 +254,7 @@ Result:
   }
 }
 ```
+
 *See also*
 
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
@@ -284,9 +289,9 @@ The [`getnetworkinfo` RPC](../api/rpc-network.md#getnetworkinfo) returns informa
 | → → →<br>`limited`                     | bool          | Required<br>(exactly 1) | Set to `true` if only connections to this network are allowed according to the `-onlynet` Dimecoin Core command-line/configuration-file parameter.  Otherwise set to `false`                                                                          |
 | → → →<br>`reachable`                   | bool          | Required<br>(exactly 1) | Set to `true` if connections can be made to or from this network.  Otherwise set to `false`                                                                                                                                                       |
 | → → →<br>`proxy`                       | string        | Required<br>(exactly 1) | The hostname and port of any proxy being used for this network.  If a proxy is not in use, an empty string                                                                                                                                        |
-| → → →<br>`proxy_randomize_credentials` | bool          | Required<br>(exactly 1) | *Added in Bitcoin Core 0.11.0*<br><br>Set to `true` if randomized credentials are set for this proxy. Otherwise set to `false`                                                                                                                    |
-| →<br>`relayfee`                        | number (DASH) | Required<br>(exactly 1) | The minimum relay fee per kilobyte for transactions in order for this node to accept it into its memory pool                                                                                                                                      |
-| →<br>`incrementalfee`                  | number (DASH) | Required<br>(exactly 1) | *Added in Dimecoin Core 0.12.3*<br><br>The minimum fee increment for mempool limiting or BIP 125 replacement in DASH/kB                                                                                                                               |
+| → → →<br>`proxy_randomize_credentials` | bool          | Required<br>(exactly 1) | Set to `true` if randomized credentials are set for this proxy. Otherwise set to `false`                                                                                                                    |
+| →<br>`relayfee`                        | number (DIME) | Required<br>(exactly 1) | The minimum relay fee per kilobyte for transactions in order for this node to accept it into its memory pool                                                                                                                                      |
+| →<br>`incrementalfee`                  | number (DIME) | Required<br>(exactly 1) | The minimum fee increment for mempool limiting or BIP 125 replacement in DIME/kB                                                                                                                               |
 | →<br>`localaddresses`                  | array         | Required<br>(exactly 1) | An array of objects each describing the local addresses this node believes it listens on                                                                                                                                                          |
 | → →<br>Address                         | object        | Optional<br>(0 or more) | An object describing a particular address this node believes it listens on                                                                                                                                                                        |
 | → → →<br>`address`                     | string        | Required<br>(exactly 1) | An IP address or .onion address this node believes it listens on.  This may be manually configured, auto detected, or based on [`version` messages](../reference/p2p-network-control-messages.md#version) this node received from its peers              |
@@ -342,6 +347,7 @@ Result (actual addresses have been replaced with [RFC5737](http://tools.ietf.org
   "warnings": ""
 }
 ```
+
 *See also*
 
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
@@ -371,9 +377,9 @@ The [`getpeerinfo` RPC](../api/rpc-network.md#getpeerinfo) returns data about ea
 | → →<br>`bytessent`              | number (int)        | Required<br>(exactly 1) | The total number of bytes we've sent to this node                                                                                                                                                                                                                                    |
 | → →<br>`bytesrecv`              | number (int)        | Required<br>(exactly 1) | The total number of bytes we've received from this node                                                                                                                                                                                                                              |
 | → →<br>`conntime`               | number (int)        | Required<br>(exactly 1) | The Unix epoch time when we connected to this node                                                                                                                                                                                                                                   |
-| → →<br>`timeoffset`             | number (int)        | Required<br>(exactly 1) | *Added in Bitcoin Core 0.12.0*<br><br>The time offset in seconds                                                                                                                                                                                                                     |
+| → →<br>`timeoffset`             | number (int)        | Required<br>(exactly 1) | The time offset in seconds                                                                                                                                                                                                                     |
 | → →<br>`pingtime`               | number (real)       | Required<br>(exactly 1) | The number of seconds this node took to respond to our last P2P [`ping` message](../reference/p2p-network-control-messages.md#ping)                                                                                                                                                         |
-| → →<br>`minping`                | number (real)       | Optional<br>(0 or 1)    | *Updated in Bitcoin Core 0.13.0*<br><br>The minimum observed ping time (if any at all)                                                                                                                                                                                               |
+| → →<br>`minping`                | number (real)       | Optional<br>(0 or 1)    | The minimum observed ping time (if any at all)                                                                                                                                                                                               |
 | → →<br>`pingwait`               | number (real)       | Optional<br>(0 or 1)    | The number of seconds we've been waiting for this node to respond to a P2P [`ping` message](../reference/p2p-network-control-messages.md#ping).  Only shown if there's an outstanding [`ping` message](../reference/p2p-network-control-messages.md#ping)                                          |
 | → →<br>`version`                | number (int)        | Required<br>(exactly 1) | The protocol version number used by this node.  See the [protocol versions section](../reference/p2p-network-protocol-versions.md) for more information                                                                                                                                     |
 | → →<br>`subver`                 | string              | Required<br>(exactly 1) | The user agent this node sends in its [`version` message](../reference/p2p-network-control-messages.md#version).  This string will have been sanitized to prevent corrupting the JSON results.  May be an empty string                                                                      |
@@ -388,7 +394,7 @@ The [`getpeerinfo` RPC](../api/rpc-network.md#getpeerinfo) returns data about ea
 | → →<br>`whitelisted`            | bool                | Required<br>(exactly 1) | Set to `true` if the remote peer has been whitelisted; otherwise, set to `false`.  Whitelisted peers will not be banned if their ban score exceeds the maximum (100 by default).  By default, peers connecting from localhost are whitelisted                                        |
 | → →<br>`bytessent_per_msg`      | string : <br>object | Required<br>(exactly 1) | Information about total sent bytes aggregated by message type                                                                                                                                                                                  |
 | → → →<br>Message Type           | number (int)        | Required<br>(1 or more) | Total sent bytes aggregated by message type. One field for every used message type                                                                                                                                                                                                   |
-| → →<br>`bytesrecv_per_msg`      | string : <br>object | Required<br>(exactly 1) | *Added in Bitcoin Core 0.13.0*<br><br>Information about total received bytes aggregated by message type                                                                                                                                                                              |
+| → →<br>`bytesrecv_per_msg`      | string : <br>object | Required<br>(exactly 1) | Information about total received bytes aggregated by message type                                                                                                                                                                              |
 | → → →<br>Message Type           | number (int)        | Required<br>(1 or more) | Total received bytes aggregated by message type. One field for every used message type                                                                                                                                                                                               |
 
 *Example from Dimecoin Core 2.3.0.0*
@@ -448,6 +454,7 @@ Result (edited to show only a single entry, with IP addresses changed to
   }
 ]
 ```
+
 *See also*
 
 * [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
@@ -504,7 +511,7 @@ The [`ping` RPC](../api/rpc-network.md#ping) sends a P2P ping message to all con
 
 *Parameters: none*
 
-_Result---`null`_
+*Result---`null`_
 
 | Name     | Type | Presence | Description        |
 | -------- | ---- | -------- | ------------------ |
@@ -570,7 +577,7 @@ The [`setban` RPC](../api/rpc-network.md#setban) attempts add or remove a IP/Sub
 | -------- | ---- | -------------------- | ---------------------------------------------------------------------------------------- |
 | Absolute | bool | Optional<br>(0 or 1) | If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT) |
 
-_Result---`null` on success_
+*Result---`null` on success_
 
 | Name     | Type | Presence                | Description        |
 | -------- | ---- | ----------------------- | ------------------ |
@@ -601,7 +608,7 @@ The [`setnetworkactive` RPC](../api/rpc-network.md#setnetworkactive) disables/en
 | -------- | ---- | ----------------------- | ---------------------------------------------------------------------------------------------------- |
 | Activate | bool | Required<br>(exactly 1) | Set to `true` to enable all P2P network activity. Set to `false` to disable all P2P network activity |
 
-_Result---`null` or error on failure_
+*Result---`null` or error on failure_
 
 | Name     | Type | Presence                | Description                                                                                 |
 | -------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------- |

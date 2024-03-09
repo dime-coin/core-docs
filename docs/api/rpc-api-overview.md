@@ -4,6 +4,7 @@
   :title: RPC API Overview
   :description: Dimecoin Core provides an RPC interface for administrative tasks, wallet operations, and network/blockchain queries, with client libraries available in multiple languages and a built-in dimecoin-cli program for command-line and RPC API interaction. 
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -14,9 +15,9 @@
 
 Dimecoin Core provides a remote procedure call (RPC) interface for various administrative tasks, [wallet](../resources/glossary.md#wallet) operations, and queries about [network](../resources/glossary.md#network) and [blockchain](../resources/glossary.md#block-chain) data.
 
-Open-source client libraries for the RPC interface are readily available in most modern programming languages. Unless you are working on a custom framework, you won't need to write your own from scratch. 
+Open-source client libraries for the RPC interface are readily available in most modern programming languages. Unless you are working on a custom framework, you won't need to write your own from scratch.
 
-Dimecoin Core also ships with its own compiled C++ RPC client, `dimecoin-cli,` located in the `bin` directory alongside `dimecoind` and `dimecoin-qt.` The `dimecoin-cli` program can be used as a command-line interface (CLI) to Dimecoin Core or for making RPC calls from applications written in languages lacking a suitable native client. 
+Dimecoin Core also ships with its own compiled C++ RPC client, `dimecoin-cli,` located in the `bin` directory alongside `dimecoind` and `dimecoin-qt.` The `dimecoin-cli` program can be used as a command-line interface (CLI) to Dimecoin Core or for making RPC calls from applications written in languages lacking a suitable native client.
 
 The remainder of this section describes the Dimecoin Core RPC protocol in detail.
 
@@ -190,9 +191,8 @@ Continuing with the example above, the output from the `dimecoin-cli` command wo
 
 #### Multi-Wallet Support
 
-Since version 2.0.0.0, Dimecoin Core has supported loading multiple wallets simultaneously. Consequently, when multiple wallet 
-files are active, wallet-related RPC commands require specifying the wallet name to guarantee the accurate execution of 
-commands on the intended wallet.
+Since version 2.0.0.0, Dimecoin Core has supported loading multiple wallets simultaneously. Consequently, when multiple wallet
+files are active, wallet-related RPC commands require specifying the wallet name to guarantee the accurate execution of commands on the intended wallet.
 
 **Dimecoin-cli Example**
 
@@ -278,7 +278,7 @@ Block height out of range
 
 #### Batch Requests
 
-Request batching allows for the execution of multiple RPC commands in a single HTTP request, enhancing efficiency as outlined in the [JSON-RPC 2.0 specification](http://www.jsonrpc.org/specification#batch). Clients can bundle several Request objects into a JSON array and send them through a `POST` request. Responses correspondingly arrive in a JSON array, each Response object matching its Request counterpart. This method could significantly optimize performance based on how it's applied. Note, however, that the `dimecoin-cli` tool does not facilitate request batching. 
+Request batching allows for the execution of multiple RPC commands in a single HTTP request, enhancing efficiency as outlined in the [JSON-RPC 2.0 specification](http://www.jsonrpc.org/specification#batch). Clients can bundle several Request objects into a JSON array and send them through a `POST` request. Responses correspondingly arrive in a JSON array, each Response object matching its Request counterpart. This method could significantly optimize performance based on how it's applied. Note, however, that the `dimecoin-cli` tool does not facilitate request batching.
 
 ```shell
 curl --user 'my_username:my_secret_password' --data-binary '''

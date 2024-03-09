@@ -4,6 +4,7 @@
   :title: Mining RPCs
   :description: A list of remote procedure calls for mining in Dimecoin.
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -54,7 +55,7 @@ Name | Type | Presence | Description
 → → →<br>`sigops` | number | Required<br>(exactly 1) | Total SigOps. If not present, the count is unknown (clients MUST NOT assume there aren't any)
 →<br>`coinbaseaux` | object | Required<br>(exactly 1) | A object containing data that should be included in the coinbase scriptSig content
 →<br>`coinbasevalue` | number | Required<br>(exactly 1) | The maximum allowable input to coinbase transaction, including the generation award and transaction fees (in dimecoins)
-→<br>`coinbasetxn` | object | Required<br>(exactly 1) |
+→<br>`longpollid` | number | Required<br>(exactly1) | Version identifier that represents the current state of the blockchain as seen by the node.
 →<br>`target` | string | Required<br>(exactly 1) | The hash target
 →<br>`mintime` | number | Required<br>(exactly 1) | The minimum timestamp appropriate for next block time in seconds since epoch
 →<br>`mutable` | array (string) | Required<br>(exactly 1) | The list of ways the block template may be changed
@@ -79,6 +80,7 @@ Name | Type | Presence | Description
 ```bash
 dimecoin-cli -mainnet getblocktemplate
 ```
+
 Result:
 
 ```json
@@ -124,6 +126,7 @@ Result:
   "masternode_payments_enforced": false
 }
 ```
+
 *See also*
 
 * [GetMiningInfo](../api/rpc-mining.md##getmininginfo): returns various mining-related information.
@@ -156,6 +159,7 @@ Name | Type | Presence | Description
 ```bash
 dimecoin-cli getmininginfo
 ```
+
 Result:
 
 ```json
@@ -173,6 +177,7 @@ Result:
   "warnings": ""
 }
 ```
+
 *See also*
 
 * [GetMemPoolInfo](../api/rpc-blockchain.md##getmempoolinfo): returns information about the node's current transaction memory pool.
@@ -209,11 +214,13 @@ difficulty change before block 4000.
 ```bash
 dimecoin-cli -mainnet getnetworkhashps -1 4000
 ```
+
 Result:
 
 ```text
 938189.1678726483
 ```
+
 *See also*
 
 * [GetDifficulty](../api/rpc-blockchain.md##getdifficulty): returns the proof-of-work and proof-of-stake difficulties as a multiple of the minimum difficulty.
@@ -272,7 +279,7 @@ Name | Type | Presence | Description
 
 Submit the following block with the a dummy value, "test".
 
-```bash                                                                         
+```bash
 dimecoin-cli -mainnet submitblock 01000000010000000000000000000000000000000000000\
 000000000000000000000000000ffffffff2103423d58047a81eb650881008e81806400005468\
 65426565506f6f6c2e636f6d00000000000208ddce00000000001976a914b153550dd81025c35\
@@ -286,6 +293,7 @@ Result (the block above was already on a copy of the local chain):
 ```text
 duplicate
 ```
+
 *See also*
 
 * [GetBlockTemplate](../api/rpc-mining.md##getblocktemplate): gets a block template or proposal for use with mining software.

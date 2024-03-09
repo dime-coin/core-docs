@@ -4,6 +4,7 @@
   :title: Dimecoin RPCs
   :description: A list of remote procedure calls that classify under Dimecoin RPCs.
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -12,7 +13,7 @@
 
 ### GetSuperblockBudget
 
-The [`getsuperblockbudget` RPC](#getsuperblockbudget) returns the absolute maximum sum of superblock payments allowed. 
+The [`getsuperblockbudget` RPC](#getsuperblockbudget) returns the absolute maximum sum of superblock payments allowed.
 
 *Parameter #1---block index*
 
@@ -24,7 +25,7 @@ The [`getsuperblockbudget` RPC](#getsuperblockbudget) returns the absolute maxim
 
 | Name     | Type         | Presence                | Description                                                      |
 | -------- | ------------ | ----------------------- | ---------------------------------------------------------------- |
-| `result` | number (int) | Required<br>(exactly 1) | The absolute maximum sum of superblock payments allowed, in DASH |
+| `result` | number (int) | Required<br>(exactly 1) | The absolute maximum sum of superblock payments allowed, in DIME |
 
 *Example from Dash Core 0.12.2. Superblocks not utilized in Dimecoin Core 2.3.0.0*
 
@@ -37,10 +38,6 @@ Result:
 ``` text
 367.20
 ```
-
-*See also:*
-
-* [GetGovernanceInfo](#getgovernanceinfo): returns an object containing governance parameters.
 
 ### GObject
 
@@ -79,6 +76,7 @@ Result:
   "36"
 }
 ```
+
 #### Masternode Current
 
 The `masternode current` RPC prints info on current masternode winner to be paid the next block (calculated locally).
@@ -115,6 +113,7 @@ Result:
   "activeseconds": 2245402
 }
 ```
+
 #### Masternode List
 
 The `masternode list` prints a list of all known masternodes.
@@ -163,6 +162,7 @@ Result:
   "f6c83fd96bfaa47887c4587cceadeb9af6238a2c86fe36b883c4d7a6867eab0f-1"
 ]
 ```
+
 #### Masternode Status
 
 The `masternode status` RPC prints masternode status information.
@@ -567,6 +567,7 @@ Result:
   "IsFailed": false
 }
 ```
+
 **Command Mode - `next`**
 
 *Result---next command return status*
@@ -580,11 +581,13 @@ Result:
 ``` bash
 dimecoin-cli -mainnet mnsync next
 ```
+
 Result:
 
 ```text
 sync updated to MASTERNODE_SYNC_GOVERNANCE
 ```
+
 **Command Mode - `reset`**
 
 *Result---reset command return status*
@@ -598,6 +601,7 @@ sync updated to MASTERNODE_SYNC_GOVERNANCE
 ``` bash
 dimecoin-cli -mainnet mnsync reset
 ```
+
 Result:
 
 ```text
@@ -633,6 +637,7 @@ The [`spork` RPC](#spork) shows information about the current state of sporks.
 ``` bash
 dimecoin-cli -mainnet spork show
 ```
+
 Result:
 
 ``` json
@@ -649,6 +654,7 @@ Result:
   "SPORK_15_POS_DISABLED": 4070908800
 }
 ```
+
 **Command Mode - `active`**
 
 *Result---spork active status*
@@ -663,6 +669,7 @@ Result:
 ``` bash
 dimecoin-cli -mainnet spork active
 ```
+
 Result:
 
 ``` json
@@ -674,6 +681,7 @@ Result:
   "SPORK_12_RECONSIDER_BLOCKS": true,
 }
 ```
+
 ## VoteRaw
 
 The [`voteraw` RPC](#voteraw) compiles and relays a governance vote with provided external signature instead of signing vote internally *Spork currently not active in Dimecoin Core*
@@ -716,9 +724,9 @@ The [`voteraw` RPC](#voteraw) compiles and relays a governance vote with provide
 
 *Result---votes for specified governance*
 
-Name | Type | Presence | Description
---- | --- | --- | ---
-Result | object | Required<br>(exactly 1) | The vote result
+|Name   | Type   | Presence | Description  |
+|---    | ---    | ---      | ---          |
+|Result | object | Required<br>(exactly 1) | The vote result|
 
 *See also:*
 

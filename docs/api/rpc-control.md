@@ -4,6 +4,7 @@
   :title: Control RPCs
   :description: A list of all the Control RPCs in Dimecoin.
 ```
+
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -53,6 +54,7 @@ Result:
   }
 }
 ```
+
 *See also*
 
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
@@ -118,16 +120,16 @@ Name | Type | Presence | Description
 *Parameter #2---exclude categories*
 
 Name | Type | Presence | Description
---- | --- | --- | ---
+---  | ---  | ---      | ---
 `exclude` | array of strings | Optional<br>(0 or 1) | Enable debugging for these categories
 
 The categories are:
 
-| Type | Category |
-| - | - |
-| Special | • `0` or `none` - Disables all categories <br>• `1` or `all` - Enables all categories <br>• `dimecoin` - enables/disables all Dimecoin categories |
-| Standard | `addrman`, `bench` <br>`cmpctblock`, `coindb`, `estimatefee`, `http`, `leveldb`, `libevent`, `mempool`, `mempoolrej`, `net`, `proxy`, `qt`, `rand`, `reindex`, `rpc`, `selectcoins`, `tor`, `db`, `zmq`|
-| Dimecoin | `gobject`, `instantsend`, `mnpayments`, `mnsync`, `spork` |
+Type  | Category
+---   | ---
+Special | • `0` or `none` - Disables all categories <br>• `1` or `all` - Enables all categories <br>• `dimecoin` - enables/disables all Dimecoin categories
+Standard | `addrman`, `bench` <br>`cmpctblock`, `coindb`, `estimatefee`, `http`, `leveldb`, `libevent`, `mempool`, `mempoolrej`, `net`, `proxy`, `qt`, `rand`, `reindex`, `rpc`, `selectcoins`, `tor`, `db`, `zmq`
+Dimecoin | `gobject`, `instantsend`, `mnpayments`, `mnsync`, `spork`
 
 *Result---a list of the logging categories that are active*
 
