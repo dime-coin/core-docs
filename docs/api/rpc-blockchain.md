@@ -4,7 +4,6 @@
   :title: Blockchain RPCs
   :description: A list of all the Blockchain RPCs in Dimecoin.
 ```
-
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
@@ -19,16 +18,15 @@ The [`getbestblockhash` RPC](../api/rpc-blockchain.md#getbestblockhash) returns 
 
 *Result---hash of the tip from the best blockchain*
 
-Name | Type | Presence | Description 
+Name | Type | Presence | Description
 --- | --- | --- | ---
-`result` | string (hex) | Required<br>(exactly 1) | The hash of the block header from the most recent block on the best blockchain, encoded as hex in RPC byte order 
+`result` | string (hex) | Required<br>(exactly 1) | The hash of the block header from the most recent block on the best blockchain, encoded as hex in RPC byte order
 
 *Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet getbestblockhash
 ```
-
 Result:
 
 ``` text
@@ -157,9 +155,8 @@ dimecoin-cli -mainnet getblock \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91 \
             0
 ```
-
 Result (wrapped):
-
+                                                                
 ``` text
 0100000001000000000000000000000000000000000000000000000000000000\
 0000000000ffffffff21032851560421d290650881022f9cea04000054686542\
@@ -174,7 +171,6 @@ Get the same block in JSON:
 dimecoin-cli -mainnet getblock \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91
 ```
-
 Result:
 
 ``` json
@@ -209,7 +205,6 @@ Get the same block in JSON with transaction details:
 dimecoin-cli -mainnet getblock \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91 2
 ```
-
 Result:
 
 ``` json
@@ -280,7 +275,6 @@ Result:
   "nextblockhash": "000000000000b30ef27147bcc0829c540d0bd01076f9727d9a3a3c4c2e1f0d1d"
 }
 ```
-
 *See also*
 
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
@@ -334,7 +328,6 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getblockchaininfo
 ```
-
 Result:
 
 ``` json
@@ -392,7 +385,6 @@ Result:
   "warnings": ""
 }
 ```
-
 *See also*
 
 * [GetMiningInfo](../api/rpc-mining.md#getmininginfo): returns various mining-related information.
@@ -422,7 +414,6 @@ Result:
 ``` text
 5781103
 ```
-
 *See also*
 
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
@@ -455,7 +446,6 @@ Result:
 ``` text
 00000000539760ef8dd9d933743b6281e8337359ecfa35917f924e52156c7566
 ```
-
 *See also*
 
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
@@ -512,21 +502,18 @@ dimecoin-cli -mainnet getblockheader \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91 \
             false
 ```
-
 Result (wrapped):
 
 ``` text
 00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91\
 
 ```
-
 Get the same block in JSON:
 
 ``` bash
 dimecoin-cli -mainnet getblockheader \
             00000000002490fad52485862dddb08f3fa31812b6c3b44136dd481ad7014d91
 ```
-
 Result:
 
 ``` json
@@ -548,7 +535,6 @@ Result:
   "nextblockhash": "000000000000b30ef27147bcc0829c540d0bd01076f9727d9a3a3c4c2e1f0d1d"
 }
 ```
-
 *See also*
 
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
@@ -560,7 +546,6 @@ Result:
 ```{eval-rst}
 .. _api-rpc-blockchain-getblockheaders:
 ```
-
 ### GetChainTips
 
 The [`getchaintips` RPC](../api/remote-procedure-calls-blockchain.md#getchaintips) returns information about the highest-height block (tip) of each local block chain.
@@ -586,7 +571,6 @@ Name | Type | Presence | Description
 ``` bash
 dash-cli -testnet getchaintips
 ```
-
 ``` json
 [
   {
@@ -600,7 +584,6 @@ dash-cli -testnet getchaintips
   }
 ]
 ```
-
 *See also*
 
 * [GetBestBlockHash](../api/remote-procedure-calls-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best block chain.
@@ -642,7 +625,6 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getchaintxstats
 ```
-
 Result:
 
 ``` json
@@ -656,7 +638,6 @@ Result:
   "txrate": 0.03272732132274444
 }
 ```
-
 *See also: none*
 
 ### GetCheckPoint
@@ -670,8 +651,7 @@ The `getcheckpoint` RPC returns info of latest syncronized checkpoint.
 ``` bash
 dimecoin-cli -mainnet getcheckpoint
 ```
-
-Result:
+Result: 
 
 ``` text
 {
@@ -680,7 +660,6 @@ Result:
   "timestamp": 1709854037
 }
 ```
-
 ### GetDifficulty
 
 The [`getdifficulty` RPC](../api/rpc-blockchain.md#getdifficulty) returns the proof-of-work difficulty as a multiple of the minimum difficulty.
@@ -698,14 +677,12 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getdifficulty
 ```
-
 Result:
 
 ``` text
   "proof-of-work": 7000.711921042552,
   "proof-of-stake": 13105918.85568522
 ```
-
 *See also*
 
 * [GetNetworkHashPS](../api/rpc-mining.md#getnetworkhashps): returns the estimated network hashes per second based on the last n blocks.
@@ -714,7 +691,6 @@ Result:
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempoolancestors:
 ```
-
 ### GetMemPoolAncestors
 
 The [`getmempoolancestors` RPC](../api/rpc-blockchain.md#getmempoolancestors) returns all in-mempool ancestors for a transaction in the mempool.
@@ -773,7 +749,6 @@ Name | Type | Presence | Description
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempooldescendants:
 ```
-
 ### GetMemPoolDescendants
 
 The [`getmempooldescendants` RPC](../api/rpc-blockchain.md#getmempooldescendants) returns all in-mempool descendants for a transaction in the mempool.
@@ -834,7 +809,6 @@ Name | Type | Presence | Description
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempoolentry:
 ```
-
 ### GetMemPoolEntry
 
 The [`getmempoolentry` RPC](../api/rpc-blockchain.md#getmempoolentry) returns mempool data for given transaction (must be in mempool).
@@ -876,7 +850,6 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli getmempoolentry 1c789d3697b0036af0176d0bed968d27dc72733310e406a37e08ec8f48883ff0
 ```
-
 Result:
 
 ``` json
@@ -905,7 +878,6 @@ Result:
   ]
 }
 ```
-
 *See also*
 
 * [GetMemPoolAncestors](../api/rpc-blockchain.md#getmempoolancestors): returns all in-mempool ancestors for a transaction in the mempool.
@@ -936,7 +908,6 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet getmempoolinfo
 ```
-
 Result:
 
 ``` json
@@ -949,7 +920,6 @@ Result:
   "minrelaytxfee": 0.01000
 }
 ```
-
 *See also*
 
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
@@ -959,7 +929,6 @@ Result:
 ```{eval-rst}
 .. _api-rpc-blockchain-getrawmempool:
 ```
-
 ### GetRawMemPool
 
 The [`getrawmempool` RPC](../api/rpc-blockchain.md#getrawmempool) returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
@@ -1011,7 +980,6 @@ The default (`false`):
 ``` bash
 dimecoin-cli getrawmempool
 ```
-
 Result:
 
 ``` json
@@ -1025,7 +993,6 @@ Verbose output (`true`):
 ``` bash
 dimecoin-cli getrawmempool true
 ```
-
 Result:
 
 ``` json
@@ -1056,7 +1023,6 @@ Result:
   }
 }
 ```
-
 *See also*
 
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
@@ -1112,7 +1078,6 @@ dimecoin-cli -mainnet gettxout \
   84e0bb9b5efecb46dec47d7e22d91f7bab6c4231acdbe165f8bc85d74d526067 \
   0 true
 ```
-
 Result:
 
 ``` json
@@ -1132,7 +1097,6 @@ Result:
   "coinbase": false
 }
 ```
-
 *See also*
 
 * [GetRawTransaction](../api/rpc-raw-transactions.md#getrawtransaction): gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dimecoin Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Dimecoin Core startup settings.
@@ -1141,6 +1105,7 @@ Result:
 ### GetTxOutProof
 
 The [`gettxoutproof` RPC](../api/rpc-blockchain.md#gettxoutproof) returns a hex-encoded proof that one or more specified transactions were included in a block.
+
 
 **NOTE:**
 By default this function only works when there is an
@@ -1202,7 +1167,6 @@ Name | Type | Presence | Description
 ``` bash
 dimecoin-cli -mainnet gettxoutsetinfo
 ```
-
 Result:
 
 ``` json
@@ -1217,7 +1181,6 @@ Result:
   "total_amount": 3117947018953.76811
 }
 ```
-
 *See also*
 
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
@@ -1250,7 +1213,6 @@ The [`savemempool` RPC](../api/rpc-blockchain.md#savemempool) dumps the mempool 
 ``` bash
 dimecoin-cli savemempool
 ```
-
 Result (no output from dimecoin-cli, returns `null`).
 
 ### VerifyChain
@@ -1282,7 +1244,6 @@ Verify the most recent 1000 blocks using the most detailed check:
 ``` bash
 dimecoin-cli -mainnet verifychain 4 1000
 ```
-
 A window will pop up as it scans the blocks. When done the result should display as follows:
 
 Result ():
@@ -1290,7 +1251,6 @@ Result ():
 ``` json
 true
 ```
-
 *See also*
 
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
@@ -1329,7 +1289,6 @@ Result:
 "243ceb732dae2a027d94b046bf7e9861295863bf575d7e2f482fbd122a719e9c"
 ]
 ```
-
 *See also*
 
 * [GetTxOutProof](../api/rpc-blockchain.md#gettxoutproof): returns a hex-encoded proof that one or more specified transactions were included in a block.
