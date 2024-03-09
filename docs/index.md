@@ -96,6 +96,17 @@ reference/improvement-proposals
 :hidden:
 
 api/rpc-api-overview
+api/rpc-quick-reference
+api/rpc-blockchain
+api/rpc-control
+api/rpc-dime
+api/rpc-generating
+api/rpc-mining
+api/rpc-network
+api/rpc-raw-transactions
+api/rpc-utility
+api/rpc-wallet
+api/rpc-wallet-deprecated
 api/http-rest
 api/zmq
 ```
