@@ -22,7 +22,7 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | string (hex) | Required<br>(exactly 1) | The hash of the block header from the most recent block on the best blockchain, encoded as hex in RPC byte order
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet getbestblockhash
@@ -493,7 +493,7 @@ Name | Type | Presence | Description
 →<br>`previousblockhash` | string (hex) | Optional<br>(0 or 1) | The hash of the header of the previous block, encoded as hex in RPC byte order.  Not returned for genesis block
 →<br>`nextblockhash` | string (hex) | Optional<br>(0 or 1) | The hash of the next block on the best blockchain, if known, encoded as hex in RPC byte order
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 Get a block header in raw hex:
 
@@ -620,7 +620,7 @@ Name | Type | Presence | Description
 →<br>`window_interval` | numeric | Optional<br>(0 or 1) | The elapsed time in the window in seconds. Only returned if `window_block_count` is > 0
 →<br>`txrate` | numeric | Optional<br>(0 or 1) | The average rate of transactions per second in the window. Only returned if `window_interval` is > 0
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet getchaintxstats
@@ -646,7 +646,7 @@ The `getcheckpoint` RPC returns info of latest syncronized checkpoint.
 
 *Parameters: none*
 
-Example from Dimecoin Core 2.3.0.0
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet getcheckpoint
@@ -672,7 +672,7 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | number (real) | Required<br>(exactly 1) | Returns the proof-of-work and proof-of-stake difficulties as a multiple of the minimum difficulty.
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet getdifficulty
@@ -845,7 +845,7 @@ Name | Type | Presence | Description
 →<br>`spentby` | array | Required<br>(exactly 1) |  An array of unconfirmed transactions spending outputs from this transaction
 → →<br>TXID | string | Optional (0 or more) | The TXIDs of any unconfirmed transactions spending from this transaction
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli getmempoolentry 1c789d3697b0036af0176d0bed968d27dc72733310e406a37e08ec8f48883ff0
@@ -903,7 +903,7 @@ Name | Type | Presence | Description
 →<br>`mempoolminfee` | number | Required<br>(exactly 1) | Minimum fee rate in DASH/kB for tx to be accepted. Is the maximum of minrelaytxfee and minimum mempool fee
 →<br>`minrelaytxfee` | numeric | Required<br>(exactly 1) | Current minimum relay fee for transactions
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet getmempoolinfo
@@ -1068,7 +1068,7 @@ Name | Type | Presence | Description
 → → →<br>Address | string | Required<br>(1 or more) | A P2PKH or P2SH address
 →<br>`coinbase` | bool | Required<br>(exactly 1) | Set to `true` if the transaction output belonged to a coinbase transaction; set to `false` for all other transactions.  Coinbase transactions need to have 101 confirmations before their outputs can be spent
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 Get the UTXO from the following transaction from the first output index ("0"),
 searching the memory pool if necessary.
@@ -1162,7 +1162,7 @@ Name | Type | Presence | Description
 →<br>`disk_size` | numeric | Required<br>(exactly 1) | The estimated size of the chainstate on disk
 →<br>`total_amount` | number (DIME) | Required<br>(exactly 1) | The total amount of Dash in the UTXO set
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli -mainnet gettxoutsetinfo
@@ -1208,7 +1208,7 @@ The [`savemempool` RPC](../api/rpc-blockchain.md#savemempool) dumps the mempool 
 
 *Parameters: none*
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 ``` bash
 dimecoin-cli savemempool
@@ -1237,7 +1237,7 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | bool | Required<br>(exactly 1) | Set to `true` if verified; set to `false` if verification failed for any reason
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 Verify the most recent 1000 blocks using the most detailed check:
 
