@@ -563,7 +563,7 @@ Result:
 
 ### GetChainTips
 
-The [`getchaintips` RPC](../api/remote-procedure-calls-blockchain.md#getchaintips) returns information about the highest-height block (tip) of each local block chain.
+The [`getchaintips` RPC](../api/rpc-blockchain.md#getchaintips) returns information about the highest-height block (tip) of each local block chain.
 
 *Parameters: none*
 
@@ -603,9 +603,9 @@ dimecoin-cli -testnet getchaintips
 
 *See also*
 
-* [GetBestBlockHash](../api/remote-procedure-calls-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best block chain.
-* [GetBlock](../api/remote-procedure-calls-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
-* [GetBlockChainInfo](../api/remote-procedure-calls-blockchain.md#getblockchaininfo): provides information about the current state of the block chain.
+* [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best block chain.
+* [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
+* [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the block chain.
 
 ### GetChainTxStats
 
