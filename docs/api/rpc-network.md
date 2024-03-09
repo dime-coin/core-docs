@@ -26,7 +26,7 @@ The [`addnode` RPC](../api/rpc-network.md#addnode) attempts to add or remove a n
 | --------- | ------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `command` | string | Required<br>(exactly 1) | What to do with the IP address above.  Options are:<br>• `add` to add a node to the addnode list.  Up to 8 nodes can be added additional to the default 8 nodes. Not limited by `-maxconnections`<br>• `remove` to remove a node from the list.  If currently connected, this will disconnect immediately<br>• `onetry` to immediately attempt connection to the node even if the outgoing connection slots are full; this will only attempt the connection once |
 
-*Result---`null` plus error on failed remove_
+*Result---`null` plus error on failed remove*
 
 | Name     | Type | Presence                | Description                                                                                                                                                                                                                                             |
 | -------- | ---- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,7 +52,7 @@ The [`clearbanned` RPC](../api/rpc-network.md#clearbanned) clears list of banned
 
 *Parameters: none*
 
-*Result---`null` on success_
+*Result---`null` on success*
 
 | Name     | Type | Presence                | Description                           |
 | -------- | ---- | ----------------------- | ------------------------------------- |
@@ -128,7 +128,7 @@ Prior to Dimecoin Core 2.0.0.0, this dummy parameter was required for historical
 
 | Name    | Type   | Presence                  | Description                   |
 | ------- | ------ | ------------------------- | ----------------------------- |
-| *Dummy* | *bool* | *Required<br>(exactly 1)_ | *Removed in Dimecoin Core 2.0.0.0* |
+| *Dummy* | *bool* | *Required<br>(exactly 1)* | *Removed in Dimecoin Core 2.0.0.0* |
 
 Beginning with Dimecoin Core 2.0.0.0, this is the single (optional) parameter:
 
@@ -511,7 +511,7 @@ The [`ping` RPC](../api/rpc-network.md#ping) sends a P2P ping message to all con
 
 *Parameters: none*
 
-*Result---`null`_
+*Result---`null`*
 
 | Name     | Type | Presence | Description        |
 | -------- | ---- | -------- | ------------------ |
@@ -577,7 +577,7 @@ The [`setban` RPC](../api/rpc-network.md#setban) attempts add or remove a IP/Sub
 | -------- | ---- | -------------------- | ---------------------------------------------------------------------------------------- |
 | Absolute | bool | Optional<br>(0 or 1) | If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT) |
 
-*Result---`null` on success_
+*Result---`null` on success*
 
 | Name     | Type | Presence                | Description        |
 | -------- | ---- | ----------------------- | ------------------ |
