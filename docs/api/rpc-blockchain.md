@@ -1272,7 +1272,7 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | string | Required<br>(exactly 1) | The txid(s) which the proof commits to, or empty array if the proof cannot be validated
 
-Example from Dimecoin Core 2.3.0.0*
+*Example from Dimecoin Core 2.3.0.0*
 
 Verify a proof:
 
