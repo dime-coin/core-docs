@@ -11,7 +11,8 @@
 
 ## Wallet RPCs
 
-> **NOTE**
+> **NOTE:**
+>
 > Wallet Support
 >
 > RPCs that require wallet support are **not available on masternodes** for security reasons. Such RPCs are designated with a "*Requires wallet support*" message.
@@ -78,7 +79,7 @@ true
 
 ### AddMultiSigAddress
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -143,7 +144,7 @@ Result:
 
 ### BackupWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -173,7 +174,7 @@ dimecoin-cli -mainnet backupwallet /tmp/backup.dat
   
 ## CreateWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -220,7 +221,7 @@ Result:
 }
 ```
 
-> **NOTE**
+> **NOTE:**
 >
 > In the example above, a new directory named `new-wallet` was created in the current data directory (`~/.dimecoincore/testnet3/`). This new directory contains the wallet.dat file and other related wallet files for the new wallet.
 
@@ -230,7 +231,7 @@ Result:
 
 ### DumpPrivKey
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
 
@@ -267,7 +268,7 @@ dQZZ4awQvcDHyFS3CmURqSgeTobQm9t9nyUr337kvUtsWsnvvQyw
 
 ## DumpWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
 
@@ -337,7 +338,7 @@ cTGSKYaQTQabnjNSwCqpjYXiucVujTXiwp9dzmJV9cNAiayAJusi 2018-12-14T17:24:37Z change
 
 ### EncryptWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -380,11 +381,11 @@ HD). You need to make a new backup.
 
 ### GetAddressInfo
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
-The [`getaddressinfo` RPC](../api/rpc-wallet.md#getaddressinfo) returns information about the given Dimecoin address. Note: Some information requires the address to be in the wallet.
+The [`getaddressinfo` RPC](../api/rpc-wallet.md#getaddressinfo) returns information about the given Dimecoin address. NOTE:: Some information requires the address to be in the wallet.
 
 *Parameter #1---a P2PKH or P2SH address*
 
@@ -488,7 +489,7 @@ Result:
 
 ### GetAddressesByLabel
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -533,7 +534,7 @@ Result:
 
 ### GetBalance
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -648,7 +649,7 @@ Result:
 
 ### GetRawChangeAddress
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -681,7 +682,7 @@ Result:
 
 ### GetReceivedByAddress
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 >
@@ -749,7 +750,7 @@ Result:
 
 ### GetReceivedByLabel
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -805,7 +806,7 @@ Result:
 
 ### GetTransaction
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -907,7 +908,7 @@ Result:
 
 ### GetUnconfirmedBalance
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -939,7 +940,7 @@ Result (no unconfirmed incoming payments):
 
 ### GetWalletInfo
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -996,7 +997,7 @@ Result:
 
 ### ImportAddress
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**)
 
@@ -1065,7 +1066,7 @@ watch-only test
 
 ### ImportMulti
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Wallet must be unlocked.
 
@@ -1150,7 +1151,7 @@ Result (scriptPubKey import failed because `internal` was not set to `true`):
 
 ### ImportPrivKey
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Wallet must be unlocked.
 
@@ -1172,7 +1173,7 @@ The [`importprivkey` RPC](../api/rpc-wallet.md#importprivkey) adds a private key
 
 | Name   | Type | Presence             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ------ | ---- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet (including transaction affecting the newly-added address for this private key).  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  Notes: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
+| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet (including transaction affecting the newly-added address for this private key).  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  NOTE:s: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
 
 *Result---`null` on success*
 
@@ -1204,7 +1205,7 @@ dimecoin-cli -mainnet importprivkey \
 
 ### ImportPrunedFunds
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 > *As of Dimecoin Core 2.0.0.0 pruned wallets are not supported*
@@ -1264,7 +1265,7 @@ The [`importpubkey` RPC](../api/rpc-wallet.md#importpubkey) imports a public key
 
 | Name   | Type | Presence             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------ | ---- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet.  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  Notes: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
+| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet.  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  NOTE:s: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
 
 *Result---`null` on success*
 
@@ -1294,7 +1295,7 @@ dimecoin-cli -mainnet importpubkey \
 
 ### ImportWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
 
@@ -1329,7 +1330,7 @@ dimecoin-cli -mainnet importwallet /tmp/dump.txt
 
 ### KeyPoolRefill
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
 
@@ -1365,7 +1366,7 @@ dimecoin-cli -mainnet keypoolrefill 1001
 
 ### ListAddressGroupings
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -1455,7 +1456,7 @@ Result (edited to only three results):
 
 ### ListLabels
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -1500,7 +1501,7 @@ Result:
 
 ### ListLockUnspent
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -1540,7 +1541,7 @@ Result:
 
 ### ListReceivedByAddress
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -1634,7 +1635,7 @@ Result (edit to show only two entries):
 
 ### ListReceivedByLabel
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -1709,7 +1710,7 @@ Result:
 
 ### ListSinceBlock
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -1766,7 +1767,7 @@ The [`listsinceblock` RPC](../api/rpc-wallet.md#listsinceblock) gets all transac
 | → <br>`abandoned`            | bool            | Optional<br>(0 or 1)        | `true` if the transaction has been abandoned (inputs are respendable). Only available for the 'send' category of transactions.                                                                                                                                                                                                                                                                |
 | → <br>`comment`              | string          | Optional<br>(0 or 1)        | For transaction originating with this wallet, a locally-stored comment added to the transaction.  Only returned if a comment was added                                                                                                                                                                                                                                                        |
 | → <br>`to`                   | string          | Optional<br>(0 or 1)        | For transaction originating with this wallet, a locally-stored comment added to the transaction identifying who the transaction was sent to.  Only returned if a comment-to was added                                                                                                                                                                                                         |
-| →<br>`removed`               | array           | Optional<br>(0 or 1)        | Structure is the same as `transactions`. Only present if `include_removed` is `true`.<br>*Note*: transactions that were re-added in the active chain will appear as-is in this array, and may thus have a positive confirmation count.                                                                                                                                                        |
+| →<br>`removed`               | array           | Optional<br>(0 or 1)        | Structure is the same as `transactions`. Only present if `include_removed` is `true`.<br>*NOTE:*: transactions that were re-added in the active chain will appear as-is in this array, and may thus have a positive confirmation count.                                                                                                                                                        |
 
 *Example from Dimecoin Core 2.3.0.0*
 
@@ -1814,7 +1815,7 @@ Result (edited to show only two payments):
 
 ### ListTransactions
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -1915,11 +1916,11 @@ Result:
 
 ### ListUnspent
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
-The [`listunspent` RPC](../api/rpc-wallet.md#listunspent) returns an array of unspent transaction outputs belonging to this wallet. **Note:** Outputs affecting watch-only addresses will be returned; see the *spendable* field in the results described below.
+The [`listunspent` RPC](../api/rpc-wallet.md#listunspent) returns an array of unspent transaction outputs belonging to this wallet. **NOTE::** Outputs affecting watch-only addresses will be returned; see the *spendable* field in the results described below.
 
 *Parameter #1---the minimum number of confirmations an output must have*
 
@@ -2070,11 +2071,11 @@ Result:
 
 ### LoadWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
-The [`loadwallet` RPC](../api/rpc-wallet.md#loadwallet) loads a wallet from a wallet file or directory. Note that all wallet command-line options used when starting dimecoind will be applied to the new wallet (eg -zapwallettxes, upgradewallet, rescan, etc).
+The [`loadwallet` RPC](../api/rpc-wallet.md#loadwallet) loads a wallet from a wallet file or directory. NOTE: that all wallet command-line options used when starting dimecoind will be applied to the new wallet (eg -zapwallettxes, upgradewallet, rescan, etc).
 
 *Parameter #1---wallet name*
 
@@ -2118,7 +2119,7 @@ Result:
 
 ### LockUnspent
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -2234,7 +2235,7 @@ Result:
 
 ### RemovePrunedFunds
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -2311,7 +2312,7 @@ Result:
 
 ### ScanTXOutset
 
-> **NOTE**
+> **NOTE:**
 >
 > Experimental: this call may be removed or changed in future releases.
 
@@ -2395,7 +2396,7 @@ Result:
 
 ### SendMany
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
 
@@ -2480,7 +2481,7 @@ a7c0194a005a220b9bfeb5fdd12d5b90979c10f53de4f8a48a1495aa198a6b95
 
 ### SendToAddress
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
 
@@ -2562,7 +2563,7 @@ Result:
 
 ### SetLabel
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -2605,7 +2606,7 @@ dimecoin-cli -mainnet setlabel 7MTFRnrfJ4NpnYVeidDNHVwT7uuNsVjevq "test"
 
 ### SetTxFee
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -2730,7 +2731,7 @@ H4XULzfHCf16In2ECk9Ta9QxQPq639zQto2JA3OLlo3JbUdrClvJ89+A1z+Z9POd6l8LJhn1jGpQYF8m
 
 ### SignRawTransactionWithWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet.
 
@@ -2797,7 +2798,7 @@ Result:
 
 ### UnloadWallet
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**).
 
@@ -2942,7 +2943,7 @@ Result:
 
 ### WalletLock
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet.
 
@@ -2972,7 +2973,7 @@ dimecoin-cli -mainnet walletlock
 
 ### WalletPassphrase
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an encrypted wallet.
 
@@ -3024,7 +3025,7 @@ dimecoin-cli -mainnet walletpassphrase test 600
 
 ### WalletPassphraseChange
 
-> **NOTE**
+> **NOTE:**
 >
 > Requires [wallet](../resources/glossary.md#wallet) support (**unavailable on masternodes**). Requires an encrypted wallet.
 
