@@ -953,3 +953,40 @@ b5bd82b3656493484556689640a91357 ............ Masternode Auth. Challenge
 
 00 .......................................... Masternode connection (false)
 ```
+
+```{eval-rst}
+.. meta::
+  :title: Masternode Messages
+  :description: The following network messages enable the masternode features built in to Dimecoin.
+```
+
+## Masternode Messages
+
+The following network messages enable the [masternode](../resources/glossary.md#masternode) features built in to Dimecoin.
+
+![Overview Of P2P Protocol Masternode Request And Reply Messages](../../img/dev/en-p2p-masternode-messages.svg)
+
+For additional details, refer to the Developer Guide [Masternode Sync](../guide/dime-features-masternode-sync.md) and [Masternode Payment](../guide/dime-features-masternode-payment.md) sections.
+
+### ssc
+
+The [`ssc` message](../reference/p2p-network-masternode-messages.md#ssc) is used to track the sync status of masternode objects. This message is sent in response to sync requests for the list of governance objects (`govsync` message), and governance object votes (`govsync` message).
+
+| Bytes | Name | Data type | Required | Description
+| ---------- | ----------- | --------- | -------- | --------
+| 4 | nItemID | int | Required | Masternode Sync Item ID
+| 4 | nCount | int | Required | Number of items to sync
+
+Sync Item IDs
+
+| ID | Description | Response To
+|------|--------------|---------------
+| 10 | MASTERNODE_SYNC_GOVOBJ | [`govsync` message](../reference/p2p-network-governance-messages.md#govsync)
+| 11 | MASTERNODE_SYNC_GOVOBJ_VOTE | [`govsync` message](../reference/p2p-network-governance-messages.md#govsync) with non-zero hash
+
+The following annotated hexdump shows a [`ssc` message](../reference/p2p-network-masternode-messages.md#ssc). (The message header has been omitted.)
+
+``` text
+02000000 ................................... Item ID: MASTERNODE_SYNC_LIST (2)
+bf110000 ................................... Count: 43
+```
