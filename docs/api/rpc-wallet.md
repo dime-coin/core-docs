@@ -209,7 +209,7 @@ The [`createwallet` RPC](../api/remote-procedure-calls-wallet.md#createwallet) c
 *Example from Dimecoin Core 2.3.0.0*
 
 ```bash
-dimecoin-cli -testnet createwallet new-wallet
+dimecoin-cli -mainnet createwallet new-wallet
 ```
 
 Result:
@@ -298,7 +298,7 @@ The [`dumpwallet` RPC](../api/remote-procedure-calls-wallet.md#dumpwallet) creat
 Create a wallet dump and then print its first 10 lines.
 
 ```bash
-dimecoin-cli -testnet dumpwallet /tmp/dump.txt
+dimecoin-cli -mainnet dumpwallet /tmp/dump.txt
 head /tmp/dump.txt
 ```
 
@@ -334,7 +334,7 @@ cTGSKYaQTQabnjNSwCqpjYXiucVujTXiwp9dzmJV9cNAiayAJusi 2018-12-14T17:24:37Z change
 *See also*
 
 * [BackupWallet](../api/remote-procedure-calls-wallet.md#backupwallet): safely copies `wallet.dat` to the specified file, which can be a directory or a path with filename.
-* [ImportWallet](../api/remote-procedure-calls-wallet.md#importwallet): imports private keys from a file in wallet dump file format (see the [`dumpwallet` RPC](../api/remote-procedure-calls-wallet.md#dumpwallet)). These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the block chain for transactions affecting the newly-added keys, which may take several minutes.
+* [ImportWallet](../api/remote-procedure-calls-wallet.md#importwallet): imports private keys from a file in wallet dump file format (see the [`dumpwallet` RPC](../api/remote-procedure-calls-wallet.md#dumpwallet)). These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
 
 ### EncryptWallet
 

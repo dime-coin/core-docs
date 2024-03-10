@@ -107,7 +107,10 @@ api/rpc-raw-transactions
 api/rpc-utility
 api/rpc-wallet
 api/rpc-wallet-deprecated
+api/rpc-zmq
 api/http-rest
+api/http-rest-quick-reference
+api/http-rest-requests
 api/zmq
 ```
 

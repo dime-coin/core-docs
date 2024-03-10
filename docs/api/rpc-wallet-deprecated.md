@@ -8,14 +8,14 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-# Wallet RPCs (Deprecated)
+## Wallet RPCs (Deprecated)
 
 >**NOTE**
 >
 > RPCs that require wallet support are **not available on masternodes** for security reasons. Such RPCs are designated with a "*Requires wallet support*" message.
 >
 
-## GetAccount
+### GetAccount
 
 > **NOTE**
 >
@@ -51,7 +51,7 @@ doc test
 
 * [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account.
 
-## GetAccountAddress
+### GetAccountAddress
 
 > **NOTE**
 >
@@ -91,7 +91,7 @@ Result:
 * [GetRawChangeAddress](../api/rpc-wallet.md#getrawchangeaddress): returns a new Dimecoin address for receiving change. This is for use with raw transactions, not normal use.
 * [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account.
 
-## GetAddressesByAccount
+### GetAddressesByAccount
 
 > **NOTE**
 >
@@ -134,7 +134,7 @@ Result:
 * [GetAccount](../api/rpc-wallet-deprecated.md#getaccount): returns the name of the account associated with the given address.
 * [GetBalance](../api/rpc-wallet.md#getbalance): gets the balance in decimal Dimecoin across all accounts or for a particular account.
 
-## SetAccount
+### SetAccount
 
 > **NOTE**
 >
