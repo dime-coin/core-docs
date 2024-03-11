@@ -4,7 +4,13 @@
   :description: Transactions in Dimecoin are collected into blocks, linked by cryptographic hashes to form a secure blockchain. Any attempt to use an output twice constitutes double spending and is rejected. 
 ```
 
-## Blockchain Overview
+## Understanding the Dimecoin Blockchain
+
+The blockchain provides Dimecoin's public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
+
+Each full node in the Dimecoin network independently stores a blockchain containing only blocks validated by that node. When several nodes all have the same blocks in their blockchain, they are considered to be in [consensus](../resources/glossary.md#consensus). The validation rules these nodes follow to maintain consensus are called [consensus rules](../resources/glossary.md#consensus-rules). This section describes many of the consensus rules used by Dimecoin Core.
+
+### Blockchain Overview
 
 ![Blockchain Overview](../../img/dev/en-blockchain-overview.svg)
 

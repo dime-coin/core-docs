@@ -121,7 +121,6 @@ api/zmq
 :hidden:
 
 guide/introduction
-guide/blockchain
 guide/blockchain-overview
 guide/transactions
 guide/contracts
