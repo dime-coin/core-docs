@@ -1,8 +1,8 @@
 ```{eval-rst}
 .. _guide-index:
 .. meta::
-  :title: Dash Developer Guide Introduction
-  :description: The Developer Guide aims to provide the information you need to understand Dash and start building Dash-based applications. 
+  :title: Dimecoin Developer Guide Introduction
+  :description: The Developer Guide aims to provide the information you need to understand Dimecoin and start building Dimecoin based applications. 
 ```
 
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
