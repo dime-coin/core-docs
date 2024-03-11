@@ -4,7 +4,7 @@
   :description: Dimecoins's blockchain acts as a timestamped public ledger, safeguarding against double spending and transaction record alteration.
 ```
 
-# Blockchain
+## Blockchain
 
 The blockchain provides Dimecoin's public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
 

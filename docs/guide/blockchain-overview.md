@@ -4,7 +4,7 @@
   :description: Transactions in Dimecoin are collected into blocks, linked by cryptographic hashes to form a secure blockchain. Any attempt to use an output twice constitutes double spending and is rejected. 
 ```
 
-# Blockchain Overview
+## Blockchain Overview
 
 ![Blockchain Overview](../../img/dev/en-blockchain-overview.svg)
 
