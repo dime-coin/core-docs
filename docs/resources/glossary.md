@@ -190,7 +190,7 @@ An ECDSA public key that is 33 bytes long rather than the 65 bytes of an uncompr
 
 #### Confirmations
 
-A score indicating the number of blocks on the best block chain that would need to be modified to remove or modify a particular transaction. A confirmed transaction has a confirmation score of one or higher.
+A score indicating the number of blocks on the best blockchain that would need to be modified to remove or modify a particular transaction. A confirmed transaction has a confirmation score of one or higher.
 
 #### Consensus
 
@@ -318,7 +318,7 @@ A private key and its derived public key.
 
 #### Locktime
 
-Part of a transaction which indicates the earliest time or earliest block when that transaction may be added to the block chain.
+Part of a transaction which indicates the earliest time or earliest block when that transaction may be added to the blockchain.
 
 #### Long-Living Masternode Quorum
 
@@ -422,7 +422,7 @@ Four defined bytes which start every message in the Dimecoin P2P protocol to all
 
 #### nLockTime
 
-Part of a transaction which indicates the earliest time or earliest block when that transaction may be added to the block chain.
+Part of a transaction which indicates the earliest time or earliest block when that transaction may be added to the blockchain.
 
 #### Node
 
@@ -638,7 +638,7 @@ A spork is a mechanism unique to Dimecoin used to safely deploy new features to 
 
 #### Stale Block
 
-Blocks which were successfully mined or staked but which aren't included on the current best block chain, likely because some other block at the same height had its chain extended first.
+Blocks which were successfully mined or staked but which aren't included on the current best blockchain, likely because some other block at the same height had its chain extended first.
 
 #### Standard Block Relay
 
