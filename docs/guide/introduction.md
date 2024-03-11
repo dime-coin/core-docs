@@ -11,7 +11,7 @@
 
 ### Introduction
 
-The Guides section of our Read the Docs site is designed to serve as a comprehensive resource for users and developers interested in Dimecoin based applications. This section contains detailed tutorials, practical how-to guides, and detailed explanations. These resources aim to facilitate a deeper understanding of the mechanisms behind Dimecoin Core, guiding you through setup, operation, and optimization. Whether you are a beginner looking to get started with Dimecoin or an experienced developer seeking advanced techniques, this section provides the knowledge and tools necessary to navigate the ecosystem of Dimecoin Core.
+The Core Guide section is designed to serve as a comprehensive resource for users and developers interested in Dimecoin Core and related applications. This section contains detailed tutorials, practical how-to guides, and detailed explanations. These resources aim to facilitate a deeper understanding of the mechanisms behind Dimecoin Core, guiding you through setup, operation, and optimization. Whether you are a beginner looking to get started with Dimecoin or an experienced developer seeking advanced techniques, this section provides the knowledge and tools necessary to navigate the ecosystem of Dimecoin Core.
 
 It is important to remember that this documentation does not serve as a specification; rather, it serves as a guide to understanding the fundamental operations and mechanisms of Dimecoin, aiming to educate and facilitate development within the Dimecoin ecosystem.
 

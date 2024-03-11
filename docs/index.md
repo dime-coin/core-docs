@@ -127,6 +127,7 @@ guide/transactions
 guide/contracts
 guide/wallets
 guide/operating-modes
+guide/masternodes
 guide/p2p-network
 guide/mining
 ```
