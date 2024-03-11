@@ -8,7 +8,7 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-# HTTP REST
+## HTTP REST
 
 >**NOTE:** Privacy
 >
