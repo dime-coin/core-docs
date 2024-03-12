@@ -4,6 +4,10 @@
   :description: Non-Standard Transactions are those not adhering to specific network rules, hence not accepted by nodes running on default-settings.
 ```
 
+> ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
+>
+> ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
+
 ## Non-Standard Transactions
 
 If you use anything besides a standard [pubkey script](../resources/glossary.md#pubkey-script) in an [output](../resources/glossary.md#output), [peers](../resources/glossary.md#peer) and miners/stakers using the default Dimecoin Core settings will neither accept, broadcast, nor mine/mint your [transaction](../resources/glossary.md#transaction). When you try to broadcast your transaction to a peer running the default settings, you will receive an error.

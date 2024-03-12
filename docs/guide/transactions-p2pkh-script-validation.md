@@ -12,13 +12,13 @@
 
 The validation procedure requires evaluation of the [signature script](../resources/glossary.md#signature-script) and [pubkey script](../resources/glossary.md#pubkey-script). In a [P2PKH](../resources/glossary.md#pay-to-pubkey-hash) [output](../resources/glossary.md#output), the pubkey script is:
 
-```
+```bash
 OP_DUP OP_HASH160 <PubkeyHash> OP_EQUALVERIFY OP_CHECKSIG
 ```
 
 The spender's signature script is evaluated and prefixed to the beginning of the script. In a P2PKH transaction, the signature script contains an secp256k1 signature (sig) and full public key (pubkey), creating the following concatenation:
 
-```
+```bash
 <Sig> <PubKey> OP_DUP OP_HASH160 <PubkeyHash> OP_EQUALVERIFY OP_CHECKSIG
 ```
 
