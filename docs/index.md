@@ -131,6 +131,15 @@ guide/blockchain-block-height-and-forking
 guide/blockchain-transaction-data
 guide/blockchain-consensus-rule-changes
 guide/transactions
+guide/transactions-p2pkh-script-validation
+guide/transactions-p2sh-scripts
+guide/transactions-standard-transactions
+guide/transactions-non-standard-transactions
+guide/transactions-signature-hash-types
+guide/transactions-locktime-and-sequence-number
+guide/transactions-transaction-fees-and-change
+guide/transactions-avoiding-key-reuse
+guide/transactions-transaction-malleability
 guide/contracts
 guide/wallets
 guide/operating-modes
@@ -183,7 +192,7 @@ right of each page.
 .. raw:: html
 
     <div class="custom-spacing"></div>
-    
+
 .. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
    :class: no-scaled-link
    :align: center

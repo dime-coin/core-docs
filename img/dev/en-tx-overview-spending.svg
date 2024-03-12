@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="177px" viewBox="0 0 450 177" style="enable-background:new 0 0 450 177;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:9.8131px;}
+	.st3{fill:none;}
+	.st4{fill:none;stroke:#000000;stroke-width:1.2266;stroke-miterlimit:2.8037;}
+	.st5{fill:none;stroke:#000000;stroke-width:1.2266;stroke-miterlimit:2.8037;stroke-dasharray:3.5047,1.4019;}
+	.st6{stroke:#000000;stroke-width:1.2266;stroke-miterlimit:2.8037;}
+	.st7{opacity:0.98;enable-background:new    ;}
+</style>
+<g id="graph0" transform="scale(0.700935 0.700935) rotate(0) translate(4 248)">
+	<polygon class="st0" points="-4,4.3 -4,-247.7 638,-247.7 638,4.3 	"/>
+	<text transform="matrix(1.4267 0 0 1.4267 224.2442 -7.5427)" class="st1 st2">Transaction Spending Overview</text>
+	<g id="clust1">
+		<polygon class="st3" points="185.5,-142.7 185.5,-235.7 494.5,-235.7 494.5,-142.7 		"/>
+	</g>
+	<g id="clust2">
+		<polygon class="st4" points="193.5,-150.7 193.5,-227.7 486.5,-227.7 486.5,-150.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 207.6996 -212.543)" class="st1 st2">Example Output Paying A Pubkey Script</text>
+	</g>
+	<g id="clust3">
+		<polygon class="st3" points="103.5,-30.7 103.5,-123.7 477.5,-123.7 477.5,-30.7 		"/>
+	</g>
+	<g id="clust4">
+		<polygon class="st4" points="111.5,-38.7 111.5,-115.7 469.5,-115.7 469.5,-38.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 139.9999 -46.5434)" class="st1 st2">Example Input Spending The Example Output</text>
+	</g>
+	<g id="node1">
+		<text transform="matrix(1.4267 0 0 1.4267 8.3001 -92.5436)" class="st1 st2">Transaction</text>
+		<text transform="matrix(1.4267 0 0 1.4267 43.3001 -77.5427)" class="st1 st2">1</text>
+	</g>
+	<g id="node2">
+		<text transform="matrix(1.4267 0 0 1.4267 8.3001 -181.543)" class="st1 st2">Transaction</text>
+		<text transform="matrix(1.4267 0 0 1.4267 43.3001 -166.5428)" class="st1 st2">0</text>
+	</g>
+	<g id="node11">
+		<polygon class="st4" points="215,-107.7 120,-107.7 120,-69.7 215,-69.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 128.3003 -92.5436)" class="st1 st2">Transaction</text>
+		<text transform="matrix(1.4267 0 0 1.4267 139.4997 -77.5427)" class="st1 st2">Identifier</text>
+	</g>
+	<g id="edge5">
+		<path class="st5" d="M72.4-158.7c17.9,13,42.4,30.7,62,44.9"/>
+		<polygon class="st6" points="136.6,-116.5 142.7,-107.7 132.5,-110.8 		"/>
+	</g>
+	<g id="node3">
+		<text transform="matrix(1.4267 0 0 1.4267 526.3003 -100.0433)" class="st1 st2">Not Shown:</text>
+		<text transform="matrix(1.4267 0 0 1.4267 508.8 -85.0424)" class="st1 st2">Version, Outputs,</text>
+		<text transform="matrix(1.4267 0 0 1.4267 535.3995 -70.0429)" class="st1 st2">Locktime</text>
+	</g>
+	<g id="node4">
+		<text transform="matrix(1.4267 0 0 1.4267 526.3003 -189.0428)" class="st1 st2">Not Shown:</text>
+		<text transform="matrix(1.4267 0 0 1.4267 514.4008 -174.0433)" class="st1 st2">Version, Inputs,</text>
+		<text transform="matrix(1.4267 0 0 1.4267 535.3995 -159.0431)" class="st1 st2">Locktime</text>
+	</g>
+	<g id="node5">
+		<polygon class="st4" points="453,-196.7 386,-196.7 386,-158.7 453,-158.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 394.3003 -181.543)" class="st1 st2">Pubkey</text>
+		<text transform="matrix(1.4267 0 0 1.4267 400.6005 -166.5428)" class="st1 st2">Script</text>
+	</g>
+	<g id="node10">
+		<polygon class="st4" points="461.5,-107.7 377.5,-107.7 377.5,-69.7 461.5,-69.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 388.0001 -92.5436)" class="st1 st2">Signature</text>
+		<text transform="matrix(1.4267 0 0 1.4267 400.6005 -77.5427)" class="st1 st2">Script</text>
+	</g>
+	<g id="edge3">
+		<path class="st5" d="M419.5-158.7c0,11.8,0,27.4,0,40.8"/>
+		<polygon class="st6" points="423,-117.7 419.5,-107.7 416,-117.7 		"/>
+	</g>
+	<g id="node6">
+		<polygon class="st4" points="375,-196.7 304,-196.7 304,-158.7 375,-158.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 317.3728 -181.543)" class="st7 st1 st2">Amount</text>
+		<text transform="matrix(1.4267 0 0 1.4267 316.1266 -166.5428)" class="st7 st1 st2">(mDIME)</text>
+	</g>
+	<g id="node7">
+		<text transform="matrix(1.4267 0 0 1.4267 223.7998 -181.543)" class="st1 st2">Output 0</text>
+		<text transform="matrix(1.4267 0 0 1.4267 225.2 -166.5428)" class="st1 st2">(Implied)</text>
+	</g>
+	<g id="node8">
+		<polygon class="st4" points="285.5,-107.7 219.5,-107.7 219.5,-69.7 285.5,-69.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 230.1 -92.5436)" class="st1 st2">Output</text>
+		<text transform="matrix(1.4267 0 0 1.4267 234.3006 -77.5427)" class="st1 st2">Index</text>
+	</g>
+	<g id="edge4">
+		<path class="st5" d="M252.5-158.7c0,11.8,0,27.4,0,40.8"/>
+		<polygon class="st6" points="256,-117.7 252.5,-107.7 249,-117.7 		"/>
+	</g>
+	<g id="node9">
+		<polygon class="st4" points="373,-107.7 290,-107.7 290,-69.7 373,-69.7 		"/>
+		<text transform="matrix(1.4267 0 0 1.4267 297.2007 -92.5436)" class="st1 st2">Sequence</text>
+		<text transform="matrix(1.4267 0 0 1.4267 305.6004 -77.5427)" class="st1 st2">Number</text>
+	</g>
+</g>
+</svg>
