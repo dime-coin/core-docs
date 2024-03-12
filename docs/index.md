@@ -179,7 +179,7 @@ documentation can be submitted as via the "Edit this page" button on the top,
 right of each page.
 
 ```{eval-rst}
-.. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true" class="no-scaled-link align-center" src="https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
+.. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
    :class: no-scaled-link
    :align: center
    :width: 90%
