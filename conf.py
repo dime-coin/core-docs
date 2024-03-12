@@ -26,7 +26,6 @@ extensions = [
   'sphinx_design',
   'sphinx_search.extension',
   'sphinx.ext.intersphinx',
-  'sphinx_inline_tabs',
 ]
 
 templates_path = ['_templates']
