@@ -10,7 +10,7 @@
 
 ## Transaction Fees and Change
 
-Transactions pay fees based on the total byte size of the signed transaction. Fees per byte are calculated based on current demand for space in mined blocks with fees rising as demand increases.  The [transaction fee](../resources/glossary.md#transaction-fee) is given to the Dimecoin miner/staker, as explained in the [blockchain section](../guide/blockchain-overview.md), and so it is ultimately up to each [miner](../resources/glossary.md#miner) or [staker](../resources/glossary.md#staker) to choose the minimum transaction fee they will accept.
+Transactions pay fees based on the total byte size of the signed transaction. Fees per byte are calculated based on current demand for space in mined or minted blocks with fees rising as demand increases.  The [transaction fee](../resources/glossary.md#transaction-fee) is given to the Dimecoin miner/staker, as explained in the [blockchain section](../guide/blockchain-overview.md), and so it is ultimately up to each [miner](../resources/glossary.md#miner) or [staker](../resources/glossary.md#staker) to choose the minimum transaction fee they will accept.
 
 All transactions are prioritized based on their fee per byte, with higher-paying transactions being added in sequence until all of the available space is filled.
 
