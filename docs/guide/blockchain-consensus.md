@@ -4,6 +4,18 @@
   :description: Explore Dimecoin's innovative hybrid consensus mechanism, combining Proof of Work (PoW) and Proof of Stake (PoS) for enhanced security, energy efficiency, and network decentralization. Learn how this unique approach maintains optimal block time while promoting broad participation in the Dimecoin ecosystem
 ```
 
+> ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
+>
+> ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
+
+## Consensus
+
+Dimecoin's hybrid consensus model employs a dynamic mechanism to maintain a stable target block time of ~50 seconds. It adjusts the difficulty of PoW and the selection criteria for PoS validators in response to changes in network participation and computational power. The network difficulty adjusts dynamically each block to ensure that the time it takes for block creation remains consistent, regardless of the network’s hashing and minting power. As more participants join the network, the difficulty increases. Alternatively, when few participants are on the network, the difficulty decreases.
+
+Chaining blocks together makes it impossible to modify [transactions](../resources/glossary.md#transaction) included in any block without modifying all following blocks. As a result, the cost to modify a particular block increases with every new block added to the blockchain, magnifying the effect of the dual consensus mechanism.
+
+Dimecoin's adoption of a hybrid mechanism underscores a technical innovation in blockchain technology, blending the computational challenge of PoW with the economic validation of PoS. This dual approach enhances network security, reduces energy consumption, and promotes greater decentralization by encouraging widespread participation in the consensus process. Through its implementation, Dimecoin sets a precedent for balancing efficiency, security, and inclusivity in blockchain networks.
+
 ## Proof of Work
 
 The Proof of Work (PoW) arm of the Dimecoin [blockchain](../resources/glossary.md#block-chain) is collaboratively maintained by anonymous [peers](../resources/glossary.md#peer) on the [network](../resources/glossary.md#network), so Dimecoin requires that each [block](../resources/glossary.md#block) prove a significant amount of work was invested in its creation to ensure that untrustworthy peers who want to modify past blocks have to work harder than honest peers who only want to add new blocks to the blockchain.
@@ -60,11 +72,3 @@ After approximately 30 days, individual inputs will hit their maximum minting po
 * Spending coins, combining inputs, will reset an inputs coinage to zero.
 
 By incentivizing stakeholders to act honestly and maintain their investment in the network, Proof of Stake ensures a secure, efficient, and more environmentally friendly approach to achieving consensus on the blockchain. This method demonstrates a mature evolution in blockchain technology, aiming to sustain the network's long-term growth and security.
-
-## Consensus
-
-Dimecoin's hybrid consensus model employs a dynamic mechanism to maintain a stable target block time of ~50 seconds. It adjusts the difficulty of PoW and the selection criteria for PoS validators in response to changes in network participation and computational power. The network difficulty adjusts dynamically each block to ensure that the time it takes for block creation remains consistent, regardless of the network’s hashing and minting power. As more participants join the network, the difficulty increases. Alternatively, when few participants are on the network, the difficulty decreases.
-
-Chaining blocks together makes it impossible to modify [transactions](../resources/glossary.md#transaction) included in any block without modifying all following blocks. As a result, the cost to modify a particular block increases with every new block added to the blockchain, magnifying the effect of the dual consensus mechanism.
-
-Dimecoin's adoption of a hybrid mechanism underscores a technical innovation in blockchain technology, blending the computational challenge of PoW with the economic validation of PoS. This dual approach enhances network security, reduces energy consumption, and promotes greater decentralization by encouraging widespread participation in the consensus process. Through its implementation, Dimecoin sets a precedent for balancing efficiency, security, and inclusivity in blockchain networks.
