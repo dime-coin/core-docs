@@ -276,11 +276,11 @@ Prefilled Transactions
 
 ### getblocks
 
-The [`getblocks` message](docs/reference/p2p-network.md#getblocks) requests an [`inv` message](docs/reference/p2p-network.md#inv) that provides [block header](../resources/glossary.md#block-header) hashes starting from a particular point in the [block chain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the data it needs to request the blocks it hasn't seen.
+The [`getblocks` message](docs/reference/p2p-network.md#getblocks) requests an [`inv` message](docs/reference/p2p-network.md#inv) that provides [block header](../resources/glossary.md#block-header) hashes starting from a particular point in the [blockchain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the data it needs to request the blocks it hasn't seen.
 
-Peers which have been disconnected may have [stale blocks](../resources/glossary.md#stale-block) in their locally-stored block chain, so the [`getblocks` message](docs/reference/p2p-network.md#getblocks) allows the requesting peer to provide the receiving peer with multiple [header](../resources/glossary.md#header) hashes at heights on their local chain. This allows the receiving peer to find, within that list, the last header hash they had in common and reply with all subsequent header hashes.
+Peers which have been disconnected may have [stale blocks](../resources/glossary.md#stale-block) in their locally-stored blockchain, so the [`getblocks` message](docs/reference/p2p-network.md#getblocks) allows the requesting peer to provide the receiving peer with multiple [header](../resources/glossary.md#header) hashes at heights on their local chain. This allows the receiving peer to find, within that list, the last header hash they had in common and reply with all subsequent header hashes.
 
-**Note:** the receiving peer itself may respond with an [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes of stale blocks.  It is up to the requesting peer to poll all of its peers to find the best block chain.
+**Note:** the receiving peer itself may respond with an [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes of stale blocks.  It is up to the requesting peer to poll all of its peers to find the best blockchain.
 
 If the receiving peer does not find a common header hash within the list, it will assume the last common block was the [genesis block](../resources/glossary.md#genesis-block) (block zero), so it will reply with in [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes starting with block one (the first block after the genesis block).
 
@@ -343,7 +343,7 @@ The format and maximum size limitations of the [`getdata` message](docs/referenc
 
 ### getheaders
 
-The [`getheaders` message](docs/reference/p2p-network.md#getheaders) requests a [`headers` message](docs/reference/p2p-network.md#headers) that provides block headers starting from a particular point in the [block chain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the [headers](../resources/glossary.md#header) it hasn’t seen yet.
+The [`getheaders` message](docs/reference/p2p-network.md#getheaders) requests a [`headers` message](docs/reference/p2p-network.md#headers) that provides block headers starting from a particular point in the [blockchain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the [headers](../resources/glossary.md#header) it hasn’t seen yet.
 
 The [`getheaders` message](docs/reference/p2p-network.md#getheaders) is nearly identical to the [`getblocks` message](docs/reference/p2p-network.md#getblocks), with one minor difference: the `inv` reply to the [`getblocks` message](docs/reference/p2p-network.md#getblocks) will include no more than 500 [block header](../resources/glossary.md#block-header) hashes; the `headers` reply to the [`getheaders` message](docs/reference/p2p-network.md#getheaders) will include as many as 2,000 block headers.
 
@@ -411,11 +411,10 @@ The [`mempool` message](docs/reference/p2p-network.md#mempool) requests the [TXI
 
 Sending the [`mempool` message](docs/reference/p2p-network.md#mempool) is mostly useful when a program first connects to the network. Full nodes can use it to quickly gather most or all of the unconfirmed transactions available on the network; this is especially useful for miners trying to gather transactions for their transaction fees. SPV clients can set a filter before sending a `mempool` to only receive transactions that match that filter; this allows a recently-started client to get most or all unconfirmed transactions related to its wallet.
 
-> 📘 InstantSend and ChainLock Synchronization
+> **NOTE** InstantSend Synchronization
 >
 > Dimecoin Core 2.0.0.0 expanded the mempool message to include syncing of [InstantSend Lock](docs/reference/p2p-network-instantsend-messages.md#islock) inventories. Additionally, nodes now attempt to sync their mempool with peers at startup by default (limited to peers using protocol version 70006 or higher). This allows nodes to more quickly detect any double-spend attempts as well as show InstantSend lock status correctly for transactions received while offline. *Note: InstaSend currently disabled on Dimecoin mainnet.*
 >
-> Dimecoin Core 2.0.0.0 expanded the mempool message to include syncing of [ChainLock](docs/reference/p2p-network-instantsend-messages.md#clsig) inventories. This allows nodes to more quickly show ChainLock status correctly after being offline.
 
 The `inv` response to the [`mempool` message](docs/reference/p2p-network.md#mempool) is, at best, one node's view of the network---not a complete list of every [unconfirmed transaction](../resources/glossary.md#unconfirmed-transaction) on the network. Here are some additional reasons the list might not be complete:
 
@@ -505,7 +504,7 @@ Continue descending and ascending until you have enough information to obtain th
 
 * Fail if the hash of the merkle root node is not identical to the merkle root in the [block header](../resources/glossary.md#block-header).
 
-* Fail if the block header is invalid. Remember to ensure that the hash of the header is less than or equal to the [target threshold](../resources/glossary.md#target) encoded by the nBits header field. Your program should also, of course, attempt to ensure the header belongs to the best block chain and that the user knows how many confirmations this block has.
+* Fail if the block header is invalid. Remember to ensure that the hash of the header is less than or equal to the [target threshold](../resources/glossary.md#target) encoded by the nBits header field. Your program should also, of course, attempt to ensure the header belongs to the best blockchain and that the user knows how many confirmations this block has.
 
 For a detailed example of parsing a [`merkleblock` message](docs/reference/p2p-network.md#merkleblock), please see the corresponding [merkle block examples section](../examples/p2p-network-parsing-a-merkleblock.md).
 
@@ -910,7 +909,7 @@ If a [`version` message](docs/reference/p2p-network.md#version) is accepted, the
 | 8        | nonce                 | uint64_t         | Required | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt of a [`version` message](docs/reference/p2p-network.md#version) with a nonce it previously sent.
 | *Varies* | user_agent bytes      | compactSize uint | Required | Number of bytes in following user\_agent field.  If 0x00, no user agent field is sent.
 | *Varies* | user_agent            | string           | Required if user_agent bytes > 0 | User agent as defined by BIP14. Previously called subVer.<br><br>Dimecoin Core limits the length to 256 characters.
-| 4        | start_height          | int32_t          | Required | The height of the transmitting node's best block chain or, in the case of an SPV client, best block header chain.
+| 4        | start_height          | int32_t          | Required | The height of the transmitting node's best blockchain or, in the case of an SPV client, best block header chain.
 | 1        | relay                 | bool             | Optional | Transaction relay flag.  If 0x00, no [`inv` messages](docs/reference/p2p-network-data-messages.md#inv) or [`tx` messages](docs/reference/p2p-network-data-messages.md#tx) announcing new transactions should be sent to this client until it sends a [`filterload` message](docs/reference/p2p-network.md#filterload) or [`filterclear` message](docs/reference/p2p-network.md#filterclear).  If the relay field is not present or is set to 0x01, this node wants [`inv` messages](docs/reference/p2p-network#inv) and [`tx` messages](docs/reference/p2p-network-data-messages.md#tx) announcing new transactions.
 | 1        | mn_connection         | bool             | Optional | If 0x00, the connection is from a non-masternode. If 0x01, the connection is from a masternode.
 
