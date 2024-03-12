@@ -636,6 +636,10 @@ Special Transactions provide a way to include non-financial, consensus-assisting
 
 A spork is a mechanism unique to Dimecoin used to safely deploy new features to the network through network-level variables to avoid the risk of unintended network forking during upgrades.
 
+#### Staker
+
+Staking is the act of creating and validating transactions in new Dimecoin blocks. Stakers, lock a certain amount of their holdings as a 'stake' in the network. This act serves as a collateral or security deposit, making them eligible to validate transactions, propose new blocks, and receive rewards.
+
 #### Stale Block
 
 Blocks which were successfully mined or staked but which aren't included on the current best blockchain, likely because some other block at the same height had its chain extended first.

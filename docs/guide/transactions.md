@@ -12,7 +12,7 @@
 
 Transactions let users spend dimecoins. Each [transaction](../resources/glossary.md#transaction) is constructed out of several parts which enable both simple direct payments and complex transactions. This section will describe each part and demonstrate how to use them together to build complete transactions.
 
-To keep things simple, this section pretends coinbase transactions do not exist. Coinbase transactions can only be created by Dimecoin validators and they're an exception to many of the rules listed below. Instead of pointing out the coinbase exception to each rule, we invite you to read about coinbase transactions in the [blockchain](../resources/glossary.md#blockchain) [section](../guide/blockchain.md) of this guide.
+To keep things simple, this section pretends coinbase transactions do not exist. Coinbase transactions can only be created by Dimecoin validators and they're an exception to many of the rules listed below. Instead of pointing out the coinbase exception to each rule, we invite you to read about coinbase transactions in the [blockchain](../resources/glossary.md#blockchain) [section](../guide/blockchain-overview.md) of this guide.
 
 ![The Parts Of A Transaction](../../img/dev/en-tx-overview.svg)
 
