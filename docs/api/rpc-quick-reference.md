@@ -119,6 +119,7 @@
 * [AddMultiSigAddress](../api/rpc-wallet.md#addmultisigaddress): adds a P2SH multisig address to the wallet.
 * [BackupWallet](../api/rpc-wallet.md#backupwallet): safely copies `wallet.dat` to the specified file, which can be a directory or a path with filename.
 * [DumpPrivKey](../api/rpc-wallet.md#dumpprivkey): returns the wallet-import-format (WIP) private key corresponding to an address. (But does not remove it from the wallet.)
+* [DumpWallet](../api/rpc-wallet.md#dumpwallet): creates or overwrites a file with all wallet keys in a human-readable format.
 * [EncryptWallet](../api/rpc-wallet.md#encryptwallet): encrypts the wallet with a passphrase.  This is only to enable encryption for the first time. After encryption is enabled, you will need to enter the passphrase to use private keys.
 * [GetAddressInfo](../api/rpc-wallet.md#getaddressinfo): returns information about the given dimecoin address.
 * [GetAddressesByLabel](../api/rpc-wallet.md#getaddressesbylabel): returns a list of every address assigned to a particular label.
