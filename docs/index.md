@@ -27,8 +27,8 @@ working with Dimecoin as quickly as possible. Let's jump right in!
     .. grid-item-card:: API Reference
         :margin: 2 2 auto auto
         :link-type: ref
-        :link: api-rpc
-        
+        :link: api-rpc-overview
+                
         RPC, REST, and ZMQ information
         
         +++
