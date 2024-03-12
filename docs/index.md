@@ -2,7 +2,11 @@
 .. _core-index:
 ```
 
-# Core Docs
+> ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
+>
+> ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
+
+## Core Docs
 
 Welcome to the Dimecoin Core developer documentation. You'll find sections for
 [reference information](reference/introduction.md), [API
@@ -19,37 +23,37 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         :link-type: ref
         :link: reference-index
         
-        Blockchain and protocol details 
+        Blockchain and Protocol Details 
         
         +++
-        :ref:`Click to begin <reference-index>`
+        :ref:`Click to Begin <reference-index>`
 
     .. grid-item-card:: API Reference
         :margin: 2 2 auto auto
         :link-type: ref
         :link: api-rpc-overview
                 
-        RPC, REST, and ZMQ information
+        RPC, REST, and ZMQ Info
         
         +++
-        :ref:`Click to begin <api-rpc>`
+        :ref:`Click to Begin <api-rpc>`
 
     .. grid-item-card:: Core Guides
         :margin: 2 2 auto auto
         :link-type: ref
         :link: guide-index
         
-        Dimecoin features and operation
+        Dimecoin Features and Operation
         
         +++
-        :ref:`Click to begin <guide-index>`
+        :ref:`Click to Begin <guide-index>`
 
     .. grid-item-card:: Core Examples
         :margin: 2 2 auto auto
         :link-type: ref
         :link: examples-index
         
-        Examples for common use-cases
+        Common Use-Case Examples
         
         +++
         :ref:`Click to begin <examples-index>`
@@ -59,20 +63,20 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         :link-type: ref
         :link: dimecore-arguments-and-commands
         
-        Dimecoin Core configuration and usage
+        Dimecoin Core Configuration and Usage
         
         +++
-        :ref:`Click to begin <dimecore-arguments-and-commands>`
+        :ref:`Click to Begin <dimecore-arguments-and-commands>`
 
     .. grid-item-card:: Glossary
         :margin: 2 2 auto auto
         :link-type: ref
         :link: resources-glossary
         
-        Important terms with definitions
+        Important Terms and Definitions
         
         +++
-        :ref:`Click to begin <resources-glossary>`
+        :ref:`Click to Begin <resources-glossary>`
 ```
 
 ```{toctree}
@@ -169,13 +173,13 @@ Dimecoin Legacy Whitepaper <https://>
 Bitcoin Whitepaper <https://bitcoin.org/bitcoin.pdf>
 ```
 
-Questions about Dimecoin development are best asked in one of the [Dimecoin development
-communities](https:). Errors or suggestions related to
+Questions about Dimecoin development are best asked in one of the [Dimecoin Social
+Communities](https://dimecoinnetwork.com/socials). Errors or suggestions related to
 documentation can be submitted as via the "Edit this page" button on the top,
 right of each page.
 
 ```{eval-rst}
-.. image:: https://
+.. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true" class="no-scaled-link align-center" src="https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
    :class: no-scaled-link
    :align: center
    :width: 90%
