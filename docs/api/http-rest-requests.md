@@ -236,12 +236,12 @@ Result (whitespace added):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GET Block/NoTxDetails](../api/http-rest-requests.md#get-blocknotxdetails) gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.  The JSON object includes TXIDs for transactions within the block rather than the complete transactions [GET block](../api/http-rest-requests.md#get-block) returns.
 * [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash) RPC: returns the header hash of the most recent block on the best blockchain.
 * [GetBlock](../api/rpc-blockchain.md#getblock) RPC: gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash) RPC: returns the header hash of a block at the given height in the local best blockchain.
+```
 
 ### GET Block/NoTxDetails
 
