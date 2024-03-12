@@ -618,7 +618,7 @@ Result | array | Required<br>(exactly 1) | An array containing the requested blo
 →→<br>`hash` | string (hex) | Required<br>(exactly 1) | The hash of this block's block header encoded as hex in RPC byte order.  This is the same as the hash provided in parameter #2
 →→<br>`confirmations` | number (int) | Required<br>(exactly 1) | The number of confirmations the transactions in this block have, starting at 1 when this block is at the tip of the best blockchain.  This score will be -1 if the the block is not part of the best blockchain
 →→<br>`height` | number (int) | Required<br>(exactly 1) | The height of this block on its blockchain
-→→<br>`version` | number (int) | Required<br>(exactly 1) | This block's version number. 
+→→<br>`version` | number (int) | Required<br>(exactly 1) | This block's version number.
 →→<br>`merkleroot` | string (hex) | Required<br>(exactly 1) | The merkle root for this block, encoded as hex in RPC byte order
 →→<br>`time` | number (int) | Required<br>(exactly 1) | The value of the *time* field in the block header, indicating approximately when the block was created
 →→<br>`mediantime` | number (int) | Required<br>(exactly 1) | The median time of the 11 blocks before the most recent block on the blockchain.  Used for validating transaction locktime under BIP113
