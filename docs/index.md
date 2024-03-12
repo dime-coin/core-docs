@@ -122,6 +122,7 @@ api/zmq
 
 guide/introduction
 guide/blockchain-overview
+guide/blockchain-consensus
 guide/transactions
 guide/contracts
 guide/wallets
