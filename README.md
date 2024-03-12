@@ -21,10 +21,6 @@ by [Read the Docs](https://readthedocs.org/). Feel free to [open an
 issue](https://github.com/dime-coin/core-docs/issues/) or submit PRs
 modifying the English source text in this repository.
 
-## License
-
-[MIT](/LICENSE) © Dimecoin Developers.
-
 ## Acknowledgments and Credits
 The Dimecoin project has built and improved upon the achievements and features of several cryptocurrencies. Building on a wealth of knowledge, innovation, and technology developed by the broader cryptocurrency community – we extend our deepest gratitude to the following projects and their contributors whose pioneering work has helped shape Dimecoin into what it is today:
 
@@ -43,3 +39,7 @@ In addition to the project above’s contribution to our codebase, we also recog
 As we continue developing Dimecoin and contributing to the cryptocurrency landscape, we remain committed to open-source development, collaboration, and innovation principles. We look forward to continuing to build upon the work of our peers and sharing our own contributions with the community.
 
 Thank you to all the developers, researchers, and enthusiasts who have paved the way for projects like ours. Your hard work and dedication continue to inspire and drive the evolution of blockchain technology.
+
+## License
+
+[MIT](/LICENSE) © Dimecoin Developers.
