@@ -344,12 +344,12 @@ Result (whitespace added):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GET Block](../api/http-rest-requests.md#get-block): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
 * [GetBlock](../api/rpc-blockchain.md#getblock) RPC: gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash) RPC: returns the header hash of a block at the given height in the local best blockchain.
 * [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash) RPC: returns the header hash of the most recent block on the best blockchain.
+```
 
 ### GET ChainInfo
 
@@ -476,9 +476,9 @@ Result (whitespace added):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo) RPC: provides information about the current state of the blockchain.
+```
 
 ### GET GetUtxos
 
@@ -577,9 +577,9 @@ Result (whitespace added):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetTxOutSetInfo](../api/rpc-blockchain.md#gettxoutsetinfo) RPC: returns statistics about the confirmed unspent transaction output (UTXO) set. Note that this call may take some time and that it only counts outputs from confirmed transactions---it does not count outputs from the memory pool.
+```
 
 ### GET Headers
 
@@ -690,11 +690,11 @@ Result (whitespace added):
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GET Block/NoTxDetails](../api/http-rest-requests.md#get-blocknotxdetails) gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.  The JSON object includes TXIDs for transactions within the block rather than the complete transactions [GET block](../api/rpc-blockchain.md#getblock) returns.
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash) RPC: returns the header hash of a block at the given height in the local best blockchain.
 * [GetBlockHeader](../api/rpc-blockchain.md#getblockheader) RPC: gets a block header with a particular header hash from the local block database either as a JSON object or as a serialized block header.
+```
 
 ### GET MemPool/Contents
 
@@ -757,11 +757,11 @@ Result (whitespace added):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GET MemPool/Info](../api/http-rest-requests.md#get-mempoolinfo): returns information about the node's current transaction memory pool.
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo) RPC: returns information about the node's current transaction memory pool.
 * [GetRawMemPool](../api/rpc-blockchain.md#getrawmempool) RPC: returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
+```
 
 ### GET MemPool/Info
 
@@ -806,10 +806,10 @@ Result (whitespace added):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GET MemPool/Contents](../api/http-rest-requests.md#get-mempoolcontents): returns all transaction in the memory pool with detailed information.
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo) RPC: returns information about the node's current transaction memory pool.
+```
 
 ### GET Tx
 
@@ -963,7 +963,7 @@ Result (whitespace added):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetRawTransaction](../api/rpc-raw-transactions.md#getrawtransaction) RPC: gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dimecoin Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Dimecoin Core startup settings.
 * [GetTransaction](../api/rpc-wallet.md#gettransaction) RPC: gets detailed information about an in-wallet transaction.
+```

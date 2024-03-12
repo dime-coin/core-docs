@@ -35,10 +35,10 @@ Result:
 00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
+```
 
 ### GetBlock
 
@@ -281,10 +281,10 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
 * [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best blockchain.
+```
 
 ### GetBlockChainInfo
 
@@ -393,11 +393,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetMiningInfo](../api/rpc-mining.md#getmininginfo): returns various mining-related information.
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
 * [GetWalletInfo](../api/rpc-wallet.md#getwalletinfo): provides information about the wallet.
+```
 
 ### GetBlockCount
 
@@ -423,10 +423,10 @@ Result:
 5781103
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
+```
 
 ### GetBlockHash
 
@@ -456,10 +456,10 @@ Result:
 00000000539760ef8dd9d933743b6281e8337359ecfa35917f924e52156c7566
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
 * [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best blockchain.
+```
 
 ### GetBlockHeader
 
@@ -549,13 +549,13 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
 * [GetBlockHash](../api/rpc-blockchain.md#getblockhash): returns the header hash of a block at the given height in the local best blockchain.
 * [GetBlockHashes](../api/rpc-blockchain.md#getblockhashes): returns array of hashes of blocks within the timestamp range provided (requires `timestampindex` to be enabled).
 * [GetBlockHeaders](../api/rpc-blockchain.md#getblockheaders): returns an array of items with information about the requested number of blockheaders starting from the requested hash.
 * [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best blockchain.
+```
 
 ```{eval-rst}
 .. _api-rpc-blockchain-getblockheaders:
@@ -601,11 +601,11 @@ dimecoin-cli -testnet getchaintips
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetBestBlockHash](../api/rpc-blockchain.md#getbestblockhash): returns the header hash of the most recent block on the best block chain.
 * [GetBlock](../api/rpc-blockchain.md#getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the block chain.
+```
 
 ### GetChainTxStats
 
@@ -657,7 +657,8 @@ Result:
 }
 ```
 
-*See also: none*
+```{seealso}: none
+```
 
 ### GetCheckPoint
 
@@ -706,10 +707,10 @@ Result:
   "proof-of-stake": 13105918.85568522
 ```
 
-*See also*
-
+```{seealso}
 * [GetNetworkHashPS](../api/rpc-mining.md#getnetworkhashps): returns the estimated network hashes per second based on the last n blocks.
 * [GetMiningInfo](../api/rpc-mining.md#getmininginfo): returns various mining-related information.
+```
 
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempoolancestors:
@@ -765,10 +766,10 @@ Name | Type | Presence | Description
 → →<br>`spentby` | array | Required<br>(exactly 1) |  An array of unconfirmed transactions spending outputs from this transaction
 → → →<br>TXID | string | Optional (0 or more) | The TXIDs of any unconfirmed transactions spending from this transaction
 
-*See also*
-
+```{seealso}
 * [GetMemPoolDescendants](../api/rpc-blockchain.md#getmempooldescendants): returns all in-mempool descendants for a transaction in the mempool.
 * [GetRawMemPool](../api/rpc-blockchain.md#getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
+```
 
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempooldescendants:
@@ -826,10 +827,10 @@ Name | Type | Presence | Description
 → →<br>`unbroadcast` | bool | Required<br>(exactly 1) | True if this transaction  is currently unbroadcast (initial broadcast not yet acknowledged by any peers)
 → →<br>`instantlock` | bool | Required<br>(exactly 1) | Set to `true` if this transaction was locked via InstantSend
 
-*See also*
-
+```{seealso}
 * [GetMemPoolAncestors](../api/rpc-blockchain.md#getmempoolancestors): returns all in-mempool ancestors for a transaction in the mempool.
 * [GetRawMemPool](../api/rpc-blockchain.md#getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
+```
 
 ```{eval-rst}
 .. _api-rpc-blockchain-getmempoolentry:
@@ -906,11 +907,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetMemPoolAncestors](../api/rpc-blockchain.md#getmempoolancestors): returns all in-mempool ancestors for a transaction in the mempool.
 * [GetMemPoolDescendants](../api/rpc-blockchain.md#getmempooldescendants): returns all in-mempool descendants for a transaction in the mempool.
 * [GetRawMemPool](../api/rpc-blockchain.md#getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
+```
 
 ### GetMemPoolInfo
 
@@ -950,11 +951,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
 * [GetRawMemPool](../api/rpc-blockchain.md#getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
 * [GetTxOutSetInfo](../api/rpc-blockchain.md#gettxoutsetinfo): returns statistics about the confirmed unspent transaction output (UTXO) set. Note that this call may take some time and that it only counts outputs from confirmed transactions---it does not count outputs from the memory pool.
+```
 
 ```{eval-rst}
 .. _api-rpc-blockchain-getrawmempool:
@@ -1057,11 +1058,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
 * [GetMemPoolEntry](../api/rpc-blockchain.md#getmempoolentry): returns mempool data for given transaction (must be in mempool).
 * [GetTxOutSetInfo](../api/rpc-blockchain.md#gettxoutsetinfo): returns statistics about the confirmed unspent transaction output (UTXO) set. Note that this call may take some time and that it only counts outputs from confirmed transactions---it does not count outputs from the memory pool.
+```
 
 ### GetTxOut
 
@@ -1133,10 +1134,10 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetRawTransaction](../api/rpc-raw-transactions.md#getrawtransaction): gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dimecoin Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Dimecoin Core startup settings.
 * [GetTransaction](../api/rpc-wallet.md#gettransaction): gets detailed information about an in-wallet transaction.
+```
 
 ### GetTxOutProof
 
@@ -1166,11 +1167,11 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | string | Required<br>(exactly 1) | A string that is a serialized, hex-encoded data for the proof
 
-*See also*
-
+```{seealso}
 * [VerifyTxOutProof](../api/rpc-blockchain.md#verifytxoutproof): verifies that a proof points to one or more transactions in a block, returning the transactions the proof commits to and throwing an RPC error if the block is not in our best blockchain.
 * [`merkleblock` message](../reference/p2p-network-data-messages.md#merkleblock): A description of the
   format used for the proof.
+```
 
 ### GetTxOutSetInfo
 
@@ -1218,10 +1219,10 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
+```
 
 ### PreciousBlock
 
@@ -1291,10 +1292,10 @@ Result ():
 true
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlockChainInfo](../api/rpc-blockchain.md#getblockchaininfo): provides information about the current state of the blockchain.
 * [GetTxOutSetInfo](../api/rpc-blockchain.md#gettxoutsetinfo): returns statistics about the confirmed unspent transaction output (UTXO) set. Note that this call may take some time and that it only counts outputs from confirmed transactions---it does not count outputs from the memory pool.
+  ```
 
 ### VerifyTxOutProof
 
@@ -1330,7 +1331,7 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetTxOutProof](../api/rpc-blockchain.md#gettxoutproof): returns a hex-encoded proof that one or more specified transactions were included in a block.
 * [`merkleblock` message](../reference/p2p-network-data-messages.md#merkleblock): A description of the format used for the proof.
+```
