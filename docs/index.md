@@ -36,7 +36,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         RPC, REST, and ZMQ Info
         
         +++
-        :ref:`Click to Begin <api-rpc>`
+        :ref:`Click to Begin <api-rpc-overview>`
 
     .. grid-item-card:: Core Guides
         :margin: 2 2 auto auto
