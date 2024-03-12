@@ -26,6 +26,7 @@ extensions = [
   'sphinx_design',
   'sphinx_search.extension',
   'sphinx.ext.intersphinx',
+  'sphinx_inline_tabs',
 ]
 
 templates_path = ['_templates']
@@ -39,7 +40,10 @@ hoverxref_role_types = {
 
 # -- Myst parser configuration -----------------------------------------------
 myst_heading_anchors = 5
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+    ]
 
 # -- intersphinx configuration -----------------------------------------------
 intersphinx_mapping = {
@@ -48,12 +52,13 @@ intersphinx_mapping = {
 intersphinx_disabled_reftypes = ["*"]
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = "pydata_sphinx_theme"
+html_theme = "furo"
 html_static_path = ['_static']
 html_logo = 'img/dime_logo.png'
 html_css_files = [
     'css/footer.css',
     'css/pydata-overrides.css',
+    'pied-piper-admonition.css',
 ]
 
 html_sidebars = {
