@@ -123,6 +123,7 @@ api/zmq
 guide/introduction
 guide/blockchain-overview
 guide/blockchain-consensus
+guide/blockchain-block-height-and-forking
 guide/transactions
 guide/contracts
 guide/wallets
