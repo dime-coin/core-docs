@@ -85,7 +85,9 @@ Using json rpc
  (code -1)
 ```
 
-**NOTE**: `setgenerate` is disabled on mainnet and will only work on test networks.
+```{note}
+`setgenerate` is disabled on mainnet and will only work on test networks.
+```
 
 *See also*
 
