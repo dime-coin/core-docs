@@ -43,8 +43,6 @@ myst_enable_extensions = ["colon_fence"]
 
 # -- intersphinx configuration -----------------------------------------------
 intersphinx_mapping = {
-    "user": ("https://docs.dash.org/en/stable/", None),
-    "platform": ("https://docs.dash.org/projects/platform/en/latest/", None),
 }
 
 intersphinx_disabled_reftypes = ["*"]
@@ -60,6 +58,7 @@ html_css_files = [
 
 html_sidebars = {
     "index": ["sidebar-main.html"],
+    "docs/index": ["sidebar-nav2.html"],
     "**": ["sidebar-sub-nav.html"],
   
 }
