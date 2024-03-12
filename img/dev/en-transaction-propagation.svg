@@ -161,9 +161,9 @@
 	<g id="edge1">
 		<path class="st6" d="M1.1-420c1.9,0,39.2,0,68.8,0"/>
 		<polygon class="st4" points="70,-423.5 80,-420 70,-416.5 		"/>
-		<text transform="matrix(1.22 0 0 1.22 8.8201 -453.8122)" class="st1 st2">100,000</text>
-		<text transform="matrix(1.22 0 0 1.22 12.9067 -438.8159)" class="st1 st2">(100k)</text>
-		<text transform="matrix(1.22 0 0 1.22 17.3083 -423.8203)" class="st1 st2">duffs</text>
+		<text transform="matrix(1.22 0 0 1.22 8.7083 -453.8122)" class="st1 st2">100,000</text>
+		<text transform="matrix(1.22 0 0 1.22 12.7952 -438.8159)" class="st1 st2">(100k)</text>
+		<text transform="matrix(1.22 0 0 1.22 13.5709 -425.4853)" class="st1 st2">DIME</text>
 	</g>
 </g>
 </svg>
