@@ -9,7 +9,7 @@
 
 ## Transaction Data
 
-Every [block](../resources/glossary.md#block) must include one or more [transactions](../resources/glossary.md#transaction). The first one of these transactions must be a [coinbase transaction](../resources/glossary.md#coinbase-transaction), also called a generation transaction, which should collect and spend the [block reward](../resources/glossary.md#block-reward) (comprised of a block subsidy and any transaction fees paid by transactions included in this block).
+Every [block](../resources/glossary.md#block) must include one or more [transactions](../resources/glossary.md#transaction). The first one of these transactions must be a [coinbase transaction](../resources/glossary.md#coinbase-transaction), also called a generation transaction. This transaction should collect and spend the [block reward](../resources/glossary.md#block-reward) (comprised of a block subsidy and any transaction fees paid by transactions included in this block).
 
 The UTXO of a coinbase transaction has the special condition that it cannot be spent (used as an input) for at least 100 blocks. This temporarily prevents a [miner](../resources/glossary.md#miner) from spending the transaction fees and block reward from a block that may later be determined to be stale (and therefore the coinbase transaction destroyed) after a blockchain [fork](../resources/glossary.md#fork).
 
