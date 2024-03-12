@@ -179,8 +179,19 @@ documentation can be submitted as via the "Edit this page" button on the top,
 right of each page.
 
 ```{eval-rst}
+
+.. raw:: html
+
+    <div class="custom-spacing"></div>
+    
 .. image:: https://github.com/dime-coin/branding-assets/blob/main/master-files/Logobreakdown2.png?raw=true
    :class: no-scaled-link
    :align: center
    :width: 90%
+
+.. raw:: html
+
+    <div class="custom-spacing"></div>
+
+
 ```
