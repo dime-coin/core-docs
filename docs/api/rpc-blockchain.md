@@ -72,7 +72,7 @@ Name | Type | Presence | Description
 →<br>`size` | numeric | Required<br>(exactly 1) | The size of this block in serialized block format, counted in bytes
 →<br>`strippedsize`| numeric | Required<br>(exactly 1) | The block size excluding witness data
 →<br>`height` | numeric | Required<br>(exactly 1) | The height of this block on its blockchain
-→<br>`version` | numeric | Required<br>(exactly 1) | This block's version number.  See [block version numbers](../reference/block-chain-block-headers.md#block-versions)
+→<br>`version` | numeric | Required<br>(exactly 1) | This block's version number.
 →<br>`versionHex` | string (hex) | Required<br>(exactly 1) | The block version formatted in hexadecimal
 →<br>`merkleroot` | string (hex) | Required<br>(exactly 1) | The merkle root for this block, encoded as hex in RPC byte order
 →<br>`tx` | array | Required<br>(exactly 1) | An array containing the TXIDs of all transactions in this block.  The transactions appear in the array in the same order they appear in the serialized block
@@ -102,7 +102,7 @@ Name | Type | Presence | Description
 →<br>`size` | numeric | Required<br>(exactly 1) | The size of this block in serialized block format, counted in bytes
 →<br>`weight`| numeric | Required<br>(exactly 1) | THe block weight as defined in [BIP 141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki)
 →<br>`height` | numeric | Required<br>(exactly 1) | The height of this block on its blockchain
-→<br>`version` | numeric | Required<br>(exactly 1) | This block's version number.  See [block version numbers](../reference/block-chain-block-headers.md#block-versions)
+→<br>`version` | numeric | Required<br>(exactly 1) | This block's version number.
 →<br>`versionHex` | string (hex) | Required<br>(exactly 1) | The block version formatted in hexadecimal
 →<br>`merkleroot` | string (hex) | Required<br>(exactly 1) | The merkle root for this block, encoded as hex in RPC byte order
 →<br>`tx` | array | Required<br>(exactly 1) | An array containing the TXIDs of all transactions in this block.  The transactions appear in the array in the same order they appear in the serialized block
@@ -436,7 +436,7 @@ The [`getblockhash` RPC](../api/rpc-blockchain.md#getblockhash) returns the head
 
 Name | Type | Presence | Description
 --- | --- | --- | ---
-Block Height | numeric | Required<br>(exactly 1) | Returns hash of block in best-block-chain at height provided.  The height of the hardcoded genesis block is 0
+Block Height | numeric | Required<br>(exactly 1) | Returns hash of block in best-blockchain at height provided.  The height of the hardcoded genesis block is 0
 
 *Result---the block header hash*
 
@@ -491,7 +491,7 @@ Name | Type | Presence | Description
 →<br>`hash` | string (hex) | Required<br>(exactly 1) | The hash of this block's block header encoded as hex in RPC byte order.  This is the same as the hash provided in parameter #1
 →<br>`confirmations` | numeric | Required<br>(exactly 1) | The number of confirmations the transactions in this block have, starting at 1 when this block is at the tip of the best blockchain.  This score will be -1 if the the block is not part of the best blockchain
 →<br>`height` | numeric | Required<br>(exactly 1) | The height of this block on its blockchain
-→<br>`version` | numeric | Required<br>(exactly 1) | This block's version number.  See [block version numbers](../reference/block-chain-block-headers.md#block-versions)
+→<br>`version` | numeric | Required<br>(exactly 1) | This block's version number.
 →<br>`merkleroot` | string (hex) | Required<br>(exactly 1) | The merkle root for this block, encoded as hex in RPC byte order
 →<br>`time` | numeric | Required<br>(exactly 1) | The time of the block  
 →<br>`mediantime` | numeric | Required<br>(exactly 1) | The computed median time of the previous 11 blocks.  Used for validating transaction locktime under BIP113

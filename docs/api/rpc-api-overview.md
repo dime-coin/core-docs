@@ -13,7 +13,7 @@
 
 ### Overview
 
-Dimecoin Core provides a remote procedure call (RPC) interface for various administrative tasks, [wallet](../resources/glossary.md#wallet) operations, and queries about [network](../resources/glossary.md#network) and [blockchain](../resources/glossary.md#block-chain) data.
+Dimecoin Core provides a remote procedure call (RPC) interface for various administrative tasks, [wallet](../resources/glossary.md#wallet) operations, and queries about [network](../resources/glossary.md#network) and [blockchain](../resources/glossary.md#blockchain) data.
 
 Open-source client libraries for the RPC interface are readily available in most modern programming languages. Unless you are working on a custom framework, you won't need to write your own from scratch.
 

@@ -110,7 +110,7 @@ The currently-available type identifiers are:
 
 ### block
 
-The [`block` message](docs/reference/p2p-network.md#block) transmits a single [serialized block](../resources/glossary.md#serialized-block) in the format described in the [serialized blocks section](docs/reference/block-chain-serialized-blocks.md). See that section for an example hexdump.  It can be sent for two different reasons:
+The [`block` message](docs/reference/p2p-network.md#block) transmits a single [serialized block](../resources/glossary.md#serialized-block) in the format described in the [serialized blocks section](docs/reference/blockchain#serialized-blocks.md). See that section for an example hexdump.  It can be sent for two different reasons:
 
 1. **GetData Response:** Nodes will always send it in response to a [`getdata` message](docs/reference/p2p-network.md#getdata) that requests the block with an [inventory](../resources/glossary.md#inventory) type of `MSG_BLOCK` (provided the node has that block available for relay).
 
