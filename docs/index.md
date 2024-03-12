@@ -124,6 +124,7 @@ guide/introduction
 guide/blockchain-overview
 guide/blockchain-consensus
 guide/blockchain-block-height-and-forking
+guide/blockchain-transaction-data
 guide/transactions
 guide/contracts
 guide/wallets
