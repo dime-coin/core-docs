@@ -4,7 +4,11 @@
   :description: A micropayment channel allows two parties to exchange cryptocurrency off-chain, bypassing blockchain interactions.
 ```
 
-# Micropayment Channel
+> ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
+>
+> ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
+
+## Micropayment Channel
 
 Alice also works part-time moderating forum posts for Bob. Every time someone posts to Bob's busy forum, Alice skims the post to make sure it isn't offensive or spam. Alas, Bob often forgets to pay her, so Alice demands to be paid immediately after each post she approves or rejects. Bob says he can't do that because hundreds of small payments will cost him thousands of dimecoins in transaction fees, so Alice suggests they use a micropayment channel.
 
