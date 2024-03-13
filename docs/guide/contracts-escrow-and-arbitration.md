@@ -22,7 +22,9 @@ To create a multiple-signature ([multisig](../resources/glossary.md#multisig)) o
 OP_2 [A's pubkey] [B's pubkey] [C's pubkey] OP_3 OP_CHECKMULTISIG
 ```
 
-(Opcodes to push the public keys onto the stack are not shown.)
+```{note}
+Opcodes to push the public keys onto the stack are not shown for brevity.
+```
 
 `OP_2` and `OP_3` push the actual numbers 2 and 3 onto the stack. `OP_2` specifies that 2 signatures are required to sign; `OP_3` specifies that 3 public keys (unhashed) are being provided. This is a 2-of-3 multisig pubkey script, more generically called a m-of-n pubkey script (where *m* is the *minimum* matching signatures required and *n* in the *number* of public keys provided).
 
@@ -38,7 +40,9 @@ In the [signature script](../resources/glossary.md#signature-script) Jane puts h
 OP_0 [A's signature] [B's or C's signature] [serialized redeem script]
 ```
 
-(Opcodes to push the signatures and redeem script onto the stack are not shown.)
+```{note}
+Opcodes to push the public keys onto the stack are not shown for brevity.
+```
 
  `OP_0` is a workaround for an off-by-one error in the original implementation which must be preserved for compatibility.  Note that the signature script must provide signatures in the same order as the corresponding public keys appear in the redeem script.  See the description in [`OP_CHECKMULTISIG`](../reference/transactions-opcodes.md) for details.)
 
