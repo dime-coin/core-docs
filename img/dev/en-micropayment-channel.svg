@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="480px" height="377px" viewBox="0 0 480 377" style="enable-background:new 0 0 480 377;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:9.5319px;}
+	.st3{fill:none;stroke:#000000;stroke-width:0.6809;stroke-miterlimit:2.7234;}
+	.st4{fill:none;stroke:#000000;stroke-width:0.6809;stroke-miterlimit:2.7234;stroke-dasharray:3.4043,1.3617;}
+	.st5{stroke:#000000;stroke-width:0.6809;stroke-miterlimit:2.7234;}
+</style>
+<g id="graph0" transform="scale(0.680851 0.680851) rotate(0) translate(4 549)">
+	<polygon class="st0" points="-4,4.4 -4,-548.6 701,-548.6 701,4.4 	"/>
+	<text transform="matrix(1.4688 0 0 1.4688 152.0662 -82.4395)" class="st1 st2">Alice broadcasts the bond to the DIME network immediately.</text>
+	<text transform="matrix(1.4688 0 0 1.4688 127.6084 -67.4407)" class="st1 st2">She broadcasts the final version of the refund when she finishes work</text>
+	<text transform="matrix(1.4688 0 0 1.4688 110.8648 -52.4405)" class="st1 st2">or before the locktime.  If she fails to broadcast before refund v1&apos;s time lock</text>
+	<text transform="matrix(1.4688 0 0 1.4688 164.6312 -37.4404)" class="st1 st2">expires, Bob can broadcast refund v1 to get a full refund.</text>
+	<text transform="matrix(1.4688 0 0 1.4688 227.6297 -7.44)" class="st1 st2">Dimecoin Micropayment Channels</text>
+	<g id="clust1">
+		<polygon class="st3" points="0,-148.6 0,-477.6 131,-477.6 131,-148.6 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 10.8998 -462.4398)" class="st1 st2">Alice&apos;s Computer</text>
+		<text transform="matrix(1.4688 0 0 1.4688 39.6007 -447.4404)" class="st1 st2">(Server)</text>
+	</g>
+	<g id="clust2">
+		<polygon class="st3" points="572,-135.6 572,-536.6 697,-536.6 697,-135.6 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 582.6997 -521.4401)" class="st1 st2">Bob&apos;s Computer</text>
+		<text transform="matrix(1.4688 0 0 1.4688 612.1005 -506.4407)" class="st1 st2">(Client)</text>
+	</g>
+	<g id="edge2">
+		<path class="st4" d="M101.9-419.8c17.4-2.5,38.8-4.9,58.1-4.9c0,0,0,0,383,0c19.7,0,39.6,8.4,55.8,17.8"/>
+		<polygon class="st5" points="600.6,-409.8 607.3,-401.6 597,-403.9 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 223.4002 -443.4408)" class="st1 st2">A: Signed; please send me the bond to</text>
+		<text transform="matrix(1.4688 0 0 1.4688 251.4005 -428.4406)" class="st1 st2">prove you funded the account</text>
+	</g>
+	<g id="node2">
+		<polygon class="st3" points="103.5,-388.1 27.5,-388.1 27.5,-335.1 103.5,-335.1 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 48.0001 -372.9408)" class="st1 st2">Bond</text>
+		<text transform="matrix(1.4688 0 0 1.4688 44.5003 -357.9406)" class="st1 st2">(2-of-2</text>
+		<text transform="matrix(1.4688 0 0 1.4688 39.6007 -342.9404)" class="st1 st2">multisig)</text>
+	</g>
+	<g id="edge4">
+		<path class="st4" d="M103.7-355.8c17.1,2.2,37.7,4.2,56.3,4.2c0,0,0,0,383,0c5,0,25.4,6.5,45.6,13.3"/>
+		<polygon class="st5" points="589.8,-341.6 598.2,-335.1 587.6,-335 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 211.5004 -370.4407)" class="st1 st2">A: Some work done; please sign refund v2</text>
+		<text transform="matrix(1.4688 0 0 1.4688 238.7999 -355.4406)" class="st1 st2">reducing your refund by 1 mDIME</text>
+	</g>
+	<g id="edge6">
+		<path class="st4" d="M92.7-291.6c18.5,6.2,44.1,13,67.3,13c0,0,0,0,383,0c15.8,0,33.2-0.2,48.5-0.3"/>
+		<polygon class="st5" points="591.6,-282.5 601.7,-279.1 591.7,-275.5 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 236.7 -297.4407)" class="st1 st2">A: More work done; please sign v3</text>
+		<text transform="matrix(1.4688 0 0 1.4688 211.5004 -282.4405)" class="st1 st2">reducing your refund by another 1 mDIME</text>
+	</g>
+	<g id="edge8">
+		<path class="st4" d="M98-238.8c24.6,8.2,55.6,18.2,62,18.2c0,0,0,0,383,0c17.8,0,37.5,0,54,0"/>
+		<polygon class="st5" points="597.4,-224.1 607.4,-220.6 597.4,-217.1 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 331.9006 -224.4406)" class="st1 st2">A: [...]</text>
+	</g>
+	<g id="node5">
+		<polygon class="st3" points="113,-224.6 18,-224.6 18,-156.6 113,-156.6 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 26.3001 -209.4405)" class="st1 st2">Refund v45</text>
+		<text transform="matrix(1.4688 0 0 1.4688 39.6007 -194.4403)" class="st1 st2">Bob: 66</text>
+		<text transform="matrix(1.4688 0 0 1.4688 36.8001 -179.4401)" class="st1 st2">Alice: 44</text>
+		<text transform="matrix(1.4688 0 0 1.4688 32.5997 -164.4399)" class="st1 st2">(No Lock)</text>
+	</g>
+	<g id="edge10">
+		<path class="st4" d="M113.2-159.8c14.4,6.9,30.7,12.2,46.8,12.2c0,0,0,0,383,0c16,0,33.4-2.2,48.7-4.8"/>
+		<polygon class="st5" points="591.4,-155.9 601.9,-154.3 592.7,-149.1 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 261.8997 -166.4408)" class="st1 st2">A: I&apos;m done for the day.  I&apos;m</text>
+		<text transform="matrix(1.4688 0 0 1.4688 252.1004 -151.4406)" class="st1 st2">going to broadcast refund v45</text>
+	</g>
+	<g id="node6">
+		<polygon class="st3" points="679,-490.6 590,-490.6 590,-422.6 679,-422.6 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 599.4999 -475.4406)" class="st1 st2">Refund v1</text>
+		<text transform="matrix(1.4688 0 0 1.4688 604.4011 -460.4404)" class="st1 st2">Bob: 100</text>
+		<text transform="matrix(1.4688 0 0 1.4688 610.0007 -445.4402)" class="st1 st2">Alice: 0</text>
+		<text transform="matrix(1.4688 0 0 1.4688 600.1999 -430.44)" class="st1 st2">(Locktime)</text>
+	</g>
+	<g id="edge1">
+		<path class="st3" d="M589.9-464.8c-14.8-2.1-31.6-3.9-46.9-3.9c-383,0-383,0-383,0c-25.8,0-50.8,15.8-68.4,30.4"/>
+		<polygon class="st5" points="93.9,-435.6 84,-431.6 89.3,-440.9 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 247.2007 -502.4403)" class="st1 st2">B: Please sign refund version 1,</text>
+		<text transform="matrix(1.4688 0 0 1.4688 244.4002 -487.4402)" class="st1 st2">which is a full refund of the bond</text>
+		<text transform="matrix(1.4688 0 0 1.4688 248.6006 -472.44)" class="st1 st2">that can&apos;t be spent for 24 hours</text>
+	</g>
+	<g id="edge3">
+		<path class="st3" d="M607.1-387.9c-18-3.7-42.4-7.7-64.1-7.7c-383,0-383,0-383,0c-15.9,0-32.4,4.4-47.1,10"/>
+		<polygon class="st5" points="114.2,-382.4 103.6,-381.8 111.5,-388.8 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 219.8998 -399.4399)" class="st1 st2">B: Here&apos;s the bond; please start working</text>
+	</g>
+	<g id="edge5">
+		<path class="st3" d="M598.3-322.6c-16.7,0-37,0-55.3,0c-383,0-383,0-383,0c-19.3,0-40.4,4.3-57.6,9.1"/>
+		<polygon class="st5" points="103.3,-310.2 92.7,-310.8 101.4,-316.9 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 203.8002 -326.4399)" class="st1 st2">B: Signed; refund now pays Bob: 99; Alice: 1</text>
+	</g>
+	<g id="edge7">
+		<path class="st3" d="M601.6-268c-23.5,8.4-52.5,18.3-58.6,18.3c-383,0-383,0-383,0c-16.9,0-35.5,0-51.7,0"/>
+		<polygon class="st5" points="108.1,-246.1 98.1,-249.6 108.1,-253.1 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 203.8002 -253.4398)" class="st1 st2">B: Signed; refund now pays Bob: 98; Alice: 2</text>
+	</g>
+	<g id="edge9">
+		<path class="st3" d="M607.3-207.5c-17.7,7.7-41.8,15.9-64.3,15.9c-383,0-383,0-383,0c-11.9,0-24.7,0.1-36.9,0.2"/>
+		<polygon class="st5" points="123.1,-187.9 113.1,-191.3 123.1,-194.9 		"/>
+		<text transform="matrix(1.4688 0 0 1.4688 331.9006 -195.44)" class="st1 st2">B: [...]</text>
+	</g>
+</g>
+</svg>
