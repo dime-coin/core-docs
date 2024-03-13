@@ -148,6 +148,9 @@ guide/contracts-crosschain-trading
 guide/wallets
 guide/operating-modes
 guide/masternodes
+guide/masternodes-pow-vs-pos
+guide/masternodes-quorum
+guide/masternodes-setup-requirements
 guide/p2p-network
 guide/mining
 ```

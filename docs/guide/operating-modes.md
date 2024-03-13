@@ -73,5 +73,5 @@ There are future proposals such as Unspent Transaction Output (UTXO) commitments
 Until these types of operating modes are implemented, modes should be chosen based on the likely threat model, computing and bandwidth constraints, and liability in Dimecoin value.
 
 ```{seealso}
-[Original Thread on UTXO Commitments](https://bitcointalk.org/index.php?topic=88208.0)
+[Original BitcoinTalk Thread on UTXO Commitments](https://bitcointalk.org/index.php?topic=88208.0)
 ```
