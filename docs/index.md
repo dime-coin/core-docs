@@ -141,6 +141,10 @@ guide/transactions-transaction-fees-and-change
 guide/transactions-avoiding-key-reuse
 guide/transactions-transaction-malleability
 guide/contracts
+guide/contracts-escrow-and-arbitration
+guide/contracts-micropayment-channel
+guide/deposit
+guide/cross-chain-trading
 guide/wallets
 guide/operating-modes
 guide/masternodes

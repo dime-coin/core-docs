@@ -14,7 +14,7 @@ None of Dimecoin's signature hash types protect the [signature script](../resour
 
 Although the modifications are non-functional---so they do not change what [inputs](../resources/glossary.md#input) the transaction uses nor what [outputs](../resources/glossary.md#output) it pays---they do change the computed hash of the transaction. Since each transaction links to previous transactions using hashes as a transaction identifier ([TXID](../resources/glossary.md#transaction-identifiers)), a modified transaction will not have the txid its creator expected.
 
-This isn't a problem for most Dimecoin transactions which are designed to be added to the [block chain](../resources/glossary.md#block-chain) immediately. But it does become a problem when the output from a transaction is spent before that transaction is added to the block chain.
+This isn't a problem for most Dimecoin transactions which are designed to be added to the [blockchain](../resources/glossary.md#blockchain) immediately. But it does become a problem when the output from a transaction is spent before that transaction is added to the blockchain.
 
 Dimecoin Core 2.0.0.0 implemented [BIP-147](https://github.com/bitcoin/bips/blob/master/bip-0147.mediawiki) which fixes a design flaw in OP_CHECKMULTISIG and OP_CHECKMULTISIGVERIFY that caused them to consume an extra stack element ("dummy element") after signature validation. Previously, the dummy element was not inspected in any manner, and could be replaced by any value without invalidating the script. BIP147 removed this malleability vector by forcing the dummy element to be an empty byte array and rejecting anything else.
 
