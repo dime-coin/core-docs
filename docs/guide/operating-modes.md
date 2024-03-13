@@ -58,10 +58,10 @@ An SPV client can not only add transactions as elements to the filter, but also 
 
 If a user is more privacy-conscious, he can set the Bloom filter to include more false positives, at the expense of extra bandwidth used for transaction discovery. If a user is on a tight bandwidth budget, he can set the false-positive rate to low, knowing that this will allow full nodes a clear view of what transactions are associated with his client.
 
-```{admonition}Resources
+```{admonition} Resources
 [DimecoinJ](https://github.com/dime-coin/dimecoinj), a Java implementation of Dimecoin based on BitcoinJ that uses the SPV security model and Bloom filters. Used in many Android wallets.
 
-[ElectrumXDime](https://github.com/dime-coin/electrumx-dimecoin allows users to run their own Electrum server. It connects to your full node and indexes the blockchain, allowing efficient querying of history of arbitrary addresses.)
+[ElectrumXDime](https://github.com/dime-coin/electrumx-dimecoin) allows users to run their own Electrum server. It connects to your full node and indexes the blockchain, allowing efficient querying of history of arbitrary addresses.
 ```
 
 Bloom filters were standardized for use via [BIP37](https://github.com/bitcoin/bips/blob/master/bip-0037.mediawiki). Review the BIP for implementation details.
