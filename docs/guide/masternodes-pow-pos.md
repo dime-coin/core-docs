@@ -1,5 +1,4 @@
 ```{eval-rst}
-.. _masternodes:
 .. meta::
   :title: Dimecoin Masternodes
   :description: Explanation of difference between block validators (miners or stakers) and masternodes
@@ -12,7 +11,7 @@
 
 ## POW/POS vs Masternodes
 
-Dimecoin, like Bitcoin and most other cryptocurrencies, is based on a decentralized ledger of all transactions, known as a blockchain. This blockchain is secured through a consensus mechanism; in the case of Dimecoin, the consensus mechanism is a hybrid Proof of Work (PoW) / Proof of Stake (PoS) system. Miners attempt to solve complex problems with specialized computers, and when they solve the problem, they receive the right to add a new block to the blockchain. If all the other people running the software agree that the problem was solved correctly, the block is added to the blockchain, and the miner is rewarded. Conversely, staking validators attempt to mint new blocks to the network based on the coins they hold. See the Core guide [consensus](../guide/blockchain-consensus.md) section for more detailed information.
+Dimecoin, like Bitcoin and most other cryptocurrencies, is based on a decentralized ledger of all transactions, known as a [blockchain](../resources/glossary.md#blockchain). This blockchain is secured through a consensus mechanism; in the case of Dimecoin, the consensus mechanism is a hybrid Proof of Work (PoW) / Proof of Stake (PoS) system. Miners attempt to solve complex problems with specialized computers, and when they solve the problem, they receive the right to add a new block to the blockchain. If all the other people running the software agree that the problem was solved correctly, the block is added to the blockchain, and the miner is rewarded. Conversely, staking validators attempt to mint new blocks to the network based on the coins they hold. See the Core guide [consensus](../guide/blockchain-consensus.md) section for more detailed information.
 
 Dimecoin works a little differently when compared to Bitcoin because it has a two-tier network, similar to Dash. The second tier is powered by masternodes [Full Nodes](../resources/glossary.md#full-node), enabling additional network functionality. Since this second tier is essential, masternodes are rewarded when miners or stakers create new blocks. The breakdown is as follows:
 

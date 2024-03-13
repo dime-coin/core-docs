@@ -149,7 +149,7 @@ guide/wallets
 guide/operating-modes
 guide/masternodes
 guide/masternodes-pow-pos
-guide/masternodes-quorum
+guide/masternodes-paylogic-quorums
 guide/masternodes-setup-requirements
 guide/p2p-network
 guide/mining
