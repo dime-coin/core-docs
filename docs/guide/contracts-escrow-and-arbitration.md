@@ -18,7 +18,7 @@ This simple contract isn't much help if there's a dispute, so Sam and Alex enlis
 
 To create a multiple-signature ([multisig](../resources/glossary.md#multisig)) output, they each give the others a [public key](../resources/glossary.md#public-key). Then Sam creates the following [P2SH multisig](../resources/glossary.md#p2sh-multisig) [redeem script](../resources/glossary.md#redeem-script):
 
-```bash
+```text
 OP_2 [A's pubkey] [B's pubkey] [C's pubkey] OP_3 OP_CHECKMULTISIG
 ```
 
@@ -34,7 +34,7 @@ After looking at the evidence, Jane thinks a 40% refund is sufficient, so she cr
 
 In the [signature script](../resources/glossary.md#signature-script) Jane puts her signature and a copy of the unhashed serialized redeem script that Sam created.  She gives a copy of the incomplete transaction to both Sam and Alex.  Either one of them can complete it by adding his signature to create the following signature script:
 
-```bash
+```text
 OP_0 [A's signature] [B's or C's signature] [serialized redeem script]
 ```
 
