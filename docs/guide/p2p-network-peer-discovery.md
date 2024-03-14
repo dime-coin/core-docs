@@ -45,5 +45,7 @@ Dimecoin Core also includes a hardcoded list of IP addresses and port numbers to
 As a manual fallback option, Dimecoin Core also provides several command-line connection options, including the ability to get a list of peers from a specific node by IP address, or to make a persistent connection to a specific node by IP address.  See the `-help` text for details.
 
 ```{admonition} Resources
-[Dimecoin Seeder](https://github.com/dime-coin/dimecoin-seeder), the program run by several of the seeds used by Dimecoin Core. The Dimecoin Core [DNS Seed Policy](https://github.com/dime-coin/dimecoin/blob/master/doc/dnsseed-policy.md). The hardcoded list of IP addresses used by Dimecoin Core is generated using the [makeseeds script](https://github.com/dime-coin/dimecoin/tree/master/contrib/seeds).
+* [Dimecoin Seeder](https://github.com/dime-coin/dimecoin-seeder), the program run by several of the seeds used by Dimecoin Core. 
+* The Dimecoin Core [DNS Seed Policy](https://github.com/dime-coin/dimecoin/blob/master/doc/dnsseed-policy.md). 
+* The hardcoded list of IP addresses used by Dimecoin Core is generated using the [makeseeds script](https://github.com/dime-coin/dimecoin/tree/master/contrib/seeds).
 ```
