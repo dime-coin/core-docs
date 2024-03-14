@@ -32,7 +32,7 @@ Full nodes validate the received block and then advertise it to their peers usin
 
 | **Message** | [inv message](../reference/p2p-network.md#inv)                                   | [getdata message](../reference/p2p-network.md#getdata)               | [getheaders message](../reference/p2p-network.md#getheaders)                                     | [headers message](../reference/p2p-network.md#headers) |
 | --- | --- | --- | --- | --- |
-| **From→To** | Relay→_Any_                                            | BF→Relay                                   | HF→Relay                                                               | Relay→HF                                   |
+| **From→To** | Relay→*Any*                                           | BF→Relay                                   | HF→Relay                                                               | Relay→HF                                   |
 | **Payload** | The inventory of the new block                         | The inventory of the new block             | One or more header hashes on the HF node's best header chain (BHC)     | Up to 2,000 headers connecting HF node's BHC to relay node's BHC |
 | **Message** | [`block` message](../reference/p2p-network.md#block)                               | [`merkleblock` message](../reference/p2p-network.md#merkleblock)       | [`tx` message](../reference/p2p-network.md#tx)                                                     | |
 | **From→To** | Relay→BF/HF                                            | Relay→SPV                                  | Relay→SPV                                                              |   |

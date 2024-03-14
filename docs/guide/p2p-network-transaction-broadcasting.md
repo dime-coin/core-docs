@@ -12,7 +12,6 @@
 
 In order to send a [transaction](../resources/glossary.md#transaction) to a [peer](../resources/glossary.md#peer), an [`inv` message](../reference/p2p-network-data-messages.md#inv) is sent. If a [`getdata` message](../reference/p2p-network-data-messages.md#getdata) is received in reply, the transaction is sent using a [`tx` message](../reference/p2p-network-data-messages.md#tx). If it is a valid transaction, the peer receiving the transaction also forwards the transaction to its peers.
 
-
 ### Memory Pool
 
 Full peers may track unconfirmed transactions that are eligible to be included in the next [block](../resources/glossary.md#block). This is essential for miners or stakers who will produce some or all of those transactions. Still, it's also useful for any peer who wants to keep track of unconfirmed transactions, such as peers serving unconfirmed transaction information to SPV clients.

@@ -16,12 +16,12 @@ When started for the first time, programs don't know the IP addresses of any act
 
 ```bash
 ;; QUESTION SECTION:
-;dnsseed.dimecoinnetwork.com.		IN	A
+;dnsseed.dimecoinnetwork.com.  IN A
 
 ;; ANSWER SECTION:
-dnsseed.dimecoinnetwork.com.	3600	IN	A	144.81.48.187
-dnsseed.dimecoinnetwork.com.	3600	IN	A	132.95.151.84
-dnsseed.dimecoinnetwork.com.	3600	IN	A	124.77.137.236
+dnsseed.dimecoinnetwork.com. 3600 IN A 144.81.48.187
+dnsseed.dimecoinnetwork.com. 3600 IN A 132.95.151.84
+dnsseed.dimecoinnetwork.com. 3600 IN A 124.77.137.236
 
 [...]
 ```

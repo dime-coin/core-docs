@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="110px" viewBox="0 0 450 110" style="enable-background:new 0 0 450 110;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.7639;stroke-miterlimit:3.0557;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:10.6948px;}
+	.st3{fill:none;stroke:#000000;stroke-width:0.7639;stroke-miterlimit:3.0557;}
+	.st4{stroke:#000000;stroke-width:0.7639;stroke-miterlimit:3.0557;}
+</style>
+<g id="graph1" transform="scale(0.765306 0.765306) rotate(0) translate(4 140)">
+	<polygon class="st0" points="-3.5,4.7 -3.5,-140 584.5,-140 584.5,4.7 	"/>
+	<text transform="matrix(1.3067 0 0 1.3067 170.5172 -8.6391)" class="st1 st2">Pool-Based Dimecoin Mining Workflow</text>
+	<g id="node1">
+		<polygon class="st3" points="77.4,-100.1 1.5,-100.1 1.5,-58.1 77.4,-58.1 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 25.481 -83.5026)" class="st1 st2">P2P</text>
+		<text transform="matrix(1.3067 0 0 1.3067 11.5065 -66.5332)" class="st1 st2">Network</text>
+	</g>
+	<g id="node4">
+		<polygon class="st3" points="232.1,-100.1 170.2,-100.1 170.2,-58.1 232.1,-58.1 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 179.5012 -83.5026)" class="st1 st2">Mining</text>
+		<text transform="matrix(1.3067 0 0 1.3067 186.4882 -66.5332)" class="st1 st2">Pool</text>
+	</g>
+	<g id="edge4">
+		<path class="st3" d="M78.2-79.1c24.6,0,56.4,0,81.6,0"/>
+		<polygon class="st4" points="160.1,-82.6 170,-79.1 160.1,-75.6 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 106.7108 -83.5026)" class="st1 st2">TXes</text>
+	</g>
+	<g id="node2">
+		<polygon class="st3" points="579.5,-97.1 525.6,-97.1 525.6,-61.1 579.5,-61.1 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 535.7529 -75.0176)" class="st1 st2">ASIC</text>
+	</g>
+	<g id="node3">
+		<polygon class="st3" points="417.8,-100.1 337.9,-100.1 337.9,-58.1 417.8,-58.1 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 355.0268 -83.5026)" class="st1 st2">Mining</text>
+		<text transform="matrix(1.3067 0 0 1.3067 349.6464 -66.5332)" class="st1 st2">Software</text>
+	</g>
+	<g id="edge10">
+		<path class="st3" d="M537.3-60.9c-13,15.6-29.7,35.7-29.7,35.7h-71.9c0,0-13.8-12.9-28-26.1"/>
+		<polygon class="st4" points="405.3,-48.8 400.4,-58.1 410.1,-53.9 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 444.51 -63.5389)" class="st1 st2">Headers</text>
+		<text transform="matrix(1.3067 0 0 1.3067 450.5336 -46.5695)" class="st1 st2">Below</text>
+		<text transform="matrix(1.3067 0 0 1.3067 450.0933 -29.6007)" class="st1 st2">Target</text>
+	</g>
+	<g id="edge8">
+		<path class="st3" d="M418.1-83.3c9.9-1,17.7-1.8,17.7-1.8h71.9c0,0,3.1,0.4,7.6,1"/>
+		<polygon class="st4" points="515.9,-87.5 525.4,-82.7 515,-80.6 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 452.8039 -123.43)" class="st1 st2">Block</text>
+		<text transform="matrix(1.3067 0 0 1.3067 437.7112 -106.4605)" class="st1 st2">Headers &amp;</text>
+		<text transform="matrix(1.3067 0 0 1.3067 446.2357 -89.4917)" class="st1 st2">Targets</text>
+	</g>
+	<g id="edge12">
+		<path class="st3" d="M337.6-61.1c-9.9,4.4-17.7,7.9-17.7,7.9h-69.9c0,0-3.7-2-9.1-4.8"/>
+		<polygon class="st4" points="239.3,-54.9 232.1,-62.7 242.6,-61.1 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 261.9514 -57.5498)" class="st1 st2">Shares</text>
+	</g>
+	<g id="edge6">
+		<path class="st3" d="M170.2-62.7c-9.7,5.2-17.9,9.5-17.9,9.5H96.4c0,0-3.7-1.7-9.2-4.2"/>
+		<polygon class="st4" points="85.7,-54.2 78,-61.5 88.6,-60.5 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 102.0644 -57.5498)" class="st1 st2">Blocks</text>
+	</g>
+	<g id="edge2">
+		<path class="st3" d="M232.3-79.1c26.3,0,64.6,0,95.2,0"/>
+		<polygon class="st4" points="327.7,-82.6 337.7,-79.1 327.7,-75.6 		"/>
+		<text transform="matrix(1.3067 0 0 1.3067 253.5665 -100.4714)" class="st1 st2">Prototype</text>
+		<text transform="matrix(1.3067 0 0 1.3067 266.1432 -83.5026)" class="st1 st2">Block</text>
+	</g>
+</g>
+</svg>

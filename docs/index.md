@@ -159,6 +159,7 @@ guide/p2p-network-block-broadcasting
 guide/p2p-network-transaction-broadcasting
 guide/p2p-network-misbehaving-nodes
 guide/mining
+guide/staking
 ```
 
 ```{toctree}

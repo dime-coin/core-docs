@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="107px" viewBox="0 0 450 107" style="enable-background:new 0 0 450 107;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.7431;stroke-miterlimit:2.9724;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:10.4032px;}
+	.st3{fill:none;stroke:#000000;stroke-width:0.7431;stroke-miterlimit:2.9724;}
+	.st4{stroke:#000000;stroke-width:0.7431;stroke-miterlimit:2.9724;}
+</style>
+<g id="graph1" transform="scale(0.745033 0.745033) rotate(0) translate(4 140)">
+	<polygon class="st0" points="-3.2,4.6 -3.2,-140 600.2,-140 600.2,4.6 	"/>
+	<text transform="matrix(1.3422 0 0 1.3422 204.6972 -8.744)" class="st1 st2">Solo Dimecoin Mining Workflow</text>
+	<g id="node1">
+		<polygon class="st3" points="77.6,-100.1 1.8,-100.1 1.8,-58.2 77.6,-58.2 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 25.7124 -83.548)" class="st1 st2">P2P</text>
+		<text transform="matrix(1.3422 0 0 1.3422 11.7488 -66.5926)" class="st1 st2">Network</text>
+	</g>
+	<g id="node4">
+		<polygon class="st3" points="241.1,-97.1 171.3,-97.1 171.3,-61.2 241.1,-61.2 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 175.5492 -75.4327)" class="st1 st2">dimecoind</text>
+	</g>
+	<g id="edge4">
+		<path class="st3" d="M78.3-79.2c24.5,0,56.3,0,82.1,0"/>
+		<polygon class="st4" points="160.7,-82.7 170.7,-79.2 160.7,-75.7 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 106.9994 -83.548)" class="st1 st2">TXes</text>
+	</g>
+	<g id="node2">
+		<polygon class="st3" points="595.2,-97.1 541.4,-97.1 541.4,-61.2 595.2,-61.2 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 551.5359 -75.07)" class="st1 st2">ASIC</text>
+	</g>
+	<g id="node3">
+		<polygon class="st3" points="433.6,-100.1 353.9,-100.1 353.9,-58.2 433.6,-58.2 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 372.1054 -83.548)" class="st1 st2">Mining</text>
+		<text transform="matrix(1.3422 0 0 1.3422 364.4269 -66.5926)" class="st1 st2">Software</text>
+	</g>
+	<g id="edge10">
+		<path class="st3" d="M553.1-60.9c-13,15.6-29.7,35.6-29.7,35.6h-71.8c0,0-13.8-12.9-28-26"/>
+		<polygon class="st4" points="421.2,-48.8 416.3,-58.2 426,-53.9 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 459.5779 -63.6002)" class="st1 st2">Headers</text>
+		<text transform="matrix(1.3422 0 0 1.3422 467.2564 -46.6448)" class="st1 st2">Below</text>
+		<text transform="matrix(1.3422 0 0 1.3422 465.8604 -29.6887)" class="st1 st2">Target</text>
+	</g>
+	<g id="edge8">
+		<path class="st3" d="M433.9-83.3c9.9-1,17.7-1.8,17.7-1.8h71.8c0,0,3.1,0.4,7.6,1"/>
+		<polygon class="st4" points="531.7,-87.6 541.1,-82.8 530.8,-80.6 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 468.6537 -123.4437)" class="st1 st2">Block</text>
+		<text transform="matrix(1.3422 0 0 1.3422 453.2941 -106.4877)" class="st1 st2">Headers &amp;</text>
+		<text transform="matrix(1.3422 0 0 1.3422 462.3699 -89.5323)" class="st1 st2">Targets</text>
+	</g>
+	<g id="edge12">
+		<path class="st3" d="M353.6-61.1c-9.9,4.4-17.7,7.9-17.7,7.9h-75.8c0,0-3.7-1.8-9.2-4.4"/>
+		<polygon class="st4" points="249.3,-54.5 241.9,-62 252.4,-60.8 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 275.6581 -57.6159)" class="st1 st2">Blocks</text>
+	</g>
+	<g id="edge6">
+		<path class="st3" d="M170.6-62c-10,4.8-18.2,8.8-18.2,8.8H96.5c0,0-3.7-1.7-9.2-4.2"/>
+		<polygon class="st4" points="85.9,-54.3 78.2,-61.6 88.7,-60.6 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 102.1129 -57.6159)" class="st1 st2">Blocks</text>
+	</g>
+	<g id="edge2">
+		<path class="st3" d="M242-79.2c28.8,0,69.5,0,101.6,0"/>
+		<polygon class="st4" points="343.6,-82.7 353.6,-79.2 343.6,-75.7 		"/>
+		<text transform="matrix(1.3422 0 0 1.3422 279.1493 -100.5041)" class="st1 st2">Block</text>
+		<text transform="matrix(1.3422 0 0 1.3422 267.2803 -83.548)" class="st1 st2">Template</text>
+	</g>
+</g>
+</svg>
