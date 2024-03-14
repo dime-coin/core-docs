@@ -18,7 +18,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 ```{eval-rst}
 .. grid:: 1 2 3 3
 
-    .. grid-item-card:: Core Reference
+    .. grid-item-card:: Core Architecture Reference
         :margin: 2 2 auto auto
         :link-type: ref
         :link: reference-index
@@ -81,7 +81,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 
 ```{toctree}
 :maxdepth: 2
-:caption: Core Reference
+:caption: Core Architecture Reference
 :hidden:
 
 resources/glossary
