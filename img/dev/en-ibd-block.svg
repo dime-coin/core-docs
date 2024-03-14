@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="181px" viewBox="0 0 450 181" style="enable-background:new 0 0 450 181;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:12.1622px;}
+	.st3{font-family:'SansSerifBold';}
+	.st4{font-family:'SansSerifOblique';}
+	.st5{fill:none;stroke:#000000;stroke-width:0.8687;stroke-miterlimit:3.4749;}
+	.st6{font-family:'Courier';}
+	.st7{font-size:12.0921px;}
+	.st8{fill:none;stroke:#000000;stroke-width:1.7375;stroke-miterlimit:3.4749;}
+	.st9{fill:none;stroke:#000000;stroke-width:1.5203;stroke-miterlimit:3.4749;}
+	.st10{stroke:#000000;stroke-width:1.5203;stroke-miterlimit:3.4749;}
+</style>
+<g id="graph0" transform="scale(0.868726 0.868726) rotate(0) translate(4 204)">
+	<polygon class="st0" points="-4,4.2 -4,-203.8 514,-203.8 514,4.2 	"/>
+	<text transform="matrix(1.1511 0 0 1.1511 48.4998 -7.6209)" class="st1 st2">First block message sent to Initial Blocks Download (IBD) node</text>
+	<g id="node1">
+		<text transform="matrix(1.1511 0 0 1.1511 14.3998 -184.1214)" class="st1 st2">IBD</text>
+		<text transform="matrix(1.1511 0 0 1.1511 8.7999 -169.1216)" class="st1 st2">Node</text>
+	</g>
+	<g id="node2">
+		<text transform="matrix(1.1511 0 0 1.1511 194.9994 -177.1214)" class="st3 st2">Block Message</text>
+		<text transform="matrix(1.1511 0 0 1.1511 197.4995 -151.1214)" class="st4 st2">Message Header</text>
+		<polygon class="st5" points="102,-99.3 102,-139.3 194,-139.3 194,-99.3 		"/>
+		<text transform="matrix(1.1511 0 0 1.1511 107.9995 -123.1215)" class="st4 st2">Start String</text>
+		<text transform="matrix(1.1511 0 0 1.1511 114.4998 -109.121)" class="st6 st7">da10f96e</text>
+		<polygon class="st5" points="196,-99.3 196,-139.3 278,-139.3 278,-99.3 		"/>
+		<text transform="matrix(1.1511 0 0 1.1511 202 -123.1215)" class="st4 st2">Command</text>
+		<text transform="matrix(1.1511 0 0 1.1511 215.9999 -109.121)" class="st6 st2">block</text>
+		<polygon class="st5" points="280,-99.3 280,-139.3 321,-139.3 321,-99.3 		"/>
+		<text transform="matrix(1.1511 0 0 1.1511 286.0002 -123.1215)" class="st4 st2">Size</text>
+		<text transform="matrix(1.1511 0 0 1.1511 288 -109.121)" class="st6 st2">215</text>
+		<polygon class="st5" points="323,-99.3 323,-139.3 408,-139.3 408,-99.3 		"/>
+		<text transform="matrix(1.1511 0 0 1.1511 328.9993 -123.1215)" class="st4 st2">Checksum</text>
+		<text transform="matrix(1.1511 0 0 1.1511 331.9996 -109.121)" class="st6 st2">934d270a</text>
+		<text transform="matrix(1.1511 0 0 1.1511 227.4998 -82.1216)" class="st4 st2">Payload</text>
+		<polygon class="st5" points="102,-30.3 102,-70.3 408,-70.3 408,-30.3 		"/>
+		<text transform="matrix(1.1511 0 0 1.1511 200.4998 -54.1218)" class="st4 st2">Serialized Block</text>
+		<text transform="matrix(1.1511 0 0 1.1511 135 -40.1218)" class="st6 st2">010000006fe2...58eeac00000000</text>
+		<polygon class="st8" points="99,-27.8 99,-194.8 411,-194.8 411,-27.8 		"/>
+	</g>
+	<g id="edge1">
+		<path class="st9" d="M64.4-180.3c18.3,0,36.6,0,36.6,0"/>
+		<polygon class="st10" points="64.4,-176.8 54.4,-180.3 64.4,-183.8 		"/>
+	</g>
+	<g id="node3">
+		<text transform="matrix(1.1511 0 0 1.1511 466.1996 -184.1214)" class="st1 st2">Sync</text>
+		<text transform="matrix(1.1511 0 0 1.1511 464.8 -169.1216)" class="st1 st2">Node</text>
+	</g>
+	<g id="edge2">
+		<path class="st9" d="M419.3-180.3c9.4,0,23.7,0,36.3,0"/>
+		<polygon class="st10" points="419,-176.8 409,-180.3 419,-183.8 		"/>
+	</g>
+</g>
+</svg>

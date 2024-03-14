@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="216px" viewBox="0 0 450 216" style="enable-background:new 0 0 450 216;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:12.0921px;}
+	.st3{font-family:'SansSerifBold';}
+	.st4{font-family:'SansSerifOblique';}
+	.st5{fill:none;stroke:#000000;stroke-width:0.8637;stroke-miterlimit:3.4549;}
+	.st6{font-family:'Courier';}
+	.st7{fill:none;stroke:#000000;stroke-width:1.7274;stroke-miterlimit:3.4549;}
+	.st8{fill:none;stroke:#000000;stroke-width:1.5115;stroke-miterlimit:3.4549;}
+	.st9{stroke:#000000;stroke-width:1.5115;stroke-miterlimit:3.4549;}
+</style>
+<g id="graph0" transform="scale(0.863724 0.863724) rotate(0) translate(4 246)">
+	<polygon class="st0" points="-4,4 -4,-246 517,-246 517,4 	"/>
+	<text transform="matrix(1.1578 0 0 1.1578 23.4 -7.7602)" class="st1 st2">First getheaders message sent from Initial Blocks Download (IBD) node</text>
+	<g id="node1">
+		<text transform="matrix(1.1578 0 0 1.1578 14.4001 -226.2596)" class="st1 st2">IBD</text>
+		<text transform="matrix(1.1578 0 0 1.1578 8.8 -211.2599)" class="st1 st2">Node</text>
+	</g>
+	<g id="node2">
+		<text transform="matrix(1.1578 0 0 1.1578 170.9996 -219.2598)" class="st3 st2">GetHeaders Message</text>
+		<text transform="matrix(1.1578 0 0 1.1578 199.4997 -197.2597)" class="st4 st2">Message Header</text>
+		<polygon class="st5" points="95.5,-151.5 95.5,-189.5 179.5,-189.5 179.5,-151.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 97.5 -174.2596)" class="st4 st2">Start String</text>
+		<text transform="matrix(1.1578 0 0 1.1578 104 -160.26)" class="st6 st2">da10f96e</text>
+		<polygon class="st5" points="181.5,-151.5 181.5,-189.5 274.5,-189.5 274.5,-151.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 192.9996 -174.2596)" class="st4 st2">Command</text>
+		<text transform="matrix(1.1578 0 0 1.1578 186.4996 -160.26)" class="st6 st2">getheaders</text>
+		<polygon class="st5" points="276.5,-151.5 276.5,-189.5 324.5,-189.5 324.5,-151.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 285.9995 -174.2596)" class="st4 st2">Size</text>
+		<text transform="matrix(1.1578 0 0 1.1578 291.9998 -160.26)" class="st6 st2">69</text>
+		<polygon class="st5" points="326.5,-151.5 326.5,-189.5 418.5,-189.5 418.5,-151.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 335.9998 -174.2596)" class="st4 st2">Checksum</text>
+		<text transform="matrix(1.1578 0 0 1.1578 338.9994 -160.26)" class="st6 st2">f5fcbcad</text>
+		<text transform="matrix(1.1578 0 0 1.1578 229.5002 -138.26)" class="st4 st2">Payload</text>
+		<polygon class="st5" points="95.5,-98.5 95.5,-130.5 274.5,-130.5 274.5,-98.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 128.4999 -118.2601)" class="st4 st2">Protocol Version</text>
+		<text transform="matrix(1.1578 0 0 1.1578 163.9998 -104.2593)" class="st6 st2">70008</text>
+		<polygon class="st5" points="276.5,-98.5 276.5,-130.5 418.5,-130.5 418.5,-98.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 279.5 -118.2601)" class="st4 st2">Header Hash Count</text>
+		<text transform="matrix(1.1578 0 0 1.1578 342.9996 -104.2593)" class="st6 st2">1</text>
+		<polygon class="st5" points="95.5,-64.5 95.5,-96.5 418.5,-96.5 418.5,-64.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 127.4999 -84.2594)" class="st4 st2">Header Hashes (Highest-Height First)</text>
+		<text transform="matrix(1.1578 0 0 1.1578 128.9997 -70.2598)" class="st6 st2">da10f96e94887d...1391a5ad000000</text>
+		<polygon class="st5" points="95.5,-30.5 95.5,-62.5 418.5,-62.5 418.5,-30.5 		"/>
+		<text transform="matrix(1.1578 0 0 1.1578 138.4999 -50.2599)" class="st4 st2">Stopping Hash (Zero Is &quot;No Stop&quot;)</text>
+		<text transform="matrix(1.1578 0 0 1.1578 128.9997 -36.2592)" class="st6 st2">00000000000000...00000000000000</text>
+		<polygon class="st7" points="92,-28 92,-237 421,-237 421,-28 		"/>
+	</g>
+	<g id="edge1">
+		<path class="st8" d="M54.3-222.5c10.6,0,22.2,0,30.2,0"/>
+		<polygon class="st9" points="84.5,-226 94.5,-222.5 84.5,-219 		"/>
+	</g>
+	<g id="node3">
+		<text transform="matrix(1.1578 0 0 1.1578 469.1996 -226.2596)" class="st1 st2">Sync</text>
+		<text transform="matrix(1.1578 0 0 1.1578 467.7999 -211.2599)" class="st1 st2">Node</text>
+	</g>
+	<g id="edge2">
+		<path class="st8" d="M419.5-222.5c0,0,13.9,0,28.8,0"/>
+		<polygon class="st9" points="448.7,-226 458.7,-222.5 448.7,-219 		"/>
+	</g>
+</g>
+</svg>

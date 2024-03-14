@@ -152,6 +152,12 @@ guide/masternodes-pow-pos
 guide/masternodes-paylogic-quorums
 guide/masternodes-setup-requirements
 guide/p2p-network
+guide/p2p-network-peer-discovery
+guide/p2p-network-connecting-to-peers
+guide/p2p-network-initial-block-download
+guide/p2p-network-block-broadcasting
+guide/p2p-network-transaction-broadcasting
+guide/p2p-network-misbehaving-nodes
 guide/mining
 ```
 

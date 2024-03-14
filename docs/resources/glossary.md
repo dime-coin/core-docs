@@ -178,7 +178,7 @@ The first transaction in a block, includes a single coinbase.
 
 #### Cold Storage
 
-Term used for an offline wallet i.e. paperwallet (see below).
+Term used for an offline wallet. A paperwallet would be an example of a cold storage wallet (see below).
 
 #### CompactSize
 

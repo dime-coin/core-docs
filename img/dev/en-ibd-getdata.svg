@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="450px" height="246px" viewBox="0 0 450 246" style="enable-background:new 0 0 450 246;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:11.5174px;}
+	.st3{font-family:'SansSerifBold';}
+	.st4{font-family:'SansSerifOblique';}
+	.st5{fill:none;stroke:#000000;stroke-width:0.8227;stroke-miterlimit:3.2907;}
+	.st6{font-family:'Courier';}
+	.st7{font-size:12.0921px;}
+	.st8{fill:none;stroke:#000000;stroke-width:1.6453;stroke-miterlimit:3.2907;}
+	.st9{fill:none;stroke:#000000;stroke-width:1.4397;stroke-miterlimit:3.2907;}
+	.st10{stroke:#000000;stroke-width:1.4397;stroke-miterlimit:3.2907;}
+</style>
+<g id="graph0" transform="scale(0.822669 0.822669) rotate(0) translate(4 295)">
+	<polygon class="st0" points="-4,4 -4,-295 543,-295 543,4 	"/>
+	<text transform="matrix(1.2156 0 0 1.2156 48.2998 -7.787)" class="st1 st2">First getdata message sent from Initial Blocks Download (IBD) node</text>
+	<g id="node1">
+		<text transform="matrix(1.2156 0 0 1.2156 14.3995 -275.7874)" class="st1 st2">IBD</text>
+		<text transform="matrix(1.2156 0 0 1.2156 8.8001 -260.7876)" class="st1 st2">Node</text>
+	</g>
+	<g id="node2">
+		<text transform="matrix(1.2156 0 0 1.2156 198.4998 -268.7878)" class="st3 st2">GetData Message</text>
+		<text transform="matrix(1.2156 0 0 1.2156 212.4995 -245.7878)" class="st4 st2">Message Header</text>
+		<polygon class="st5" points="80.5,-203 80.5,-237 212.5,-237 212.5,-203 		"/>
+		<text transform="matrix(1.2156 0 0 1.2156 106.4998 -223.7879)" class="st4 st2">Start String</text>
+		<text transform="matrix(1.2156 0 0 1.2156 112.9996 -209.7877)" class="st6 st7">da10f96e</text>
+		<polygon class="st5" points="214.5,-203 214.5,-237 313.5,-237 313.5,-203 		"/>
+		<text transform="matrix(1.2156 0 0 1.2156 228.9997 -223.7879)" class="st4 st2">Command</text>
+		<text transform="matrix(1.2156 0 0 1.2156 234.9997 -209.7877)" class="st6 st2">getdata</text>
+		<polygon class="st5" points="315.5,-203 315.5,-237 366.5,-237 366.5,-203 		"/>
+		<text transform="matrix(1.2156 0 0 1.2156 326.4994 -223.7879)" class="st4 st2">Size</text>
+		<text transform="matrix(1.2156 0 0 1.2156 323.9994 -209.7877)" class="st6 st2">4609</text>
+		<polygon class="st5" points="368.5,-203 368.5,-237 459.5,-237 459.5,-203 		"/>
+		<text transform="matrix(1.2156 0 0 1.2156 377.4993 -223.7879)" class="st4 st2">Checksum</text>
+		<text transform="matrix(1.2156 0 0 1.2156 380.5002 -209.7877)" class="st6 st2">33e41222</text>
+		<text transform="matrix(1.2156 0 0 1.2156 242.4996 -188.7873)" class="st4 st2">Payload</text>
+		<polygon class="st5" points="80.5,-146 80.5,-180 459.5,-180 459.5,-146 		"/>
+		<text transform="matrix(1.2156 0 0 1.2156 117.9995 -166.7874)" class="st4 st2">Number Of Objects Requested By Inventory</text>
+		<text transform="matrix(1.2156 0 0 1.2156 257.5 -152.7871)" class="st6 st2">128</text>
+		<polygon class="st5" points="80.5,-31 80.5,-144 459.5,-144 459.5,-31 		"/>
+		<text transform="matrix(1.2156 0 0 1.2156 137.4995 -126.788)" class="st4 st2">Objects Requested (Inventory Entries)</text>
+		<text transform="matrix(1.2156 0 0 1.2156 90.9997 -105.7876)" class="st4 st2">Type</text>
+		<text transform="matrix(1.2156 0 0 1.2156 134.9995 -105.7876)" class="st4 st2">Unique Identifier (For Blocks, A Header Hash)</text>
+		<text transform="matrix(1.2156 0 0 1.2156 88.9995 -83.7877)" class="st1 st2">Block</text>
+		<text transform="matrix(1.2156 0 0 1.2156 148.5 -83.7877)" class="st6 st2">434341c0ecf9a2b4...d654121dd9070000</text>
+		<text transform="matrix(1.2156 0 0 1.2156 88.9995 -62.7873)" class="st1 st2">Block</text>
+		<text transform="matrix(1.2156 0 0 1.2156 148.5 -62.7873)" class="st6 st2">bddd99ccfda39da1...ce1e57ccaf0b0000</text>
+		<text transform="matrix(1.2156 0 0 1.2156 107.4999 -42.7876)" class="st4 st2">...............126 more inventory entries...............</text>
+		<polygon class="st8" points="77,-28 77,-286 462,-286 462,-28 		"/>
+	</g>
+	<g id="edge1">
+		<path class="st9" d="M54.1-272c5.4,0,10.8,0,15.2,0"/>
+		<polygon class="st10" points="69.5,-275.5 79.5,-272 69.5,-268.5 		"/>
+	</g>
+	<g id="node3">
+		<text transform="matrix(1.2156 0 0 1.2156 495.1993 -275.7874)" class="st1 st2">Sync</text>
+		<text transform="matrix(1.2156 0 0 1.2156 493.7997 -260.7876)" class="st1 st2">Node</text>
+	</g>
+	<g id="edge2">
+		<path class="st9" d="M460.5-272c0,0,6.2,0,14.3,0"/>
+		<polygon class="st10" points="474.9,-275.5 484.9,-272 474.9,-268.5 		"/>
+	</g>
+</g>
+</svg>
