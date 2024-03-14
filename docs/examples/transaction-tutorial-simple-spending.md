@@ -10,7 +10,7 @@
 
 ## Simple Spending
 
-Dimecoin Core provides several RPCs which handle all the details of spending, including creating a [change output](../resources/glossary.md#change-output) and paying an appropriate [transaction fee](../resources/glossary.md#transaction-fee). Even advanced users should use these RPCs whenever possible to decrease the chance that [duffs](../resources/glossary.md#duffs) will be lost by mistake.
+Dimecoin Core provides several RPCs which handle all the details of spending, including creating a [change output](../resources/glossary.md#change-output) and paying an appropriate [transaction fee](../resources/glossary.md#transaction-fee). Even advanced users should use these RPCs whenever possible to decrease the chance that dimecoins will be lost by mistake.
 
 ### 1. Get New Address
 
@@ -27,7 +27,7 @@ Get a new Dimecoin [address](../resources/glossary.md#address) and save it in th
 
 Send 10 DIME to the address using the [`sendtoaddress` RPC](../api/rpc-wallet.md#sendtoaddress).  The returned hex string is the transaction identifier ([TXID](../resources/glossary.md#transaction-identifiers)).
 
-The [`sendtoaddress` RPC](../api/rpc-wallet.md#sendtoaddress) automatically selects an [unspent transaction output](../resources/glossary.md#unspent-transaction-output) (UTXO) from which to spend the duffs. In this case, it withdrew the duffs from our only available UTXO, the [coinbase transaction](../resources/glossary.md#coinbase-transaction) for [block](../resources/glossary.md#block) #1 which matured with the creation of block #101.
+The [`sendtoaddress` RPC](../api/rpc-wallet.md#sendtoaddress) automatically selects an [unspent transaction output](../resources/glossary.md#unspent-transaction-output) (UTXO) from which to spend the dimecoins. In this case, it withdrew the dimecoins from our only available UTXO, the [coinbase transaction](../resources/glossary.md#coinbase-transaction) for [block](../resources/glossary.md#block) #1 which matured with the creation of block #101.
 
 ``` bash
 > dimecoin-cli -regtest sendtoaddress $NEW_ADDRESS 10.00
