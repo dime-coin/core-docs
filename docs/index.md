@@ -171,6 +171,11 @@ examples/introduction
 examples/configuration-file
 examples/testing-applications
 examples/transaction-tutorial
+examples/transaction-tutorial-simple-spending
+examples/transaction-tutorial-simple-raw-transaction
+examples/transaction-tutorial-complex-raw-transaction
+examples/transaction-tutorial-offline-signing
+examples/transaction-tutorial-p2sh-multisig
 examples/p2p-network
 examples/receiving-zmq-notifications
 ```
