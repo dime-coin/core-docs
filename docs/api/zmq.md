@@ -30,8 +30,8 @@ Currently, the following notifications are supported:
 | - | - |
 | zmqpubhashblock | Block hash |
 | zmqpubhashtx | Transaction hash (TXID) |
-| zmqpubrawblock | Raw [`block`](../reference/p2p-network-data-messages.md#block) |
-| zmqpubrawtx | Raw transaction ([`tx`](../reference/transactions-raw-transaction-format.md))  |
+| zmqpubrawblock | Raw [`block`](../reference/p2p-network.md#block) |
+| zmqpubrawtx | Raw transaction ([`tx`](../reference/transactions#raw-transaction-format.md))  |
 
 ### High Water Mark
 
@@ -41,8 +41,8 @@ The option to set the PUB socket's outbound message [high water mark](https://ze
 | - | - |
 | zmqpubhashtxhwm | Transaction hash (TXID) high water mark |
 | zmqpubhashblockhwm | Block hash high water mark |
-| zmqpubrawblockhwm | Raw [`block`](../reference/p2p-network-data-messages.md#block) high water mark |
-| zmqpubrawtxhwm | Raw transaction ([`tx`](../reference/transactions-raw-transaction-format.md))  high water mark |
+| zmqpubrawblockhwm | Raw [`block`](../reference/p2p-network.md#block) high water mark |
+| zmqpubrawtxhwm | Raw transaction ([`tx`](../reference/transactions#raw-transaction-format.md))  high water mark |
 
 ### Dimecoin Core Configuration
 
