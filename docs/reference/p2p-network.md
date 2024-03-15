@@ -14,7 +14,9 @@ This section describes the Dimecoin P2P network protocol (but it is not a [speci
 
 All peer-to-peer communication occurs entirely over TCP.
 
-**Note**: Unless their description says otherwise, all multi-byte integers mentioned in this section are transmitted in little-endian order.
+```{note}
+Unless their description says otherwise, all multi-byte integers mentioned in this section are transmitted in little-endian order.
+```
 
 ## Constants and Defaults
 
@@ -26,7 +28,9 @@ The following constants and defaults are taken from Dimecoin Core's [chainparams
 | Testnet | 21931        | 0x39309278  | 0x78923039
 | Regtest | 31931        | 0x39923078  | 0x78309239
 
-Note: the testnet start string above are for testnet3; the original testnet used a different string with less difficult nBits.
+```{note}
+The testnet start string above are for testnet3; the original testnet used a different string with less difficult nBits.
+```
 
 Command line parameters can change what port a [node](../resources/glossary.md#node) listens on (see `-help`). Start strings are hardcoded constants that appear at the start of all messages sent on the Dimecoin [network](../resources/glossary.md#network); they may also appear in data files such as Dimecoin Core's block database. The Magic Value and [nBits](../resources/glossary.md#nbits) displayed above are in big-endian order; they're sent over the network in little-endian order. The [Start String](../resources/glossary.md#start-string) is simply the endian reversed Magic Value.
 
@@ -127,7 +131,9 @@ Upon receipt of a properly-formatted requested [`blocktxn` message](docs/referen
 3. Place each short transaction ID in the first available position in the block
 4. Once the block has been reconstructed, it shall be processed as normal.
 
-**Short transaction IDs are expected to occasionally collide. Nodes must not be penalized for such collisions.**
+```{important}
+Short transaction IDs are expected to occasionally collide. Nodes must not be penalized for such collisions.
+```
 
 The structure of `BlockTransactions` is defined below.
 
@@ -190,7 +196,9 @@ Transaction(s)
 
 The [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the [inventory](../resources/glossary.md#inventory) type `MSG_CMPCT_BLOCK`. If the requested block was recently announced and is close to the tip of the best chain of the receiver and after having sent the requesting [peer](../resources/glossary.md#peer) a [`sendcmpct` message](docs/reference/p2p-network-control-messages.md#sendcmpct), nodes respond with a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) containing data for the block.
 
-**If the requested block is too old, the node responds with a *full non-compact block***
+```{important}
+If the requested block is too old, the node responds with a *full non-compact block
+```
 
 Upon receipt of a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock), after sending a [`sendcmpct` message](docs/reference/p2p-network-control-messages.md#sendcmpct), nodes should calculate the short transaction ID for each [unconfirmed transaction](../resources/glossary.md#unconfirmed-transaction) they have available (i.e. in their mempool) and compare each to each short transaction ID in the [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock). After finding already-available transactions, nodes which do not have all transactions available to reconstruct the full block should request the missing transactions using a [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn).
 
@@ -280,7 +288,9 @@ The [`getblocks` message](docs/reference/p2p-network.md#getblocks) requests an [
 
 Peers which have been disconnected may have [stale blocks](../resources/glossary.md#stale-block) in their locally-stored blockchain, so the [`getblocks` message](docs/reference/p2p-network.md#getblocks) allows the requesting peer to provide the receiving peer with multiple [header](../resources/glossary.md#header) hashes at heights on their local chain. This allows the receiving peer to find, within that list, the last header hash they had in common and reply with all subsequent header hashes.
 
-**Note:** the receiving peer itself may respond with an [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes of stale blocks.  It is up to the requesting peer to poll all of its peers to find the best blockchain.
+```{note}
+The receiving peer itself may respond with an [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes of stale blocks.  It is up to the requesting peer to poll all of its peers to find the best blockchain.
+```
 
 If the receiving peer does not find a common header hash within the list, it will assume the last common block was the [genesis block](../resources/glossary.md#genesis-block) (block zero), so it will reply with in [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes starting with block one (the first block after the genesis block).
 
@@ -411,10 +421,9 @@ The [`mempool` message](docs/reference/p2p-network.md#mempool) requests the [TXI
 
 Sending the [`mempool` message](docs/reference/p2p-network.md#mempool) is mostly useful when a program first connects to the network. Full nodes can use it to quickly gather most or all of the unconfirmed transactions available on the network; this is especially useful for miners trying to gather transactions for their transaction fees. SPV clients can set a filter before sending a `mempool` to only receive transactions that match that filter; this allows a recently-started client to get most or all unconfirmed transactions related to its wallet.
 
-> **NOTE** InstantSend Synchronization
->
-> Dimecoin Core 2.0.0.0 expanded the mempool message to include syncing of [InstantSend Lock](docs/reference/p2p-network-instantsend-messages.md#islock) inventories. Additionally, nodes now attempt to sync their mempool with peers at startup by default (limited to peers using protocol version 70006 or higher). This allows nodes to more quickly detect any double-spend attempts as well as show InstantSend lock status correctly for transactions received while offline. *Note: InstaSend currently disabled on Dimecoin mainnet.*
->
+```{note}
+ Dimecoin Core 2.0.0.0 expanded the mempool message to include syncing of [InstantSend Lock](docs/reference/p2p-network-instantsend-messages.md#islock) inventories. Additionally, nodes now attempt to sync their mempool with peers at startup by default (limited to peers using protocol version 70006 or higher). This allows nodes to more quickly detect any double-spend attempts as well as show InstantSend lock status correctly for transactions received while offline. *InstaSend currently disabled on Dimecoin mainnet.*
+ ```
 
 The `inv` response to the [`mempool` message](docs/reference/p2p-network.md#mempool) is, at best, one node's view of the network---not a complete list of every [unconfirmed transaction](../resources/glossary.md#unconfirmed-transaction) on the network. Here are some additional reasons the list might not be complete:
 
@@ -424,11 +433,7 @@ There is no payload in a [`mempool` message](docs/reference/p2p-network.md#mempo
 
 ### merkleblock
 
-The [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the inventory type `MSG_MERKLEBLOCK`.  It is only part of the reply: if any matching transactions are found, they will be sent separately as [`tx` messages](docs/reference/p2p-network.md#tx). As of Dimecoin Core 2.0.0.0 [`islock` messages](docs/reference/p2p-network-instantsend-messages.md#islock) for matching transactions are sent if present.
-
-> 🚧
->
-> Note: `islock` messages are currently dropped once a ChainLock is present so in most cases they will not actually be provided in response to a merkleblock request. Future updates may modify this behavior.
+The [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the inventory type `MSG_MERKLEBLOCK`.  It is only part of the reply: if any matching transactions are found, they will be sent separately as [`tx` messages](docs/reference/p2p-network.md#tx). 
 
 If a filter has been previously set with the [`filterload` message](docs/reference/p2p-network-control-messages.md#filterload), the [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) will contain the [TXIDs](../resources/glossary.md#transaction-identifiers) of any transactions in the requested block that matched the filter, as well as any parts of the block's [merkle tree](../resources/glossary.md#merkle-tree) necessary to connect those transactions to the block header's [merkle root](../resources/glossary.md#merkle-root). The message also contains a complete copy of the [block header](../resources/glossary.md#block-header) to allow the client to hash it and confirm its [proof of work](../resources/glossary.md#proof-of-work).
 
@@ -670,9 +675,9 @@ If the seed resulting from the formula above is larger than four bytes, it must 
 
 The actual hash function implementation used is the [32-bit Murmur3 hash function](https://en.wikipedia.org/wiki/MurmurHash).
 
-> 🚧 Murmer3 Version
->
-> **Warning:** the Murmur3 hash function has separate 32-bit and 64-bit versions that produce different results for the same [input](../resources/glossary.md#input).  Only the 32-bit Murmur3 version is used with Dimecoin bloom filters.
+```{warning}
+The Murmur3 hash function has separate 32-bit and 64-bit versions that produce different results for the same [input](../resources/glossary.md#input).  Only the 32-bit Murmur3 version is used with Dimecoin bloom filters.
+```
 
 The data to be hashed can be any transaction element which the bloom filter can match. See the next subsection for the list of transaction elements checked against the filter. The largest element which can be matched is a script data push of 520 bytes, so the data should never exceed 520 bytes.
 
@@ -878,12 +883,13 @@ To verify `vchSig`, compare the hard-coded spork public key (`strSporkPubKey` fr
 * The spork magic message (`"DarkCoin Signed Message:\n"`)
 * nSporkID + nValue + nTimeSigned
 
+
+
 | Network | Spork Pubkey (wrapped)
 | ---------- | ----------
-| Mainnet | 04549ac134f694c0243f503e8c8a9a986f5de6610049c40b07816809b0d1<br>d06a21b07be27b9bb555931773f62ba6cf35a25fd52f694d4e1106ccd237<br>a7bb899fdd
-| Testnet3 | 046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb50<br>1b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f7<br>5e76869f0e
+| Mainnet | 045078e030f9b5131e2fe4de7bf81761e5eb609309f951ca3dd<br>63b85fc702b97c736de0644562e48b75c2555a5765bdc2aecc15264777b99ec2f264<br>3d4521a50e2
+| Testnet3 | 045078e030f9b5131e2fe4de7bf81761e5eb609309f951ca3dd63b85f<br>1c702b97c736de0644562e48b75c2555a5765bdc2aecc15264777b99ec2f26<br>43d4521a50e2
 | RegTest | Undefined
-| Devnets | 046f78dcf911fbd61910136f7f0f8d90578f68d0b3ac973b5040fb7afb50<br>1b5939f39b108b0569dca71488f5bbf498d92e4d1194f6f941307ffd95f7<br>5e76869f0e
 
 ### verack
 
@@ -987,5 +993,5 @@ The following annotated hexdump shows a [`ssc` message](../reference/p2p-network
 
 ``` text
 02000000 ................................... Item ID: MASTERNODE_SYNC_LIST (2)
-bf110000 ................................... Count: 43
+bf110000 ................................... Count: 47
 ```
