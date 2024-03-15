@@ -55,9 +55,9 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetMemPoolInfo](../api/rpc-blockchain.md#getmempoolinfo): returns information about the node's current transaction memory pool.
+```
 
 ### Help
 
@@ -103,9 +103,9 @@ Result:
 "text"     (string) The help text
 ```
 
-*See also*
-
-* The [RPC Quick Reference](../api/remote-procedure-call-quick-reference.md)
+```{seealso}
+* The [RPC Quick Reference](../api/rpc-quick-reference.md)
+```
 
 ### Logging
 
@@ -219,9 +219,9 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [Debug](../api/rpc-control.md#debug): changes the debug category from the console.
+```
 
 ### Stop
 
@@ -247,7 +247,9 @@ Result:
 Dimecoin Core server stopping...
 ```
 
+```{seealso}
 *See also: none*
+```
 
 ### Uptime
 
@@ -273,4 +275,6 @@ Result:
 3060
 ```
 
+```{seealso}
 *See also: none*
+```

@@ -22,7 +22,6 @@ Dimecoin Core also ships with its own compiled C++ RPC client, `dimecoin-cli,` l
 The remainder of this section describes the Dimecoin Core RPC protocol in detail.
 
 ```{note}
-**Dimecoin Core Configuration**
 The following subsections reference setting configuration values. See the [Examples Page](../examples/introduction.md) for more information about setting Dimecoin Core configuration values.
 ```
 

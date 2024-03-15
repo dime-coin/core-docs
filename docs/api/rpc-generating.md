@@ -89,8 +89,8 @@ Using json rpc
 `setgenerate` is disabled on mainnet and will only work on test networks.
 ```
 
-*See also*
-
-* [Generate](#generate): mines a block with a set of ordered transactions immediately to a specified address or descriptor.
-* [GetMiningInfo](../api/rpc-mining.md#getmininginfo): returns various mining-related information.
+```{seealso}
+* [Generate](#generate): mines a block with a set of ordered transactions immediately to a specified address or descriptor.<br>
+* [GetMiningInfo](../api/rpc-mining.md#getmininginfo): returns various mining-related information.<br>
 * [GetBlockTemplate](../api/rpc-mining.md#getblocktemplate): gets a block template or proposal for use with mining software.
+```

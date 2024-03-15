@@ -9,7 +9,6 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-
 ## Receiving ZMQ Notifications
 
 ### Overview
@@ -26,7 +25,7 @@ This requires a Dimecoin Core full node or masternode
 
 In the [`dimecoin.conf` configuration file](../examples/configuration-file.md), add the following [ZMQ notifications](../api/zmq.md#available-notifications) and assign the address that Dimecoin Core should listen on. The notifications selected here relate to transaction data.
 
-```
+```shell
 ## ZMQ
 zmqpubrawblock=tcp://0.0.0.0:11391
 zmqpubhashtx=tcp://0.0.0.0:11391
@@ -141,7 +140,7 @@ The following response demonstrates the notification provided by Dimecoin Core w
   3. When a transaction is seen by a node, the (`RAWTX`) sends the full raw transaction data to subscribers.
   4. The (`RAWBLOCK`) data could decoded using the [`decoderawtransaction` RPC](../api/rpc-raw-transactions.md#decoderawtransaction) for example)
 
-```
+```shell
 Received HASHTX containing:
  b2e128661e3679c3d00cd081e32fdc9a12f44e486e083e6eab998bdfd6f64a9b
 

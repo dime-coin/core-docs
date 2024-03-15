@@ -268,9 +268,9 @@ Result:
 }
 ```
 
-*See also:*
-
+```{seealso}
 * [Masternode Winners](#masternode-winners): prints the list of masternode winners.
+```
 
 #### Masternode Winners
 
@@ -343,24 +343,24 @@ Result (current block - 37458):
 Get a filtered list of masternode winners
 
 ``` bash
-dimecoin-cli -mainnet masternode winners 150 "yTZ99"
+dimecoin-cli -mainnet masternode winners 150 "7TZ99"
 ```
 
 Result:
 
 ``` json
 {
-  "37338": "yTZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM",
-  "37339": "yTZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM",
-  "37432": "yTZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM",
-  "37433": "yTZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM"
+  "37338": "7TZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM",
+  "37339": "7TZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM",
+  "37432": "7TZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM",
+  "37433": "7TZ99fCnjNu33RDRtawf81iwJ9uxXFmkgM"
 }
 ```
 
-*See also:*
-
+```{seealso}
 * [MasternodeList](#masternodelist): returns a list of masternodes in different modes.
 * [Masternode Winner](#masternode-winner): prints info on the next masternode winner to vote for.
+```
 
 ### Masternodelist
 
@@ -502,10 +502,10 @@ Result:
 }
 ```
 
-*See also:*
-
+```{seealso}
 * [Masternode](#masternode): provides a set of commands for managing masternodes and displaying information about them.
 * [MnSync](#mnsync): returns the sync status, updates to the next step or resets it entirely.
+```
 
 ### MnSync
 
@@ -608,10 +608,10 @@ Result:
 success
 ```
 
-*See also:*
-
+```{seealso}
 * [Masternode](#masternode): provides a set of commands for managing masternodes and displaying information about them.
 * [MasternodeList](#masternodelist): returns a list of masternodes in different modes.
+```
 
 ### Spork
 
@@ -728,6 +728,6 @@ The [`voteraw` RPC](#voteraw) compiles and relays a governance vote with provide
 |---    | ---    | ---      | ---          |
 |Result | object | Required<br>(exactly 1) | The vote result|
 
-*See also:*
-
+```{seealso}
 * [GObject](#gobject): provides a set of commands for managing governance objects and displaying information about them.
+```

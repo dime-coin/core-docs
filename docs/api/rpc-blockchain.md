@@ -1143,10 +1143,11 @@ Result:
 
 The [`gettxoutproof` RPC](../api/rpc-blockchain.md#gettxoutproof) returns a hex-encoded proof that one or more specified transactions were included in a block.
 
->**NOTE:**
->By default this function only works when there is an
->unspent output in the UTXO set for this transaction. To make it always work,
->you need to maintain a transaction index, using the `-txindex` command line option, or specify the block >in which the transaction is included in manually (by block header hash).
+```{note}
+By default this function only works when there is an
+unspent output in the UTXO set for this transaction. To make it always work,
+you need to maintain a transaction index, using the `-txindex` command line option, or specify the block >in which the transaction is included in manually (by block header hash).
+```
 
 *Parameter #1---the transaction hashes to prove*
 

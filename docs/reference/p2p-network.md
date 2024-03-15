@@ -433,7 +433,7 @@ There is no payload in a [`mempool` message](p2p-network.md#mempool).  See the [
 
 ### merkleblock
 
-The [`merkleblock` message](p2p-network.md#merkleblock) is a reply to a [`getdata` message](p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the inventory type `MSG_MERKLEBLOCK`.  It is only part of the reply: if any matching transactions are found, they will be sent separately as [`tx` messages](p2p-network.md#tx). 
+The [`merkleblock` message](p2p-network.md#merkleblock) is a reply to a [`getdata` message](p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the inventory type `MSG_MERKLEBLOCK`.  It is only part of the reply: if any matching transactions are found, they will be sent separately as [`tx` messages](p2p-network.md#tx).
 
 If a filter has been previously set with the [`filterload` message](p2p-network.md#filterload), the [`merkleblock` message](p2p-network.md#merkleblock) will contain the [TXIDs](../resources/glossary.md#transaction-identifiers) of any transactions in the requested block that matched the filter, as well as any parts of the block's [merkle tree](../resources/glossary.md#merkle-tree) necessary to connect those transactions to the block header's [merkle root](../resources/glossary.md#merkle-root). The message also contains a complete copy of the [block header](../resources/glossary.md#block-header) to allow the client to hash it and confirm its [proof of work](../resources/glossary.md#proof-of-work).
 
@@ -882,8 +882,6 @@ To verify `vchSig`, compare the hard-coded spork public key (`strSporkPubKey` fr
 
 * The spork magic message (`"Dimecoin Signed Message:\n"`)
 * nSporkID + nValue + nTimeSigned
-
-
 
 | Network | Spork Pubkey (wrapped)
 | ---------- | ----------
