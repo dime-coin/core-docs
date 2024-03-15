@@ -880,7 +880,7 @@ The list of all active sporks can be found in
 
 To verify `vchSig`, compare the hard-coded spork public key (`strSporkPubKey` from [`src/chainparams.cpp`](https://github.com/dime-coin/dimecoin/blob/272dbe4974e09eca6a928ce13b42941b1c28aca2/src/chainparams.cpp#L177)) with the public key recovered from the [`spork` message](p2p-network.md#spork)'s hash and `vchSig` value (implementation details for Dimecoin Core can be found in `CPubKey::RecoverCompact`). The hash is a double SHA-256 hash of:
 
-* The spork magic message (`"DarkCoin Signed Message:\n"`)
+* The spork magic message (`"Dimecoin Signed Message:\n"`)
 * nSporkID + nValue + nTimeSigned
 
 

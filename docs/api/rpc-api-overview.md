@@ -21,9 +21,10 @@ Dimecoin Core also ships with its own compiled C++ RPC client, `dimecoin-cli,` l
 
 The remainder of this section describes the Dimecoin Core RPC protocol in detail.
 
-> **Dimecoin Core Configuration**
->
-> The following subsections reference setting configuration values. See the [Examples Page](../examples/introduction.md) for more information about setting Dimecoin Core configuration values.
+```{note}
+**Dimecoin Core Configuration**
+The following subsections reference setting configuration values. See the [Examples Page](../examples/introduction.md) for more information about setting Dimecoin Core configuration values.
+```
 
 #### Enabling RPC
 
@@ -168,8 +169,9 @@ The HTTP response data for this request would be:
 }
 ```
 
->
-> Note: In order to minimize its size, the raw JSON response from Dimecoin Core doesn't include any extraneous whitespace characters.
+```{note}
+In order to minimize its size, the raw JSON response from Dimecoin Core doesn't include any extraneous whitespace characters.
+```
 
 Here whitespace has been added to make the object more readable. `dimecoin-cli` also transforms the raw response to make it more human-readable. It:
 
@@ -315,4 +317,6 @@ This translates into an JSON-RPC Request object of the form:
 
 #### Precision Handling
 
-**Caution:** When using the JSON-RPC interface in programming, ensure your application properly manages high-precision numbers. Refer to [Proper Money Handling](https://en.bitcoin.it/wiki/Proper_Money_Handling_%28JSON-RPC%29) on the Bitcoin Wiki for guidance and sample code.
+```{caution}
+When using the JSON-RPC interface in programming, ensure your application properly manages high-precision numbers. Refer to [Proper Money Handling](https://en.bitcoin.it/wiki/Proper_Money_Handling_%28JSON-RPC%29) on the Bitcoin Wiki for guidance and sample code.
+```
