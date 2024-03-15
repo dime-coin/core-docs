@@ -154,8 +154,3 @@ Received RAWTX containing:
 Received RAWBLOCK containing:
  02000000025a4d18da609107e9ea3dc6 ... 9e889cee7ba48981ca002e6962a20236
 ```
-
-zmqpubhashrawblock=tcp://0.0.0.0:11391
-zmqpubhashtx=tcp://0.0.0.0:11391
-zmqpubhashblock=tcp://0.0.0.0:11391
-zmqpubrawtx=tcp://0.0.0.0:11391
