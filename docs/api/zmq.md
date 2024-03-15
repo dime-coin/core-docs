@@ -20,7 +20,7 @@ The ZeroMQ facility implements a notification interface through a set of specifi
 
 ZeroMQ sockets are self-connecting and self-healing; that is, connections made between two endpoints will be automatically restored after an outage, and either end may be freely started or stopped in any order.
 
-Because ZeroMQ is message oriented, subscribers receive transactions and blocks all-at-once and do not need to implement any sort of buffering or reassembly.
+Since ZeroMQ is message oriented, subscribers receive transactions and blocks all-at-once and do not need to implement any sort of buffering or reassembly.
 
 ### Available Notifications
 
@@ -67,15 +67,15 @@ zmqpubrawtx=tcp://0.0.0.0:11931
 
 The socket type is PUB and the address must be a valid ZeroMQ socket address. Each PUB notification has a topic and body, where the header corresponds to the notification type. For instance, for the notification `-zmqpubhashtx` the topic is `hashtx` (no null terminator) and the body is the hexadecimal transaction hash (32 bytes).
 
-> **NOTE**
->
-> The same address can be used in more than one notification.
+```{note}
+The same address can be used in more than one notification.
+```
 
 ZeroMQ endpoint specifiers for TCP (and others) are documented in the [ZeroMQ API](http://api.zeromq.org/4-0:_start).
 
 Client side, then, the ZeroMQ subscriber socket must have the `ZMQ_SUBSCRIBE` option set to one or either of these prefixes (for instance, just `hash`); without doing so will result in no messages arriving. Please see the Dimecoin Core repository for a [working example](https://github.com/dime-coin/dimecoin/blob/272dbe4974e09eca6a928ce13b42941b1c28aca2/contrib/zmq/zmq_sub3.4.py).
 
-### Notes
+### Additional Notes
 
 From the perspective of dimecoind, the ZeroMQ socket is write-only; PUB sockets don't even have a read function. Thus, there is no state introduced into dimecoind directly. Furthermore, no information is broadcast that wasn't already received from the public P2P network.
 
