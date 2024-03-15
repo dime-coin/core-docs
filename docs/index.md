@@ -192,18 +192,22 @@ examples/receiving-zmq-notifications
 :hidden:
 
 dimecore/wallet-arguments-and-commands
+dimecore/wallet-arguments-and-commands-dimecoind
+dimecore/wallet-arguments-and-commands-dimecoin-qt
+dimecore/wallet-arguments-and-commands-dimecoin-cli
+dimecore/wallet-arguments-and-commands-dimecoin-tx
+dimecore/wallet-arguments-and-commands-dimecoin-wallet
 dimecore/wallet-configuration-file
 ```
 
 ```{toctree}
 :maxdepth: 2
-:titlesonly:
 :caption: Additional Resources
 :hidden:
 
-Mainnet Block Explorer <https://chainz.cryptoid.info/dime/>
-Dimecoin Legacy Whitepaper <https://>
-Bitcoin Whitepaper <https://bitcoin.org/bitcoin.pdf>
+chain-analysis-tokenomics/chain-analysis-tokenomics
+legacy-android-wallet/legacy-android
+paper-wallet/paper-wallet
 ```
 
 Questions about Dimecoin development are best asked in one of the [Dimecoin Social
