@@ -10,7 +10,7 @@
 
 ## P2P Networks
 
-This section describes the Dimecoin P2P network protocol (but it is not a [specification](index.md#specification-disclaimer)). It does not describe the [BIP70 payment protocol](../resources/glossary.md#bip70-payment-protocol), the [GetBlockTemplate mining protocol](../guide/mining-block-prototypes.md#getblocktemplate-rpc), or any network protocol never implemented in an official version of Dimecoin Core.
+This section describes the Dimecoin P2P network protocol (but it is not a [specification](index.md#specification-disclaimer)). It does not describe the [BIP70 payment protocol](../resources/glossary.md#bip70-payment-protocol), the [GetBlockTemplate mining protocol](../guide/mining.md#getblocktemplate-rpc), or any network protocol never implemented in an official version of Dimecoin Core.
 
 All peer-to-peer communication occurs entirely over TCP.
 
@@ -57,15 +57,15 @@ Historical Bitcoin protocol versions shown below since Dimecoin is a [fork](../r
 
 | Version | Initial Release                    | Major Changes
 |---------|------------------------------------|--------------
-| 70001   | Bitcoin Core 0.8.0 <br>(Feb 2013)  | • Added [`notfound` message](docs/reference/p2p-network.md#notfound). <br><br>[BIP37](https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki): <br>• Added [`filterload` message](docs/reference/p2p-network-control-messages.md#filterload). <br>• Added [`filteradd` message](docs/reference/p2p-network-control-messages.md#filteradd). <br>• Added [`filterclear` message](docs/reference/p2p-network-control-messages.md#filterclear). <br>• Added [`merkleblock` message](docs/reference/p2p-network.md#merkleblock). <br>• Added relay field to [`version` message](docs/reference/p2p-network-control-messages.md#version) <br>• Added `MSG_FILTERED_BLOCK` inventory type to [`getdata` message](docs/reference/p2p-network.md#getdata).
-| 60002   | Bitcoin Core 0.7.0 <br>(Sep 2012)  | [BIP35](https://github.com/bitcoin/bips/blob/master/bip-0035.mediawiki): <br>• Added [`mempool` message](docs/reference/p2p-network.md#mempool). <br>• Extended [`getdata` message](docs/reference/p2p-network.md#getdata) to allow download of memory pool transactions
-| 60001   | Bitcoin Core 0.6.1 <br>(May 2012)  | [BIP31](https://github.com/bitcoin/bips/blob/master/bip-0031.mediawiki): <br>• Added nonce field to [`ping` message](docs/reference/p2p-network-control-messages.md#ping) <br>• Added [`pong` message](docs/reference/p2p-network-control-messages.md#pong)
+| 70001   | Bitcoin Core 0.8.0 <br>(Feb 2013)  | • Added [`notfound` message](p2p-network.md#notfound). <br><br>[BIP37](https://github.com/bitcoin/bips/blob/master/bip-0137.mediawiki): <br>• Added [`filterload` message](p2p-network.md#filterload). <br>• Added [`filteradd` message](p2p-network.md#filteradd). <br>• Added [`filterclear` message](p2p-network.md#filterclear). <br>• Added [`merkleblock` message](p2p-network.md#merkleblock). <br>• Added relay field to [`version` message](p2p-network.md#version) <br>• Added `MSG_FILTERED_BLOCK` inventory type to [`getdata` message](p2p-network.md#getdata).
+| 60002   | Bitcoin Core 0.7.0 <br>(Sep 2012)  | [BIP35](https://github.com/bitcoin/bips/blob/master/bip-0035.mediawiki): <br>• Added [`mempool` message](p2p-network.md#mempool). <br>• Extended [`getdata` message](p2p-network.md#getdata) to allow download of memory pool transactions
+| 60001   | Bitcoin Core 0.6.1 <br>(May 2012)  | [BIP31](https://github.com/bitcoin/bips/blob/master/bip-0031.mediawiki): <br>• Added nonce field to [`ping` message](p2p-network.md#ping) <br>• Added [`pong` message](p2p-network.md#pong)
 | 60000   | Bitcoin Core 0.6.0 <br>(Mar 2012)  | [BIP14](https://github.com/bitcoin/bips/blob/master/bip-0014.mediawiki): <br>• Separated protocol version from Bitcoin Core version
-| 31800   | Bitcoin Core 0.3.18 <br>(Dec 2010) | • Added [`getheaders` message](docs/reference/p2p-network.md#getheaders) and [`headers` message](docs/reference/p2p-network.md#headers).
-| 31402   | Bitcoin Core 0.3.15 <br>(Oct 2010) | • Added time field to [`addr` message](docs/reference/p2p-network-control-messages.md#addr).
+| 31800   | Bitcoin Core 0.3.18 <br>(Dec 2010) | • Added [`getheaders` message](p2p-network.md#getheaders) and [`headers` message](p2p-network.md#headers).
+| 31402   | Bitcoin Core 0.3.15 <br>(Oct 2010) | • Added time field to [`addr` message](p2p-network.md#addr).
 | 311     | Bitcoin Core 0.3.11 <br>(Aug 2010) | • Added `alert` message.
 | 209     | Bitcoin Core 0.2.9 <br>(May 2010)  | • Added checksum field to message headers.
-| 106     | Bitcoin Core 0.1.6 <br>(Oct 2009)  | • Added receive IP address fields to [`version` message](docs/reference/p2p-network-control-messages.md#version).
+| 106     | Bitcoin Core 0.1.6 <br>(Oct 2009)  | • Added receive IP address fields to [`version` message](p2p-network.md#version).
 
 ## Message Headers
 
@@ -76,11 +76,11 @@ All messages in the network protocol use the same container format, which provid
 | 4     | start string | char[4]   | Magic bytes indicating the originating network; used to seek to next message when stream state is unknown.
 | 12    | command name | char[12]  | ASCII string which identifies what message type is contained in the payload.  Followed by nulls (0x00) to pad out byte count; for example: `version\0\0\0\0\0`.
 | 4     | payload size | uint32_t  | Number of bytes in payload.  The current maximum number of bytes ([`MAX_SIZE`](https://github.com/dime-coin/dimecoin/blob/272dbe4974e09eca6a928ce13b42941b1c28aca2/src/serialize.h#L29)) allowed in the payload by Dimecoin Core is 32 MiB---messages with a payload size larger than this will be dropped or rejected.
-| 4     | checksum     | char[4]   | First 4 bytes of SHA256(SHA256(payload)) in internal byte order.<br /><br /> If payload is empty, as in `verack` and [`getaddr` messages](docs/reference/p2p-network.md#getaddr), the checksum is always 0x5df6e0e2 (SHA256(SHA256(<empty string>))).
+| 4     | checksum     | char[4]   | First 4 bytes of SHA256(SHA256(payload)) in internal byte order.<br /><br /> If payload is empty, as in `verack` and [`getaddr` messages](p2p-network.md#getaddr), the checksum is always 0x5df6e0e2 (SHA256(SHA256(<empty string>))).
 
 ### Example
 
-The following example is an annotated hex dump of a [mainnet](../resources/glossary.md#mainnet) message header from a [`verack` message](docs/reference/p2p-network-control-messages.md#verack) which has no payload.
+The following example is an annotated hex dump of a [mainnet](../resources/glossary.md#mainnet) message header from a [`verack` message](p2p-network.md#verack) which has no payload.
 
 ``` text
 bf0c6bbd ................... Start string: Mainnet
@@ -108,26 +108,26 @@ The currently-available type identifiers are:
 |-----------------|-------------------------------------------------------------------------------|---------------
 | 1               | MSG_TX                                     | The hash is a TXID.
 | 2               | MSG_BLOCK                            | The hash is of a block header.
-| 3               | MSG_FILTERED_BLOCK | The hash is of a block header; identical to `MSG_BLOCK`. When used in a [`getdata` message](docs/reference/p2p-network.md#getdata), this indicates the response should be a [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) rather than a [`block` message](docs/reference/p2p-network.md#block) (but this only works if a bloom filter was previously configured).  **Only for use in [`getdata` messages](docs/reference/p2p-network.md#getdata).**
+| 3               | MSG_FILTERED_BLOCK | The hash is of a block header; identical to `MSG_BLOCK`. When used in a [`getdata` message](p2p-network.md#getdata), this indicates the response should be a [`merkleblock` message](p2p-network.md#merkleblock) rather than a [`block` message](p2p-network.md#block) (but this only works if a bloom filter was previously configured).  **Only for use in [`getdata` messages](p2p-network.md#getdata).**
 | 6               | MSG_SPORK                            | The hash is Spork ID.
-| 20               | MSG_CMPCT_BLOCK                                     | The hash is of a block header; identical to `MSG_BLOCK`. When used in a [`getdata` message](docs/reference/p2p-network.md#getdata), this indicates the response should be a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock). **Only for use in [`getdata` messages](docs/reference/p2p-network.md#getdata).**
+| 20               | MSG_CMPCT_BLOCK                                     | The hash is of a block header; identical to `MSG_BLOCK`. When used in a [`getdata` message](p2p-network.md#getdata), this indicates the response should be a [`cmpctblock` message](p2p-network.md#cmpctblock). **Only for use in [`getdata` messages](p2p-network.md#getdata).**
 
 ### block
 
-The [`block` message](docs/reference/p2p-network.md#block) transmits a single [serialized block](../resources/glossary.md#serialized-block) in the format described in the [serialized blocks section](docs/reference/blockchain#serialized-blocks.md). See that section for an example hexdump.  It can be sent for two different reasons:
+The [`block` message](p2p-network.md#block) transmits a single [serialized block](../resources/glossary.md#serialized-block) in the format described in the [serialized blocks section](docs/reference/blockchain#serialized-blocks.md). See that section for an example hexdump.  It can be sent for two different reasons:
 
-1. **GetData Response:** Nodes will always send it in response to a [`getdata` message](docs/reference/p2p-network.md#getdata) that requests the block with an [inventory](../resources/glossary.md#inventory) type of `MSG_BLOCK` (provided the node has that block available for relay).
+1. **GetData Response:** Nodes will always send it in response to a [`getdata` message](p2p-network.md#getdata) that requests the block with an [inventory](../resources/glossary.md#inventory) type of `MSG_BLOCK` (provided the node has that block available for relay).
 
-2. **Unsolicited:** Some miners will send unsolicited [`block` messages](docs/reference/p2p-network.md#block) broadcasting their newly-mined blocks to all of their [peers](../resources/glossary.md#peer). Many [mining](../resources/glossary.md#mining) pools do the same thing, although some may be misconfigured to send the block from multiple nodes, possibly sending the same block to some peers more than once.
+2. **Unsolicited:** Some miners will send unsolicited [`block` messages](p2p-network.md#block) broadcasting their newly-mined blocks to all of their [peers](../resources/glossary.md#peer). Many [mining](../resources/glossary.md#mining) pools do the same thing, although some may be misconfigured to send the block from multiple nodes, possibly sending the same block to some peers more than once.
 
 ### blocktxn
 
-The [`blocktxn` message](docs/reference/p2p-network.md#blocktxn) sends requested [block](../resources/glossary.md#block) [transactions](../resources/glossary.md#transaction) to a node which previously requested them with a [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn). It is defined as a message containing a serialized `BlockTransactions` message.
+The [`blocktxn` message](p2p-network.md#blocktxn) sends requested [block](../resources/glossary.md#block) [transactions](../resources/glossary.md#transaction) to a node which previously requested them with a [`getblocktxn` message](p2p-network.md#getblocktxn). It is defined as a message containing a serialized `BlockTransactions` message.
 
-Upon receipt of a properly-formatted requested [`blocktxn` message](docs/reference/p2p-network.md#blocktxn), [nodes](../resources/glossary.md#node) should:
+Upon receipt of a properly-formatted requested [`blocktxn` message](p2p-network.md#blocktxn), [nodes](../resources/glossary.md#node) should:
 
-1. Attempt to reconstruct the full block by taking the prefilledtxn transactions from the original [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) and placing them in the marked positions
-2. For each short transaction ID from the original [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock), in order, find the corresponding transaction (from either the [`blocktxn` message](docs/reference/p2p-network.md#blocktxn) or from other sources)
+1. Attempt to reconstruct the full block by taking the prefilledtxn transactions from the original [`cmpctblock` message](p2p-network.md#cmpctblock) and placing them in the marked positions
+2. For each short transaction ID from the original [`cmpctblock` message](p2p-network.md#cmpctblock), in order, find the corresponding transaction (from either the [`blocktxn` message](p2p-network.md#blocktxn) or from other sources)
 3. Place each short transaction ID in the first available position in the block
 4. Once the block has been reconstructed, it shall be processed as normal.
 
@@ -141,9 +141,9 @@ The structure of `BlockTransactions` is defined below.
 |----------|----------------------|----------------------|----------|------------
 | 32       | blockhash            | Binary blob          | The output from a double-SHA256 of the block header, as used elsewhere | The blockhash of the block which the transactions being provided are in
 | 1 or 3   | transactions<br>_length | CompactSize          | As used to encode array lengths elsewhere  The number of transactions provided | NA
-| *Varies* | transactions         | List of transactions | As encoded in [`tx` messages](docs/reference/p2p-network.md#tx) in response to `getdata MSG_TX` | The transactions provided
+| *Varies* | transactions         | List of transactions | As encoded in [`tx` messages](p2p-network.md#tx) in response to `getdata MSG_TX` | The transactions provided
 
-The following annotated hexdump shows a [`blocktxn` message](docs/reference/p2p-network.md#blocktxn).  (The message header has been omitted.)
+The following annotated hexdump shows a [`blocktxn` message](p2p-network.md#blocktxn).  (The message header has been omitted.)
 
 ``` text
 182327cb727da7d60541da793831fd0ab0509e79c8cd
@@ -194,28 +194,28 @@ Transaction(s)
 
 ### cmpctblock
 
-The [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the [inventory](../resources/glossary.md#inventory) type `MSG_CMPCT_BLOCK`. If the requested block was recently announced and is close to the tip of the best chain of the receiver and after having sent the requesting [peer](../resources/glossary.md#peer) a [`sendcmpct` message](docs/reference/p2p-network-control-messages.md#sendcmpct), nodes respond with a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) containing data for the block.
+The [`cmpctblock` message](p2p-network.md#cmpctblock) is a reply to a [`getdata` message](p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the [inventory](../resources/glossary.md#inventory) type `MSG_CMPCT_BLOCK`. If the requested block was recently announced and is close to the tip of the best chain of the receiver and after having sent the requesting [peer](../resources/glossary.md#peer) a [`sendcmpct` message](p2p-network.md#sendcmpct), nodes respond with a [`cmpctblock` message](p2p-network.md#cmpctblock) containing data for the block.
 
 ```{important}
 If the requested block is too old, the node responds with a *full non-compact block
 ```
 
-Upon receipt of a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock), after sending a [`sendcmpct` message](docs/reference/p2p-network-control-messages.md#sendcmpct), nodes should calculate the short transaction ID for each [unconfirmed transaction](../resources/glossary.md#unconfirmed-transaction) they have available (i.e. in their mempool) and compare each to each short transaction ID in the [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock). After finding already-available transactions, nodes which do not have all transactions available to reconstruct the full block should request the missing transactions using a [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn).
+Upon receipt of a [`cmpctblock` message](p2p-network.md#cmpctblock), after sending a [`sendcmpct` message](p2p-network.md#sendcmpct), nodes should calculate the short transaction ID for each [unconfirmed transaction](../resources/glossary.md#unconfirmed-transaction) they have available (i.e. in their mempool) and compare each to each short transaction ID in the [`cmpctblock` message](p2p-network.md#cmpctblock). After finding already-available transactions, nodes which do not have all transactions available to reconstruct the full block should request the missing transactions using a [`getblocktxn` message](p2p-network.md#getblocktxn).
 
-A node must not send a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) unless they are able to respond to a [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn) which requests every transaction in the block. A node must not send a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) without having validated that the [header](../resources/glossary.md#header) properly commits to each transaction in the block, and properly builds on top of the existing, fully-validated chain with a valid proof-of-work either as a part of the current most-work valid chain, or building directly on top of it. A node may send a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) before validating that each transaction in the block validly spends existing UTXO set entries.
+A node must not send a [`cmpctblock` message](p2p-network.md#cmpctblock) unless they are able to respond to a [`getblocktxn` message](p2p-network.md#getblocktxn) which requests every transaction in the block. A node must not send a [`cmpctblock` message](p2p-network.md#cmpctblock) without having validated that the [header](../resources/glossary.md#header) properly commits to each transaction in the block, and properly builds on top of the existing, fully-validated chain with a valid proof-of-work either as a part of the current most-work valid chain, or building directly on top of it. A node may send a [`cmpctblock` message](p2p-network.md#cmpctblock) before validating that each transaction in the block validly spends existing UTXO set entries.
 
-The [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) contains a vector of `PrefilledTransaction` whose structure is defined below. A `PrefilledTransaction` is used in `HeaderAndShortIDs` to provide a list of a few transactions explicitly.
+The [`cmpctblock` message](p2p-network.md#cmpctblock) contains a vector of `PrefilledTransaction` whose structure is defined below. A `PrefilledTransaction` is used in `HeaderAndShortIDs` to provide a list of a few transactions explicitly.
 
 | Bytes    | Name                 | Data Type            | Encoding | Description
 |----------|----------------------|----------------------|----------|------------
 | 1 or 3   | index                | CompactSize          | Compact Size, differentially encoded since the last PrefilledTransaction in a list | The index into the block at which this transaction is
-| *Varies* | tx                   | Transaction          | As encoded in [`tx` messages](docs/reference/p2p-network.md#tx) sent in response to `getdata MSG_TX` | Transaction which is in the block at index `index`
+| *Varies* | tx                   | Transaction          | As encoded in [`tx` messages](p2p-network.md#tx) sent in response to `getdata MSG_TX` | Transaction which is in the block at index `index`
 
-The [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) is compromised of a serialized `HeaderAndShortIDs` structure which is defined below. A `HeaderAndShortIDs` structure is used to relay a block header, the short transactions IDs used for matching already-available transactions, and a select few transactions which we expect a peer may be missing.
+The [`cmpctblock` message](p2p-network.md#cmpctblock) is compromised of a serialized `HeaderAndShortIDs` structure which is defined below. A `HeaderAndShortIDs` structure is used to relay a block header, the short transactions IDs used for matching already-available transactions, and a select few transactions which we expect a peer may be missing.
 
 | Bytes    | Name                 | Data Type            | Encoding | Description
 |----------|----------------------|----------------------|----------|------------
-| 80       | header               | Block header         | First 80 bytes of the block as defined by the encoding used by [`block` messages](docs/reference/p2p-network.md#block) | The header of the block being provided
+| 80       | header               | Block header         | First 80 bytes of the block as defined by the encoding used by [`block` messages](p2p-network.md#block) | The header of the block being provided
 | 8        | nonce                | uint64_t             | Little Endian | A nonce for use in short transaction ID calculations
 | 1 or 3   | shortids_<br>length  | CompactSize          | As used to encode array lengths elsewhere | The number of short transaction IDs in `shortids` (i.e. block tx count - `prefilledtxn`<br>`_length`)
 | *Varies* | shortids  | List of 6-byte integers | Little Endian | The short transaction IDs calculated from the transactions which were not provided explicitly in `prefilledtxn`
@@ -230,7 +230,7 @@ Short transaction IDs are used to represent a transaction without sending a full
 * Running SipHash-2-4 with the input being the transaction ID and the keys (k0/k1) set to the first two little-endian 64-bit integers from the above hash, respectively.
 * Dropping the 2 most significant bytes from the SipHash output to make it 6 bytes.
 
-The following annotated hexdump shows a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock). (The message header has been omitted.)
+The following annotated hexdump shows a [`cmpctblock` message](p2p-network.md#cmpctblock). (The message header has been omitted.)
 
 ``` text
 00000020981178a4342cec6316296b2ad84c9b7cdf9f
@@ -284,24 +284,24 @@ Prefilled Transactions
 
 ### getblocks
 
-The [`getblocks` message](docs/reference/p2p-network.md#getblocks) requests an [`inv` message](docs/reference/p2p-network.md#inv) that provides [block header](../resources/glossary.md#block-header) hashes starting from a particular point in the [blockchain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the data it needs to request the blocks it hasn't seen.
+The [`getblocks` message](p2p-network.md#getblocks) requests an [`inv` message](p2p-network.md#inv) that provides [block header](../resources/glossary.md#block-header) hashes starting from a particular point in the [blockchain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the data it needs to request the blocks it hasn't seen.
 
-Peers which have been disconnected may have [stale blocks](../resources/glossary.md#stale-block) in their locally-stored blockchain, so the [`getblocks` message](docs/reference/p2p-network.md#getblocks) allows the requesting peer to provide the receiving peer with multiple [header](../resources/glossary.md#header) hashes at heights on their local chain. This allows the receiving peer to find, within that list, the last header hash they had in common and reply with all subsequent header hashes.
+Peers which have been disconnected may have [stale blocks](../resources/glossary.md#stale-block) in their locally-stored blockchain, so the [`getblocks` message](p2p-network.md#getblocks) allows the requesting peer to provide the receiving peer with multiple [header](../resources/glossary.md#header) hashes at heights on their local chain. This allows the receiving peer to find, within that list, the last header hash they had in common and reply with all subsequent header hashes.
 
 ```{note}
-The receiving peer itself may respond with an [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes of stale blocks.  It is up to the requesting peer to poll all of its peers to find the best blockchain.
+The receiving peer itself may respond with an [`inv` message](p2p-network.md#inv) containing header hashes of stale blocks.  It is up to the requesting peer to poll all of its peers to find the best blockchain.
 ```
 
-If the receiving peer does not find a common header hash within the list, it will assume the last common block was the [genesis block](../resources/glossary.md#genesis-block) (block zero), so it will reply with in [`inv` message](docs/reference/p2p-network.md#inv) containing header hashes starting with block one (the first block after the genesis block).
+If the receiving peer does not find a common header hash within the list, it will assume the last common block was the [genesis block](../resources/glossary.md#genesis-block) (block zero), so it will reply with in [`inv` message](p2p-network.md#inv) containing header hashes starting with block one (the first block after the genesis block).
 
 | Bytes    | Name                 | Data Type        | Description
 |----------|----------------------|------------------|----------------
-| 4        | version              | uint32_t         | The protocol version number; the same as sent in the [`version` message](docs/reference/p2p-network-control-messages.md#version).
+| 4        | version              | uint32_t         | The protocol version number; the same as sent in the [`version` message](p2p-network.md#version).
 | *Varies* | hash count           | compactSize uint | The number of header hashes provided not including the stop hash.  There is no limit except that the byte size of the entire message must be below the [`MAX_SIZE`](https://github.com/dime-coin/dimecoin/blob/272dbe4974e09eca6a928ce13b42941b1c28aca2/src/serialize.h#L29) limit; typically from 1 to 200 hashes are sent.
 | *Varies* | block header hashes  | char[32]         | One or more block header hashes (32 bytes each) in internal byte order.  Hashes should be provided in reverse order of block height, so highest-height hashes are listed first and lowest-height hashes are listed last.
-| 32       | stop hash            | char[32]         | The header hash of the last header hash being requested; set to all zeroes to request an [`inv` message](docs/reference/p2p-network.md#inv) with all subsequent header hashes (a maximum of 500 will be sent as a reply to this message; if you need more than 500, you will need to send another [`getblocks` message](docs/reference/p2p-network.md#getblocks) with a higher-height header hash as the first entry in block header hash field).
+| 32       | stop hash            | char[32]         | The header hash of the last header hash being requested; set to all zeroes to request an [`inv` message](p2p-network.md#inv) with all subsequent header hashes (a maximum of 500 will be sent as a reply to this message; if you need more than 500, you will need to send another [`getblocks` message](p2p-network.md#getblocks) with a higher-height header hash as the first entry in block header hash field).
 
-The following annotated hexdump shows a [`getblocks` message](docs/reference/p2p-network.md#getblocks).  (The message header has been omitted.)
+The following annotated hexdump shows a [`getblocks` message](p2p-network.md#getblocks).  (The message header has been omitted.)
 
 ``` text
 71110100 ........................... Protocol version: 70001
@@ -319,9 +319,9 @@ d39f608a7775b537729884d4e6633bb2
 
 ### getblocktxn
 
-The [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn) requests a [`blocktxn` message](docs/reference/p2p-network.md#blocktxn) for any transactions that it has not seen after a compact block is received. It is defined as a message containing a serialized `BlockTransactionsRequest` message. Upon receipt of a properly-formatted [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn), [nodes](../resources/glossary.md#node) which recently provided the sender of such a message with a [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock) for the block hash identified in this message must respond with either an appropriate [`blocktxn` message](docs/reference/p2p-network.md#blocktxn), or a full block message.
+The [`getblocktxn` message](p2p-network.md#getblocktxn) requests a [`blocktxn` message](p2p-network.md#blocktxn) for any transactions that it has not seen after a compact block is received. It is defined as a message containing a serialized `BlockTransactionsRequest` message. Upon receipt of a properly-formatted [`getblocktxn` message](p2p-network.md#getblocktxn), [nodes](../resources/glossary.md#node) which recently provided the sender of such a message with a [`cmpctblock` message](p2p-network.md#cmpctblock) for the block hash identified in this message must respond with either an appropriate [`blocktxn` message](p2p-network.md#blocktxn), or a full block message.
 
-A [`blocktxn` message](docs/reference/p2p-network.md#blocktxn) response must contain exactly and only each transaction which is present in the appropriate block at the index specified in the [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn) indexes list, in the order requested.
+A [`blocktxn` message](p2p-network.md#blocktxn) response must contain exactly and only each transaction which is present in the appropriate block at the index specified in the [`getblocktxn` message](p2p-network.md#getblocktxn) indexes list, in the order requested.
 
 The structure of `BlockTransactionsRequest` is defined below.
 
@@ -331,7 +331,7 @@ The structure of `BlockTransactionsRequest` is defined below.
 | *Varies* | indexes_length  | CompactSize uint     | As used to encode array lengths elsewhere | The number of transactions requested
 | *Varies* | indexes         | CompactSize uint[]   | Differentially encoded | Vector of compactSize containing the indexes of the transactions being requested in the block.
 
-The following annotated hexdump shows a [`getblocktxn` message](docs/reference/p2p-network.md#getblocktxn).  (The message header has been omitted.)
+The following annotated hexdump shows a [`getblocktxn` message](p2p-network.md#getblocktxn).  (The message header has been omitted.)
 
 ``` text
 182327cb727da7d60541da793831fd0a
@@ -343,37 +343,37 @@ b0509e79c8cd3d654cdf3a0100000000 ... Block Hash
 
 ### getdata
 
-The [`getdata` message](docs/reference/p2p-network.md#getdata) requests one or more data objects from another [node](../resources/glossary.md#node). The objects are requested by an inventory, which the requesting node typically previously received by way of an [`inv` message](docs/reference/p2p-network.md#inv).
+The [`getdata` message](p2p-network.md#getdata) requests one or more data objects from another [node](../resources/glossary.md#node). The objects are requested by an inventory, which the requesting node typically previously received by way of an [`inv` message](p2p-network.md#inv).
 
-The response to a [`getdata` message](docs/reference/p2p-network.md#getdata) can be a [`tx` message](docs/reference/p2p-network.md#tx), [`block` message](docs/reference/p2p-network.md#block), [`merkleblock` message](docs/reference/p2p-network.md#merkleblock), [`dstx` message](docs/reference/p2p-network-privatesend-messages.md#dstx), [`govobj` message](docs/reference/p2p-network-governance-messages.md#govobj), [`govobjvote` message](docs/reference/p2p-network-governance-messages.md#govobjvote), [`notfound` message](docs/reference/p2p-network.md#notfound), [`cmpctblock` message](docs/reference/p2p-network.md#cmpctblock), or any other messages that are exchanged by way of [`inv` messages](docs/reference/p2p-network.md#inv).
+The response to a [`getdata` message](p2p-network.md#getdata) can be a [`tx` message](p2p-network.md#tx), [`block` message](p2p-network.md#block), [`merkleblock` message](p2p-network.md#merkleblock), [`notfound` message](p2p-network.md#notfound), [`cmpctblock` message](p2p-network.md#cmpctblock), or any other messages that are exchanged by way of [`inv` messages](p2p-network.md#inv).
 
-This message cannot be used to request arbitrary data, such as historic transactions no longer in the memory pool or relay set. Full nodes may not even be able to provide older [blocks](../resources/glossary.md#block) if they've pruned old transactions from their block database. For this reason, the [`getdata` message](docs/reference/p2p-network.md#getdata) should usually only be used to request data from a node which previously advertised it had that data by sending an [`inv` message](docs/reference/p2p-network.md#inv).
+This message cannot be used to request arbitrary data, such as historic transactions no longer in the memory pool or relay set. Full nodes may not even be able to provide older [blocks](../resources/glossary.md#block) if they've pruned old transactions from their block database. For this reason, the [`getdata` message](p2p-network.md#getdata) should usually only be used to request data from a node which previously advertised it had that data by sending an [`inv` message](p2p-network.md#inv).
 
-The format and maximum size limitations of the [`getdata` message](docs/reference/p2p-network.md#getdata) are identical to the [`inv` message](docs/reference/p2p-network.md#inv); only the message header differs.
+The format and maximum size limitations of the [`getdata` message](p2p-network.md#getdata) are identical to the [`inv` message](p2p-network.md#inv); only the message header differs.
 
 ### getheaders
 
-The [`getheaders` message](docs/reference/p2p-network.md#getheaders) requests a [`headers` message](docs/reference/p2p-network.md#headers) that provides block headers starting from a particular point in the [blockchain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the [headers](../resources/glossary.md#header) it hasn’t seen yet.
+The [`getheaders` message](p2p-network.md#getheaders) requests a [`headers` message](p2p-network.md#headers) that provides block headers starting from a particular point in the [blockchain](../resources/glossary.md#block-chain). It allows a [peer](../resources/glossary.md#peer) which has been disconnected or started for the first time to get the [headers](../resources/glossary.md#header) it hasn’t seen yet.
 
-The [`getheaders` message](docs/reference/p2p-network.md#getheaders) is nearly identical to the [`getblocks` message](docs/reference/p2p-network.md#getblocks), with one minor difference: the `inv` reply to the [`getblocks` message](docs/reference/p2p-network.md#getblocks) will include no more than 500 [block header](../resources/glossary.md#block-header) hashes; the `headers` reply to the [`getheaders` message](docs/reference/p2p-network.md#getheaders) will include as many as 2,000 block headers.
+The [`getheaders` message](p2p-network.md#getheaders) is nearly identical to the [`getblocks` message](p2p-network.md#getblocks), with one minor difference: the `inv` reply to the [`getblocks` message](p2p-network.md#getblocks) will include no more than 500 [block header](../resources/glossary.md#block-header) hashes; the `headers` reply to the [`getheaders` message](p2p-network.md#getheaders) will include as many as 2,000 block headers.
 
 | Bytes    | Name                 | Data Type        | Description
 |----------|----------------------|------------------|----------------
-| 4        | version              | uint32_t         | The protocol version number; the same as sent in the [`version` message](docs/reference/p2p-network-control-messages.md#version).
+| 4        | version              | uint32_t         | The protocol version number; the same as sent in the [`version` message](p2p-network.md#version).
 | *Varies* | hash count           | compactSize uint | The number of header hashes provided not including the stop hash.
 | *Varies* | block header hashes  | char[32]         | One or more block header hashes (32 bytes each) in internal byte order.  Hashes should be provided in reverse order of block height, so highest-height hashes are listed first and lowest-height hashes are listed last.
 | 32       | stop hash            | char[32]         | The header hash of the last header hash being requested; set to all zeroes to request as many blocks as possible (2000).
 
 ### headers
 
-The [`headers` message](docs/reference/p2p-network.md#headers) sends block headers to a [node](../resources/glossary.md#node) which previously requested certain [headers](../resources/glossary.md#header) with a [`getheaders` message](docs/reference/p2p-network.md#getheaders). A headers message can be empty.
+The [`headers` message](p2p-network.md#headers) sends block headers to a [node](../resources/glossary.md#node) which previously requested certain [headers](../resources/glossary.md#header) with a [`getheaders` message](p2p-network.md#getheaders). A headers message can be empty.
 
 | Bytes    | Name    | Data Type        | Description
 |----------|---------|------------------|-----------------
 | *Varies* | count   | compactSize uint | Number of block headers up to a maximum of 2,000.  Note: headers-first sync assumes the sending node will send the maximum number of headers whenever possible.
 | *Varies* | headers | block_header     | Block headers: each 80-byte block header is in the format described in the [block headers section](docs/reference/block-chain-block-headers.md) with an additional 0x00 suffixed.  This 0x00 is called the transaction count, but because the headers message doesn't include any transactions, the transaction count is always zero.
 
-The following annotated hexdump shows a [`headers` message](docs/reference/p2p-network.md#headers).  (The message header has been omitted.)
+The following annotated hexdump shows a [`headers` message](p2p-network.md#headers).  (The message header has been omitted.)
 
 ``` text
 01 ................................. Header count: 1
@@ -392,16 +392,16 @@ fe9f0864 ........................... Nonce
 
 ### inv
 
-The [`inv` message](docs/reference/p2p-network.md#inv) (inventory message) transmits one or more [inventories](../resources/glossary.md#inventory) of objects known to the transmitting [peer](../resources/glossary.md#peer).  It can be sent unsolicited to announce new [transactions](../resources/glossary.md#transaction) or [blocks](../resources/glossary.md#block), or it can be sent in reply to a [`getblocks` message](docs/reference/p2p-network.md#getblocks) or [`mempool` message](docs/reference/p2p-network.md#mempool).
+The [`inv` message](p2p-network.md#inv) (inventory message) transmits one or more [inventories](../resources/glossary.md#inventory) of objects known to the transmitting [peer](../resources/glossary.md#peer).  It can be sent unsolicited to announce new [transactions](../resources/glossary.md#transaction) or [blocks](../resources/glossary.md#block), or it can be sent in reply to a [`getblocks` message](p2p-network.md#getblocks) or [`mempool` message](p2p-network.md#mempool).
 
-The receiving peer can compare the inventories from an [`inv` message](docs/reference/p2p-network.md#inv) against the inventories it has already seen, and then use a follow-up message to request unseen objects.
+The receiving peer can compare the inventories from an [`inv` message](p2p-network.md#inv) against the inventories it has already seen, and then use a follow-up message to request unseen objects.
 
 | Bytes    | Name      | Data Type             | Description
 |----------|-----------|-----------------------|-----------------
 | *Varies* | count     | compactSize uint      | The number of inventory entries.
 | *Varies* | inventory | inventory             | One or more inventory entries up to a maximum of 50,000 entries.
 
-The following annotated hexdump shows an [`inv` message](docs/reference/p2p-network.md#inv) with two inventory entries.  (The message header has been omitted.)
+The following annotated hexdump shows an [`inv` message](p2p-network.md#inv) with two inventory entries.  (The message header has been omitted.)
 
 ``` text
 02 ................................. Count: 2
@@ -417,25 +417,25 @@ ab17057f9ce4b50c2aef4fadf3729a2e ... Hash (txlvote)
 
 ### mempool
 
-The [`mempool` message](docs/reference/p2p-network.md#mempool) requests the [TXIDs](../resources/glossary.md#transaction-identifiers) of transactions that the receiving [node](../resources/glossary.md#node) has verified as valid but which have not yet appeared in a [block](../resources/glossary.md#block). That is, transactions which are in the receiving node's memory pool. The response to the [`mempool` message](docs/reference/p2p-network.md#mempool) is one or more [`inv` messages](docs/reference/p2p-network.md#inv) containing the TXIDs in the usual [inventory](../resources/glossary.md#inventory) format.
+The [`mempool` message](p2p-network.md#mempool) requests the [TXIDs](../resources/glossary.md#transaction-identifiers) of transactions that the receiving [node](../resources/glossary.md#node) has verified as valid but which have not yet appeared in a [block](../resources/glossary.md#block). That is, transactions which are in the receiving node's memory pool. The response to the [`mempool` message](p2p-network.md#mempool) is one or more [`inv` messages](p2p-network.md#inv) containing the TXIDs in the usual [inventory](../resources/glossary.md#inventory) format.
 
-Sending the [`mempool` message](docs/reference/p2p-network.md#mempool) is mostly useful when a program first connects to the network. Full nodes can use it to quickly gather most or all of the unconfirmed transactions available on the network; this is especially useful for miners trying to gather transactions for their transaction fees. SPV clients can set a filter before sending a `mempool` to only receive transactions that match that filter; this allows a recently-started client to get most or all unconfirmed transactions related to its wallet.
+Sending the [`mempool` message](p2p-network.md#mempool) is mostly useful when a program first connects to the network. Full nodes can use it to quickly gather most or all of the unconfirmed transactions available on the network; this is especially useful for miners trying to gather transactions for their transaction fees. SPV clients can set a filter before sending a `mempool` to only receive transactions that match that filter; this allows a recently-started client to get most or all unconfirmed transactions related to its wallet.
 
 ```{note}
- Dimecoin Core 2.0.0.0 expanded the mempool message to include syncing of [InstantSend Lock](docs/reference/p2p-network-instantsend-messages.md#islock) inventories. Additionally, nodes now attempt to sync their mempool with peers at startup by default (limited to peers using protocol version 70006 or higher). This allows nodes to more quickly detect any double-spend attempts as well as show InstantSend lock status correctly for transactions received while offline. *InstaSend currently disabled on Dimecoin mainnet.*
+ Dimecoin Core 2.0.0.0 expanded the mempool message to include syncing of InstantSend Lock inventories. Additionally, nodes now attempt to sync their mempool with peers at startup by default (limited to peers using protocol version 70006 or higher). This allows nodes to more quickly detect any double-spend attempts as well as show InstantSend lock status correctly for transactions received while offline. *InstaSend currently disabled on Dimecoin mainnet.*
  ```
 
-The `inv` response to the [`mempool` message](docs/reference/p2p-network.md#mempool) is, at best, one node's view of the network---not a complete list of every [unconfirmed transaction](../resources/glossary.md#unconfirmed-transaction) on the network. Here are some additional reasons the list might not be complete:
+The `inv` response to the [`mempool` message](p2p-network.md#mempool) is, at best, one node's view of the network---not a complete list of every [unconfirmed transaction](../resources/glossary.md#unconfirmed-transaction) on the network. Here are some additional reasons the list might not be complete:
 
-* The [`mempool` message](docs/reference/p2p-network.md#mempool) is not currently fully compatible with the [`filterload` message](docs/reference/p2p-network-control-messages.md#filterload)'s `BLOOM_UPDATE_ALL` and `BLOOM_UPDATE_P2PUBKEY_ONLY` flags. Mempool transactions are not sorted like in-block transactions, so a transaction (tx2) spending an [output](../resources/glossary.md#output) can appear before the transaction (tx1) containing that output, which means the automatic filter update mechanism won't operate until the second-appearing transaction (tx1) is seen---missing the first-appearing transaction (tx2). It has been proposed in [Bitcoin Core issue #2381](https://github.com/bitcoin/bitcoin/issues/2381) that the transactions should be sorted before being processed by the filter.
+* The [`mempool` message](p2p-network.md#mempool) is not currently fully compatible with the [`filterload` message](p2p-network.md#filterload)'s `BLOOM_UPDATE_ALL` and `BLOOM_UPDATE_P2PUBKEY_ONLY` flags. Mempool transactions are not sorted like in-block transactions, so a transaction (tx2) spending an [output](../resources/glossary.md#output) can appear before the transaction (tx1) containing that output, which means the automatic filter update mechanism won't operate until the second-appearing transaction (tx1) is seen---missing the first-appearing transaction (tx2). It has been proposed in [Bitcoin Core issue #2381](https://github.com/bitcoin/bitcoin/issues/2381) that the transactions should be sorted before being processed by the filter.
 
-There is no payload in a [`mempool` message](docs/reference/p2p-network.md#mempool).  See the [message header section](docs/reference/p2p-network-message-headers.md) for an example of a message without a payload.
+There is no payload in a [`mempool` message](p2p-network.md#mempool).  See the [message header section](p2p-network.md#message-headers) for an example of a message without a payload.
 
 ### merkleblock
 
-The [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the inventory type `MSG_MERKLEBLOCK`.  It is only part of the reply: if any matching transactions are found, they will be sent separately as [`tx` messages](docs/reference/p2p-network.md#tx). 
+The [`merkleblock` message](p2p-network.md#merkleblock) is a reply to a [`getdata` message](p2p-network.md#getdata) which requested a [block](../resources/glossary.md#block) using the inventory type `MSG_MERKLEBLOCK`.  It is only part of the reply: if any matching transactions are found, they will be sent separately as [`tx` messages](p2p-network.md#tx). 
 
-If a filter has been previously set with the [`filterload` message](docs/reference/p2p-network-control-messages.md#filterload), the [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) will contain the [TXIDs](../resources/glossary.md#transaction-identifiers) of any transactions in the requested block that matched the filter, as well as any parts of the block's [merkle tree](../resources/glossary.md#merkle-tree) necessary to connect those transactions to the block header's [merkle root](../resources/glossary.md#merkle-root). The message also contains a complete copy of the [block header](../resources/glossary.md#block-header) to allow the client to hash it and confirm its [proof of work](../resources/glossary.md#proof-of-work).
+If a filter has been previously set with the [`filterload` message](p2p-network.md#filterload), the [`merkleblock` message](p2p-network.md#merkleblock) will contain the [TXIDs](../resources/glossary.md#transaction-identifiers) of any transactions in the requested block that matched the filter, as well as any parts of the block's [merkle tree](../resources/glossary.md#merkle-tree) necessary to connect those transactions to the block header's [merkle root](../resources/glossary.md#merkle-root). The message also contains a complete copy of the [block header](../resources/glossary.md#block-header) to allow the client to hash it and confirm its [proof of work](../resources/glossary.md#proof-of-work).
 
 | Bytes    | Name               | Data Type        | Description
 |----------|--------------------|------------------|----------------
@@ -446,7 +446,7 @@ If a filter has been previously set with the [`filterload` message](docs/referen
 | *Varies* | flag byte count    | compactSize uint | The number of flag bytes in the following field.
 | *Varies* | flags              | byte[]           | A sequence of bits packed eight in a byte with the least significant bit first.  May be padded to the nearest byte boundary but must not contain any more bits than that.  Used to assign the hashes to particular nodes in the merkle tree as described below.
 
-The annotated hexdump below shows a [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) which corresponds to the examples below.  (The message header has been omitted.)
+The annotated hexdump below shows a [`merkleblock` message](p2p-network.md#merkleblock) which corresponds to the examples below.  (The message header has been omitted.)
 
 ``` text
 01000000 ........................... Block version: 1
@@ -474,17 +474,17 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 1d ................................. Flags: 1 0 1 1 1 0 0 0
 ```
 
-Note: when fully decoded, the above [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) provided the TXID for a single transaction that matched the filter. In the [network](../resources/glossary.md#network) traffic dump this output was taken from, the full transaction belonging to that TXID was sent immediately after the [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) as a [`tx` message](docs/reference/p2p-network.md#tx).
+Note: when fully decoded, the above [`merkleblock` message](p2p-network.md#merkleblock) provided the TXID for a single transaction that matched the filter. In the [network](../resources/glossary.md#network) traffic dump this output was taken from, the full transaction belonging to that TXID was sent immediately after the [`merkleblock` message](p2p-network.md#merkleblock) as a [`tx` message](p2p-network.md#tx).
 
 #### Parsing A MerkleBlock Message
 
-As seen in the annotated hexdump above, the [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) provides three special data types: a transaction count, a list of hashes, and a list of one-bit flags.
+As seen in the annotated hexdump above, the [`merkleblock` message](p2p-network.md#merkleblock) provides three special data types: a transaction count, a list of hashes, and a list of one-bit flags.
 
 You can use the transaction count to construct an empty [merkle tree](../resources/glossary.md#merkle-tree). We'll call each entry in the tree a node; on the bottom are TXID nodes---the hashes for these nodes are [TXIDs](../resources/glossary.md#transaction-identifiers); the remaining nodes (including the [merkle root](../resources/glossary.md#merkle-root)) are non-TXID nodes---they may actually have the same hash as a TXID, but we treat them differently.
 
 ![Example Of Parsing A MerkleBlock Message](../../img/dev/animated-en-merkleblock-parsing.gif)
 
-Keep the hashes and flags in the order they appear in the [`merkleblock` message](docs/reference/p2p-network.md#merkleblock). When we say "next flag" or "next hash", we mean the next flag or hash on the list, even if it's the first one we've used so far.
+Keep the hashes and flags in the order they appear in the [`merkleblock` message](p2p-network.md#merkleblock). When we say "next flag" or "next hash", we mean the next flag or hash on the list, even if it's the first one we've used so far.
 
 Start with the merkle root node and the first flag. The table below describes how to evaluate a flag based on whether the node being processed is a TXID node or a non-TXID node. Once you apply a flag to a node, never apply another flag to that same node or reuse that same flag again.
 
@@ -511,11 +511,11 @@ Continue descending and ascending until you have enough information to obtain th
 
 * Fail if the block header is invalid. Remember to ensure that the hash of the header is less than or equal to the [target threshold](../resources/glossary.md#target) encoded by the nBits header field. Your program should also, of course, attempt to ensure the header belongs to the best blockchain and that the user knows how many confirmations this block has.
 
-For a detailed example of parsing a [`merkleblock` message](docs/reference/p2p-network.md#merkleblock), please see the corresponding [merkle block examples section](../examples/p2p-network-parsing-a-merkleblock.md).
+For a detailed example of parsing a [`merkleblock` message](p2p-network.md#merkleblock), please see the corresponding [merkle block examples section](../examples/p2p-network-parsing-a-merkleblock.md).
 
 #### Creating A MerkleBlock Message
 
-It's easier to understand how to create a [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) after you understand how to parse an already-created message, so we recommend you read the parsing section above first.
+It's easier to understand how to create a [`merkleblock` message](p2p-network.md#merkleblock) after you understand how to parse an already-created message, so we recommend you read the parsing section above first.
 
 Create a complete merkle tree with [TXIDs](../resources/glossary.md#transaction-identifiers) on the bottom row and all the other hashes calculated up to the [merkle root](../resources/glossary.md#merkle-root) on the top row. For each transaction that matches the filter, track its TXID node and all of its ancestor nodes.
 
@@ -534,21 +534,21 @@ When processing a child node, you may need to process its children (the grandchi
 
 After you process a TXID node or a node which is neither a TXID nor a match ancestor, stop processing and begin to ascend the tree until you find a node with a right child you haven't processed yet. Descend into that right child and process it.
 
-After you fully process the merkle root node according to the instructions in the table above, processing is complete.  Pad your flag list to a byte boundary and construct the [`merkleblock` message](docs/reference/p2p-network.md#merkleblock) using the template near the beginning of this subsection.
+After you fully process the merkle root node according to the instructions in the table above, processing is complete.  Pad your flag list to a byte boundary and construct the [`merkleblock` message](p2p-network.md#merkleblock) using the template near the beginning of this subsection.
 
 ### notfound
 
-The [`notfound` message](docs/reference/p2p-network.md#notfound) is a reply to a [`getdata` message](docs/reference/p2p-network.md#getdata) which requested an object the receiving [node](../resources/glossary.md#node) does not have available for relay. (Nodes are not expected to relay historic transactions which are no longer in the memory pool or relay set. Nodes may also have pruned spent transactions from older [blocks](../resources/glossary.md#block), making them unable to send those blocks.)
+The [`notfound` message](p2p-network.md#notfound) is a reply to a [`getdata` message](p2p-network.md#getdata) which requested an object the receiving [node](../resources/glossary.md#node) does not have available for relay. (Nodes are not expected to relay historic transactions which are no longer in the memory pool or relay set. Nodes may also have pruned spent transactions from older [blocks](../resources/glossary.md#block), making them unable to send those blocks.)
 
-The format and maximum size limitations of the [`notfound` message](docs/reference/p2p-network.md#notfound) are identical to the [`inv` message](docs/reference/p2p-network.md#inv); only the message header differs.
+The format and maximum size limitations of the [`notfound` message](p2p-network.md#notfound) are identical to the [`inv` message](p2p-network.md#inv); only the message header differs.
 
 ### tx
 
-The [`tx` message](docs/reference/p2p-network.md#tx) transmits a single transaction in the [raw transaction](../resources/glossary.md#raw-transaction) format. It can be sent in a variety of situations;
+The [`tx` message](p2p-network.md#tx) transmits a single transaction in the [raw transaction](../resources/glossary.md#raw-transaction) format. It can be sent in a variety of situations;
 
-* **Transaction Response:** Dimecoin Core will send it in response to a [`getdata` message](docs/reference/p2p-network.md#getdata) that requests the transaction with an [inventory](../resources/glossary.md#inventory)  type of `MSG_TX`.
+* **Transaction Response:** Dimecoin Core will send it in response to a [`getdata` message](p2p-network.md#getdata) that requests the transaction with an [inventory](../resources/glossary.md#inventory)  type of `MSG_TX`.
 
-* **MerkleBlock Response:** Dimecoin Core will send it in response to a [`getdata` message](docs/reference/p2p-network.md#getdata) that requests a [merkle block](../resources/glossary.md#merkle-block) with an [inventory](../resources/glossary.md#inventory) type of `MSG_MERKLEBLOCK`. (This is in addition to sending a [`merkleblock` message](docs/reference/p2p-network.md#merkleblock).) Each [`tx` message](docs/reference/p2p-network.md#tx) in this case provides a matched transaction from that [block](../resources/glossary.md#block).
+* **MerkleBlock Response:** Dimecoin Core will send it in response to a [`getdata` message](p2p-network.md#getdata) that requests a [merkle block](../resources/glossary.md#merkle-block) with an [inventory](../resources/glossary.md#inventory) type of `MSG_MERKLEBLOCK`. (This is in addition to sending a [`merkleblock` message](p2p-network.md#merkleblock).) Each [`tx` message](p2p-network.md#tx) in this case provides a matched transaction from that [block](../resources/glossary.md#block).
 
 For an example hexdump of the raw transaction format, see the [raw transaction section](docs/reference/transactions.html#raw-transaction-format).
 
@@ -562,9 +562,9 @@ Note that almost none of the control messages are authenticated in any way, mean
 
 ### addr
 
-The `addr` (IP address) message relays connection information for peers on the network. Each peer which wants to accept incoming connections creates an [`addr` message](docs/reference/p2p-network.md#addr) providing its connection information and then sends that message to its peers unsolicited. Some of its peers send that information to their peers (also unsolicited), some of which further distribute it, allowing decentralized peer discovery for any program already on the network.
+The `addr` (IP address) message relays connection information for peers on the network. Each peer which wants to accept incoming connections creates an [`addr` message](p2p-network.md#addr) providing its connection information and then sends that message to its peers unsolicited. Some of its peers send that information to their peers (also unsolicited), some of which further distribute it, allowing decentralized peer discovery for any program already on the network.
 
-An [`addr` message](docs/reference/p2p-network.md#addr) may also be sent in response to a [`getaddr` message](docs/reference/p2p-network.md#getaddr).
+An [`addr` message](p2p-network.md#addr) may also be sent in response to a [`getaddr` message](p2p-network.md#getaddr).
 
 | Bytes      | Name             | Data Type          | Description
 |------------|------------------|--------------------|----------------
@@ -575,12 +575,12 @@ Each encapsulated network IP address currently uses the following structure:
 
 | Bytes | Name       | Data Type | Description
 |-------|------------|-----------|---------------
-| 4     | time       | uint32    | A time in Unix epoch time format.  Nodes advertising their own IP address set this to the current time.  Nodes advertising IP addresses they've connected to set this to the last time they connected to that node.  Other nodes just relaying the IP address should not change the time.  Nodes can use the time field to avoid relaying old [`addr` messages](docs/reference/p2p-network.md#addr).  <br><br>Malicious nodes may change times or even set them in the future.
-| 8     | services   | uint64_t  | The services the node advertised in its [`version` message](docs/reference/p2p-network#version).
+| 4     | time       | uint32    | A time in Unix epoch time format.  Nodes advertising their own IP address set this to the current time.  Nodes advertising IP addresses they've connected to set this to the last time they connected to that node.  Other nodes just relaying the IP address should not change the time.  Nodes can use the time field to avoid relaying old [`addr` messages](p2p-network.md#addr).  <br><br>Malicious nodes may change times or even set them in the future.
+| 8     | services   | uint64_t  | The services the node advertised in its [`version` message](p2p-network#version).
 | 16    | IP address | char      | IPv6 address in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses)
 | 2     | port       | uint16_t  | Port number in **big endian byte order**.  Note that Dimecoin Core will only connect to nodes with non-standard port numbers as a last resort for finding peers.  This is to prevent anyone from trying to use the network to disrupt non-Dimecoin services that run on other ports.
 
-The following annotated hexdump shows part of an [`addr` message](docs/reference/p2p-network.md#addr). (The [message header](../resources/glossary.md#message-header) has been omitted and the actual IP address has been replaced with a [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP address.)
+The following annotated hexdump shows part of an [`addr` message](p2p-network.md#addr). (The [message header](../resources/glossary.md#message-header) has been omitted and the actual IP address has been replaced with a [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP address.)
 
 ``` text
 fde803 ............................. Address count: 1000
@@ -595,18 +595,18 @@ d91f4854 ........................... Epoch time: 1414012889
 
 ### filteradd
 
-The [`filteradd` message](docs/reference/p2p-network.md#filteradd) tells the receiving [peer](../resources/glossary.md#peer) to add a single element to a previously-set [bloom filter](../resources/glossary.md#bloom-filter), such as a new [public key](../resources/glossary.md#public-key). The element is sent directly to the receiving peer; the peer then uses the parameters set in the [`filterload` message](docs/reference/p2p-network.md#filterload) to add the element to the bloom filter.
+The [`filteradd` message](p2p-network.md#filteradd) tells the receiving [peer](../resources/glossary.md#peer) to add a single element to a previously-set [bloom filter](../resources/glossary.md#bloom-filter), such as a new [public key](../resources/glossary.md#public-key). The element is sent directly to the receiving peer; the peer then uses the parameters set in the [`filterload` message](p2p-network.md#filterload) to add the element to the bloom filter.
 
-Because the element is sent directly to the receiving peer, there is no obfuscation of the element and none of the plausible-deniability privacy provided by the bloom filter. Clients that want to maintain greater privacy should recalculate the bloom filter themselves and send a new [`filterload` message](docs/reference/p2p-network.md#filterload) with the recalculated bloom filter.
+Because the element is sent directly to the receiving peer, there is no obfuscation of the element and none of the plausible-deniability privacy provided by the bloom filter. Clients that want to maintain greater privacy should recalculate the bloom filter themselves and send a new [`filterload` message](p2p-network.md#filterload) with the recalculated bloom filter.
 
 | Bytes    | Name          | Data Type        | Description
 |----------|---------------|------------------|-----------------
 | *Varies* | element bytes | compactSize uint | The number of bytes in the following element field.
 | *Varies* | element       | uint8_t[]        | The element to add to the current filter.  Maximum of 520 bytes, which is the maximum size of an element which can be pushed onto the stack in a pubkey or signature script.  Elements must be sent in the byte order they would use when appearing in a raw transaction; for example, hashes should be sent in internal byte order.
 
-Note: a [`filteradd` message](docs/reference/p2p-network.md#filteradd) will not be accepted unless a filter was previously set with the [`filterload` message](docs/reference/p2p-network.md#filterload).
+Note: a [`filteradd` message](p2p-network.md#filteradd) will not be accepted unless a filter was previously set with the [`filterload` message](p2p-network.md#filterload).
 
-The annotated hexdump below shows a [`filteradd` message](docs/reference/p2p-network.md#filteradd) adding a [TXID](../resources/glossary.md#transaction-identifiers). (The message header has been omitted.) This TXID appears in the same block used for the example hexdump in the [`merkleblock` message](docs/reference/p2p-network-data-messages.md#merkleblock); if that [`merkleblock` message](docs/reference/p2p-network-data-messages.md#merkleblock) is re-sent after sending this [`filteradd` message](docs/reference/p2p-network.md#filteradd), six hashes are returned instead of four.
+The annotated hexdump below shows a [`filteradd` message](p2p-network.md#filteradd) adding a [TXID](../resources/glossary.md#transaction-identifiers). (The message header has been omitted.) This TXID appears in the same block used for the example hexdump in the [`merkleblock` message](p2p-network.md#merkleblock); if that [`merkleblock` message](p2p-network.md#merkleblock) is re-sent after sending this [`filteradd` message](p2p-network.md#filteradd), six hashes are returned instead of four.
 
 ``` text
 20 ................................. Element bytes: 32
@@ -616,15 +616,15 @@ fdacf9b3eb077412e7a968d2e4f11b9a
 
 ### filterclear
 
-The [`filterclear` message](docs/reference/p2p-network.md#filterclear) tells the receiving [peer](../resources/glossary.md#peer) to remove a previously-set [bloom filter](../resources/glossary.md#bloom-filter).  This also undoes the effect of setting the relay field in the [`version` message](docs/reference/p2p-network.md#version) to 0, allowing unfiltered access to [`inv` messages](docs/reference/p2p-network-data-messages.md#inv) announcing new transactions.
+The [`filterclear` message](p2p-network.md#filterclear) tells the receiving [peer](../resources/glossary.md#peer) to remove a previously-set [bloom filter](../resources/glossary.md#bloom-filter).  This also undoes the effect of setting the relay field in the [`version` message](p2p-network.md#version) to 0, allowing unfiltered access to [`inv` messages](p2p-network.md#inv) announcing new transactions.
 
-Dimecoin Core does not require a [`filterclear` message](docs/reference/p2p-network.md#filterclear) before a replacement filter is loaded with `filterload`.  It also doesn't require a [`filterload` message](docs/reference/p2p-network.md#filterload) before a [`filterclear` message](docs/reference/p2p-network.md#filterclear).
+Dimecoin Core does not require a [`filterclear` message](p2p-network.md#filterclear) before a replacement filter is loaded with `filterload`.  It also doesn't require a [`filterload` message](p2p-network.md#filterload) before a [`filterclear` message](p2p-network.md#filterclear).
 
-There is no payload in a [`filterclear` message](docs/reference/p2p-network.md#filterclear).  See the [message header section](docs/reference/p2p-network-message-headers.md) for an example of a message without a payload.
+There is no payload in a [`filterclear` message](p2p-network.md#filterclear).  See the [message header section](p2p-network.md#message-headers) for an example of a message without a payload.
 
 ### filterload
 
-The [`filterload` message](docs/reference/p2p-network.md#filterload) tells the receiving [peer](../resources/glossary.md#peer) to filter all relayed transactions and requested [merkle blocks](../resources/glossary.md#merkle-block) through the provided filter. This allows clients to receive transactions relevant to their [wallet](../resources/glossary.md#wallet) plus a configurable rate of false positive transactions which can provide plausible-deniability privacy.
+The [`filterload` message](p2p-network.md#filterload) tells the receiving [peer](../resources/glossary.md#peer) to filter all relayed transactions and requested [merkle blocks](../resources/glossary.md#merkle-block) through the provided filter. This allows clients to receive transactions relevant to their [wallet](../resources/glossary.md#wallet) plus a configurable rate of false positive transactions which can provide plausible-deniability privacy.
 
 | Bytes    | Name         | Data Type | Description
 |----------|--------------|-----------|---------------
@@ -634,7 +634,7 @@ The [`filterload` message](docs/reference/p2p-network.md#filterload) tells the r
 | 4        | nTweak       | uint32_t  | An arbitrary value to add to the seed value in the hash function used by the bloom filter.
 | 1        | nFlags       | uint8_t   | A set of flags that control how outpoints corresponding to a matched pubkey script are added to the filter. See the table in the Updating A Bloom Filter subsection below.
 
-The annotated hexdump below shows a [`filterload` message](docs/reference/p2p-network.md#filterload). (The message header has been omitted.)  For an example of how this payload was created, see the [filterload example](../examples/p2p-network-creating-a-bloom-filter.md).
+The annotated hexdump below shows a [`filterload` message](p2p-network.md#filterload). (The message header has been omitted.)  For an example of how this payload was created, see the [filterload example](../examples/p2p-network-creating-a-bloom-filter.md).
 
 ``` text
 02 ......... Filter bytes: 2
@@ -765,27 +765,27 @@ In addition, because the filter size stays the same even though additional eleme
 
 ### getaddr
 
-The [`getaddr` message](docs/reference/p2p-network.md#getaddr) requests an [`addr` message](docs/reference/p2p-network.md#addr) from the receiving [node](../resources/glossary.md#node), preferably one with lots of IP addresses of other receiving nodes. The transmitting node can use those IP addresses to quickly update its database of available nodes rather than waiting for unsolicited [`addr` messages](docs/reference/p2p-network.md#addr) to arrive over time.
+The [`getaddr` message](p2p-network.md#getaddr) requests an [`addr` message](p2p-network.md#addr) from the receiving [node](../resources/glossary.md#node), preferably one with lots of IP addresses of other receiving nodes. The transmitting node can use those IP addresses to quickly update its database of available nodes rather than waiting for unsolicited [`addr` messages](p2p-network.md#addr) to arrive over time.
 
-There is no payload in a [`getaddr` message](docs/reference/p2p-network.md#getaddr).  See the [message header section](docs/reference/p2p-network-message-headers.md) for an example of a message without a payload.
+There is no payload in a [`getaddr` message](p2p-network.md#getaddr).  See the [message header section](p2p-network.md#message-headers) for an example of a message without a payload.
 
 ### getsporks
 
-The [`getsporks` message](docs/reference/p2p-network.md#getsporks) requests [`spork` messages](docs/reference/p2p-network.md#spork) from the receiving node.
+The [`getsporks` message](p2p-network.md#getsporks) requests [`spork` messages](p2p-network.md#spork) from the receiving node.
 
-There is no payload in a [`getsporks` message](docs/reference/p2p-network.md#getsporks).  See the [message header section](docs/reference/p2p-network-message-headers.md) for an example of a message without a payload.
+There is no payload in a [`getsporks` message](p2p-network.md#getsporks).  See the [message header section](p2p-network.md#message-headers) for an example of a message without a payload.
 
 ### ping
 
-The [`ping` message](docs/reference/p2p-network.md#ping) helps confirm that the receiving [peer](../resources/glossary.md#peer) is still connected. If a TCP/IP error is encountered when sending the [`ping` message](docs/reference/p2p-network.md#ping) (such as a connection timeout), the transmitting node can assume that the receiving node is disconnected. The response to a [`ping` message](docs/reference/p2p-network.md#ping) is the [`pong` message](docs/reference/p2p-network.md#pong).
+The [`ping` message](p2p-network.md#ping) helps confirm that the receiving [peer](../resources/glossary.md#peer) is still connected. If a TCP/IP error is encountered when sending the [`ping` message](p2p-network.md#ping) (such as a connection timeout), the transmitting node can assume that the receiving node is disconnected. The response to a [`ping` message](p2p-network.md#ping) is the [`pong` message](p2p-network.md#pong).
 
 As of Dimecoin protocol version 70005 and all later versions, the message includes a single field, the nonce.
 
 | Bytes | Name  | Data Type | Description
 |-------|-------|-----------|---------------
-| 8     | nonce | uint64_t  | Random nonce assigned to this [`ping` message](docs/reference/p2p-network.md#ping).  The responding [`pong` message](docs/reference/p2p-network.md#pong) will include this nonce to identify the [`ping` message](docs/reference/p2p-network.md#ping) to which it is replying.
+| 8     | nonce | uint64_t  | Random nonce assigned to this [`ping` message](p2p-network.md#ping).  The responding [`pong` message](p2p-network.md#pong) will include this nonce to identify the [`ping` message](p2p-network.md#ping) to which it is replying.
 
-The annotated hexdump below shows a [`ping` message](docs/reference/p2p-network.md#ping). (The message header has been omitted.)
+The annotated hexdump below shows a [`ping` message](p2p-network.md#ping). (The message header has been omitted.)
 
 ``` text
 0094102111e2af4d ... Nonce
@@ -793,32 +793,32 @@ The annotated hexdump below shows a [`ping` message](docs/reference/p2p-network.
 
 ### pong
 
-The [`pong` message](docs/reference/p2p-network.md#pong) replies to a [`ping` message](docs/reference/p2p-network.md#ping), proving to the pinging [node](../resources/glossary.md#node) that the ponging node is still alive. Dimecoin Core will, by default, disconnect from any clients which have not responded to a [`ping` message](docs/reference/p2p-network.md#ping) within 20 minutes.
+The [`pong` message](p2p-network.md#pong) replies to a [`ping` message](p2p-network.md#ping), proving to the pinging [node](../resources/glossary.md#node) that the ponging node is still alive. Dimecoin Core will, by default, disconnect from any clients which have not responded to a [`ping` message](p2p-network.md#ping) within 20 minutes.
 
-To allow nodes to keep track of latency, the [`pong` message](docs/reference/p2p-network.md#pong) sends back the same nonce received in the [`ping` message](docs/reference/p2p-network.md#ping) it is replying to.
+To allow nodes to keep track of latency, the [`pong` message](p2p-network.md#pong) sends back the same nonce received in the [`ping` message](p2p-network.md#ping) it is replying to.
 
-The format of the [`pong` message](docs/reference/p2p-network.md#pong) is identical to the [`ping` message](docs/reference/p2p-network.md#ping); only the message header differs.
+The format of the [`pong` message](p2p-network.md#pong) is identical to the [`ping` message](p2p-network.md#ping); only the message header differs.
 
 ### sendcmpct
 
-The [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) tells the receiving [peer](../resources/glossary.md#peer) whether or not to announce new [blocks](../resources/glossary.md#block) using a [`cmpctblock` message](docs/reference/p2p-network-data-messages.md#cmpctblock). It also sends the compact block protocol version it supports. The [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) is defined as a message containing a 1-byte integer followed by a 8-byte integer. The first integer is interpreted as a boolean and should have a value of either 1 or 0. The second integer is be interpreted as a little-endian version number.
+The [`sendcmpct` message](p2p-network.md#sendcmpct) tells the receiving [peer](../resources/glossary.md#peer) whether or not to announce new [blocks](../resources/glossary.md#block) using a [`cmpctblock` message](p2p-network.md#cmpctblock). It also sends the compact block protocol version it supports. The [`sendcmpct` message](p2p-network.md#sendcmpct) is defined as a message containing a 1-byte integer followed by a 8-byte integer. The first integer is interpreted as a boolean and should have a value of either 1 or 0. The second integer is be interpreted as a little-endian version number.
 
-Upon receipt of a [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) with the first and second integers set to 1, the [node](../resources/glossary.md#node) should announce new blocks by sending a [`cmpctblock` message](docs/reference/p2p-network-data-messages.md#cmpctblock).
+Upon receipt of a [`sendcmpct` message](p2p-network.md#sendcmpct) with the first and second integers set to 1, the [node](../resources/glossary.md#node) should announce new blocks by sending a [`cmpctblock` message](p2p-network.md#cmpctblock).
 
-Upon receipt of a [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) with the first integer set to 0, the node shouldn't announce new blocks by sending a [`cmpctblock` message](docs/reference/p2p-network-data-messages.md#cmpctblock), but instead announce new blocks by sending invs or [headers](../resources/glossary.md#header), as defined by [BIP130](https://github.com/bitcoin/bips/blob/master/bip-0130.mediawiki).
+Upon receipt of a [`sendcmpct` message](p2p-network.md#sendcmpct) with the first integer set to 0, the node shouldn't announce new blocks by sending a [`cmpctblock` message](p2p-network.md#cmpctblock), but instead announce new blocks by sending invs or [headers](../resources/glossary.md#header), as defined by [BIP130](https://github.com/bitcoin/bips/blob/master/bip-0130.mediawiki).
 
-Upon receipt of a [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) with the second integer set to something other than 1, nodes should treat the peer as if they had not received the message (as it indicates the peer will provide an unexpected encoding in [`cmpctblock` messages](docs/reference/p2p-network-data-messages.md#cmpctblock), and/or other, messages). This allows future versions to send duplicate [`sendcmpct` messages](docs/reference/p2p-network.md#sendcmpct) with different versions as a part of a version handshake.
+Upon receipt of a [`sendcmpct` message](p2p-network.md#sendcmpct) with the second integer set to something other than 1, nodes should treat the peer as if they had not received the message (as it indicates the peer will provide an unexpected encoding in [`cmpctblock` messages](p2p-network.md#cmpctblock), and/or other, messages). This allows future versions to send duplicate [`sendcmpct` messages](p2p-network.md#sendcmpct) with different versions as a part of a version handshake.
 
-Nodes should check for a protocol version of >= 70007 before sending [`sendcmpct` messages](docs/reference/p2p-network.md#sendcmpct). Nodes shouldn't send a request for a `MSG_CMPCT_BLOCK` object to a peer before having received a [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) from that peer. Nodes shouldn't request a `MSG_CMPCT_BLOCK` object before having sent all [`sendcmpct` messages](docs/reference/p2p-network.md#sendcmpct) to that peer which they intend to send, as the peer cannot know what protocol version to use in the response.
+Nodes should check for a protocol version of >= 70007 before sending [`sendcmpct` messages](p2p-network.md#sendcmpct). Nodes shouldn't send a request for a `MSG_CMPCT_BLOCK` object to a peer before having received a [`sendcmpct` message](p2p-network.md#sendcmpct) from that peer. Nodes shouldn't request a `MSG_CMPCT_BLOCK` object before having sent all [`sendcmpct` messages](p2p-network.md#sendcmpct) to that peer which they intend to send, as the peer cannot know what protocol version to use in the response.
 
-The structure of a [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct) is defined below.
+The structure of a [`sendcmpct` message](p2p-network.md#sendcmpct) is defined below.
 
 | Bytes    | Name          | Data Type        | Description
 |----------|---------------|------------------|--------------
-| 1        | announce      | bool             | 0 - Announce blocks via [`headers` message](docs/reference/p2p-network-data-messages.md#headers) or [`inv` message](docs/reference/p2p-network-data-messages.md#inv)<br>1 - Announce blocks via [`cmpctblock` message](docs/reference/p2p-network-data-messages.md#cmpctblock)
+| 1        | announce      | bool             | 0 - Announce blocks via [`headers` message](p2p-network.md#headers) or [`inv` message](p2p-network.md#inv)<br>1 - Announce blocks via [`cmpctblock` message](p2p-network.md#cmpctblock)
 | 8        | version       | uint64_t         | The compact block protocol version number
 
-The annotated hexdump below shows a [`sendcmpct` message](docs/reference/p2p-network.md#sendcmpct). (The message header has been omitted.)
+The annotated hexdump below shows a [`sendcmpct` message](p2p-network.md#sendcmpct). (The message header has been omitted.)
 
 ``` text
 01 ................................. Block announce type: Compact Blocks
@@ -827,17 +827,17 @@ The annotated hexdump below shows a [`sendcmpct` message](docs/reference/p2p-net
 
 ### sendheaders
 
-The [`sendheaders` message](docs/reference/p2p-network.md#sendheaders) tells the receiving [peer](../resources/glossary.md#peer) to send new [block](../resources/glossary.md#block) announcements using a [`headers` message](docs/reference/p2p-network-data-messages.md#headers) rather than an [`inv` message](docs/reference/p2p-network-data-messages.md#inv).
+The [`sendheaders` message](p2p-network.md#sendheaders) tells the receiving [peer](../resources/glossary.md#peer) to send new [block](../resources/glossary.md#block) announcements using a [`headers` message](p2p-network.md#headers) rather than an [`inv` message](p2p-network.md#inv).
 
-There is no payload in a [`sendheaders` message](docs/reference/p2p-network.md#sendheaders).  See the [message header section](docs/reference/p2p-network-message-headers.md) for an example of a message without a payload.
+There is no payload in a [`sendheaders` message](p2p-network.md#sendheaders).  See the [message header section](p2p-network.md#message-headers) for an example of a message without a payload.
 
 ### spork
 
 Sporks are a mechanism by which updated code is released to the network, but not immediately made active (or “enforced”). Enforcement of the updated code can be activated remotely. Should problems arise, the code can be deactivated in the same manner, without the need for a network-wide rollback or client update.
 
-A [`spork` message](docs/reference/p2p-network.md#spork) may be sent in response to a [`getsporks` message](docs/reference/p2p-network.md#getsporks).
+A [`spork` message](p2p-network.md#spork) may be sent in response to a [`getsporks` message](p2p-network.md#getsporks).
 
-The [`spork` message](docs/reference/p2p-network.md#spork) tells the receiving peer the status of the spork defined by the SporkID field. Upon receiving a [spork](../resources/glossary.md#spork) message, the client must verify the [signature](../resources/glossary.md#signature) before accepting the spork message as valid.
+The [`spork` message](p2p-network.md#spork) tells the receiving peer the status of the spork defined by the SporkID field. Upon receiving a [spork](../resources/glossary.md#spork) message, the client must verify the [signature](../resources/glossary.md#signature) before accepting the spork message as valid.
 
 | Bytes | Name | Data type | Required | Description
 | ---------- | ----------- | --------- | -------- | --------
@@ -846,7 +846,7 @@ The [`spork` message](docs/reference/p2p-network.md#spork) tells the receiving p
 | 8 | nTimeSigned | int64_t | Required | Time the spork value was signed
 | 66 | vchSig | char[] | Required | Length (1 byte) + Signature (65 bytes)
 
-The following annotated hexdump shows a [`spork` message](docs/reference/p2p-network.md#spork).
+The following annotated hexdump shows a [`spork` message](p2p-network.md#spork).
 
 ``` text
 11270000 .................................... Spork ID: Spork 2 InstantSend enabled (10001)
@@ -878,7 +878,7 @@ The list of all active sporks can be found in
 
 #### Spork verification
 
-To verify `vchSig`, compare the hard-coded spork public key (`strSporkPubKey` from [`src/chainparams.cpp`](https://github.com/dime-coin/dimecoin/blob/272dbe4974e09eca6a928ce13b42941b1c28aca2/src/chainparams.cpp#L177)) with the public key recovered from the [`spork` message](docs/reference/p2p-network.md#spork)'s hash and `vchSig` value (implementation details for Dimecoin Core can be found in `CPubKey::RecoverCompact`). The hash is a double SHA-256 hash of:
+To verify `vchSig`, compare the hard-coded spork public key (`strSporkPubKey` from [`src/chainparams.cpp`](https://github.com/dime-coin/dimecoin/blob/272dbe4974e09eca6a928ce13b42941b1c28aca2/src/chainparams.cpp#L177)) with the public key recovered from the [`spork` message](p2p-network.md#spork)'s hash and `vchSig` value (implementation details for Dimecoin Core can be found in `CPubKey::RecoverCompact`). The hash is a double SHA-256 hash of:
 
 * The spork magic message (`"DarkCoin Signed Message:\n"`)
 * nSporkID + nValue + nTimeSigned
@@ -893,17 +893,17 @@ To verify `vchSig`, compare the hard-coded spork public key (`strSporkPubKey` fr
 
 ### verack
 
-The [`verack` message](docs/reference/p2p-network.md#verack) acknowledges a previously-received [`version` message](docs/reference/p2p-network.md#version), informing the connecting [node](../resources/glossary.md#node) that it can begin to send other messages. The [`verack` message](docs/reference/p2p-network.md#verack) has no payload; for an example of a message with no payload, see the [message headers section](docs/reference/p2p-network.md#message-headers.md).
+The [`verack` message](p2p-network.md#verack) acknowledges a previously-received [`version` message](p2p-network.md#version), informing the connecting [node](../resources/glossary.md#node) that it can begin to send other messages. The [`verack` message](p2p-network.md#verack) has no payload; for an example of a message with no payload, see the [message headers section](p2p-network.md#message-headers.md).
 
 ### version
 
-The [`version` message](docs/reference/p2p-network.md#version) provides information about the transmitting [node](../resources/glossary.md#node) to the receiving node at the beginning of a connection. Until both [peers](../resources/glossary.md#peer) have exchanged [`version` messages](docs/reference/p2p-network.md#version), no other messages will be accepted.
+The [`version` message](p2p-network.md#version) provides information about the transmitting [node](../resources/glossary.md#node) to the receiving node at the beginning of a connection. Until both [peers](../resources/glossary.md#peer) have exchanged [`version` messages](p2p-network.md#version), no other messages will be accepted.
 
-If a [`version` message](docs/reference/p2p-network.md#version) is accepted, the receiving node should send a [`verack` message](docs/reference/p2p-network.md#verack)---but no node should send a [`verack` message](docs/reference/p2p-network.md#verack) before initializing its half of the connection by first sending a [`version` message](docs/reference/p2p-network.md#version).
+If a [`version` message](p2p-network.md#version) is accepted, the receiving node should send a [`verack` message](p2p-network.md#verack)---but no node should send a [`verack` message](p2p-network.md#verack) before initializing its half of the connection by first sending a [`version` message](p2p-network.md#version).
 
 | Bytes    | Name                  | Data<br>Type        | Required/<br>Optional                        | Description
 |----------|-----------------------|------------------|------------------------------------------|-------------
-| 4        | version               | int32_t          | Required | The highest protocol version understood by the transmitting node.  See the [protocol version section](docs/reference/p2p-network.md#protocol-versions).
+| 4        | version               | int32_t          | Required | The highest protocol version understood by the transmitting node.  See the [protocol version section](p2p-network.md#protocol-versions).
 | 8        | services              | uint64_t         | Required | The services supported by the transmitting node encoded as a bitfield.  See the list of service codes below.
 | 8        | timestamp             | int64_t          | Required | The current Unix epoch time according to the transmitting node's clock.  Because nodes will reject blocks with timestamps more than two hours in the future, this field can help other nodes to determine that their clock is wrong.
 | 8        | addr_recv services    | uint64_t         | Required | The services supported by the receiving node as perceived by the transmitting node.  Same format as the 'services' field above. Dimecoin Core will attempt to provide accurate information.
@@ -912,11 +912,11 @@ If a [`version` message](docs/reference/p2p-network.md#version) is accepted, the
 | 8        | addr_trans services   | uint64_t         | Required | The services supported by the transmitting node.  Should be identical to the 'services' field above.
 | 16       | addr_trans IP address | char             | Required | The IPv6 address of the transmitting node in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses).  Set to ::ffff:127.0.0.1 if unknown.
 | 2        | addr_trans port       | uint16_t         | Required | The port number of the transmitting node in **big endian byte order**.
-| 8        | nonce                 | uint64_t         | Required | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt of a [`version` message](docs/reference/p2p-network.md#version) with a nonce it previously sent.
+| 8        | nonce                 | uint64_t         | Required | A random nonce which can help a node detect a connection to itself.  If the nonce is 0, the nonce field is ignored.  If the nonce is anything else, a node should terminate the connection on receipt of a [`version` message](p2p-network.md#version) with a nonce it previously sent.
 | *Varies* | user_agent bytes      | compactSize uint | Required | Number of bytes in following user\_agent field.  If 0x00, no user agent field is sent.
 | *Varies* | user_agent            | string           | Required if user_agent bytes > 0 | User agent as defined by BIP14. Previously called subVer.<br><br>Dimecoin Core limits the length to 256 characters.
 | 4        | start_height          | int32_t          | Required | The height of the transmitting node's best blockchain or, in the case of an SPV client, best block header chain.
-| 1        | relay                 | bool             | Optional | Transaction relay flag.  If 0x00, no [`inv` messages](docs/reference/p2p-network-data-messages.md#inv) or [`tx` messages](docs/reference/p2p-network-data-messages.md#tx) announcing new transactions should be sent to this client until it sends a [`filterload` message](docs/reference/p2p-network.md#filterload) or [`filterclear` message](docs/reference/p2p-network.md#filterclear).  If the relay field is not present or is set to 0x01, this node wants [`inv` messages](docs/reference/p2p-network#inv) and [`tx` messages](docs/reference/p2p-network-data-messages.md#tx) announcing new transactions.
+| 1        | relay                 | bool             | Optional | Transaction relay flag.  If 0x00, no [`inv` messages](p2p-network.md#inv) or [`tx` messages](p2p-network.md#tx) announcing new transactions should be sent to this client until it sends a [`filterload` message](p2p-network.md#filterload) or [`filterclear` message](p2p-network.md#filterclear).  If the relay field is not present or is set to 0x01, this node wants [`inv` messages](p2p-network#inv) and [`tx` messages](p2p-network.md#tx) announcing new transactions.
 | 1        | mn_connection         | bool             | Optional | If 0x00, the connection is from a non-masternode. If 0x01, the connection is from a masternode.
 
 The following service identifiers have been assigned.
@@ -930,7 +930,7 @@ The following service identifiers have been assigned.
 | 0x40 | `NODE_COMPACT_FILTERS` | This node supports basic block filter requests. See [BIP157](https://github.com/bitcoin/bips/blob/master/bip-0157.mediawiki) and [BIP158](https://github.com/bitcoin/bips/blob/master/bip-0158.mediawiki) for details on how this is implemented.
 | 0x400 | `NODE_NETWORK_LIMITED` | This is the same as `NODE_NETWORK` with the limitation of only serving the last 288 blocks. See [BIP159](https://github.com/bitcoin/bips/blob/master/bip-0159.mediawiki) for details on how this is implemented.
 
-The following annotated hexdump shows a [`version` message](docs/reference/p2p-network.md#version). (The message header has been omitted and the actual IP addresses have been replaced with [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP addresses.)
+The following annotated hexdump shows a [`version` message](p2p-network.md#version). (The message header has been omitted and the actual IP addresses have been replaced with [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP addresses.)
 
 ``` text
 46120100 .................................... Protocol version: 70008
@@ -975,7 +975,7 @@ For additional details, refer to the Developer Guide [Masternode Sync](../guide/
 
 ### ssc
 
-The [`ssc` message](../reference/p2p-network-masternode-messages.md#ssc) is used to track the sync status of masternode objects. This message is sent in response to sync requests for the list of governance objects (`govsync` message), and governance object votes (`govsync` message).
+The [`ssc` message](../reference/p2p-network.md#ssc) is used to track the sync status of masternode objects. This message is sent in response to sync requests for the list of governance objects (`govsync` message), and governance object votes (`govsync` message).
 
 | Bytes | Name | Data type | Required | Description
 | ---------- | ----------- | --------- | -------- | --------
@@ -986,10 +986,10 @@ Sync Item IDs
 
 | ID | Description | Response To
 |------|--------------|---------------
-| 10 | MASTERNODE_SYNC_GOVOBJ | [`govsync` message](../reference/p2p-network-governance-messages.md#govsync)
-| 11 | MASTERNODE_SYNC_GOVOBJ_VOTE | [`govsync` message](../reference/p2p-network-governance-messages.md#govsync) with non-zero hash
+| 10 | MASTERNODE_SYNC_GOVOBJ | `govsync`message
+| 11 | MASTERNODE_SYNC_GOVOBJ_VOTE | `govsync` message with non-zero hash
 
-The following annotated hexdump shows a [`ssc` message](../reference/p2p-network-masternode-messages.md#ssc). (The message header has been omitted.)
+The following annotated hexdump shows a [`ssc` message](../reference/p2p-network.md#ssc). (The message header has been omitted.)
 
 ``` text
 02000000 ................................... Item ID: MASTERNODE_SYNC_LIST (2)
