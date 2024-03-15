@@ -12,9 +12,8 @@
 
 ### Quick Reference
 
-* [Creating a Bloom Filter](../examples/p2p-network-creating-a-bloom-filter.md) 
+* [Creating a Bloom Filter](../examples/p2p-network-creating-a-bloom-filter.md)
 * [Evaluating a Bloom Filter](../examples/p2p-network-evaluating-a-bloom-filter.md)
-* [Bloom Filter Script](../examples/p2p-network-bloom-filter-script.md) 
-* [Retrieving a MerkleBlock](../examples/p2p-network-retrieving-a-merkleblock.md) 
-* [Parsing a MerkleBlock](../examples/p2p-network-parsing-a-merkleblock.md) 
-
+* [Bloom Filter Script](../examples/p2p-network-bloom-filter-script.md)
+* [Retrieving a MerkleBlock](../examples/p2p-network-retrieving-a-merkleblock.md)
+* [Parsing a MerkleBlock](../examples/p2p-network-parsing-a-merkleblock.md)
