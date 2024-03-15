@@ -177,6 +177,11 @@ examples/transaction-tutorial-complex-raw-transaction
 examples/transaction-tutorial-offline-signing
 examples/transaction-tutorial-p2sh-multisig
 examples/p2p-network
+examples/p2p-network-creating-a-bloom-filter
+examples/p2p-network-evaluating-a-bloom-filter
+examples/p2p-network-bloom-filter-script
+examples/p2p-network-retrieving-a-merkleblock
+examples/p2p-network-parsing-a-merkleblock
 examples/receiving-zmq-notifications
 ```
 
