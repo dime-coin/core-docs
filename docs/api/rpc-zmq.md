@@ -40,11 +40,11 @@ Result:
     "address": "tcp://0.0.0.0:11321",
   },
   {
-    "type": "pubhashchainlock",
+    "type": "pubhashtx",
     "address": "tcp://0.0.0.0:11321",
   },
   {
-    "type": "pubhashgovernanceobject",
+    "type": "pubrawblock",
     "address": "tcp://0.0.0.0:11321",
   }
 ]

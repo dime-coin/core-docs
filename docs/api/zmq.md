@@ -30,21 +30,8 @@ Currently, the following notifications are supported:
 | - | - |
 | zmqpubhashblock | Block hash |
 | zmqpubhashtx | Transaction hash (TXID) |
-| zmqpubhashtxlock | Hash of a transaction receiving and [InstantSend](../guide/dime-features-instantsend.md) lock (TXID) |
-| zmqpubhashgovernancevote | Governance vote hash |
-| zmqpubhashgovernanceobject | Governance object hash |
-| zmqpubhashinstantsend<br>doublespend | Hash of a transaction attempting to double-spend an InstantSend-locked input |
-| zmqpubhashrecoveredsig | Hash of recovered signatures (recovered by LLMQs) |
 | zmqpubrawblock | Raw [`block`](../reference/p2p-network-data-messages.md#block) |
-| zmqpubrawchainlock | Raw [`block`](../reference/p2p-network-data-messages.md#block) receiving a ChainLock |
-| zmqpubrawchainlocksig | Raw [`block`](../reference/p2p-network-data-messages.md#block) with ChainLock signature ([`clsig`](../reference/p2p-network-instantsend-messages.md#clsig)) concatenated |
 | zmqpubrawtx | Raw transaction ([`tx`](../reference/transactions-raw-transaction-format.md))  |
-| zmqpubrawtxlock | Raw InstantSend transaction ([`tx`](../reference/transactions-raw-transaction-format.md))  |
-| zmqpubrawtxlocksig | Raw InstantSend transaction ([`tx`](../reference/transactions-raw-transaction-format.md)) with InstantSend lock signature ([`islock`](../reference/p2p-network-instantsend-messages.md#islock)) concatenated |
-| zmqpubrawgovernancevote | Raw governance vote ([`govobjvote`](../reference/p2p-network-governance-messages.md#govobjvote)) |
-| zmqpubrawgovernanceobject | Raw governance object ([`govobject`](../reference/p2p-network-governance-messages.md#govobj)) |
-| zmqpubrawinstantsend<br>doublespend | Raw transaction ([`tx`](../reference/transactions-raw-transaction-format.md)) attempting to double-spend an InstantSend-locked input |
-| zmqpubrawrecoveredsig | Raw recovered signatures (recovered by LLMQs) |
 
 ### High Water Mark
 
@@ -54,22 +41,8 @@ The option to set the PUB socket's outbound message [high water mark](https://ze
 | - | - |
 | zmqpubhashtxhwm | Transaction hash (TXID) high water mark |
 | zmqpubhashblockhwm | Block hash high water mark |
-| zmqpubhashchainlockhwm | Hash of a block with a [ChainLock](../guide/dime-features-chainlocks.md) high water mark |
-| zmqpubhashtxlockhwm | Hash of a transaction receiving and [InstantSend](../guide/dime-features-instantsend.md) lock (TXID) high water mark |
-| zmqpubhashgovernancevotehwm | Governance vote hash high water mark |
-| zmqpubhashgovernanceobjecthwm | Governance object hash high water mark |
-| zmqpubhashinstantsenddoublespendhwm | Hash of a transaction attempting to double-spend an InstantSend-locked input high water mark |
-| zmqpubhashrecoveredsighwm | Hash of recovered signatures (recovered by LLMQs) high water mark |
 | zmqpubrawblockhwm | Raw [`block`](../reference/p2p-network-data-messages.md#block) high water mark |
 | zmqpubrawtxhwm | Raw transaction ([`tx`](../reference/transactions-raw-transaction-format.md))  high water mark |
-| zmqpubrawchainlockhwm | Raw [`block`](../reference/p2p-network-data-messages.md#block) receiving a ChainLock high water mark |
-| zmqpubrawchainlocksighwm | Raw [`block`](../reference/p2p-network-data-messages.md#block) with ChainLock signature ([`clsig`](../reference/p2p-network-instantsend-messages.md#clsig)) concatenated high water mark |
-| zmqpubrawtxlockhwm | Raw InstantSend transaction ([`tx`](../reference/transactions-raw-transaction-format.md)) high water mark |
-| zmqpubrawtxlocksighwm | Raw InstantSend transaction ([`tx`](../reference/transactions-raw-transaction-format.md)) with InstantSend lock signature ([`islock`](../reference/p2p-network-instantsend-messages.md#islock)) concatenated high water mark |
-| zmqpubrawgovernancevotehwm | Raw governance vote ([`govobjvote`](../reference/p2p-network-governance-messages.md#govobjvote)) high water mark |
-| zmqpubrawgovernanceobjecthwm | Raw governance object ([`govobject`](../reference/p2p-network-governance-messages.md#govobj)) high water mark |
-| zmqpubrawinstantsenddoublespendhwm | Raw transaction ([`tx`](../reference/transactions-raw-transaction-format.md)) attempting to double-spend an InstantSend-locked input high water mark |
-| zmqpubrawrecoveredsighwm |  Raw recovered signatures (recovered by LLMQs) high water mark |
 
 ### Dimecoin Core Configuration
 
