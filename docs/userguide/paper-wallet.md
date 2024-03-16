@@ -11,7 +11,7 @@
 
 ## Paper Wallets
 
-### What is a Paper Wallet?**
+### What is a Paper Wallet?
 
 
 Paper wallets are an offline storage method ([cold storage](../resources/glossary.md#cold-storage)) of storing cryptocurrency. The process includes creating a public and private key, typically stored on a piece of paper kept in a secure place. The keys are printed in the form of QR codes or hexadecimal format, which can be scanned or input for future transactions.
@@ -64,7 +64,7 @@ Next, use your public address to receive money from other cryptocurrency users. 
 Lastly, the private key is literally the keys to your coins. If someone was to obtain it, they could withdraw the funds currently in the wallet, and any funds that might be deposited in that wallet at any time.
 
 ```{tip}
-Tip: Test spending a small amount before any large payments. You can verify the transaction was successful by using the [block explorer](https://chainz.cryptoid.info/dime/) and searching your public key.
+Test spending a small amount before any large payments. You can verify the transaction was successful by using the [block explorer](https://chainz.cryptoid.info/dime/) and searching your public key.
 ```
 
 ### Spending Coins from a Paper Wallet
