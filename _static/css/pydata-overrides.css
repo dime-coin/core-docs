@@ -221,18 +221,3 @@ html[data-theme="dark"] {
 
 /* End of styling of the RtD search extension's screen */
 
-/* Navbar Highlight on Page View */
-
-.nav.bd-sidenav li.active > a {
-  background-color: #f0f0f0 !important; /* Light grey background */
-  color: #034ea2 !important; /* Change text color if needed */
-  font-weight: bold !important; /* Make text bold */
-}
-
-.nav.bd-sidenav li.active {
-  border-left: 4px solid #034ea2 !important; /* Blue left border */
-  background-color: #f0f0f0 !important; /* Light grey background for the whole item */
-  padding-left: 12px !important; /* Add some padding to offset for the border */
-}
-
-
