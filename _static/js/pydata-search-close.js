@@ -81,20 +81,3 @@ $(document).ready(function(){
 
 $(setupSearchButtons);
 
-//highlight active navbar page
-document.addEventListener('DOMContentLoaded', function() {
-  var sidebarLinks = document.querySelectorAll('.bd-sidenav .toctree-l1 > a');
-
-  var currentUrl = window.location.pathname + window.location.search;
-  
-  sidebarLinks.forEach(function(link) {
-    if (link.getAttribute('href') === currentUrl || currentUrl.endsWith(link.getAttribute('href'))) {
-      // Remove active class from all sidebar links first if needed
-      sidebarLinks.forEach(function(l) {
-        l.parentElement.classList.remove('active');
-      });
-      // Add active class to the parent list item of the matched link
-      link.parentElement.classList.add('active');
-    }
-  });
-});
