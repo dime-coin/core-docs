@@ -20,7 +20,7 @@ This process is detailed in steps similar to a financial commitment scenario:
   
 * She then shares the hash of Tx1 with the platform.
   
-* In response, the platform drafts transaction Tx2 (the return contract). This transaction, designed to return the deposit to Ella, spends Tx1 and directs it back to her original address. However, since it requires dual signatures, Tx2 is inherently incomplete. An [nLockTime](../resources/glossary.md#nlocktime) is set for a future date, say one year, with the input sequence number at zero.
+* In response, the platform drafts transaction Tx2 (the return contract). This transaction, designed to return the deposit to Ella, spends Tx1 and directs it back to her original address. However, since it requires dual signatures, Tx2 is inherently incomplete. An [nLockTime](../reference/glossary.md#nlocktime) is set for a future date, say one year, with the input sequence number at zero.
   
 * The platform sends this half-signed contract back to Ella for review. Ella verifies that the contract indeed ensures her deposit's return after a year, barring any modifications. She completes the contract by adding her signature where required.
   

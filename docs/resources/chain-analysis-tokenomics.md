@@ -1,5 +1,5 @@
 ```{eval-rst}
-.. _userguide-chain-analysis-tokenomics:
+.. _resources-chain-analysis-tokenomics:
 .. meta::
   :title: Dimecoin Chain Analysis & Tokenomics
   :description: A breakdown of Dimecoin's tokenomics and related chain analysis information.
@@ -11,7 +11,7 @@
 
 ## Supply
 
-Dimecoin's supply is inflationary until about the year 2346. As of the consensus updates in October 2023, the rate is set at about 1.4% for the first year, and transitioning to a daily decay that results in an effective annual reduction of 8% in [block rewards](../resources/glossary.md#block-reward). By 2348, the supply will approximately cap, adding an estimated 104,709,968,124.82 coins from December 2024 to 2346. These estimates may fluctuate due to changes in mining [difficulty](../resources/glossary.md#difficulty), daily block averages, and other variables.
+Dimecoin's supply is inflationary until about the year 2346. As of the consensus updates in October 2023, the rate is set at about 1.4% for the first year, and transitioning to a daily decay that results in an effective annual reduction of 8% in [block rewards](../reference/glossary.md#block-reward). By 2348, the supply will approximately cap, adding an estimated 104,709,968,124.82 coins from December 2024 to 2346. These estimates may fluctuate due to changes in mining [difficulty](../reference/glossary.md#difficulty), daily block averages, and other variables.
 
 ### Total Supply vs Circulating Supply
 

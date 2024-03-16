@@ -30,7 +30,7 @@ You should also make the `dimecoin.conf` file only readable to its owner.  On Li
 chmod 0600 dimecoin.conf
 ```
 
-For development, it's safer and cheaper to use Dimecoin's test network ([testnet](../resources/glossary.md#testnet)), [regression test mode](../resources/glossary.md#regression-test-mode) (regtest), or a developer network  ([devnet](../resources/glossary.md#devnet)) described below.
+For development, it's safer and cheaper to use Dimecoin's test network ([testnet](../reference/glossary.md#testnet)), [regression test mode](../reference/glossary.md#regression-test-mode) (regtest), or a developer network  ([devnet](../reference/glossary.md#devnet)) described below.
 
 Questions about Dimecoin use are best sent to the [Dimecoin Telegram](https://t.me/Dimecoin/1) and [Discord Channels](https://discord.gg/JqcKF4v).
 

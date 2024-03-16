@@ -10,9 +10,9 @@
 
 ## Mining
 
-Mining adds new [blocks](../resources/glossary.md#block) to the [blockchain](../resources/glossary.md#blockchain), making transaction history hard to modify.  Mining today takes on two forms:
+Mining adds new [blocks](../reference/glossary.md#block) to the [blockchain](../reference/glossary.md#blockchain), making transaction history hard to modify.  Mining today takes on two forms:
 
-* Solo mining, where the [miner](../resources/glossary.md#miner) attempts to generate new blocks on his own, with the proceeds from the [block reward](../resources/glossary.md#block-reward) and transaction fees going entirely to himself, allowing him to receive the full block reward with a higher variance (longer time between payments)
+* Solo mining, where the [miner](../reference/glossary.md#miner) attempts to generate new blocks on his own, with the proceeds from the [block reward](../reference/glossary.md#block-reward) and transaction fees going entirely to himself, allowing him to receive the full block reward with a higher variance (longer time between payments)
 
 * Pooled mining, where the miner pools resources with other miners to find blocks more often, with the proceeds being shared among the pool miners in rough correlation to the amount of hashing power they each contributed, allowing the miner to receive small payments with a lower variance (shorter time between payments).
 
@@ -22,23 +22,23 @@ In both solo and pool mining, the mining software needs to get the information n
 
 ### getwork RPC
 
-The simplest and earliest method was the now-deprecated Dimecoin Core `getwork` RPC, which constructed a [header](../resources/glossary.md#header) for the miner directly. Since a header only contains a single 4-byte nonce good for about 4 gigahashes, many modern miners need to make dozens or hundreds of `getwork` requests a second.
+The simplest and earliest method was the now-deprecated Dimecoin Core `getwork` RPC, which constructed a [header](../reference/glossary.md#header) for the miner directly. Since a header only contains a single 4-byte nonce good for about 4 gigahashes, many modern miners need to make dozens or hundreds of `getwork` requests a second.
 
 ### getblocktemplate RPC
 
 An improved method is the Dimecoin Core [`getblocktemplate` RPC](../api/rpc-mining.md#getblocktemplate). This provides the mining software with much more information:
 
-1. The information necessary to construct a [coinbase transaction](../resources/glossary.md#coinbase-transaction) paying the pool or the solo miner's `dimecoind` wallet.
+1. The information necessary to construct a [coinbase transaction](../reference/glossary.md#coinbase-transaction) paying the pool or the solo miner's `dimecoind` wallet.
 
-2. A complete dump of the [transactions](../resources/glossary.md#transaction) `dimecoind` or the mining pool suggests including in the block, allowing the mining software to inspect the transactions, optionally add additional transactions, and optionally remove non-required transactions.
+2. A complete dump of the [transactions](../reference/glossary.md#transaction) `dimecoind` or the mining pool suggests including in the block, allowing the mining software to inspect the transactions, optionally add additional transactions, and optionally remove non-required transactions.
 
-3. Other information necessary to construct a [block header](../resources/glossary.md#block-header) for the next [block](../resources/glossary.md#block): the block version, previous block hash, and bits (target).
+3. Other information necessary to construct a [block header](../reference/glossary.md#block-header) for the next [block](../reference/glossary.md#block): the block version, previous block hash, and bits (target).
 
-4. The mining pool's current [target threshold](../resources/glossary.md#target) for accepting shares. (For solo miners, this is the network target.)
+4. The mining pool's current [target threshold](../reference/glossary.md#target) for accepting shares. (For solo miners, this is the network target.)
 
-Using the transactions received, the mining software adds a nonce to the coinbase extra nonce field and then converts all the transactions into a [merkle tree](../resources/glossary.md#merkle-tree) to derive a [merkle root](../resources/glossary.md#merkle-root) it can use in a block header. Whenever the extra nonce field needs to be changed, the mining software rebuilds the necessary parts of the merkle tree and updates the time and merkle root fields in the block header.
+Using the transactions received, the mining software adds a nonce to the coinbase extra nonce field and then converts all the transactions into a [merkle tree](../reference/glossary.md#merkle-tree) to derive a [merkle root](../reference/glossary.md#merkle-root) it can use in a block header. Whenever the extra nonce field needs to be changed, the mining software rebuilds the necessary parts of the merkle tree and updates the time and merkle root fields in the block header.
 
-Like all `dimecoind` RPCs, `getblocktemplate` is sent over HTTP. To ensure they get the most recent work, most miners use [HTTP longpoll](https://en.wikipedia.org/wiki/Push_technology#Long_polling) to leave a `getblocktemplate` request open at all times. This allows the mining pool to push a new `getblocktemplate` to the miner as soon as any [miner](../resources/glossary.md#miner) on the peer-to-peer [network](../resources/glossary.md#network) publishes a new block or the pool wants to send more transactions to the mining software.
+Like all `dimecoind` RPCs, `getblocktemplate` is sent over HTTP. To ensure they get the most recent work, most miners use [HTTP longpoll](https://en.wikipedia.org/wiki/Push_technology#Long_polling) to leave a `getblocktemplate` request open at all times. This allows the mining pool to push a new `getblocktemplate` to the miner as soon as any [miner](../reference/glossary.md#miner) on the peer-to-peer [network](../reference/glossary.md#network) publishes a new block or the pool wants to send more transactions to the mining software.
 
 ### Stratum
 
@@ -58,29 +58,29 @@ Unlike `getblocktemplate`, miners using Stratum cannot inspect or add transactio
 
 ## Solo Mining
 
-As illustrated below, solo miners typically use `dimecoind` to get new [transactions](../resources/glossary.md#transaction) from the [network](../resources/glossary.md#network). Their mining software periodically polls `dimecoind` for new transactions using the [`getblocktemplate` RPC](../api/rpc-mining.md#getblocktemplate), which provides the list of new transactions plus the [public key](../resources/glossary.md#public-key) to which the [coinbase transaction](../resources/glossary.md#coinbase-transaction) should be sent.
+As illustrated below, solo miners typically use `dimecoind` to get new [transactions](../reference/glossary.md#transaction) from the [network](../reference/glossary.md#network). Their mining software periodically polls `dimecoind` for new transactions using the [`getblocktemplate` RPC](../api/rpc-mining.md#getblocktemplate), which provides the list of new transactions plus the [public key](../reference/glossary.md#public-key) to which the [coinbase transaction](../reference/glossary.md#coinbase-transaction) should be sent.
 
 ![Solo Dimecoin Mining](../../img/dev/en-solo-mining-overview.svg)
 
-The mining software constructs a block using the template (described below) and creates a [block header](../resources/glossary.md#block-header). It then sends the 80-byte block header to its mining hardware (an ASIC) along with a [target threshold](../resources/glossary.md#target) (difficulty setting). The mining hardware iterates through every possible value for the block header nonce and generates the corresponding hash.
+The mining software constructs a block using the template (described below) and creates a [block header](../reference/glossary.md#block-header). It then sends the 80-byte block header to its mining hardware (an ASIC) along with a [target threshold](../reference/glossary.md#target) (difficulty setting). The mining hardware iterates through every possible value for the block header nonce and generates the corresponding hash.
 
-If none of the hashes are below the threshold, the mining hardware gets an updated block header with a new [merkle root](../resources/glossary.md#merkle-root) from the mining software; this new block header is created by adding extra nonce data to the coinbase field of the coinbase transaction.
+If none of the hashes are below the threshold, the mining hardware gets an updated block header with a new [merkle root](../reference/glossary.md#merkle-root) from the mining software; this new block header is created by adding extra nonce data to the coinbase field of the coinbase transaction.
 
 On the other hand, if a hash is found below the target threshold, the mining hardware returns the block header with the successful nonce to the mining software. The mining software combines the header with the block and sends the completed block to `dimecoind` to be broadcast to the network for addition to the blockchain.
 
 ## Pool Mining
 
-Pool miners follow a similar workflow, illustrated below, which allows mining pool operators to pay miners based on their share of the work done. The mining pool gets new [transactions](../resources/glossary.md#transaction) from the network using `dimecoind`. Using one of the methods discussed later, each miner's mining software connects to the pool and requests the information it needs to construct block headers.
+Pool miners follow a similar workflow, illustrated below, which allows mining pool operators to pay miners based on their share of the work done. The mining pool gets new [transactions](../reference/glossary.md#transaction) from the network using `dimecoind`. Using one of the methods discussed later, each miner's mining software connects to the pool and requests the information it needs to construct block headers.
 
 ![Pooled Dimecoin Mining](../../img/dev/en-pooled-mining-overview.svg)
 
-In pooled mining, the mining pool sets the [target threshold](../resources/glossary.md#target) a few orders of magnitude higher (less difficult) than the network difficulty. This causes the mining hardware to return many block headers which don't hash to a value eligible for inclusion on the [blockchain](../resources/glossary.md#blockchain) but which do hash below the pool's target, proving (on average) that the miner checked a percentage of the possible hash values.
+In pooled mining, the mining pool sets the [target threshold](../reference/glossary.md#target) a few orders of magnitude higher (less difficult) than the network difficulty. This causes the mining hardware to return many block headers which don't hash to a value eligible for inclusion on the [blockchain](../reference/glossary.md#blockchain) but which do hash below the pool's target, proving (on average) that the miner checked a percentage of the possible hash values.
 
-The [miner](../resources/glossary.md#miner) then sends to the pool a copy of the information the pool needs to validate that the header will hash below the target and that the block of transactions referred to by the header [merkle root](../resources/glossary.md#merkle-root) field is valid for the pool's purposes. (This usually means that the [coinbase transaction](../resources/glossary.md#coinbase-transaction) must pay the pool.)
+The [miner](../reference/glossary.md#miner) then sends to the pool a copy of the information the pool needs to validate that the header will hash below the target and that the block of transactions referred to by the header [merkle root](../reference/glossary.md#merkle-root) field is valid for the pool's purposes. (This usually means that the [coinbase transaction](../reference/glossary.md#coinbase-transaction) must pay the pool.)
 
 The information the miner sends to the pool is called a share because it proves the miner did a share of the work. By chance, some shares the pool receives will also be below the network target---the mining pool sends these to the network to be added to the block chain.
 
-The [block reward](../resources/glossary.md#block-reward) and transaction fees that come from mining that block are paid to the mining pool. The mining pool pays out a portion of these proceeds to individual miners based on how many shares they generated. For example, if the mining pool's target threshold is 100 times lower than the network target threshold, 100 shares will need to be generated on average to create a successful block, so the mining pool can pay 1/100th of its payout for each share received.  Different mining pools use different reward distribution systems based on this basic share system.
+The [block reward](../reference/glossary.md#block-reward) and transaction fees that come from mining that block are paid to the mining pool. The mining pool pays out a portion of these proceeds to individual miners based on how many shares they generated. For example, if the mining pool's target threshold is 100 times lower than the network target threshold, 100 shares will need to be generated on average to create a successful block, so the mining pool can pay 1/100th of its payout for each share received.  Different mining pools use different reward distribution systems based on this basic share system.
 
 ```{admonition} Resources
 * [CCMiner](https://github.com/djm34/ccminer-lyra/releases/) mining software

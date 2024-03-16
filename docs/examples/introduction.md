@@ -15,8 +15,8 @@ The following section aims to provide examples to help start building Dimecoin-b
 
 Once installed, you'll have access to three programs: `dimecoind`, `dimecoin-qt`, and `dimecoin-cli`.
 
-* `dimecoin-qt` provides a combination full dimecoin [peer](../resources/glossary.md#peer) and [wallet](../resources/glossary.md#wallet) frontend. From the Help menu, you can access a console where you can enter the RPC commands used throughout this document.
+* `dimecoin-qt` provides a combination full dimecoin [peer](../reference/glossary.md#peer) and [wallet](../reference/glossary.md#wallet) frontend. From the Help menu, you can access a console where you can enter the RPC commands used throughout this document.
 
-* `dimecoind` is more useful for programming: it provides a full peer which you can interact with through RPCs to port 11931 (or 21931 for [testnet](../resources/glossary.md#testnet) / 31931 for regtest).
+* `dimecoind` is more useful for programming: it provides a full peer which you can interact with through RPCs to port 11931 (or 21931 for [testnet](../reference/glossary.md#testnet) / 31931 for regtest).
 
 * `dimecoin-cli` allows you to send RPC commands to `dimecoind` from the command line.  For example, `dimecoin-cli help`

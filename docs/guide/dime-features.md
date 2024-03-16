@@ -12,7 +12,7 @@
 
 ### Overview
 
-Dimecoin aims to provide a fast, secure, and eco-friendly digital currency that anyone can use -- anywhere, anytime. We believe in a future where financial transactions are democratized, freeing individuals from the constraints of traditional banking systems and empowering them with control over their financial destiny. The Dimecoin [network](../resources/glossary.md#network) features near instant transactions, double spend protection, fungibility, a self-governing, [masternodes](../resources/glossary.md#node) (masternodes), a unique hybrid consensus, and a clear [roadmap](http://dimecoinnetwork.com/roadmap/) for future development.
+Dimecoin aims to provide a fast, secure, and eco-friendly digital currency that anyone can use -- anywhere, anytime. We believe in a future where financial transactions are democratized, freeing individuals from the constraints of traditional banking systems and empowering them with control over their financial destiny. The Dimecoin [network](../reference/glossary.md#network) features near instant transactions, double spend protection, fungibility, a self-governing, [masternodes](../reference/glossary.md#node) (masternodes), a unique hybrid consensus, and a clear [roadmap](http://dimecoinnetwork.com/roadmap/) for future development.
 
 ### Dimecoin Nodes
 

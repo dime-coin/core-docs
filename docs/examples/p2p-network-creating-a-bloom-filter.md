@@ -64,7 +64,7 @@ data_to_hash = "019f5b01d4195ecbc9398fbf3c3b1fa9" \
 data_to_hash = data_to_hash.decode("hex")
 ```
 
-For the data to add to the filter, we're adding a [TXID](../resources/glossary.md#transaction-identifiers). Note that the TXID is in [internal byte order](../resources/glossary.md#internal-byte-order).
+For the data to add to the filter, we're adding a [TXID](../reference/glossary.md#transaction-identifiers). Note that the TXID is in [internal byte order](../reference/glossary.md#internal-byte-order).
 
 ``` python
 print "                             Filter (As Bits)"
@@ -109,7 +109,7 @@ nHashNum   nIndex   Filter   0123456789abcdef
 Bloom filter: b50f
 ```
 
-Notice that in iterations 8 and 9, the filter did not change because the corresponding bit was already set in a previous iteration (5 and 7, respectively).  This is a normal part of [bloom filter](../resources/glossary.md#bloom-filter) operation.
+Notice that in iterations 8 and 9, the filter did not change because the corresponding bit was already set in a previous iteration (5 and 7, respectively).  This is a normal part of [bloom filter](../reference/glossary.md#bloom-filter) operation.
 
 We only added one element to the filter above, but we could repeat the process with additional elements and continue to add them to the same filter. (To maintain the same false-positive rate, you would need a larger filter size as computed earlier.)
 

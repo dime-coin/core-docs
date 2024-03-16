@@ -1,5 +1,5 @@
 ```{eval-rst}
-.. _userguide-legacy-android:
+.. _resources-legacy-android:
 .. meta::
   :title: Wallet & Database Operations
   :description: Learn how to perform various operations while using various functions to maintain, recover and optimize your wallet.

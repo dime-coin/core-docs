@@ -15,14 +15,14 @@ Welcome to the Wallet and Database Management section. This section is designed 
 
 * Wallet Recovery: Learn how to recover your wallet in case it becomes corrupted with [salvagewallet](#wallet-recovery-using-salvagewallet), ensuring you can regain access to your dimecoins.
 * Cleaning Transactions: Understand how to clear unconfirmed or problematic transactions from your wallet, helping to resolve issues and declutter your transaction history.
-* Rescan the Dimecoin Blockchain: Discover how to [rescan](#rescan) the [blockchain](../resources/glossary.md#blockchain) to ensure that your [wallet](../resources/glossary.md#wallet) accurately reflects your transactions and balances.
+* Rescan the Dimecoin Blockchain: Discover how to [rescan](#rescan) the [blockchain](../reference/glossary.md#blockchain) to ensure that your [wallet](../reference/glossary.md#wallet) accurately reflects your transactions and balances.
 * Rebuild the Blockchain: Find out how to [reindex](#reindex) the blockchain database, which can be necessary if you encounter database corruption or synchronization problems.
 
 Each of these operations serves a unique purpose and can be instrumental in maintaining the health and accuracy of your wallet. Whether you're a new user encountering these terms for the first time or an experienced user looking to refresh your knowledge, this section will provide you with the detailed, step-by-step guidance.
 
 ### Reindex vs Rescan
 
-Running a core wallet/[node](../resources/glossary.md#node) can be somewhat finicky at times. There are two commands a user can use to fix a wide range of wallet-related issues if you encounter problems — rescan and reindex.
+Running a core wallet/[node](../reference/glossary.md#node) can be somewhat finicky at times. There are two commands a user can use to fix a wide range of wallet-related issues if you encounter problems — rescan and reindex.
 
 Commonly, most issues arise with the core wallet if it does not shut down gracefully. For example, if a user force closes the wallet while it is running, or there is a power failure. A user may apply a change to the data directory while the wallet is running or for many other reasons that lead to the local blockchain database becoming corrupt or broken.
 

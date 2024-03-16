@@ -71,7 +71,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
     .. grid-item-card:: Glossary
         :margin: 2 2 auto auto
         :link-type: ref
-        :link: resources-glossary
+        :link: reference-glossary
         
         Important Terms and Definitions
         
@@ -85,7 +85,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 :hidden:
 
 reference/introduction
-resources/glossary
+reference/glossary
 reference/blockchain
 reference/transactions
 reference/wallets
@@ -218,15 +218,15 @@ userguide/rescan-reindex
 :caption: Additional Resources
 :hidden:
 
-userguide/chain-analysis-tokenomics
-userguide/legacy-android
-userguide/paper-wallet
+resources/chain-analysis-tokenomics
+resources/legacy-android
+resources/paper-wallet
 ```
 
 Questions about Dimecoin development are best asked in one of the [Dimecoin Social
 Communities](https://dimecoinnetwork.com/socials). Errors or suggestions related to
 documentation can be submitted as via the "Edit this page" button on the top,
-right of each page. For basic operation and general use guidance for Dimecoin-QT, see the [User Guide Section](../user-guide/introduction.md).
+right of each page. For basic operation and general use guidance for Dimecoin-QT, see the [User Guide Section](userguide/introduction.md).
 
 ```{eval-rst}
 

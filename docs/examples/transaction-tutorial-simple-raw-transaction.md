@@ -10,7 +10,7 @@
 
 ## Simple Raw Transaction
 
-The [raw transaction RPCs](../api/rpc-raw-transactions.md) allow users to create custom [transactions](../resources/glossary.md#transaction) and delay broadcasting those transactions. However, mistakes made in [raw transactions](../resources/glossary.md#raw-transaction) may not be detected by Dimecoin Core, and a number of raw transaction users have permanently lost large numbers of dimecoins, so please be careful using raw transactions on [mainnet](../resources/glossary.md#mainnet).
+The [raw transaction RPCs](../api/rpc-raw-transactions.md) allow users to create custom [transactions](../reference/glossary.md#transaction) and delay broadcasting those transactions. However, mistakes made in [raw transactions](../reference/glossary.md#raw-transaction) may not be detected by Dimecoin Core, and a number of raw transaction users have permanently lost large numbers of dimecoins, so please be careful using raw transactions on [mainnet](../reference/glossary.md#mainnet).
 
 This subsection covers one of the simplest possible raw transactions.
 
@@ -20,7 +20,7 @@ The following steps pick up where the [Simple Spending Tutorial](../examples/tra
 
 ### 1. List Unspent Outputs
 
-Re-rerun `listunspent`. We now have three UTXOs: the two transactions we created before plus the [coinbase transaction](../resources/glossary.md#coinbase-transaction) from block #2. We save the [TXID](../resources/glossary.md#transaction-identifiers) and [output index](../resources/glossary.md#output-index) number (vout) of that [coinbase](../resources/glossary.md#coinbase) UTXO to shell variables.
+Re-rerun `listunspent`. We now have three UTXOs: the two transactions we created before plus the [coinbase transaction](../reference/glossary.md#coinbase-transaction) from block #2. We save the [TXID](../reference/glossary.md#transaction-identifiers) and [output index](../reference/glossary.md#output-index) number (vout) of that [coinbase](../reference/glossary.md#coinbase) UTXO to shell variables.
 
 ```shell
 DIME-cli -regtest listunspent
@@ -85,13 +85,13 @@ DIME-cli -regtest getnewaddress
 
 ### 3. Create Raw Transaction
 
-Using two arguments to the [`createrawtransaction` RPC](../api/rpc-raw-transactions.md#createrawtransaction), we create a new raw format transaction. The first argument (a JSON array) references the txid of the coinbase transaction from block #2 and the [index](../resources/glossary.md#index) number (0) of the [output](../resources/glossary.md#output) from that transaction we want to spend. The second argument (a JSON object) creates the output with the address ( [public key](../resources/glossary.md#public-key) hash) and number of DIME we want to transfer. We save the resulting raw format transaction to a shell variable.
+Using two arguments to the [`createrawtransaction` RPC](../api/rpc-raw-transactions.md#createrawtransaction), we create a new raw format transaction. The first argument (a JSON array) references the txid of the coinbase transaction from block #2 and the [index](../reference/glossary.md#index) number (0) of the [output](../reference/glossary.md#output) from that transaction we want to spend. The second argument (a JSON object) creates the output with the address ( [public key](../reference/glossary.md#public-key) hash) and number of DIME we want to transfer. We save the resulting raw format transaction to a shell variable.
 
 ```{warning}
 `createrawtransaction` does not automatically create change outputs, so you can easily accidentally pay a large transaction fee.
 ```
 
-In this example, our input had 500.00000 DIME and our output (`$NEW_ADDRESS`) is being paid 499.9999 DIME, so the transaction will include a fee of 0.0001 DIME. If we had paid `$NEW_ADDRESS` only 100 DIME with no other changes to this transaction, the [transaction fee](../resources/glossary.md#transaction-fee) would be a whopping 400 DIME. See the [Complex Raw Transaction subsection](../examples/transaction-tutorial-complex-raw-transaction.md) below for how to create a transaction with multiple outputs so you can send the change back to yourself.
+In this example, our input had 500.00000 DIME and our output (`$NEW_ADDRESS`) is being paid 499.9999 DIME, so the transaction will include a fee of 0.0001 DIME. If we had paid `$NEW_ADDRESS` only 100 DIME with no other changes to this transaction, the [transaction fee](../reference/glossary.md#transaction-fee) would be a whopping 400 DIME. See the [Complex Raw Transaction subsection](../examples/transaction-tutorial-complex-raw-transaction.md) below for how to create a transaction with multiple outputs so you can send the change back to yourself.
 
 ```shell
 ### Outputs - inputs = transaction fee, so always double-check your math!
@@ -186,11 +186,11 @@ DIME-cli -regtest signrawtransactionwithwallet $RAW_TX
 > SIGNED_RAW_TX=0100000001a8364935baa9ef11de59a7ee3d956934d75297[...]
 ```
 
-Even though the transaction is now complete, the Dimecoin Core [node](../resources/glossary.md#node) we're connected to doesn't know anything about the transaction, nor does any other part of the [network](../resources/glossary.md#network). We've created a spend, but we haven't actually spent anything because we could simply unset the `$SIGNED_RAW_TX` variable to eliminate the transaction.
+Even though the transaction is now complete, the Dimecoin Core [node](../reference/glossary.md#node) we're connected to doesn't know anything about the transaction, nor does any other part of the [network](../reference/glossary.md#network). We've created a spend, but we haven't actually spent anything because we could simply unset the `$SIGNED_RAW_TX` variable to eliminate the transaction.
 
 ### 6. Send raw transaction
 
-Send the signed transaction to the connected node using the [`sendrawtransaction` RPC](../api/rpc-raw-transactions.md#sendrawtransaction). After accepting the transaction, the node would usually then broadcast it to other [peers](../resources/glossary.md#peer), but we're not currently connected to other peers because we started in [regression test mode](../resources/glossary.md#regression-test-mode).
+Send the signed transaction to the connected node using the [`sendrawtransaction` RPC](../api/rpc-raw-transactions.md#sendrawtransaction). After accepting the transaction, the node would usually then broadcast it to other [peers](../reference/glossary.md#peer), but we're not currently connected to other peers because we started in [regression test mode](../reference/glossary.md#regression-test-mode).
 
 ```shell
 DIME-cli -regtest sendrawtransaction $SIGNED_RAW_TX

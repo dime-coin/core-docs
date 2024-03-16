@@ -10,7 +10,7 @@
 
 ## Contracts
 
-Contracts are [transactions](../resources/glossary.md#transaction) which use the decentralized Dimecoin ecosystem to enforce financial agreements. Dimecoin contracts can often be crafted to minimize dependency on outside agents, such as the court system, which significantly decreases the risk of dealing with unknown entities in financial transactions.
+Contracts are [transactions](../reference/glossary.md#transaction) which use the decentralized Dimecoin ecosystem to enforce financial agreements. Dimecoin contracts can often be crafted to minimize dependency on outside agents, such as the court system, which significantly decreases the risk of dealing with unknown entities in financial transactions.
 
 The following subsections will describe a variety of contracts that can be used levaraging the Dimecoin ecosystem, in theory. Since contracts deal with real people, not just transactions, they are framed in story format and are purely fictional.
 

@@ -10,7 +10,7 @@
 
 ## Retrieving a MerkleBlock
 
-For the [`merkleblock` message](../reference/p2p-network-data-messages.md#merkleblock) documentation on the reference page, an actual [merkle block](../resources/glossary.md#merkle-block) was retrieved from the [network](../resources/glossary.md#network) and manually processed.  This section walks through each step of the process, demonstrating basic network communication and merkle block processing.
+For the [`merkleblock` message](../reference/p2p-network-data-messages.md#merkleblock) documentation on the reference page, an actual [merkle block](../reference/glossary.md#merkle-block) was retrieved from the [network](../reference/glossary.md#network) and manually processed.  This section walks through each step of the process, demonstrating basic network communication and merkle block processing.
 
 ``` python
 #!/usr/bin/env python
@@ -43,7 +43,7 @@ def send(msg,payload):
     sys.stdout.flush()
 ```
 
-To connect to the P2P [network](../resources/glossary.md#network), the trivial Python function above was developed to compute message headers and send payloads decoded from hex.
+To connect to the P2P [network](../reference/glossary.md#network), the trivial Python function above was developed to compute message headers and send payloads decoded from hex.
 
 ``` python
 ## Create a version message
@@ -83,7 +83,7 @@ send("filterload",
 )
 ```
 
-We set a [bloom filter](../resources/glossary.md#bloom-filter) with the [`filterload` message](../reference/p2p-network.md#filterload). This filter is described in the preceding sections.
+We set a [bloom filter](../reference/glossary.md#bloom-filter) with the [`filterload` message](../reference/p2p-network.md#filterload). This filter is described in the preceding sections.
 
 ``` python
 send("getdata",

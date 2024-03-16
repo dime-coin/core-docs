@@ -27,20 +27,20 @@ Focuses on the serialization of blocks within the blockchain, a crucial process 
 
 ### Block Headers
 
-[Block headers](../resources/glossary.md#block-header) are serialized in the 80-byte format described below and then hashed as part of the proof-of-work algorithm, making the serialized header format part of the [consensus rules](../resources/glossary.md#consensus-rules).
+[Block headers](../reference/glossary.md#block-header) are serialized in the 80-byte format described below and then hashed as part of the proof-of-work algorithm, making the serialized header format part of the [consensus rules](../reference/glossary.md#consensus-rules).
 
 | Bytes | Name                | Data Type | Description
 |-------|---------------------|-----------|----------------
-| 4     | version             |  int32_t  | The [block](../resources/glossary.md#block) version number indicates which set of block validation rules to follow. See the list of block versions below.
+| 4     | version             |  int32_t  | The [block](../reference/glossary.md#block) version number indicates which set of block validation rules to follow. See the list of block versions below.
 | 32    | previous block header hash | char[32]  | An X11() hash in internal byte order of the previous block's header.  This ensures no previous block can be changed without also changing this block's header.
 | 32    | merkle root hash    | char[32]  | A SHA256(SHA256()) hash in internal byte order. The merkle root is derived from the hashes of all transactions included in this block, ensuring that none of those transactions can be modified without modifying the header.  See the [merkle trees section](#merkle-trees) below.
 | 4     | time                | uint32_t  | The block time is a Unix epoch time when the miner started hashing the header (according to the miner).  Must be strictly greater than the median time of the previous 11 blocks.  Full nodes will not accept blocks with headers more than two hours in the future according to their clock.
 | 4     | nBits               | uint32_t  | An encoded version of the target threshold this block's header hash must be less than or equal to.  See the nBits format described below.
 | 4     | nonce               | uint32_t  | An arbitrary number miners change to modify the header hash in order to produce a hash less than or equal to the target threshold.  If all 32-bit values are tested, the time can be updated or the coinbase transaction can be changed and the merkle root updated.
 
-The hashes are in [internal byte order](../resources/glossary.md#internal-byte-order); the other values are all in little-endian order.
+The hashes are in [internal byte order](../reference/glossary.md#internal-byte-order); the other values are all in little-endian order.
 
-An example [header](../resources/glossary.md#header) in hex:
+An example [header](../reference/glossary.md#header) in hex:
 
 ``` text
 01000000 ........................... Block version: 1
@@ -57,25 +57,25 @@ e6d5c4b3a2f19876e5d4c3b2a1f0e9d8 ... Merkle root
 
 ### Merkle Trees
 
-The [merkle root](../resources/glossary.md#merkle-root) is constructed using all the [TXIDs](../resources/glossary.md#transaction-identifiers) of transactions in this block, but first the TXIDs are placed in order as required by the [consensus rules](../resources/glossary.md#consensus-rules):
+The [merkle root](../reference/glossary.md#merkle-root) is constructed using all the [TXIDs](../reference/glossary.md#transaction-identifiers) of transactions in this block, but first the TXIDs are placed in order as required by the [consensus rules](../reference/glossary.md#consensus-rules):
 
-* The [coinbase transaction](../resources/glossary.md#coinbase-transaction)'s [TXID](../resources/glossary.md#transaction-identifiers) is always placed first.
+* The [coinbase transaction](../reference/glossary.md#coinbase-transaction)'s [TXID](../reference/glossary.md#transaction-identifiers) is always placed first.
 
-* Any [input](../resources/glossary.md#input) within this block can spend an [output](../resources/glossary.md#output) which also appears in this block (assuming the spend is otherwise valid). However, the TXID corresponding to the output must be placed at some point before the TXID corresponding to the input. This ensures that any program parsing blockchain transactions linearly will encounter each output before it is used as an input.
+* Any [input](../reference/glossary.md#input) within this block can spend an [output](../reference/glossary.md#output) which also appears in this block (assuming the spend is otherwise valid). However, the TXID corresponding to the output must be placed at some point before the TXID corresponding to the input. This ensures that any program parsing blockchain transactions linearly will encounter each output before it is used as an input.
 
-If a [block](../resources/glossary.md#block) only has a coinbase transaction, the coinbase TXID is used as the merkle root hash.
+If a [block](../reference/glossary.md#block) only has a coinbase transaction, the coinbase TXID is used as the merkle root hash.
 
 If a block only has a coinbase transaction and one other transaction, the TXIDs of those two transactions are placed in order, concatenated as 64 raw bytes, and then SHA256(SHA256()) hashed together to form the merkle root.
 
-If a block has three or more transactions, intermediate [merkle tree](../resources/glossary.md#merkle-tree) rows are formed. The TXIDs are placed in order and paired, starting with the coinbase transaction's TXID. Each pair is concatenated together as 64 raw bytes and SHA256(SHA256()) hashed to form a second row of hashes. If there are an odd (non-even) number of TXIDs, the last TXID is concatenated with a copy of itself and hashed. If there are more than two hashes in the second row, the process is repeated to create a third row (and, if necessary, repeated further to create additional rows). Once a row is obtained with only two hashes, those hashes are concatenated and hashed to produce the merkle root.
+If a block has three or more transactions, intermediate [merkle tree](../reference/glossary.md#merkle-tree) rows are formed. The TXIDs are placed in order and paired, starting with the coinbase transaction's TXID. Each pair is concatenated together as 64 raw bytes and SHA256(SHA256()) hashed to form a second row of hashes. If there are an odd (non-even) number of TXIDs, the last TXID is concatenated with a copy of itself and hashed. If there are more than two hashes in the second row, the process is repeated to create a third row (and, if necessary, repeated further to create additional rows). Once a row is obtained with only two hashes, those hashes are concatenated and hashed to produce the merkle root.
 
 ![Example Merkle Tree Construction](../../img/dev/en-merkle-tree-construction.svg)
 
-TXIDs and intermediate hashes are always in [internal byte order](../resources/glossary.md#internal-byte-order) when they're concatenated, and the resulting merkle root is also in internal byte order when it's placed in the [block header](../resources/glossary.md#block-header).
+TXIDs and intermediate hashes are always in [internal byte order](../reference/glossary.md#internal-byte-order) when they're concatenated, and the resulting merkle root is also in internal byte order when it's placed in the [block header](../reference/glossary.md#block-header).
 
 ### Target nBits
 
-The [target threshold](../resources/glossary.md#target) is a 256-bit unsigned integer which a [header](../resources/glossary.md#header) hash must be equal to or below in order for that header to be a valid part of the [blockchain](../resources/glossary.md#blockchain). However, the header field *[nBits](../resources/glossary.md#nbits)* provides only 32 bits of space, so the [target](../resources/glossary.md#target) number uses a less precise format called "compact" which works like a base-256 version of scientific notation:
+The [target threshold](../reference/glossary.md#target) is a 256-bit unsigned integer which a [header](../reference/glossary.md#header) hash must be equal to or below in order for that header to be a valid part of the [blockchain](../reference/glossary.md#blockchain). However, the header field *[nBits](../reference/glossary.md#nbits)* provides only 32 bits of space, so the [target](../reference/glossary.md#target) number uses a less precise format called "compact" which works like a base-256 version of scientific notation:
 
 ![Converting nBits Into A Target Threshold](../../img/dev/en-nbits-overview.svg)
 
@@ -100,25 +100,25 @@ Some examples taken from the Dimecoin Core test cases:
 |0x04923456 | &nbsp;0x12345600 | High bit set (0x80 in 0x92).
 |0x04123456 | &nbsp;0x12345600 | Inverse of above; no high bit.
 
-Difficulty 1, the minimum allowed [difficulty](../resources/glossary.md#difficulty), is represented on [mainnet](../resources/glossary.md#mainnet) and the current [testnet](../resources/glossary.md#testnet) by the nBits value 0x1e0ffff0. Regtest mode uses a different difficulty 1 value---0x207fffff, the highest possible value below uint32_max which can be encoded; this allows near-instant building of blocks in [regression test mode](../resources/glossary.md#regression-test-mode).
+Difficulty 1, the minimum allowed [difficulty](../reference/glossary.md#difficulty), is represented on [mainnet](../reference/glossary.md#mainnet) and the current [testnet](../reference/glossary.md#testnet) by the nBits value 0x1e0ffff0. Regtest mode uses a different difficulty 1 value---0x207fffff, the highest possible value below uint32_max which can be encoded; this allows near-instant building of blocks in [regression test mode](../reference/glossary.md#regression-test-mode).
 
 ## Serialized Blocks
 
-Under current [consensus rules](../resources/glossary.md#consensus-rules), a
-[block](../resources/glossary.md#block) is not valid unless its serialized size is less than or
+Under current [consensus rules](../reference/glossary.md#consensus-rules), a
+[block](../reference/glossary.md#block) is not valid unless its serialized size is less than or
 equal to 1 MB. All fields described below are counted towards the serialized size.
 
 | Bytes    | Name         | Data Type        | Description
 | - | - | - | -
-| 80       | block header | block_header     | The [block header](../resources/glossary.md#block-header) in the format described in the [block header section](blockchain.md#block-headers).
-| *Varies* | txn_count    | [compactSize uint](../resources/glossary.md#compactsize) | The total number of transactions in this block, including the coinbase transaction.
-| *Varies* | txns         | [raw transaction](../resources/glossary.md#raw-transaction)  | Every transaction in this block, one after another, in raw transaction format.  Transactions must appear in the data stream in the same order their TXIDs appeared in the first row of the merkle tree.  See the [merkle tree section](blockchain.md#merkle-trees) for details.
+| 80       | block header | block_header     | The [block header](../reference/glossary.md#block-header) in the format described in the [block header section](blockchain.md#block-headers).
+| *Varies* | txn_count    | [compactSize uint](../reference/glossary.md#compactsize) | The total number of transactions in this block, including the coinbase transaction.
+| *Varies* | txns         | [raw transaction](../reference/glossary.md#raw-transaction)  | Every transaction in this block, one after another, in raw transaction format.  Transactions must appear in the data stream in the same order their TXIDs appeared in the first row of the merkle tree.  See the [merkle tree section](blockchain.md#merkle-trees) for details.
 
 ### Coinbase
 
 The first transaction in a block must be a [coinbase
-transaction](../resources/glossary.md#coinbase-transaction) which should collect and spend any
-[transaction fee](../resources/glossary.md#transaction-fee) paid by transactions included in this
+transaction](../reference/glossary.md#coinbase-transaction) which should collect and spend any
+[transaction fee](../reference/glossary.md#transaction-fee) paid by transactions included in this
 block.
 
 ### Supply
@@ -138,12 +138,12 @@ In October of 2023, a hybrid consensus mechanism was implemented successfully. H
 ### Block Reward
 
 Together, the transaction fees and block subsidy are called the [block
-reward](../resources/glossary.md#block-reward). A coinbase transaction is invalid if it tries to
+reward](../reference/glossary.md#block-reward). A coinbase transaction is invalid if it tries to
 spend more value than is available from the block reward.
 
-The block reward is divided into three main parts: [miner/staker](../resources/glossary.md#miner),
-[masternode](../resources/glossary.md#masternode), and
-[foundation](../resources/glossary.md#superblock). The miner/staker and masternode portions add up to 90%
+The block reward is divided into three main parts: [miner/staker](../reference/glossary.md#miner),
+[masternode](../reference/glossary.md#masternode), and
+[foundation](../reference/glossary.md#superblock). The miner/staker and masternode portions add up to 90%
 of the block subsidy with the remainder allocated to the Dimecoin Foundation.
 
 The following table details how the block subsidy and fees are allocated between miners/stakers, masternodes, and the foundation pays.

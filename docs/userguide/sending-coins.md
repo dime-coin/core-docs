@@ -13,7 +13,7 @@ Sending coins with Dimecoin-qt (the Dimecoin Core graphical user interface) is a
 
 ### Step 1: Open Your Wallet
 
-Launch the Dimecoin-qt application on your computer. Wait for it to fully synchronize the Dimecoin [blockchain](../resources/glossary.md#blockchain) if you have not done so already. This process can take some time, especially if it's the first time you're opening the application or if it has been closed for a while.
+Launch the Dimecoin-qt application on your computer. Wait for it to fully synchronize the Dimecoin [blockchain](../reference/glossary.md#blockchain) if you have not done so already. This process can take some time, especially if it's the first time you're opening the application or if it has been closed for a while.
 
 ### Step 2: Access the Send Coins Interface
 

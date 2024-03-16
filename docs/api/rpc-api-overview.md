@@ -13,7 +13,7 @@
 
 ### Overview
 
-Dimecoin Core provides a remote procedure call (RPC) interface for various administrative tasks, [wallet](../resources/glossary.md#wallet) operations, and queries about [network](../resources/glossary.md#network) and [blockchain](../resources/glossary.md#blockchain) data.
+Dimecoin Core provides a remote procedure call (RPC) interface for various administrative tasks, [wallet](../reference/glossary.md#wallet) operations, and queries about [network](../reference/glossary.md#network) and [blockchain](../reference/glossary.md#blockchain) data.
 
 Open-source client libraries for the RPC interface are readily available in most modern programming languages. Unless you are working on a custom framework, you won't need to write your own from scratch.
 
@@ -77,7 +77,7 @@ In this example, user1 can only call `getnetworkinfo`, user2 can only call `getn
 
 #### Default Connection Info
 
-The Dimecoin Core RPC service listens for HTTP `POST` requests on port 11931 in [mainnet](../resources/glossary.md#mainnet) mode, 21931 in [testnet](../resources/glossary.md#testnet), or 31931 in [regression test mode](../resources/glossary.md#regression-test-mode). The port number can be changed by setting `rpcport` in `dimecoin.conf`. By default the RPC service binds to your server's [localhost](https://en.wikipedia.org/wiki/Localhost) loopback network interface so it's not accessible from other servers. Authentication is implemented using [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). RPC HTTP requests must include a `Content-Type` header set to `text/plain` and a `Content-Length` header set to the size of the request body.
+The Dimecoin Core RPC service listens for HTTP `POST` requests on port 11931 in [mainnet](../reference/glossary.md#mainnet) mode, 21931 in [testnet](../reference/glossary.md#testnet), or 31931 in [regression test mode](../reference/glossary.md#regression-test-mode). The port number can be changed by setting `rpcport` in `dimecoin.conf`. By default the RPC service binds to your server's [localhost](https://en.wikipedia.org/wiki/Localhost) loopback network interface so it's not accessible from other servers. Authentication is implemented using [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). RPC HTTP requests must include a `Content-Type` header set to `text/plain` and a `Content-Length` header set to the size of the request body.
 
 ### Data Formats
 
@@ -124,7 +124,7 @@ The HTTP response data for a RPC request is a JSON object with the following for
 
 ### Example
 
-As an example, here is the JSON-RPC request object for the hash of the [genesis block](../resources/glossary.md#genesis-block):
+As an example, here is the JSON-RPC request object for the hash of the [genesis block](../reference/glossary.md#genesis-block):
 
 ```json
 {

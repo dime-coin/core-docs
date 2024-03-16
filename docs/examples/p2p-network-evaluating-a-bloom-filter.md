@@ -10,7 +10,7 @@
 
 ## Evaluating a Bloom Filter
 
-Using a [bloom filter](../resources/glossary.md#bloom-filter) to find matching data is nearly identical to constructing a bloom filter---except that at each step we check to see if the calculated index bit is set in the existing filter.
+Using a [bloom filter](../reference/glossary.md#bloom-filter) to find matching data is nearly identical to constructing a bloom filter---except that at each step we check to see if the calculated index bit is set in the existing filter.
 
 ``` python
 vData = bitarray(endian='little')

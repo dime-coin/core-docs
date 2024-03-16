@@ -10,7 +10,7 @@
 
 ## Connecting to Peers
 
-Connecting to a [peer](../resources/glossary.md#peer) is done by sending a [`version` message](../reference/p2p-network-control-messages.md#version), which contains your version number, block, and current time to the remote node. The remote node responds with its own [`version` message](../reference/p2p-network-control-messages.md#version). Then both nodes send a [`verack` message](../reference/p2p-network-control-messages.md#verack) to the other node to indicate the connection has been established.
+Connecting to a [peer](../reference/glossary.md#peer) is done by sending a [`version` message](../reference/p2p-network-control-messages.md#version), which contains your version number, block, and current time to the remote node. The remote node responds with its own [`version` message](../reference/p2p-network-control-messages.md#version). Then both nodes send a [`verack` message](../reference/p2p-network-control-messages.md#verack) to the other node to indicate the connection has been established.
 
 Once connected, the client can send to the remote node `getaddr` and [`addr` messages](../reference/p2p-network-control-messages.md#addr) to gather additional peers.
 

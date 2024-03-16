@@ -14,7 +14,7 @@ Masternode payments in Dimecoin are determined using a completely decentralized 
 
 ### Global List
 
-Every [masternode](../resources/glossary.md#masternode) is included in a global list. Their placement within this list is determined by the time elapsed since their last network-acknowledged payment. Masternodes newly joining or those recently compensated are repositioned to the bottom of this list.
+Every [masternode](../reference/glossary.md#masternode) is included in a global list. Their placement within this list is determined by the time elapsed since their last network-acknowledged payment. Masternodes newly joining or those recently compensated are repositioned to the bottom of this list.
 
 Similarly, actively running masternodes that are rebooted using the RPC commands `masternode start` or `masternode start-alias` find themselves moved to the list's end. The command `masternode start-missing` can be employed to circumvent this repositioning. As masternodes are shuffled to the list's bottom, the rest gradually ascend toward the top. When a masternode breaks into the top 10% of the global ranking, it becomes eligible for selection within the selection pool.
 

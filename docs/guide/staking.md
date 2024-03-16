@@ -53,7 +53,7 @@ To get a more technical breakdown of the staking process for Dimecoin, read the 
 
 ### Managing Inputs and Wallet Performance
 
-Over time, as you earn staking rewards, your wallet may accumulate many [inputs](../resources/glossary.md#input). Each input represents a piece of the staking rewards you've received. While this is a sign of active and successful staking, it can also lead to a bloated [wallet](../resources/glossary.md#wallet) file (wallet.dat), which may slow down wallet operations, such as launching the wallet or making transactions.
+Over time, as you earn staking rewards, your wallet may accumulate many [inputs](../reference/glossary.md#input). Each input represents a piece of the staking rewards you've received. While this is a sign of active and successful staking, it can also lead to a bloated [wallet](../reference/glossary.md#wallet) file (wallet.dat), which may slow down wallet operations, such as launching the wallet or making transactions.
 
 #### Reducing Wallet Bloat and Improving Performance
 

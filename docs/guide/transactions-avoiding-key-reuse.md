@@ -10,15 +10,15 @@
 
 ## Avoiding Key Reuse
 
-In a [transaction](../resources/glossary.md#transaction), the spender and receiver each reveal to each other all [public keys](../resources/glossary.md#public-key) or [addresses](../resources/glossary.md#address) used in the transaction. This allows either person to use the public [blockchain](../resources/glossary.md#blockchain) to track past and future transactions involving the other person's same public keys or addresses.
+In a [transaction](../reference/glossary.md#transaction), the spender and receiver each reveal to each other all [public keys](../reference/glossary.md#public-key) or [addresses](../reference/glossary.md#address) used in the transaction. This allows either person to use the public [blockchain](../reference/glossary.md#blockchain) to track past and future transactions involving the other person's same public keys or addresses.
 
 If the same public key is reused often, as happens when people use Dimecoin addresses (hashed public keys) as static payment addresses, other people can easily track the receiving and spending habits of that person, including how many dimecoins they control in known addresses.
 
 This can be avoided if each public key is used exactly twice---once to receive a payment and once to spend that payment. The user can gain a significant amount of financial privacy by following this method of key use.
 
-Avoiding key reuse can also provide security against attacks which might allow reconstruction of [private keys](../resources/glossary.md#private-key) from public keys (hypothesized) or from signature comparisons (possible today under certain circumstances described below, with more general attacks hypothesized).
+Avoiding key reuse can also provide security against attacks which might allow reconstruction of [private keys](../reference/glossary.md#private-key) from public keys (hypothesized) or from signature comparisons (possible today under certain circumstances described below, with more general attacks hypothesized).
 
-1. Unique (non-reused) [P2PKH](../resources/glossary.md#pay-to-pubkey-hash) and [P2SH](../resources/glossary.md#pay-to-script-hash) addresses protect against the first type of attack by keeping ECDSA public keys hidden (hashed) until the first time dimecoins sent to those addresses are spent, so attacks are effectively useless unless they can reconstruct private keys in less than the hour or two it takes for a transaction to be well protected by the blockchain.
+1. Unique (non-reused) [P2PKH](../reference/glossary.md#pay-to-pubkey-hash) and [P2SH](../reference/glossary.md#pay-to-script-hash) addresses protect against the first type of attack by keeping ECDSA public keys hidden (hashed) until the first time dimecoins sent to those addresses are spent, so attacks are effectively useless unless they can reconstruct private keys in less than the hour or two it takes for a transaction to be well protected by the blockchain.
 
 2. Unique (non-reused) private keys protect against the second type of attack by only generating one signature per private key, so attackers never get a subsequent signature to use in comparison-based attacks. Existing comparison-based attacks are only practical today when insufficient entropy is used in signing or when the entropy used is exposed by some means, such as a [side-channel attack](https://en.wikipedia.org/wiki/Side_channel_attack).
 

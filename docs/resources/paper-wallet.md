@@ -1,5 +1,5 @@
 ```{eval-rst}
-.. _userguide-paper-wallet:
+.. _resources-paper-wallet:
 .. meta::
   :title: Dimecoin Paper Wallet
   :description: Learn how to use and operate a paper wallet for dimecoin.
@@ -13,7 +13,7 @@
 
 ### What is a Paper Wallet?
 
-Paper wallets are an offline storage method ([cold storage](../resources/glossary.md#cold-storage)) of storing cryptocurrency. The process includes creating a public and private key, typically stored on a piece of paper kept in a secure place. The keys are printed in the form of QR codes or hexadecimal format, which can be scanned or input for future transactions.
+Paper wallets are an offline storage method ([cold storage](../reference/glossary.md#cold-storage)) of storing cryptocurrency. The process includes creating a public and private key, typically stored on a piece of paper kept in a secure place. The keys are printed in the form of QR codes or hexadecimal format, which can be scanned or input for future transactions.
 
 Paper wallets are considered one of, if not the safest way, to store cryptocurrency. Doing so will put you in complete control of your holdings. If all precautions are followed, there is zero possibility of your private keys being compromised. You will not have to worry about hardware crashing, malware, or any hackers.
 

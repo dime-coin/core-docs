@@ -10,9 +10,9 @@
 
 ## Offline Signing
 
-We will now spend the [transaction](../resources/glossary.md#transaction) created in the [Complex Raw Transaction subsection](../examples/transaction-tutorial-complex-raw-transaction.md) without sending it to the local [node](../resources/glossary.md#node) first. This is the same basic process used by [wallet](../resources/glossary.md#wallet) programs for offline signing---which generally means signing a transaction without access to the current UTXO set.
+We will now spend the [transaction](../reference/glossary.md#transaction) created in the [Complex Raw Transaction subsection](../examples/transaction-tutorial-complex-raw-transaction.md) without sending it to the local [node](../reference/glossary.md#node) first. This is the same basic process used by [wallet](../reference/glossary.md#wallet) programs for offline signing---which generally means signing a transaction without access to the current UTXO set.
 
-Offline signing is safe. However, in this example we will also be spending an [output](../resources/glossary.md#output) which is not part of the [blockchain](../resources/glossary.md#blockchain) because the transaction containing it has never been broadcast. That can be unsafe:
+Offline signing is safe. However, in this example we will also be spending an [output](../reference/glossary.md#output) which is not part of the [blockchain](../reference/glossary.md#blockchain) because the transaction containing it has never been broadcast. That can be unsafe:
 
 ```{warning}
 Transactions which spend outputs from unconfirmed transactions are vulnerable to transaction malleability. Be sure to read about transaction malleability and adopt good practices before spending unconfirmed transactions on mainnet.
@@ -35,7 +35,7 @@ ec73fe6129b249617bb5f20c8760708055fb6fdb88ac00ca9a3b000000001976a914cb7a\
 
 ### 1. Decode Signed Transaction
 
-Decode the signed [raw transaction](../resources/glossary.md#raw-transaction) so we can get its [TXID](../resources/glossary.md#transaction-identifiers). Also, choose a specific one of its UTXOs to spend and save that UTXO's [output index](../resources/glossary.md#output-index) number (vout) and hex [pubkey script](../resources/glossary.md#pubkey-script) (scriptPubKey) into shell variables.
+Decode the signed [raw transaction](../reference/glossary.md#raw-transaction) so we can get its [TXID](../reference/glossary.md#transaction-identifiers). Also, choose a specific one of its UTXOs to spend and save that UTXO's [output index](../reference/glossary.md#output-index) number (vout) and hex [pubkey script](../reference/glossary.md#pubkey-script) (scriptPubKey) into shell variables.
 
 ``` shell
 dimecoin-cli -regtest decoderawtransaction $OLD_SIGNED_RAW_TX
@@ -123,7 +123,7 @@ dimecoin-cli -regtest decoderawtransaction $OLD_SIGNED_RAW_TX
 
 ### 2. Get New Address
 
-Get a new [address](../resources/glossary.md#address) to spend the dimecoins to.
+Get a new [address](../reference/glossary.md#address) to spend the dimecoins to.
 
 ``` bash
 > dimecoin-cli -regtest getnewaddress
@@ -158,13 +158,13 @@ a9eea0ca9368d1c99c097279b8081f88ac00000000
 
 ### 4. Sign Raw Transaction
 
-Attempt to sign the [raw transaction](../resources/glossary.md#raw-transaction) without any special arguments, the way we successfully signed the the raw transaction in the [Simple Raw Transaction subsection](../examples/transaction-tutorial-simple-raw-transaction.md). If you've read the [Transaction section](../guide/transactions.md) of the guide, you may know why the call fails and leaves the raw transaction hex unchanged.
+Attempt to sign the [raw transaction](../reference/glossary.md#raw-transaction) without any special arguments, the way we successfully signed the the raw transaction in the [Simple Raw Transaction subsection](../examples/transaction-tutorial-simple-raw-transaction.md). If you've read the [Transaction section](../guide/transactions.md) of the guide, you may know why the call fails and leaves the raw transaction hex unchanged.
 
 ![Old Transaction Data Required To Be Signed](../../img/dev/en-signing-output-to-spend.svg)
 
-As illustrated above, the data that gets signed includes the [TXID](../resources/glossary.md#transaction-identifiers) and vout from the previous transaction.  That information is included in the `createrawtransaction` raw transaction.  But the data that gets signed also includes the [pubkey script](../resources/glossary.md#pubkey-script) from the previous transaction, even though it doesn't appear in either the unsigned or signed transaction.
+As illustrated above, the data that gets signed includes the [TXID](../reference/glossary.md#transaction-identifiers) and vout from the previous transaction.  That information is included in the `createrawtransaction` raw transaction.  But the data that gets signed also includes the [pubkey script](../reference/glossary.md#pubkey-script) from the previous transaction, even though it doesn't appear in either the unsigned or signed transaction.
 
-In the other raw transaction subsections above, the previous [output](../resources/glossary.md#output) was part of the UTXO set known to the wallet, so the wallet was able to use the TXID and [output index](../resources/glossary.md#output-index) number to find the previous [pubkey script](../resources/glossary.md#pubkey-script) and insert it automatically.
+In the other raw transaction subsections above, the previous [output](../reference/glossary.md#output) was part of the UTXO set known to the wallet, so the wallet was able to use the TXID and [output index](../reference/glossary.md#output-index) number to find the previous [pubkey script](../reference/glossary.md#pubkey-script) and insert it automatically.
 
 #### 4a. Without Pubkey Script
 
@@ -172,7 +172,7 @@ In the other raw transaction subsections above, the previous [output](../resourc
 This step demonstrates the error returned when an unknown output is referenced.
 ```
 
-In this case, you're spending an [output](../resources/glossary.md#output) which is unknown to the wallet, so it can't automatically insert the previous pubkey script.
+In this case, you're spending an [output](../reference/glossary.md#output) which is unknown to the wallet, so it can't automatically insert the previous pubkey script.
 
 ``` bash
 > dimecoin-cli -regtest signrawtransactionwithwallet $RAW_TX
@@ -235,7 +235,7 @@ This specific operation is typically what offline signing wallets do. The online
 
 #### 5a. Second Transaction
 
-Attempt to broadcast the second transaction before we've broadcast the first transaction.  The [node](../resources/glossary.md#node) rejects this attempt because the second transaction spends an [output](../resources/glossary.md#output) which is not a UTXO the node knows about.
+Attempt to broadcast the second transaction before we've broadcast the first transaction.  The [node](../reference/glossary.md#node) rejects this attempt because the second transaction spends an [output](../reference/glossary.md#output) which is not a UTXO the node knows about.
 
 ``` bash
 > dimecoin-cli -regtest sendrawtransaction $SIGNED_RAW_TX

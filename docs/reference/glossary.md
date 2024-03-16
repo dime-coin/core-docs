@@ -1,5 +1,5 @@
 ```{eval-rst}
-.. _resources-glossary:
+.. _reference-glossary:
 ```
 
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***

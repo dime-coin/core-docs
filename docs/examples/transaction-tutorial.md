@@ -14,4 +14,4 @@ Creating transactions is something most Dimecoin applications do. This section p
 
 Your applications may use something besides Dimecoin Core to create transactions, but in any system, you will need to provide the same kinds of data to create transactions with the same attributes as those described below.
 
-In order to use this tutorial, you will need to setup [Dimecoin Core](https://github.com/dime-coin/dimecoin/releases/latest) and create a [regression test mode](../resources/glossary.md#regression-test-mode) environment with 500 DIME in your test wallet.
+In order to use this tutorial, you will need to setup [Dimecoin Core](https://github.com/dime-coin/dimecoin/releases/latest) and create a [regression test mode](../reference/glossary.md#regression-test-mode) environment with 500 DIME in your test wallet.

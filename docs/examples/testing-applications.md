@@ -15,13 +15,13 @@ Dimecoin Core provides several network options designed to let developers test t
 
 ### Testnet
 
-When run with no arguments, all Dimecoin Core programs default to Dimecoin's main network ([mainnet](../resources/glossary.md#mainnet)). However, for development, it's safer and cheaper to use Dimecoin's test network ([testnet](../resources/glossary.md#testnet)) where the dimecoins spent have no real-world value. Testnet also relaxes some restrictions (such as standard transaction checks) so you can test functions which might currently be disabled by default on [mainnet](../resources/glossary.md#mainnet).
+When run with no arguments, all Dimecoin Core programs default to Dimecoin's main network ([mainnet](../reference/glossary.md#mainnet)). However, for development, it's safer and cheaper to use Dimecoin's test network ([testnet](../reference/glossary.md#testnet)) where the dimecoins spent have no real-world value. Testnet also relaxes some restrictions (such as standard transaction checks) so you can test functions which might currently be disabled by default on [mainnet](../reference/glossary.md#mainnet).
 
 To use testnet, use the argument `-testnet` with `dimecoin-cli`, `dimecoind` or `dimecoin-qt` or add `testnet=1` to your `dimecoin.conf` file as [described earlier](../examples/configuration-file.md).  To get free dimecoins for testing, you can easily run [setgenerate](../api/rpc-generating.md#setgenerate) to generate some testnet dimecoins.
 
 ### Regtest mode
 
-For situations where interaction with random [peers](../resources/glossary.md#peer) and [blocks](../resources/glossary.md#block) is unnecessary or unwanted, Dimecoin Core's [regression test mode](../resources/glossary.md#regression-test-mode) (regtest mode) lets you instantly create a brand-new private [blockchain](../resources/glossary.md#blockchain) with the same basic rules as testnet---but one major difference: you choose when to create new blocks, so you have complete control over the environment.
+For situations where interaction with random [peers](../reference/glossary.md#peer) and [blocks](../reference/glossary.md#block) is unnecessary or unwanted, Dimecoin Core's [regression test mode](../reference/glossary.md#regression-test-mode) (regtest mode) lets you instantly create a brand-new private [blockchain](../reference/glossary.md#blockchain) with the same basic rules as testnet---but one major difference: you choose when to create new blocks, so you have complete control over the environment.
 
 Many developers consider regtest mode the preferred way to develop new applications. The following example will let you create a regtest environment after you first [configure dimecoind](../examples/configuration-file.md).
 
@@ -37,7 +37,7 @@ Start `dimecoind` in regtest mode to create a private block chain.
 dimecoin-cli -regtest generate 101
 ```
 
-Generate 101 blocks using a special RPC which is only available in regtest mode. This takes less than a second on a generic PC. Since this is a new block chain using Dimecoin's default rules, the first blocks pay a [block reward](../resources/glossary.md#block-reward) of 500 DIME.  Unlike [mainnet](../resources/glossary.md#mainnet), in regtest mode only the first 150 blocks pay a reward of 500 DIME. However, a block must have 100 [confirmations](../resources/glossary.md#confirmations) before that reward can be spent, so we generate 101 blocks to get access to the [coinbase transaction](../resources/glossary.md#coinbase-transaction) from block #1.
+Generate 101 blocks using a special RPC which is only available in regtest mode. This takes less than a second on a generic PC. Since this is a new block chain using Dimecoin's default rules, the first blocks pay a [block reward](../reference/glossary.md#block-reward) of 500 DIME.  Unlike [mainnet](../reference/glossary.md#mainnet), in regtest mode only the first 150 blocks pay a reward of 500 DIME. However, a block must have 100 [confirmations](../reference/glossary.md#confirmations) before that reward can be spent, so we generate 101 blocks to get access to the [coinbase transaction](../reference/glossary.md#coinbase-transaction) from block #1.
 
 ``` bash
 dimecoin-cli -regtest getbalance

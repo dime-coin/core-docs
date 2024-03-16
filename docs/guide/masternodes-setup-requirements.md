@@ -26,17 +26,17 @@ Hardware Requirements
 
 ## Setup
 
-In order to setup a [masternode](../resources/glossary.md#masternode), it is recommended that users have a basic understanding of Linux and [blockchain](../resources/glossary.md#blockchain) technology. However, if you are able to follow instructions closely, you should be able to setup a masternode with zero issue. Keep in mind, additional maintenance and security checks will be required.
+In order to setup a [masternode](../reference/glossary.md#masternode), it is recommended that users have a basic understanding of Linux and [blockchain](../reference/glossary.md#blockchain) technology. However, if you are able to follow instructions closely, you should be able to setup a masternode with zero issue. Keep in mind, additional maintenance and security checks will be required.
 
 ### Getting Started
 
-This guide will make a few assumptions — mainly that you are setting up a masternode for the first time on a new server. These instructions are not intended to be used as a how-to for updating your masternode. If you are looking to update your masternode, see [updating masternode]. When finished with this guide, you will have successfully set up a masternode using a local controller wallet on your PC for your coins’ [cold storage](../resources/glossary.md#cold-storage); and a hot wallet as your masternode on your Virtual Private Server (VPS).
+This guide will make a few assumptions — mainly that you are setting up a masternode for the first time on a new server. These instructions are not intended to be used as a how-to for updating your masternode. If you are looking to update your masternode, see [updating masternode]. When finished with this guide, you will have successfully set up a masternode using a local controller wallet on your PC for your coins’ [cold storage](../reference/glossary.md#cold-storage); and a hot wallet as your masternode on your Virtual Private Server (VPS).
 
 This guide will be using a 64-bit Windows machine for the controller/cold wallet (local wallet) and an Ubuntu Linux VPS running the masternode daemon (hot wallet).
 
 The local wallet will be where you keep your collateral and coins safe, giving you the ability to retain complete control of your private keys. Once your masternode is fully configured and enabled, you can take the local wallet offline for cold storage.
 
-The masternode daemon (hot wallet) will be running on your VPS and will not physically hold any [private keys](../resources/glossary.md#private-key).
+The masternode daemon (hot wallet) will be running on your VPS and will not physically hold any [private keys](../reference/glossary.md#private-key).
 
 While you may be able to use a minimal hardware setup to successfully run a masternode, be aware that it can make the masternode unstable, which can cause the node to crash or perform poorly. If this happens, the node risks being kicked off the masternode list, causing the masternode to lose payments.
 

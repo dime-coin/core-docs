@@ -10,7 +10,7 @@
 
 ## P2PKH Script Validation
 
-The validation procedure requires evaluation of the [signature script](../resources/glossary.md#signature-script) and [pubkey script](../resources/glossary.md#pubkey-script). In a [P2PKH](../resources/glossary.md#pay-to-pubkey-hash) [output](../resources/glossary.md#output), the pubkey script is:
+The validation procedure requires evaluation of the [signature script](../reference/glossary.md#signature-script) and [pubkey script](../reference/glossary.md#pubkey-script). In a [P2PKH](../reference/glossary.md#pay-to-pubkey-hash) [output](../reference/glossary.md#output), the pubkey script is:
 
 ```bash
 OP_DUP OP_HASH160 <PubkeyHash> OP_EQUALVERIFY OP_CHECKSIG
@@ -22,13 +22,13 @@ The spender's signature script is evaluated and prefixed to the beginning of the
 <Sig> <PubKey> OP_DUP OP_HASH160 <PubkeyHash> OP_EQUALVERIFY OP_CHECKSIG
 ```
 
-The script language is a [Forth-like](https://en.wikipedia.org/wiki/Forth_%28programming_language%29) stack-based language deliberately designed to be stateless and not Turing complete. Statelessness ensures that once a [transaction](../resources/glossary.md#transaction) is added to the [blockchain](../resources/glossary.md#blockchain), there is no condition which renders it permanently unspendable. Turing-incompleteness (specifically, a lack of loops or gotos) makes the script language less flexible and more predictable, greatly simplifying the security model.
+The script language is a [Forth-like](https://en.wikipedia.org/wiki/Forth_%28programming_language%29) stack-based language deliberately designed to be stateless and not Turing complete. Statelessness ensures that once a [transaction](../reference/glossary.md#transaction) is added to the [blockchain](../reference/glossary.md#blockchain), there is no condition which renders it permanently unspendable. Turing-incompleteness (specifically, a lack of loops or gotos) makes the script language less flexible and more predictable, greatly simplifying the security model.
 
 To test whether the transaction is valid, signature script and pubkey script operations are executed one item at a time, starting with Bob's signature script and continuing to the end of Alice's pubkey script. The figure below shows the evaluation of a standard P2PKH pubkey script; below the figure is a description of the process.
 
 ![P2PKH Stack Evaluation](../../img/dev/en-p2pkh-stack.svg)
 
-* The [signature](../resources/glossary.md#signature) (from Bob's signature script) is added (pushed) to an empty stack. Since it is just data, nothing is done except adding it to the stack. The [public key](../resources/glossary.md#public-key) (also from the signature script) is pushed on top of the signature.
+* The [signature](../reference/glossary.md#signature) (from Bob's signature script) is added (pushed) to an empty stack. Since it is just data, nothing is done except adding it to the stack. The [public key](../reference/glossary.md#public-key) (also from the signature script) is pushed on top of the signature.
 
 * From Alice's pubkey script, the `OP_DUP` operation is executed. `OP_DUP` pushes onto the stack a copy of the data currently at the top of it---in this case creating a copy of the public key Bob provided.
 

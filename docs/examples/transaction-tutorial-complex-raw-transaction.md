@@ -10,7 +10,7 @@
 
 ## Complex Raw Transaction
 
-In this example, we'll create a [transaction](../resources/glossary.md#transaction) with two [inputs](../resources/glossary.md#input) and two [outputs](../resources/glossary.md#output).  We'll sign each of the inputs separately, as might happen if the two inputs belonged to different people who agreed to create a transaction together.
+In this example, we'll create a [transaction](../reference/glossary.md#transaction) with two [inputs](../reference/glossary.md#input) and two [outputs](../reference/glossary.md#output).  We'll sign each of the inputs separately, as might happen if the two inputs belonged to different people who agreed to create a transaction together.
 
 ### 1. List Unspent Outputs
 
@@ -91,7 +91,7 @@ Users should never manually manage private keys on mainnet. As dangerous as raw 
 **These examples are to help you learn, not for you to emulate on mainnet.**
 ```
 
-Use the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey) to get the [private keys](../resources/glossary.md#private-key) corresponding to the [public keys](../resources/glossary.md#public-key) used in the two UTXOs our inputs we will be spending.  We need the private keys so we can sign each of the inputs separately.
+Use the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey) to get the [private keys](../reference/glossary.md#private-key) corresponding to the [public keys](../reference/glossary.md#public-key) used in the two UTXOs our inputs we will be spending.  We need the private keys so we can sign each of the inputs separately.
 
 ``` bash
 > dimecoin-cli -regtest dumpprivkey $UTXO1_ADDRESS
@@ -107,7 +107,7 @@ cPtZ9nagmjQ5bRKMuqoDz8xni6hRPfZ1zp3TSrqH3j3RyUThTYGN
 
 ### 4. Get New Addresses
 
-For our two outputs, get two new [addresses](../resources/glossary.md#address).
+For our two outputs, get two new [addresses](../reference/glossary.md#address).
 
 ``` bash
 > dimecoin-cli -regtest getnewaddress
@@ -121,7 +121,7 @@ For our two outputs, get two new [addresses](../resources/glossary.md#address).
 
 ### 5. Create Raw Transaction
 
-Create the [raw transaction](../resources/glossary.md#raw-transaction) using the [`createrawtransaction` RPC](../api/rpc-raw-transactions.md#createrawtransaction) much the same as before, except now we have two inputs and two outputs.
+Create the [raw transaction](../reference/glossary.md#raw-transaction) using the [`createrawtransaction` RPC](../api/rpc-raw-transactions.md#createrawtransaction) much the same as before, except now we have two inputs and two outputs.
 
 ``` bash
 ### Outputs - inputs = transaction fee, so always double-check your math!
