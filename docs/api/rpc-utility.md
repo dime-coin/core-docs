@@ -59,10 +59,10 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [AddMultiSigAddress](../api/rpc-wallet.md#addmultisigaddress): adds a P2SH multisig address to the wallet.
 * [DecodeScript](../api/rpc-raw-transactions.md#decodescript): decodes a hex-encoded P2SH redeem script.
+```
 
 ## EstimateSmartFee
 
@@ -121,9 +121,9 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [SetTxFee](../api/rpc-wallet.md#settxfee): sets the transaction fee per kilobyte paid by transactions created by this wallet.
+```
 
 ## ValidateAddress
 
@@ -187,11 +187,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [ImportAddress](../api/rpc-wallet.md#importaddress): adds an address or pubkey script to the wallet without the associated private key, allowing you to watch for transactions affecting that address or pubkey script without being able to spend any of its outputs.
 * [GetNewAddress](../api/rpc-wallet.md#getnewaddress): returns a new DIME address for receiving payments. If an account is specified, payments received with the address will be credited to that account.
 * [GetAddressInfo](../api/rpc-wallet.md#getaddressinfo): returns information about the given DIME address.
+```
 
 ## VerifyMessage
 
@@ -239,6 +239,6 @@ Result:
 true
 ```
 
-*See also*
-
+```{seealso}
 * [SignMessage](../api/rpc-wallet.md#signmessage): signs a message with the private key of an address.
+```

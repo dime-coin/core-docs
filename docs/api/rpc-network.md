@@ -42,9 +42,9 @@ dimecoin-cli -mainnet addnode 147.43.22.113:11391 onetry
 
 Result (no output from `dimecoin-cli` because result is set to `null`).
 
-*See also*
-
+```{seealso}
 * [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
+```
 
 ### ClearBanned
 
@@ -68,10 +68,10 @@ dimecoin-cli clearbanned
 
 Result (no output from `dimecoin-cli` because result is set to `null`).
 
-*See also*
-
+```{seealso}
 * [ListBanned](../api/rpc-network.md#listbanned): lists all manually banned IPs/Subnets.
 * [SetBan](../api/rpc-network.md#setban): attempts add or remove a IP/Subnet from the banned list.
+```
 
 ### DisconnectNode
 
@@ -174,10 +174,10 @@ Result (real hostname and IP address replaced with [RFC5737](http://tools.ietf.o
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [AddNode](../api/rpc-network.md#addnode): attempts to add or remove a node from the addnode list, or to try a connection to a node once.
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
+```
 
 ### GetConnectionCount
 
@@ -203,11 +203,11 @@ Result:
 8
 ```
 
-*See also*
-
+```{seealso}
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
+```
 
 ### GetNetTotals
 
@@ -255,10 +255,10 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
+```
 
 ### GetNetworkInfo
 
@@ -348,11 +348,11 @@ Result (actual addresses have been replaced with [RFC5737](http://tools.ietf.org
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
 * [SetNetworkActive](../api/rpc-network.md#setnetworkactive): disables/enables all P2P network activity.
+```
 
 ### GetPeerInfo
 
@@ -455,11 +455,11 @@ Result (edited to show only a single entry, with IP addresses changed to
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetAddedNodeInfo](../api/rpc-network.md#getaddednodeinfo): returns information about the given added node, or all added nodes (except onetry nodes). Only nodes which have been manually added using the [`addnode` RPC](../api/rpc-network.md#addnode) will have their information displayed.
 * [GetNetTotals](../api/rpc-network.md#getnettotals): returns information about network traffic, including bytes in, bytes out, and the current time.
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
+```
 
 ### ListBanned
 
@@ -500,10 +500,10 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [SetBan](../api/rpc-network.md#setban): attempts add or remove a IP/Subnet from the banned list.
 * [ClearBanned](../api/rpc-network.md#clearbanned): clears list of banned nodes.
+```
 
 ### Ping
 
@@ -544,10 +544,10 @@ Results:
       "pingtime": 0.124652 
 ```
 
-*See also*
-
+```{seealso}
 * [GetPeerInfo](../api/rpc-network.md#getpeerinfo): returns data about each connected network node.
 * [P2P Ping Message](../reference/p2p-network-control-messages.md#ping)
+```
 
 ### SetBan
 
@@ -593,10 +593,10 @@ dimecoin-cli -mainnet setban 147.22.2.111 add 1591000
 
 Result (no output from `dimecoin-cli` because result is set to `null`).
 
-*See also*
-
+```{seealso}
 * [ListBanned](../api/rpc-network.md#listbanned): lists all manually banned IPs/Subnets.
 * [ClearBanned](../api/rpc-network.md#clearbanned): clears list of banned nodes.
+```
 
 ### SetNetworkActive
 
@@ -622,6 +622,6 @@ dimecoin-cli setnetworkactive true
 
 Result (no output from `dimecoin-cli` because result is set to `null`).
 
-*See also*
-
+```{seealso}
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
+```

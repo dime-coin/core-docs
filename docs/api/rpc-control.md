@@ -248,7 +248,7 @@ Dimecoin Core server stopping...
 ```
 
 ```{seealso}
-*See also: none*
+*none*
 ```
 
 ### Uptime
@@ -276,5 +276,5 @@ Result:
 ```
 
 ```{seealso}
-*See also: none*
+*none*
 ```

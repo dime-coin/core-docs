@@ -47,9 +47,9 @@ Result:
 doc test
 ```
 
-*See also*
-
+```{seealso}
 * [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account.
+```
 
 ### GetAccountAddress
 
@@ -85,11 +85,11 @@ Result:
 7NUQ6RzTpNj5GP5ebdRcusJ7K9JJKx6VvV
 ```
 
-*See also*
-
+```{seealso}
 * [GetNewAddress](../api/rpc-wallet.md#getnewaddress): returns a new Dimecoin address for receiving payments. If an account is specified, payments received with the address will be credited to that account.
 * [GetRawChangeAddress](../api/rpc-wallet.md#getrawchangeaddress): returns a new Dimecoin address for receiving change. This is for use with raw transactions, not normal use.
 * [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account.
+```
 
 ### GetAddressesByAccount
 
@@ -129,10 +129,10 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetAccount](../api/rpc-wallet-deprecated.md#getaccount): returns the name of the account associated with the given address.
 * [GetBalance](../api/rpc-wallet.md#getbalance): gets the balance in decimal Dimecoin across all accounts or for a particular account.
+```
 
 ### SetAccount
 
@@ -173,8 +173,8 @@ dimecoin-cli -mainnet setaccount \
 
 (Success: no result displayed.)
 
-*See also*
-
+```{seealso}
 * [GetAccount](../api/rpc-wallet-deprecated.md#getaccount): returns the name of the account associated with the given address.
 * [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account.
 * [SetLabel](../api/rpc-wallet.md#setlabel): sets the label associated with the given address.
+```

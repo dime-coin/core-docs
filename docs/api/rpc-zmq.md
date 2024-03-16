@@ -50,4 +50,6 @@ Result:
 ]
 ```
 
-*See also: none*
+```{seealso}
+*none*
+```

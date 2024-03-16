@@ -34,11 +34,11 @@ dimecoin-cli -mainnet combinepsbt "mybase64_1", "mybase64_2", "mybase64_3"
 
 ```
 
-*See also:*
-
+```{seealso}
 * [CreatePSBT](../api/rpc-raw-transactions.md#createpsbt): creates a transaction in the Partially Signed Transaction (PST) format.
 * [DecodePSBT](../api/rpc-raw-transactions.md#decodepsbt): returns a JSON object representing the serialized, base64-encoded partially signed Dimecoin transaction.
 * [FinalizePSBT](../api/rpc-raw-transactions.md#finalizepsbt): finalizes the inputs of a PSBT.
+```
 
 ### CombineRawTransaction
 
@@ -86,13 +86,13 @@ db552ec58d017e10abf38acb8341de0fe7f2ee7ca2de30412fead4dd6a659b3bd5ed87a399\
 
 ```
 
-*See also:*
-
+```{seealso}
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [SignRawTransactionWithKey](#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
 * [Serialized Transaction Format](../reference/transactions-raw-transaction-format.md)
+```
 
 ### ConvertToPSBT
 
@@ -132,9 +132,7 @@ Result:
 ```bash
 cHNidP8BAHcCAAAAAWtJCIbAGYsCjGxcsUXE6zsQVaIkp6EFqt7/QbaeyR4GAQAAAAD/////AgAgX6ASAAAAGXapFEhUhUJfqZUE7BY4rEIT88/J8y7ziKzAqPm+AQAAABl2qRSBHqzBTbjrtbZEhtxDQAwCJrQopIisAAAAAAAAAAA=
 ```
-
-*See also:*
-
+```{seealso}
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [CreatePSBT](../api/rpc-raw-transactions.md#createpsbt): creates a transaction in the Partially Signed Transaction (PST) format.
 * [CombinePSBT](../api/rpc-raw-transactions.md#combinepsbt): combine multiple partially-signed Dimecoin transactions into one transaction.
@@ -142,6 +140,7 @@ cHNidP8BAHcCAAAAAWtJCIbAGYsCjGxcsUXE6zsQVaIkp6EFqt7/QbaeyR4GAQAAAAD/////AgAgX6AS
 * [FinalizePSBT](../api/rpc-raw-transactions.md#finalizepsbt): finalizes the inputs of a PSBT.
 * [SignRawTransactionWithKey](#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
 * [Serialized Transaction Format](../reference/transactions-raw-transaction-format.md)
+```
 
 ### CreatePSBT
 
@@ -192,12 +191,12 @@ Result:
 eFDleP7BAEICADGDFGXgRxzbShUlivVFKgoLyhk0RCCYLZKCYTl/tYRd+yGImBBBBBBAD/////AQAAAAAAAAAABmoEAAECAwSDFGRRREWE=
 ```
 
-*See also*
-
+```{seealso}
 * [CombinePSBT](../api/rpc-raw-transactions.md#combinepsbt): combine multiple partially-signed Dimecoin transactions into one transaction.
 * [ConvertToPSBT](../api/rpc-raw-transactions.md#converttopsbt): converts a network serialized transaction to a PSBT.
 * [DecodePSBT](../api/rpc-raw-transactions.md#decodepsbt): returns a JSON object representing the serialized, base64-encoded partially signed Dimecoin transaction.
 * [FinalizePSBT](../api/rpc-raw-transactions.md#finalizepsbt): finalizes the inputs of a PSBT.
+```
 
 ### CreateRawTransaction
 
@@ -264,13 +263,13 @@ Result:
 acc0a8f9be010000001976a914811eacc14db8ebb5b64486dc43400c0226b428a488ac00000000
 ```
 
-*See also*
-
+```{seealso}
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [SignRawTransactionWithKey](#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
 * [Serialized Transaction Format](../reference/transactions-raw-transaction-format.md)
+```
 
 ### DecodePSBT
 
@@ -543,12 +542,12 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [SignRawTransactionWithKey](#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
+```
 
 ### DecodeScript
 
@@ -599,9 +598,9 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [CreateMultiSig](../api/rpc-utility.md#createmultisig): creates a P2SH multi-signature address.
+```
 
 ### FinalizePSBT
 
@@ -643,12 +642,12 @@ Result:
 }
 ```
 
-*See also:*
-
+```{seealso}
 * [CreatePSBT](../api/rpc-raw-transactions.md#createpsbt): creates a transaction in the Partially Signed Transaction (PST) format.
 * [CombinePSBT](../api/rpc-raw-transactions.md#combinepsbt): combine multiple partially-signed Dimecoin transactions into one transaction.
 * [ConvertToPSBT](../api/rpc-raw-transactions.md#converttopsbt): converts a network serialized transaction to a PSBT.
 * [DecodePSBT](../api/rpc-raw-transactions.md#decodepsbt): returns a JSON object representing the serialized, base64-encoded partially signed Dimecoin transaction.
+```
 
 ### FundRawTransaction
 
@@ -716,13 +715,13 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [SignRawTransactionWithKey](#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
 * [Serialized Transaction Format](../reference/transactions-raw-transaction-format.md)
+```
 
 ```{eval-rst}
 .. _api-rpc-raw-transactions-getrawtransaction:
@@ -988,9 +987,9 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetTransaction](../api/rpc-wallet.md#gettransaction): gets detailed information about an in-wallet transaction.
+```
 
 ### SendRawTransaction
 
@@ -1035,12 +1034,12 @@ Result:
 2f124cb550d9967b81914b544dea3783de23e85d67a9816f9bada665ecfe1cd5
 ```
 
-*See also*
-
+```{seealso}
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [SignRawTransactionWithKey](#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
+```
 
 ### SignRawTransactionWithKey
 
@@ -1105,12 +1104,12 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
+```
 
 ### TestMemPoolAccept
 
@@ -1155,10 +1154,10 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
 * [SignRawTransactionWithKey](#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
+```

@@ -127,11 +127,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetMiningInfo](../api/rpc-mining.md##getmininginfo): returns various mining-related information.
 * [SubmitBlock](../api/rpc-mining.md##submitblock): accepts a block, verifies it is a valid addition to the blockchain, and broadcasts it to the network. Extra parameters are ignored by Dimecoin Core but may be used by mining pools or other programs.
 * [PrioritiseTransaction](../api/rpc-mining.md##prioritisetransaction): adds virtual priority or fee to a transaction, allowing it to be accepted into blocks mined by this node (or miners which use this node) with a lower priority or fee. (It can also remove virtual priority or fee, requiring the transaction have a higher priority or fee to be accepted into a locally-mined block.)
+```
 
 #### GetMiningInfo
 
@@ -178,11 +178,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetMemPoolInfo](../api/rpc-blockchain.md##getmempoolinfo): returns information about the node's current transaction memory pool.
 * [GetRawMemPool](../api/rpc-blockchain.md##getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
 * [GetBlockTemplate](../api/rpc-mining.md##getblocktemplate): gets a block template or proposal for use with mining software.
+```
 
 #### GetNetworkHashPS
 
@@ -221,10 +221,10 @@ Result:
 938189.1678726483
 ```
 
-*See also*
-
+```{seealso}
 * [GetDifficulty](../api/rpc-blockchain.md##getdifficulty): returns the proof-of-work and proof-of-stake difficulties as a multiple of the minimum difficulty.
 * [GetBlock](../api/rpc-blockchain.md##getblock): gets a block with a particular header hash from the local block database either as a JSON object or as a serialized block.
+```
 
 #### PrioritiseTransaction
 
@@ -248,10 +248,10 @@ Name | Type | Presence | Description
 --- | --- | --- | ---
 `result` | bool (true only) | Required<br>(exactly 1) | Always set to `true` if all three parameters are provided.  Will not return an error if the TXID is not in the memory pool.  If fewer or more than three arguments are provided, or if something goes wrong, will be set to `null`
 
-*See also*
-
+```{seealso}
 * [GetRawMemPool](../api/rpc-blockchain.md##getrawmempool): returns all transaction identifiers (TXIDs) in the memory pool as a JSON array, or detailed information about each transaction in the memory pool as a JSON object.
 * [GetBlockTemplate](../api/rpc-mining.md##getblocktemplate): gets a block template or proposal for use with mining software.
+```
 
 #### SubmitBlock
 
@@ -294,6 +294,6 @@ Result (the block above was already on a copy of the local chain):
 duplicate
 ```
 
-*See also*
-
+```{seealso}
 * [GetBlockTemplate](../api/rpc-mining.md##getblocktemplate): gets a block template or proposal for use with mining software.
+```
