@@ -546,7 +546,7 @@ The format and maximum size limitations of the [`notfound` message](p2p-network.
 
 ### tx
 
-The [`tx` message](p2p-network.md#tx) transmits a single transaction in the [raw transaction](../reference/glossary.md#raw-transaction) format. It can be sent in a variety of situations;
+The [`tx` message](p2p-network.md#tx) transmits a single transaction in the [raw transaction](../reference/glossary.md#raw-transaction) format. It can be sent in a variety of situations:
 
 * **Transaction Response:** Dimecoin Core will send it in response to a [`getdata` message](p2p-network.md#getdata) that requests the transaction with an [inventory](../reference/glossary.md#inventory)  type of `MSG_TX`.
 
