@@ -202,18 +202,32 @@ dimecore/wallet-configuration-file
 
 ```{toctree}
 :maxdepth: 2
+:titlesonly: 
+:caption: General User Guide
+:hidden:
+
+userguide/introduction
+userguide/receiving-coins
+userguide/sending-coins
+userguide/wallet-operations
+userguide/recovery
+userguide/rescan-reindex
+```
+
+```{toctree}
+:maxdepth: 2
 :caption: Additional Resources
 :hidden:
 
-chain-analysis-tokenomics/chain-analysis-tokenomics
-legacy-android-wallet/legacy-android
-paper-wallet/paper-wallet
+userguide/chain-analysis-tokenomics
+userguide/legacy-android
+userguide/paper-wallet
 ```
 
 Questions about Dimecoin development are best asked in one of the [Dimecoin Social
 Communities](https://dimecoinnetwork.com/socials). Errors or suggestions related to
 documentation can be submitted as via the "Edit this page" button on the top,
-right of each page.
+right of each page. For basic operation and general use guidance for Dimecoin-QT, see the [User Guide Section](../user-guide/introduction.md).
 
 ```{eval-rst}
 
