@@ -58,7 +58,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         +++
         :ref:`Click to begin <examples-index>`
 
-    .. grid-item-card:: Dimecoin Core
+    .. grid-item-card:: Dimecoin Core Wallet
         :margin: 2 2 auto auto
         :link-type: ref
         :link: dimecore-arguments-and-commands
@@ -66,7 +66,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         Dimecoin Core Configuration and Usage
         
         +++
-        :ref:`Click to Begin <examples-index>`
+        :ref:`Click to Begin <dimecore-arguments-and-commands>`
 
     .. grid-item-card:: Glossary
         :margin: 2 2 auto auto
