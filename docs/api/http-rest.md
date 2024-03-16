@@ -10,9 +10,9 @@
 
 ## HTTP REST
 
->**NOTE:** Privacy
->
-> **Warning:** A web browser can access a HTTP REST interface running on localhost, possibly allowing third parties to use cross-site scripting attacks to download your transaction and block data, reducing your privacy.  If you have privacy concerns, you should not run a browser on the same computer as a REST-enabled Dimecoin Core node.
+```{warning}
+A web browser can access a HTTP REST interface running on localhost, possibly allowing third parties to use cross-site scripting attacks to download your transaction and block data, reducing your privacy.  If you have privacy concerns, you should not run a browser on the same computer as a REST-enabled Dimecoin Core node.
+```
 
 Dimecoin Core provides an **unauthenticated** HTTP REST interface.  The interface runs on the same port as the JSON-RPC interface, by default port 9998 for [mainnet](../reference/glossary.md#mainnet) and port 19998 for [testnet](../reference/glossary.md#testnet). It must be enabled by either starting Dimecoin Core with the `-rest` option or by specifying `rest=1` in the configuration file. Make sure that the RPC interface is also activated. Set `server=1` in `dash.conf` or supply the `-server` argument when starting Dimecoin Core. Starting Dimecoin Core with `dimecoind` automatically enables the RPC interface.
 

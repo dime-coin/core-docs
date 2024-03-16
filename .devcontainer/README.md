@@ -13,7 +13,9 @@ re-build the docs after making changes, simply run this command from the termina
 make html
 ```
 
-Note: you may need go to the main menu, click `View`, then `Terminal` if the terminal isn't visible.
+```{note}
+You may need go to the main menu, click `View`, then `Terminal` if the terminal isn't visible.
+```
 
 ## Viewing the preview
 

@@ -474,7 +474,9 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 1d ................................. Flags: 1 0 1 1 1 0 0 0
 ```
 
-Note: when fully decoded, the above [`merkleblock` message](p2p-network.md#merkleblock) provided the TXID for a single transaction that matched the filter. In the [network](../reference/glossary.md#network) traffic dump this output was taken from, the full transaction belonging to that TXID was sent immediately after the [`merkleblock` message](p2p-network.md#merkleblock) as a [`tx` message](p2p-network.md#tx).
+```{note}
+When fully decoded, the above [`merkleblock` message](p2p-network.md#merkleblock) provided the TXID for a single transaction that matched the filter. In the [network](../reference/glossary.md#network) traffic dump this output was taken from, the full transaction belonging to that TXID was sent immediately after the [`merkleblock` message](p2p-network.md#merkleblock) as a [`tx` message](p2p-network.md#tx).
+```
 
 #### Parsing A MerkleBlock Message
 
@@ -604,7 +606,9 @@ Because the element is sent directly to the receiving peer, there is no obfuscat
 | *Varies* | element bytes | compactSize uint | The number of bytes in the following element field.
 | *Varies* | element       | uint8_t[]        | The element to add to the current filter.  Maximum of 520 bytes, which is the maximum size of an element which can be pushed onto the stack in a pubkey or signature script.  Elements must be sent in the byte order they would use when appearing in a raw transaction; for example, hashes should be sent in internal byte order.
 
-Note: a [`filteradd` message](p2p-network.md#filteradd) will not be accepted unless a filter was previously set with the [`filterload` message](p2p-network.md#filterload).
+```{note}
+A [`filteradd` message](p2p-network.md#filteradd) will not be accepted unless a filter was previously set with the [`filterload` message](p2p-network.md#filterload).
+```
 
 The annotated hexdump below shows a [`filteradd` message](p2p-network.md#filteradd) adding a [TXID](../reference/glossary.md#transaction-identifiers). (The message header has been omitted.) This TXID appears in the same block used for the example hexdump in the [`merkleblock` message](p2p-network.md#merkleblock); if that [`merkleblock` message](p2p-network.md#merkleblock) is re-sent after sending this [`filteradd` message](p2p-network.md#filteradd), six hashes are returned instead of four.
 

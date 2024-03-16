@@ -10,16 +10,16 @@
 
 ## Wallet RPCs (Deprecated)
 
->**NOTE**
->
-> RPCs that require wallet support are **not available on masternodes** for security reasons. Such RPCs are designated with a "*Requires wallet support*" message.
->
+```{note}
+RPCs that require wallet support are **not available on masternodes** for security reasons. Such RPCs are designated with a "*Requires wallet support*" message.
+```
+
 
 ### GetAccount
 
-> **NOTE**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getaccount` RPC](../api/rpc-wallet-deprecated.md#getaccount) returns the name of the account associated with the given address.
 
@@ -53,9 +53,9 @@ doc test
 
 ### GetAccountAddress
 
-> **NOTE**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getaccountaddress` RPC](../api/rpc-wallet-deprecated.md#getaccountaddress) returns the current Dimecoin address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address.
 
@@ -93,9 +93,9 @@ Result:
 
 ### GetAddressesByAccount
 
-> **NOTE**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getaddressesbyaccount` RPC](../api/rpc-wallet-deprecated.md#getaddressesbyaccount) returns a list of every address assigned to a particular account.
 
@@ -136,11 +136,11 @@ Result:
 
 ### SetAccount
 
-> **NOTE**
->
-> **Warning:** `setaccount` will be removed in a later version of Dimecoin Core.  Use the RPCs listed in the *See Also* subsection below instead.
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{warning}
+`setaccount` will be removed in a later version of Dimecoin Core.  Use the RPCs listed in the *See Also* subsection below instead.
+
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`setaccount` RPC](../api/rpc-wallet-deprecated.md#setaccount) puts the specified address in the given account.
 

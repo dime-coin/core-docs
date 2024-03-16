@@ -112,7 +112,9 @@
 
 ### [Wallet RPCs](../api/rpc-wallet.md)
 
-**Note:** the wallet RPCs are only available if Dimecoin Core was built with [wallet support](../reference/glossary.md#wallet-support), which is the default.
+```{note}
+The wallet RPCs are only available if Dimecoin Core was built with [wallet support](../reference/glossary.md#wallet-support), which is the default.
+```
 
 * [AbandonTransaction](../api/rpc-wallet.md#abandontransaction): marks an in-wallet transaction and all its in-wallet descendants as abandoned. This allows their inputs to be respent.
 * [AbortRescan](../api/rpc-wallet.md#abortrescan): stops current wallet rescan.
@@ -163,7 +165,9 @@
 
 ### [Wallet RPCs (Deprecated)](../api/rpc-wallet-deprecated.md)
 
-**Note:** the wallet RPCs are only available if Dimecoin Core was built with [wallet support](../reference/glossary.md#wallet-support), which is the default.
+```{note}
+The wallet RPCs are only available if Dimecoin Core was built with [wallet support](../reference/glossary.md#wallet-support), which is the default.
+```
 
 * [GetAccount](../api/rpc-wallet-deprecated.md#getaccount): returns the name of the account associated with the given address. ***Deprecated_**
 * [GetAccountAddress](../api/rpc-wallet-deprecated.md#getaccountaddress): returns the current dimecoin address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address. ***Deprecated_**

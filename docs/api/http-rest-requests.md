@@ -815,9 +815,9 @@ Result (whitespace added):
 
 The `GET tx` operation gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dimecoin Core only stores complete transaction data for UTXOs and your own transactions, so this method may fail on historic transactions unless you use the non-default `txindex=1` in your Dimecoin Core startup settings.
 
-> **NOTE:**
->
-> If you begin using `txindex=1` after downloading the blockchain, you must rebuild your indexes by starting Dimecoin Core with the option  `-reindex`.  This may take several hours to complete, during which time your node will not process new blocks or transactions. This reindex only needs to be done once.
+```{note}
+If you begin using `txindex=1` after downloading the blockchain, you must rebuild your indexes by starting Dimecoin Core with the option  `-reindex`.  This may take several hours to complete, during which time your node will not process new blocks or transactions. This reindex only needs to be done once.
+```
 
 *Request*
 

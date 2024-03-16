@@ -652,16 +652,17 @@ Result:
 
 ### FundRawTransaction
 
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{important}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`fundrawtransaction` RPC](../api/rpc-raw-transactions.md#fundrawtransaction) adds inputs to a transaction until it has enough in value to meet its out value.  This will not modify existing inputs, and will add one change output to the outputs.  
-Note that inputs which were signed may need to be resigned after completion since in/outputs have been added.  The inputs added will not be signed, use signrawtransaction for that.  
-All existing inputs must have their previous output transaction be in the wallet.
-Note that all inputs selected must be of standard form and P2SH scripts must be
-in the wallet using importaddress or addmultisigaddress (to calculate fees).
-You can see whether this is the case by checking the "solvable" field in the listunspent output.
-Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported for watch-only
+
+```{note}
+Inputs which were signed may need to be resigned after completion since in/outputs have been added. The inputs added will not be signed, use signrawtransaction for that.  
+All existing inputs must have their previous output transaction be in the wallet. All inputs selected must be of standard form and P2SH scripts must be in the wallet using importaddress or addmultisigaddress (to calculate fees). You can see whether this is the case by checking the "solvable" field in the listunspent output.
+Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported for watch-only.
+```
 
 *Parameter #1---The hex string of the raw transaction*
 
@@ -671,7 +672,9 @@ Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported 
 
 *Parameter #2---Additional options*
 
-Note: For backwards compatibility, passing in a `true` instead of an object will result in `{"includeWatching": true}`.
+```{note}
+For backwards compatibility, passing in a `true` instead of an object will result in `{"includeWatching": true}`.
+```
 
 | Name                           | Type               | Presence                | Description|
 | ------------------------------ | ------------------ | ----------------------- | ---------- |
@@ -733,9 +736,9 @@ Note: By default this function only works for mempool transactions. When called 
 
 As of Dimecoin Core 2.0.0.0, transactions with unspent outputs will no longer be included unless `-txindex` is enabled.
 
-> Reindex Note
->
-> If you begin using `txindex=1` after downloading the blockchain, you must rebuild your indexes by starting Dimecoin Core with the option  `-reindex`.  This may take several hours to complete, during which time your node will not process new blocks or transactions. This reindex only needs to be done once.
+```{note}
+If you begin using `txindex=1` after downloading the blockchain, you must rebuild your indexes by starting Dimecoin Core with the option  `-reindex`.  This may take several hours to complete, during which time your node will not process new blocks or transactions. This reindex only needs to be done once.
+```
 
 *Parameter #1---the TXID of the transaction to get*
 

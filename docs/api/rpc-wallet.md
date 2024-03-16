@@ -11,11 +11,9 @@
 
 ## Wallet RPCs
 
-> **NOTE:**
->
-> Wallet Support
->
-> RPCs that require wallet support are **not available on masternodes** for security reasons. Such RPCs are designated with a "*Requires wallet support*" message.
+```{admonition} Wallet Support
+RPCs that require wallet support are **not available on masternodes** for security reasons. Such RPCs are designated with a "*Requires wallet support*" message.
+```
 
 ### AbandonTransaction
 
@@ -43,9 +41,9 @@ dimecoin-cli abandontransaction fa3970c341c9f5de6ab13f128cbfec58d732e736a505fe32
 
 Result (no output from `dimecoin-cli` because result is set to `null`).
 
-*See also*
-
+```{seealso}
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
+```
 
 ### AbortRescan
 
@@ -75,13 +73,15 @@ Result:
 true
 ```
 
-*See also: none*
+```{seealso}
+*none*
+```
 
 ### AddMultiSigAddress
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`addmultisigaddress` RPC](../api/rpc-wallet.md#addmultisigaddress) adds a P2SH multisig address to the wallet. Each key is a Dimecoin address or hex-encoded public key. This functionality is only intended for use with non-watchonly addresses. See [`importaddress` RPC](../api/rpc-wallet.md#importaddress) for watchonly p2sh address support. If 'label' is specified, assign address to that label.
 
@@ -137,16 +137,16 @@ Result:
 
 (New P2SH multisig address also stored in wallet.)
 
-*See also*
-
+```{seealso}
 * [CreateMultiSig](../api/rpc-utility.md#createmultisig): creates a P2SH multi-signature address.
 * [DecodeScript](../api/rpc-raw-transactions.md#decodescript): decodes a hex-encoded P2SH redeem script.
+```
 
 ### BackupWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`backupwallet` RPC](../api/rpc-wallet.md#backupwallet) safely copies `wallet.dat` to the specified file, which can be a directory or a path with filename.
 
@@ -168,15 +168,15 @@ The [`backupwallet` RPC](../api/rpc-wallet.md#backupwallet) safely copies `walle
 dimecoin-cli -mainnet backupwallet /tmp/backup.dat
 ```
 
-*See also*
-
+```{seealso}
 * [ImportWallet](../api/rpc-wallet.md#importwallet): imports private keys from a file in wallet dump file format. These keys will be added to the keys currently in the wallet. This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
+```
   
 ## CreateWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`createwallet` RPC](../api/remote-procedure-calls-wallet.md#createwallet) creates and loads a new wallet.
 
@@ -221,19 +221,19 @@ Result:
 }
 ```
 
-> **NOTE:**
->
-> In the example above, a new directory named `new-wallet` was created in the current data directory (`~/.dimecoincore/testnet3/`). This new directory contains the wallet.dat file and other related wallet files for the new wallet.
+```{note}
+In the example above, a new directory named `new-wallet` was created in the current data directory (`~/.dimecoincore/testnet3/`). This new directory contains the wallet.dat file and other related wallet files for the new wallet.
+```
 
-*See also*
-
+```{seealso}
 * [LoadWallet](../api/remote-procedure-calls-wallet.md#loadwallet): loads a wallet from a wallet file or directory.
+```
 
 ### DumpPrivKey
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```
 
 The [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey) returns the wallet-import-format (WIP) private key corresponding to an address. (But does not remove it from the wallet.)
 
@@ -261,16 +261,16 @@ Result:
 dQZZ4awQvcDHyFS3CmURqSgeTobQm9t9nyUr337kvUtsWsnvvQyw
 ```
 
-*See also*
-
+```seealso
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 * [DumpWallet](../api/rpc-wallet.md#dumpwallet): creates or overwrites a file with all wallet keys in a human-readable format.
+```
 
 ## DumpWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```
 
 The [`dumpwallet` RPC](../api/remote-procedure-calls-wallet.md#dumpwallet) creates or overwrites a file with all wallet keys in a human-readable format.
 
@@ -331,20 +331,22 @@ cQM7KoqQjHCCTrDhnfBEY1vpW9W65zRvaQeTb41UbFb6WX8Q8UkQ 2018-12-14T17:24:37Z change
 cTGSKYaQTQabnjNSwCqpjYXiucVujTXiwp9dzmJV9cNAiayAJusi 2018-12-14T17:24:37Z change=1 # addr=ybQYgp21ZyZK8JuMLb2CVwG4TaWrXVXD5M
 ```
 
-*See also*
-
+```{seealso}
 * [BackupWallet](../api/remote-procedure-calls-wallet.md#backupwallet): safely copies `wallet.dat` to the specified file, which can be a directory or a path with filename.
 * [ImportWallet](../api/remote-procedure-calls-wallet.md#importwallet): imports private keys from a file in wallet dump file format (see the [`dumpwallet` RPC](../api/remote-procedure-calls-wallet.md#dumpwallet)). These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
+```
 
 ### EncryptWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`encryptwallet` RPC](../api/rpc-wallet.md#encryptwallet) encrypts the wallet with a passphrase.  This is only to enable encryption for the first time. After encryption is enabled, you will need to enter the passphrase to use private keys.
 
-> **Warning:** if using this RPC on the command line, remember that your shell probably saves your command lines (including the value of the passphrase parameter). In addition, there is no RPC to completely disable encryption. If you want to return to an unencrypted wallet, you must create a new wallet and restore your data from a backup made with the [`dumpwallet` RPC](../api/rpc-wallet.md#dumpwallet).
+```{warning}
+If using this RPC on the command line, remember that your shell probably saves your command lines (including the value of the passphrase parameter). In addition, there is no RPC to completely disable encryption. If you want to return to an unencrypted wallet, you must create a new wallet and restore your data from a backup made with the [`dumpwallet` RPC](../api/rpc-wallet.md#dumpwallet).
+```
 
 *Parameter #1---a passphrase*
 
@@ -373,19 +375,23 @@ HD). You need to make a new backup.
 
 ```
 
-*See also*
-
+```{seealso}
 * [WalletPassphrase](../api/rpc-wallet.md#walletpassphrase): stores the wallet decryption key in memory for the indicated number of seconds. Issuing the `walletpassphrase` command while the wallet is already unlocked will set a new unlock time that overrides the old one.
 * [WalletLock](../api/rpc-wallet.md#walletlock): removes the wallet encryption key from memory, locking the wallet. After calling this method, you will need to call `walletpassphrase` again before being able to call any methods which require the wallet to be unlocked.
 * [WalletPassphraseChange](../api/rpc-wallet.md#walletpassphrasechange): changes the wallet passphrase from 'old passphrase' to 'new passphrase'.
+```
 
 ### GetAddressInfo
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
-The [`getaddressinfo` RPC](../api/rpc-wallet.md#getaddressinfo) returns information about the given Dimecoin address. NOTE:: Some information requires the address to be in the wallet.
+The [`getaddressinfo` RPC](../api/rpc-wallet.md#getaddressinfo) returns information about the given Dimecoin address.
+
+```{important}
+Some information requires the address to be in the wallet.
+```
 
 *Parameter #1---a P2PKH or P2SH address*
 
@@ -481,17 +487,17 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [ImportAddress](../api/rpc-wallet.md#importaddress): adds an address or pubkey script to the wallet without the associated private key, allowing you to watch for transactions affecting that address or pubkey script without being able to spend any of its outputs.
 * [GetNewAddress](../api/rpc-wallet.md#getnewaddress): returns a new DIME address for receiving payments. If an account is specified, payments received with the address will be credited to that account.
 * [ValidateAddress](../api/rpc-utility.md#validateaddress): returns information about the given DIME address.
+```
 
 ### GetAddressesByLabel
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getaddressesbylabel` RPC](../api/rpc-wallet.md#getaddressesbylabel) returns a list of every address assigned to a particular label.
 
@@ -527,16 +533,16 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetAccount](../api/rpc-wallet-deprecated.md#getaccount): returns the name of the account associated with the given address.
 * [GetBalance](../api/rpc-wallet.md#getbalance): gets the balance in decimal DIME across all accounts or for a particular account.
+```
 
 ### GetBalance
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getbalance` RPC](../api/rpc-wallet.md#getbalance) gets the total *available balance* in DIME. The *available balance* is what the wallet considers currently spendable, and is thus affected by options which limit spendability such as `-spendzeroconfchange`.
 
@@ -602,11 +608,11 @@ Result:
 1.00000
 ```
 
-*See also*
-
+```{seealso}
 * [ListAccounts](../api/rpc-removed.md#listaccounts): lists accounts and their balances.
 * [GetReceivedByAccount](../api/rpc-removed.md#getreceivedbyaccount): returns the total amount received by addresses in a particular account from transactions with the specified number of confirmations.  It does not count coinbase transactions.
 * [GetReceivedByAddress](../api/rpc-wallet.md#getreceivedbyaddress): returns the total amount received by the specified address in transactions with the specified number of confirmations. It does not count coinbase transactions.
+```
 
 ### GetNewAddress
 
@@ -641,17 +647,17 @@ Result:
 7DAUpYSaWUFvP7PJbYoWb9gJg9xEmMiPYU
 ```
 
-*See also*
-
+```{seealso}
 * [GetAccountAddress](../api/rpc-wallet-deprecated.md#getaccountaddress): returns the current Dimecoin address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address.
 * [GetRawChangeAddress](../api/rpc-wallet.md#getrawchangeaddress): returns a new Dimecoin address for receiving change. This is for use with raw transactions, not normal use.
 * [GetBalance](../api/rpc-wallet.md#getbalance): gets the balance in decimal DIME across all accounts or for a particular account.
+```
 
 ### GetRawChangeAddress
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getrawchangeaddress` RPC](../api/rpc-wallet.md#getrawchangeaddress) returns a new DIME address for receiving change. This is for use with raw transactions, not normal use.
 
@@ -675,18 +681,18 @@ Result:
 7E6mZQV4Yv31vgAjncwS6aarecgXf8gsKw
 ```
 
-*See also*
-
+```{seealso}
 * [GetNewAddress](../api/rpc-wallet.md#getnewaddress): returns a new DIME address for receiving payments. If an account is specified, payments received with the address will be credited to that account.
 * [GetAccountAddress](../api/rpc-wallet-deprecated.md#getaccountaddress): returns the current Dimecoin address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address.
+```
 
 ### GetReceivedByAddress
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
->
-> *This RPC only returns a balance for addresses contained in the local wallet.*
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+
+*This RPC only returns a balance for addresses contained in the local wallet.*
+```
 
 The [`getreceivedbyaddress` RPC](../api/rpc-wallet.md#getreceivedbyaddress) returns the total amount received by the specified address in transactions with the specified number of confirmations. It does not count coinbase transactions.
 
@@ -742,17 +748,17 @@ Result:
 0.30000
 ```
 
-*See also*
-
+```{seealso}
 * [GetReceivedByAccount](../api/rpc-removed.md#getreceivedbyaccount): returns the total amount received by addresses in a particular account from transactions with the specified number of confirmations.  It does not count coinbase transactions.
 * [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account.
 * [ListAccounts](../api/rpc-removed.md#listaccounts): lists accounts and their balances.
+```
 
 ### GetReceivedByLabel
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getreceivedbylabel` RPC](../api/rpc-wallet.md#getreceivedbylabel) returns the total amount received by addresses with <label> in transactions with specified minimum number of confirmations.
 
@@ -794,11 +800,11 @@ Result:
 0.30000
 ```
 
-*See also*
-
+```{seealso}
 * [GetReceivedByAddress](../api/rpc-wallet.md#getreceivedbyaddress): returns the total amount received by the specified address in transactions with the specified number of confirmations. It does not count coinbase transactions.
 * [GetAddressesByLabel](../api/rpc-wallet.md#getaddressesbylabel): returns a list of every address assigned to a particular label.
 * [ListLabels](../api/rpc-wallet.md#listlabels): lists labels.
+```
 
 ```{eval-rst}
 .. _api-rpc-wallet-gettransaction:
@@ -806,9 +812,9 @@ Result:
 
 ### GetTransaction
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`gettransaction` RPC](../api/rpc-wallet.md#gettransaction) gets detailed information about an in-wallet transaction.
 
@@ -902,15 +908,15 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [GetRawTransaction](../api/rpc-raw-transactions.md#getrawtransaction): gets a hex-encoded serialized transaction or a JSON object describing the transaction. By default, Dimecoin Core only stores complete transaction data for UTXOs and your own transactions, so the RPC may fail on historic transactions unless you use the non-default `txindex=1` in your Dimecoin Core startup settings.
+```
 
 ### GetUnconfirmedBalance
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getunconfirmedbalance` RPC](../api/rpc-wallet.md#getunconfirmedbalance) returns the wallet's total unconfirmed balance.
 
@@ -934,15 +940,15 @@ Result (no unconfirmed incoming payments):
 0.00000
 ```
 
-*See also*
-
+```{seealso}
 * [GetBalance](../api/rpc-wallet.md#getbalance): gets the balance in decimal DIME across all accounts or for a particular account.
+```
 
 ### GetWalletInfo
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`getwalletinfo` RPC](../api/rpc-wallet.md#getwalletinfo) provides information about the wallet.
 
@@ -991,15 +997,15 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [ListTransactions](../api/rpc-wallet.md#listtransactions): returns the most recent transactions that affect the wallet.
+```
 
 ### ImportAddress
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**)
+```
 
 The [`importaddress` RPC](../api/rpc-wallet.md#importaddress) adds an address or pubkey script to the wallet without the associated private key, allowing you to watch for transactions affecting that address or pubkey script without being able to spend any of its outputs.
 
@@ -1059,16 +1065,16 @@ Result:
 watch-only test
 ```
 
-*See also*
-
+```{seealso}
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 * [ListReceivedByAddress](../api/rpc-wallet.md#listreceivedbyaddress): lists the total number of DIME received by each address.
+```
 
 ### ImportMulti
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Wallet must be unlocked.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Wallet must be unlocked.
+```
 
 The [`importmulti` RPC](../api/rpc-wallet.md#importmulti) imports addresses or scripts (with private keys, public keys, or P2SH redeem scripts) and optionally performs the minimum necessary rescan for all imports.
 
@@ -1143,17 +1149,17 @@ Result (scriptPubKey import failed because `internal` was not set to `true`):
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 * [ImportAddress](../api/rpc-wallet.md#importaddress): adds an address or pubkey script to the wallet without the associated private key, allowing you to watch for transactions affecting that address or pubkey script without being able to spend any of its outputs.
 * [ImportWallet](../api/rpc-wallet.md#importwallet): imports private keys from a file in wallet dump file format (see the [`dumpwallet` RPC](../api/rpc-wallet.md#dumpwallet)). These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
+```
 
 ### ImportPrivKey
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Wallet must be unlocked.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Wallet must be unlocked.
+```
 
 The [`importprivkey` RPC](../api/rpc-wallet.md#importprivkey) adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 
@@ -1173,7 +1179,7 @@ The [`importprivkey` RPC](../api/rpc-wallet.md#importprivkey) adds a private key
 
 | Name   | Type | Presence             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ------ | ---- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet (including transaction affecting the newly-added address for this private key).  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  NOTE:s: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
+| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet (including transaction affecting the newly-added address for this private key).  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  NOTE: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
 
 *Result---`null` on success*
 
@@ -1196,19 +1202,19 @@ dimecoin-cli -mainnet importprivkey \
 
 (Success: no result displayed.)
 
-*See also*
-
+```{seealso}
 * [DumpPrivKey](../api/rpc-wallet.md#dumpprivkey): returns the wallet-import-format (WIP) private key corresponding to an address. (But does not remove it from the wallet.)
 * [ImportAddress](../api/rpc-wallet.md#importaddress): adds an address or pubkey script to the wallet without the associated private key, allowing you to watch for transactions affecting that address or pubkey script without being able to spend any of its outputs.
 * [ImportPubKey](../api/rpc-wallet.md#importpubkey): imports a public key (in hex) that can be watched as if it were in your wallet but cannot be used to spend
 * [ImportWallet](../api/rpc-wallet.md#importwallet): imports private keys from a file in wallet dump file format (see the [`dumpwallet` RPC](../api/rpc-wallet.md#dumpwallet)). These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
+```
 
 ### ImportPrunedFunds
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
-> *As of Dimecoin Core 2.0.0.0 pruned wallets are not supported*
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+*As of Dimecoin Core 2.0.0.0 pruned wallets are not supported*
+```
 
 The [`importprunedfunds` RPC](../api/rpc-wallet.md#importprunedfunds) imports funds without the need of a rescan. Meant for use with pruned wallets. Corresponding address or script must previously be included in wallet.  
 The end-user is responsible to import additional transactions that subsequently spend the imported  
@@ -1240,10 +1246,10 @@ dimecoin-cli importprunedfunds "txhex" "txoutproof"
 
 (Success: no result displayed.)
 
-*See also*
-
+```{seeealso}
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 * [RemovePrunedFunds](../api/rpc-wallet.md#removeprunedfunds): deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds.
+```
 
 ### ImportPubKey
 
@@ -1265,7 +1271,7 @@ The [`importpubkey` RPC](../api/rpc-wallet.md#importpubkey) imports a public key
 
 | Name   | Type | Presence             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------ | ---- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet.  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  NOTE:s: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
+| Rescan | bool | Optional<br>(0 or 1) | Set to `true` (the default) to rescan the entire local block database for transactions affecting any address or pubkey script in the wallet.  Set to `false` to not rescan the block database (rescanning can be performed at any time by restarting Dimecoin Core with the `-rescan` command-line argument).  Rescanning may take several minutes.  NOTE: if the address for this key is already in the wallet, the block database will not be rescanned even if this parameter is set |
 
 *Result---`null` on success*
 
@@ -1287,17 +1293,17 @@ dimecoin-cli -mainnet importpubkey \
 
 (Success: no result displayed.)
 
-*See also:*
-
+```{seealso}
 * [ImportAddress](../api/rpc-wallet.md#importaddress): adds an address or pubkey script to the wallet without the associated private key, allowing you to watch for transactions affecting that address or pubkey script without being able to spend any of its outputs.
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 * [ImportWallet](../api/rpc-wallet.md#importwallet): imports private keys from a file in wallet dump file format (see the [`dumpwallet` RPC](../api/rpc-wallet.md#dumpwallet)). These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
+```
 
 ### ImportWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```
 
 The [`importwallet` RPC](../api/rpc-wallet.md#importwallet) imports private keys from a file in wallet dump file format (see the [`dumpwallet` RPC](../api/rpc-wallet.md#dumpwallet)). These keys will be added to the keys currently in the wallet.  This call may need to rescan all or parts of the blockchain for transactions affecting the newly-added keys, which may take several minutes.
 
@@ -1323,16 +1329,16 @@ dimecoin-cli -mainnet importwallet /tmp/dump.txt
 
 (Success: no result displayed.)
 
-*See also*
-
+```{seealso}
 * [DumpWallet](../api/rpc-wallet.md#dumpwallet): creates or overwrites a file with all wallet keys in a human-readable format.
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
+```
 
 ### KeyPoolRefill
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```
 
 The [`keypoolrefill` RPC](../api/rpc-wallet.md#keypoolrefill) fills the cache of unused pre-generated keys (the keypool).
 
@@ -1358,17 +1364,17 @@ dimecoin-cli -mainnet keypoolrefill 1001
 
 (No result shown: success.)
 
-*See also*
-
+```{seealso}
 * [GetNewAddress](../api/rpc-wallet.md#getnewaddress): returns a new DIME address for receiving payments. If an account is specified, payments received with the address will be credited to that account.
 * [GetAccountAddress](../api/rpc-wallet-deprecated.md#getaccountaddress): returns the current DIME address for receiving payments to this account. If the account doesn't exist, it creates both the account and a new address for receiving payment.  Once a payment has been received to an address, future calls to this RPC for the same account will return a different address.
 * [GetWalletInfo](../api/rpc-wallet.md#getwalletinfo): provides information about the wallet.
+```
 
 ### ListAddressGroupings
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`listaddressgroupings` RPC](../api/rpc-wallet.md#listaddressgroupings) lists groups of addresses that may have had their common ownership made public by common use as inputs in the same transaction or from being used as change from a previous transaction.
 
@@ -1448,17 +1454,17 @@ Result (edited to only three results):
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetAddressesByAccount](../api/rpc-wallet-deprecated.md#getaddressesbyaccount): returns a list of every address assigned to a particular account.
 * [GetTransaction](../api/rpc-wallet.md#gettransaction): gets detailed information about an in-wallet transaction.
 * [ListAddressBalances](../api/rpc-wallet.md#listaddressbalances): lists addresses of this wallet and their balances
+```
 
 ### ListLabels
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`listlabels` RPC](../api/rpc-wallet.md#listlabels) returns the list of all labels, or labels that are assigned to addresses with a specific purpose.
 
@@ -1494,16 +1500,16 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetAddressesByLabel](../api/rpc-wallet.md#getaddressesbylabel): returns the list of addresses assigned the specified label.
 * [ListReceivedByLabel](../api/rpc-wallet.md#listreceivedbylabel): lists the total number of DIME received by each label.
+```
 
 ### ListLockUnspent
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`listlockunspent` RPC](../api/rpc-wallet.md#listlockunspent) returns a list of temporarily unspendable (locked) outputs.
 
@@ -1535,15 +1541,15 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [LockUnspent](../api/rpc-wallet.md#lockunspent): temporarily locks or unlocks specified transaction outputs. A locked transaction output will not be chosen by automatic coin selection when spending DIME. Locks are stored in memory only, so nodes start with zero locked outputs and the locked output list is always cleared when a node stops or fails.
+```
 
 ### ListReceivedByAddress
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`listreceivedbyaddress` RPC](../api/rpc-wallet.md#listreceivedbyaddress) lists the total number of DIME received by each address.
 
@@ -1629,15 +1635,15 @@ Result (edit to show only two entries):
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetReceivedByAddress](../api/rpc-wallet.md#getreceivedbyaddress): returns the total amount received by the specified address in transactions with the specified number of confirmations. It does not count coinbase transactions.
+```
 
 ### ListReceivedByLabel
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`listreceivedbylabel` RPC](../api/rpc-wallet.md#listreceivedbylabel) lists the total number of DIME received by each label.
 
@@ -1698,11 +1704,11 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [ListReceivedByAddress](../api/rpc-wallet.md#listreceivedbyaddress): lists the total number of DIME received by each address.
 * [GetReceivedByAccount](../api/rpc-removed.md#getreceivedbyaccount): returns the total amount received by addresses in a particular account from transactions with the specified number of confirmations.  It does not count coinbase transactions.
 * [GetReceivedByAddress](../api/rpc-wallet.md#getreceivedbyaddress): returns the total amount received by the specified address in transactions with the specified number of confirmations. It does not count coinbase transactions.
+```
 
 ```{eval-rst}
 .. _api-rpc-wallet-listsinceblock:
@@ -1710,9 +1716,9 @@ Result:
 
 ### ListSinceBlock
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`listsinceblock` RPC](../api/rpc-wallet.md#listsinceblock) gets all transactions affecting the wallet which have occurred since a particular block, plus the header hash of a block at a particular depth.
 
@@ -1805,9 +1811,9 @@ Result (edited to show only two payments):
 }
 ```
 
-*See also*
-
+```{seealso}
 * [ListReceivedByAddress](../api/rpc-wallet.md#listreceivedbyaddress): lists the total number of DIME received by each address.
+```
 
 ```{eval-rst}
 .. _api-rpc-wallet-listtransactions:
@@ -1815,9 +1821,9 @@ Result (edited to show only two payments):
 
 ### ListTransactions
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`listtransactions` RPC](../api/rpc-wallet.md#listtransactions) returns the most recent transactions that affect the wallet. If a label name is provided, this will return only incoming transactions paying to addresses with the specified label.
 
@@ -1909,18 +1915,18 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [GetTransaction](../api/rpc-wallet.md#gettransaction): gets detailed information about an in-wallet transaction.
 * [ListSinceBlock](../api/rpc-wallet.md#listsinceblock): gets all transactions affecting the wallet which have occurred since a particular block, plus the header hash of a block at a particular depth.
+```
 
 ### ListUnspent
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
-The [`listunspent` RPC](../api/rpc-wallet.md#listunspent) returns an array of unspent transaction outputs belonging to this wallet. **NOTE::** Outputs affecting watch-only addresses will be returned; see the *spendable* field in the results described below.
+The [`listunspent` RPC](../api/rpc-wallet.md#listunspent) returns an array of unspent transaction outputs belonging to this wallet. **NOTE:** Outputs affecting watch-only addresses will be returned; see the *spendable* field in the results described below.
 
 *Parameter #1---the minimum number of confirmations an output must have*
 
@@ -2033,10 +2039,10 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [ListTransactions](../api/rpc-wallet.md#listtransactions): returns the most recent transactions that affect the wallet.
 * [LockUnspent](../api/rpc-wallet.md#lockunspent): temporarily locks or unlocks specified transaction outputs. A locked transaction output will not be chosen by automatic coin selection when spending DIME. Locks are stored in memory only, so nodes start with zero locked outputs and the locked output list is always cleared when a node stops or fails.
+```
 
 ### ListWallets
 
@@ -2066,16 +2072,17 @@ Result:
   "wallet.dat"
 ]
 ```
-
-*See also: none*
+```{seealso}
+*none*
+```
 
 ### LoadWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
-The [`loadwallet` RPC](../api/rpc-wallet.md#loadwallet) loads a wallet from a wallet file or directory. NOTE: that all wallet command-line options used when starting dimecoind will be applied to the new wallet (eg -zapwallettxes, upgradewallet, rescan, etc).
+The [`loadwallet` RPC](../api/rpc-wallet.md#loadwallet) loads a wallet from a wallet file or directory. **NOTE:** that all wallet command-line options used when starting dimecoind will be applied to the new wallet (eg -zapwallettxes, upgradewallet, rescan, etc).
 
 *Parameter #1---wallet name*
 
@@ -2112,16 +2119,16 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [CreateWallet](../api/rpc-wallet.md#createwallet): creates and loads a new wallet.
 * [UnloadWallet](../api/rpc-wallet.md#unloadwallet): unloads the specified wallet.
+```
 
 ### LockUnspent
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`lockunspent` RPC](../api/rpc-wallet.md#lockunspent) temporarily locks or unlocks specified transaction outputs. A locked transaction output will not be chosen by automatic coin selection when spending DIME. Locks are stored in memory only, so nodes start with zero locked outputs and the locked output list is always cleared when a node stops or fails.
 
@@ -2228,16 +2235,16 @@ Result:
 ]
 ```
 
-*See also*
-
+```{seealso}
 * [ListLockUnspent](../api/rpc-wallet.md#listlockunspent): returns a list of temporarily unspendable (locked) outputs.
 * [ListUnspent](../api/rpc-wallet.md#listunspent): returns an array of unspent transaction outputs belonging to this wallet.
+```
 
 ### RemovePrunedFunds
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`removeprunedfunds` RPC](../api/rpc-wallet.md#removeprunedfunds) deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds. This will effect wallet balances.
 
@@ -2262,10 +2269,10 @@ dimecoin-cli removeprunedfunds cd6daff525b83fa6a569ab50bf7f8f14d6\
 
 (Success: no result displayed.)
 
-*See also*
-
+```{seealso}
 * [ImportPrivKey](../api/rpc-wallet.md#importprivkey): adds a private key to your wallet. The key should be formatted in the wallet import format created by the [`dumpprivkey` RPC](../api/rpc-wallet.md#dumpprivkey).
 * [ImportPrunedFunds](../api/rpc-wallet.md#importprunedfunds): imports funds without the need of a rescan. Meant for use with pruned wallets.
+```
 
 ### RescanBlockChain
 
@@ -2306,15 +2313,15 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [AbortRescan](../api/rpc-wallet.md#abortrescan): stops current wallet rescan.
+```
 
 ### ScanTXOutset
 
-> **NOTE:**
->
-> Experimental: this call may be removed or changed in future releases.
+```{note}
+Experimental: this call may be removed or changed in future releases.
+```
 
 The [`scantxoutset` RPC](../api/rpc-wallet.md#scantxoutset) scans the unspent transaction output set for entries that match certain output descriptors.
 
@@ -2390,15 +2397,15 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [ListUnspent](../api/rpc-wallet.md#listunspent): returns an array of unspent transaction outputs belonging to this wallet.
+```
 
 ### SendMany
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```
 
 The [`sendmany` RPC](../api/rpc-wallet.md#sendmany) creates and broadcasts a transaction which sends outputs to multiple addresses.
 
@@ -2475,15 +2482,15 @@ Result:
 a7c0194a005a220b9bfeb5fdd12d5b90979c10f53de4f8a48a1495aa198a6b95
 ```
 
-*See also*
-
+```{seealso}
 * [SendToAddress](../api/rpc-wallet.md#sendtoaddress): spends an amount to a given address.
+```
 
 ### SendToAddress
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet or an unencrypted wallet.
+```
 
 The [`sendtoaddress` RPC](../api/rpc-wallet.md#sendtoaddress) spends an amount to a given address.
 
@@ -2557,15 +2564,15 @@ Result:
 70e2029d363f0110fe8a0aa2ba7bd771a579453135568b2aa559b2cb30f875aa
 ```
 
-*See also*
-
+```{seealso}
 * [SendMany](../api/rpc-wallet.md#sendmany): creates and broadcasts a transaction which sends outputs to multiple addresses.
+```
 
 ### SetLabel
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`setlabel` RPC](../api/rpc-wallet.md#setlabel) sets the label associated with the given address.
 
@@ -2597,18 +2604,18 @@ dimecoin-cli -mainnet setlabel 7MTFRnrfJ4NpnYVeidDNHVwT7uuNsVjevq "test"
 
 (Success: no result displayed.)
 
-*See also*
-
+```{seealso}
 * [ListLabels](../api/rpc-wallet.md#listlabels): returns the list of all labels, or labels that are assigned to addresses with a specific purpose.
 * [GetAddressesByLabel](../api/rpc-wallet.md#getaddressesbylabel): returns the list of addresses assigned the specified label.
+```
 
 <span id="setprivatesendamount"></span>
 
 ### SetTxFee
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`settxfee` RPC](../api/rpc-wallet.md#settxfee) sets the transaction fee per kilobyte paid by transactions created by this wallet.
 
@@ -2638,10 +2645,10 @@ Result:
 true
 ```
 
-*See also*
-
+```{seealso}
 * [GetWalletInfo](../api/rpc-wallet.md#getwalletinfo): provides information about the wallet.
 * [GetNetworkInfo](../api/rpc-network.md#getnetworkinfo): returns information about the node's connection to the network.
+```
 
 ### SetWalletFlag
 
@@ -2684,7 +2691,9 @@ Result:
 }
 ```
 
-*See also: none*
+```{seealso}
+*none*
+```
 
 ### SignMessage
 
@@ -2725,15 +2734,15 @@ Result:
 H4XULzfHCf16In2ECk9Ta9QxQPq639zQto2JA3OLlo3JbUdrClvJ89+A1z+Z9POd6l8LJhn1jGpQYF8mX4jkQvE=
 ```
 
-*See also*
-
+```{seealso}
 * [VerifyMessage](../api/rpc-utility.md#verifymessage): verifies a signed message.
+```
 
 ### SignRawTransactionWithWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet.
+```
 
 The [`signrawtransactionwithwallet` RPC](#signrawtransactionwithwallet) signs a transaction in the serialized transaction format using private keys stored in the wallet.
 
@@ -2788,19 +2797,19 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [CombineRawTransaction](../api/rpc-raw-transactions.md#combinerawtransaction): combine multiple partially signed transactions into one transaction.
 * [CreateRawTransaction](../api/rpc-raw-transactions.md#createrawtransaction): creates an unsigned serialized transaction that spends a previous output to a new output with a P2PKH or P2SH address. The transaction is not stored in the wallet or transmitted to the network.
 * [DecodeRawTransaction](../api/rpc-raw-transactions.md#decoderawtransaction): decodes a serialized transaction hex string into a JSON object describing the transaction.
 * [SendRawTransaction](../api/rpc-raw-transactions.md#sendrawtransaction): validates a transaction and broadcasts it to the peer-to-peer network.
 * [SignRawTransactionWithKey](../api/rpc-raw-transactions.md#signrawtransactionwithkey): signs inputs for a transaction in the serialized transaction format using private keys provided in the call.
+```
 
 ### UnloadWallet
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**).
+```
 
 The [`unloadwallet` RPC](../api/rpc-wallet.md#unloadwallet) unloads the wallet referenced by the request endpoint otherwise unloads the wallet specified in the argument. Specifying the wallet name on a wallet endpoint is invalid.
 
@@ -2830,9 +2839,9 @@ Result:
 null
 ```
 
-*See also*
-
+```{seealso}
 * [LoadWallet](../api/rpc-wallet.md#loadwallet): loads a wallet from a wallet file or directory.
+```
 
 ### UpgradeWallet
 
@@ -2860,9 +2869,9 @@ dimecoin-cli -mainnet upgradewallet
 
 Result (no output from dimecoin-cli because result is set to null).
 
-*See also*
-
+```{seealso}
 * [DumpHDInfo](../api/rpc-wallet.md#dumphdinfo):  returns an object containing sensitive private info about this HD wallet
+```
 
 ### WalletCreateFundedPSBT
 
@@ -2941,11 +2950,15 @@ Result:
 }
 ```
 
+```{seealso}
+*none*
+```
+
 ### WalletLock
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an unlocked wallet.
+```
 
 The [`walletlock` RPC](../api/rpc-wallet.md#walletlock) removes the wallet encryption key from memory, locking the wallet. After calling this method, you will need to call `walletpassphrase` again before being able to call any methods which require the wallet to be unlocked.
 
@@ -2965,23 +2978,24 @@ dimecoin-cli -mainnet walletlock
 
 (Success: nothing printed.)
 
-*See also*
-
+```{seealso}
 * [EncryptWallet](../api/rpc-wallet.md#encryptwallet): encrypts the wallet with a passphrase.  This is only to enable encryption for the first time. After encryption is enabled, you will need to enter the passphrase to use private keys.
 * [WalletPassphrase](../api/rpc-wallet.md#walletpassphrase): stores the wallet decryption key in memory for the indicated number of seconds. Issuing the `walletpassphrase` command while the wallet is already unlocked will set a new unlock time that overrides the old one.
 * [WalletPassphraseChange](../api/rpc-wallet.md#walletpassphrasechange): changes the wallet passphrase from 'old passphrase' to 'new passphrase'.
+```
 
 ### WalletPassphrase
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an encrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an encrypted wallet.
+```
 
 The [`walletpassphrase` RPC](../api/rpc-wallet.md#walletpassphrase) stores the wallet decryption key in memory for the indicated number of seconds. Issuing the `walletpassphrase` command while the wallet is already unlocked will set a new unlock time that overrides the old one.
 
->
-> **Warning:** if using this RPC on the command line, remember that your shell probably saves your command lines (including the value of the passphrase parameter).
->
+```{warning}
+If using this RPC on the command line, remember that your shell probably saves your command lines (including the value of the passphrase parameter).
+```
+
 
 *Parameter #1---the passphrase*
 
@@ -3017,23 +3031,24 @@ dimecoin-cli -mainnet walletpassphrase test 600
 
 (Success: no result printed.)
 
-*See also*
-
+```{seealso}
 * [EncryptWallet](../api/rpc-wallet.md#encryptwallet): encrypts the wallet with a passphrase.  This is only to enable encryption for the first time. After encryption is enabled, you will need to enter the passphrase to use private keys.
 * [WalletPassphraseChange](../api/rpc-wallet.md#walletpassphrasechange): changes the wallet passphrase from 'old passphrase' to 'new passphrase'.
 * [WalletLock](../api/rpc-wallet.md#walletlock): removes the wallet encryption key from memory, locking the wallet. After calling this method, you will need to call `walletpassphrase` again before being able to call any methods which require the wallet to be unlocked.
+```
 
 ### WalletPassphraseChange
 
-> **NOTE:**
->
-> Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an encrypted wallet.
+```{note}
+Requires [wallet](../reference/glossary.md#wallet) support (**unavailable on masternodes**). Requires an encrypted wallet.
+```
 
 The [`walletpassphrasechange` RPC](../api/rpc-wallet.md#walletpassphrasechange) changes the wallet passphrase from 'old passphrase' to 'new passphrase'.
 
->
-> **Warning:** if using this RPC on the command line, remember that your shell probably saves your command lines (including the value of the passphrase parameter).
->
+```{warning}
+If using this RPC on the command line, remember that your shell probably saves your command lines (including the value of the passphrase parameter).
+```
+
 
 *Parameter #1---the current passphrase*
 
@@ -3063,11 +3078,11 @@ dimecoin-cli -mainnet walletpassphrasechange "test" "test2"
 
 (Success: no result printed.)
 
-*See also*
-
+```{seealso}
 * [EncryptWallet](../api/rpc-wallet.md#encryptwallet): encrypts the wallet with a passphrase.  This is only to enable encryption for the first time. After encryption is enabled, you will need to enter the passphrase to use private keys.
 * [WalletLock](../api/rpc-wallet.md#walletlock): removes the wallet encryption key from memory, locking the wallet. After calling this method, you will need to call `walletpassphrase` again before being able to call any methods which require the wallet to be unlocked.
 * [WalletPassphrase](../api/rpc-wallet.md#walletpassphrase): stores the wallet decryption key in memory for the indicated number of seconds. Issuing the `walletpassphrase` command while the wallet is already unlocked will set a new unlock time that overrides the old one.
+```
 
 ### WalletProcessPSBT
 
@@ -3120,11 +3135,11 @@ Result:
 }
 ```
 
-*See also*
-
+```{seealso}
 * [CreatePSBT](../api/rpc-raw-transactions.md#createpsbt): creates a transaction in the Partially Signed Transaction (PST) format.
 * [CombinePSBT](../api/rpc-raw-transactions.md#combinepsbt): combine multiple partially-signed DIME transactions into one transaction.
 * [ConvertToPSBT](../api/rpc-raw-transactions.md#converttopsbt): converts a network serialized transaction to a PSBT.
 * [DecodePSBT](../api/rpc-raw-transactions.md#decodepsbt): returns a JSON object representing the serialized, base64-encoded partially signed DIME transaction.
 * [FinalizePSBT](../api/rpc-raw-transactions.md#finalizepsbt): finalizes the inputs of a PSBT.
 * [WalletCreateFundedPSBT](../api/rpc-wallet.md#walletcreatefundedpsbt): creates and funds a transaction in the Partially Signed Transaction (PST) format.
+```

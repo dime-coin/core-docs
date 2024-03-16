@@ -81,6 +81,6 @@ From the perspective of dimecoind, the ZeroMQ socket is write-only; PUB sockets 
 
 No authentication or authorization is done on connecting clients; it is assumed that the ZeroMQ port is exposed only to trusted entities, using other means such as firewalling.
 
-Note that when the block chain tip changes, a reorganisation may occur and just the tip will be notified. It is up to the subscriber to retrieve the chain from the last known block to the new tip.
+When the blockchain tip changes, a reorganisation may occur and just the tip will be notified. It is up to the subscriber to retrieve the chain from the last known block to the new tip.
 
 There are several possibilities that ZMQ notification can get lost during transmission depending on the communication type your are using. dimecoind appends an up-counting sequence number to each notification which allows listeners to detect lost notifications.
