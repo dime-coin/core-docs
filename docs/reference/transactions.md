@@ -62,7 +62,6 @@ The `OP_CHECKMULTISIG` [multisig](../reference/glossary.md#multisig) verificatio
 
 For example, the following combined signature and pubkey script will produce the stack and comparisons shown:
 
-
 ``` text
 OP_0 <A sig> <B sig> OP_2 <A pubkey> <B pubkey> <C pubkey> OP_3
 

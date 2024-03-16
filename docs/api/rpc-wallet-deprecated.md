@@ -14,7 +14,6 @@
 RPCs that require wallet support are **not available on masternodes** for security reasons. Such RPCs are designated with a "*Requires wallet support*" message.
 ```
 
-
 ### GetAccount
 
 ```{note}

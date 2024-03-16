@@ -56,6 +56,10 @@ html_css_files = [
     'css/pydata-overrides.css',
 ]
 
+html_js_files = [
+    'js/highlight-navlink.js'
+]
+
 html_sidebars = {
     "index": ["sidebar-main.html"],
     "docs/index": ["sidebar-sub-nav2.html"],

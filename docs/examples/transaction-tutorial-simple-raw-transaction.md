@@ -209,4 +209,3 @@ DIME-cli -regtest generate 1
 
 unset UTXO_TXID UTXO_VOUT NEW_ADDRESS RAW_TX SIGNED_RAW_TX
 ```
-
