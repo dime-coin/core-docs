@@ -17,7 +17,7 @@ This guide describes how you can use a backup file on a standard PC to recover y
 Be aware some of the steps in this tutorial require handling your private keys in the unencrypted form. Do not expose them to anyone. Whoever knows your private keys can spend your coins on these keys. It’d good practice that after you are finished handling these keys, they should be considered compromised, even if they are not. Make sure your system is free of any malware.
 ```
 
-We recommend using Ubuntu Linux. You can boot from a Live CD if you want, but if you do, please refrain from sending your coins to a temporary wallet created in that environment, which would be lost e.g. on a power outage or computer failure. Your desired destination wallet should already be set up and you should have one of its receiving addresses or a QR code at hand.
+We recommend using Ubuntu Linux. If you choose to boot from a Live CD, avoid transferring your coins to a temporary wallet in that session, as you could lose them due to a power outage, computer failure or similar event. Your desired destination wallet should already be set up and you should have one of its receiving addresses or a QR code at hand.
 
 Alternatively, you can also use Windows cmd shell or Powershell. Open Windows Search, search for and start `Command Prompt` or `Windows Powershell`. You will need administrator privledges so make sure you right click `Run as administrator`.
 
