@@ -13,7 +13,6 @@
 
 ### What is a Paper Wallet?
 
-
 Paper wallets are an offline storage method ([cold storage](../resources/glossary.md#cold-storage)) of storing cryptocurrency. The process includes creating a public and private key, typically stored on a piece of paper kept in a secure place. The keys are printed in the form of QR codes or hexadecimal format, which can be scanned or input for future transactions.
 
 Paper wallets are considered one of, if not the safest way, to store cryptocurrency. Doing so will put you in complete control of your holdings. If all precautions are followed, there is zero possibility of your private keys being compromised. You will not have to worry about hardware crashing, malware, or any hackers.
@@ -47,7 +46,6 @@ Second, once the generator is running, move your mouse around to add randomness 
 #### Step 3: Print the Paper Wallet
 
 Next, click the paper wallet tab and print the page on high quality setting. **NEVER** save the page as a PDF file to print it later since a file is more likely to be hacked than a piece of paper.
-
 
 #### Step 4: Fold the Wallet
 

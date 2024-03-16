@@ -81,38 +81,20 @@ $(document).ready(function(){
 
 $(setupSearchButtons);
 
-// highlight topic
+//highlight active navbar page
+document.addEventListener('DOMContentLoaded', function() {
+  var sidebarLinks = document.querySelectorAll('.bd-sidenav .toctree-l1 > a');
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Find all sidebar links
-  var links = document.querySelectorAll('.bd-sidenav .toctree-l1 > a');
-
-  // Function to clear all active states
-  function clearActive() {
-    links.forEach(function(link) {
-      link.parentElement.classList.remove('active'); // Assuming 'active' class indicates the current page
-    });
-  }
-
-  // Function to set a link as active based on the current URL
-  function setActive() {
-    clearActive();
-    links.forEach(function(link) {
-      if(link.href === window.location.href) {
-        link.parentElement.classList.add('active');
-      }
-    });
-  }
-
-  // Set the correct active link when the page loads
-  setActive();
-
-  // Optional: If you want to ensure the active state updates for SPA or when using anchors, you might need to listen to clicks or hash changes as well
-  window.addEventListener('hashchange', setActive, false);
-  links.forEach(function(link) {
-    link.addEventListener('click', function() {
-      // Timeout to allow page update
-      setTimeout(setActive, 50);
-    });
+  var currentUrl = window.location.pathname + window.location.search;
+  
+  sidebarLinks.forEach(function(link) {
+    if (link.getAttribute('href') === currentUrl || currentUrl.endsWith(link.getAttribute('href'))) {
+      // Remove active class from all sidebar links first if needed
+      sidebarLinks.forEach(function(l) {
+        l.parentElement.classList.remove('active');
+      });
+      // Add active class to the parent list item of the matched link
+      link.parentElement.classList.add('active');
+    }
   });
 });

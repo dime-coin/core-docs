@@ -220,3 +220,9 @@ html[data-theme="dark"] {
 }
 
 /* End of styling of the RtD search extension's screen */
+
+/* highlight active page on navbar */
+.toctree-l1.active, .toctree-l1.active > a {
+  border-left: 2px solid var(--dime-midnight-blue); /* Customize the color */
+}
+
