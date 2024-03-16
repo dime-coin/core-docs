@@ -90,7 +90,6 @@ reference/blockchain
 reference/transactions
 reference/wallets
 reference/p2p-network
-reference/improvement-proposals
 ```
 
 ```{toctree}
