@@ -84,8 +84,8 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 :caption: Core Architecture Reference
 :hidden:
 
-resources/glossary
 reference/introduction
+resources/glossary
 reference/blockchain
 reference/transactions
 reference/wallets
