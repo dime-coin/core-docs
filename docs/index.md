@@ -31,12 +31,12 @@ working with Dimecoin as quickly as possible. Let's jump right in!
     .. grid-item-card:: API Reference
         :margin: 2 2 auto auto
         :link-type: ref
-        :link: api-rpc-overview
+        :link: rpc-api-overview
                 
         RPC, REST, and ZMQ Info
         
         +++
-        :ref:`Click to Begin <api-rpc-overview>`
+        :ref:`Click to Begin <rpc-api-overview>`
 
     .. grid-item-card:: Core Guides
         :margin: 2 2 auto auto
@@ -66,7 +66,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
         Dimecoin Core Configuration and Usage
         
         +++
-        :ref:`Click to Begin <dimecore-arguments-and-commands>`
+        :ref:`Click to Begin <examples-index>`
 
     .. grid-item-card:: Glossary
         :margin: 2 2 auto auto

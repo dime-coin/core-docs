@@ -9,6 +9,8 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
+## Legacy Android Wallet Recovery
+
 This guide describes how you can use a backup file on a standard PC to recover your Dimecoins from the Android mobile app (v1.1.1).
 
 ```{warning}

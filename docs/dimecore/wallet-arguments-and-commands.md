@@ -1,5 +1,5 @@
 ```{eval-rst}
-.. _dimecore-arguments-and-commands:
+.. _examples-index:
 .. meta::
   :title: Dimecoin Core Arguments and Commands
   :description: Overview of arguments and commands for the components distributed with Dimecoin Core, including dimecoind, dimecoin-qt, and dimecoin-cli.
