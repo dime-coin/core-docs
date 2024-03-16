@@ -9,9 +9,9 @@
 ## Core Docs
 
 Welcome to the Dimecoin Core developer documentation. You'll find sections for
-[reference information](reference/introduction.md), [API
-details](api/rpc-api-overview.md), [guides](guide/introduction.md),
-[examples](examples/introduction.md) and [Dimecoin Core wallet
+[reference information](reference/reference-introduction.md), [API
+details](api/rpc-api-overview.md), [guides](guide/guide-introduction.md),
+[examples](examples/examples-introduction.md) and [Dimecoin Core wallet
 information](dimecore/wallet-arguments-and-commands.md) to help you start
 working with Dimecoin as quickly as possible. Let's jump right in!
 
@@ -84,7 +84,7 @@ working with Dimecoin as quickly as possible. Let's jump right in!
 :caption: Core Architecture Reference
 :hidden:
 
-reference/introduction
+reference/reference-introduction
 reference/glossary
 reference/blockchain
 reference/transactions
@@ -123,7 +123,7 @@ api/zmq
 :titlesonly:
 :hidden:
 
-guide/introduction
+guide/guide-introduction
 guide/blockchain-overview
 guide/blockchain-consensus
 guide/blockchain-block-height-and-forking
@@ -166,7 +166,7 @@ guide/staking
 :caption: Core Examples
 :hidden:
 
-examples/introduction
+examples/examples-introduction
 examples/configuration-file
 examples/testing-applications
 examples/transaction-tutorial
@@ -205,7 +205,7 @@ dimecore/wallet-configuration-file
 :caption: General User Guide
 :hidden:
 
-userguide/introduction
+userguide/userguide-introduction
 userguide/receiving-coins
 userguide/sending-coins
 userguide/wallet-operations
@@ -226,7 +226,7 @@ resources/paper-wallet
 Questions about Dimecoin development are best asked in one of the [Dimecoin Social
 Communities](https://dimecoinnetwork.com/socials). Errors or suggestions related to
 documentation can be submitted as via the "Edit this page" button on the top,
-right of each page. For basic operation and general use guidance for Dimecoin-QT, see the [User Guide Section](userguide/introduction.md).
+right of each page. For basic operation and general use guidance for Dimecoin-QT, see the [User Guide Section](userguide/guide-introduction.md).
 
 ```{eval-rst}
 

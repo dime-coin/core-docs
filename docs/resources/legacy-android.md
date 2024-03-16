@@ -31,11 +31,11 @@ sudo apt install openjdk-8-jdk android-tools-adb openssl git gradle
 
 ### Windows Recovery Setup
 
-If your system does not have it already, you will need to install OpenSSL. Skip to step X if you already have it installed
+If your system does not have it already, you will need to install OpenSSL. Skip to [step 5](#step-5-locate-backup-files) if you already have it installed.
 
 #### Step 1: Download OpenSSL
 
-Go to the official OpenSSL website or a trusted source to download the Windows version of OpenSSL. One source trusted by Dimecoin Developers is the Win32/Win64 OpenSSL installer provided by Shining Light Productions. Here is a link to their installers: https://slproweb.com/products/Win32OpenSSL.html
+Go to the official OpenSSL website or a trusted source to download the Windows version of OpenSSL. One source trusted by Dimecoin Developers is the Win32/Win64 OpenSSL installer provided by Shining Light Productions. Here is a link to their installers: [OpenSSL Installer](https://slproweb.com/products/Win32OpenSSL.html)
 
 Make sure to choose the correct version for your system. If you are not sure about your system information, you can goto the taskbar and input `system information` and hit enter and you will get a dialog box which displays all your system details.
 

@@ -86,7 +86,7 @@ find . -iname "*.md" -exec sed -i 's~](dime-core-wallet-arguments-and-commands-d
 
 
 # Examples
-find . -iname "*.md" -exec sed -i 's~](core-examples-introduction)~](\.\./examples/introduction.md)~g' {} +
+find . -iname "*.md" -exec sed -i 's~](core-examples-introduction)~](\.\./examples/examples-introduction.md)~g' {} +
 find . -iname "*.md" -exec sed -i 's~](core-examples-configuration-file)~](\.\./examples/configuration-file.md)~g' {} +
 find . -iname "*.md" -exec sed -i 's~](core-examples-p2p-network-parsing-a-merkleblock~](\.\./examples/p2p-network-parsing-a-merkleblock.md~g' {} +
 find . -iname "*.md" -exec sed -i 's~](core-examples-p2p-network-creating-a-bloom-filter~](\.\./examples/p2p-network-creating-a-bloom-filter.md~g' {} +

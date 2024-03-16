@@ -48,7 +48,7 @@ Verify that we now have 500 DIME available to spend.
 
 You can now use Dimecoin Core RPCs prefixed with `dimecoin-cli -regtest`.
 
-Regtest wallets and block chain state (chainstate) are saved in the `regtest` subdirectory of the Dimecoin Core configuration directory. You can safely delete the `regtest` subdirectory and restart Dimecoin Core to start a new regtest. (See the [Developer Examples Introduction](../examples/introduction.md) for default configuration directory locations on various operating systems. 
+Regtest wallets and block chain state (chainstate) are saved in the `regtest` subdirectory of the Dimecoin Core configuration directory. You can safely delete the `regtest` subdirectory and restart Dimecoin Core to start a new regtest. (See the [Developer Examples Introduction](../examples/examples-introduction.md) for default configuration directory locations on various operating systems. 
 
 ```{warning}
 Always back up mainnet wallets before performing dangerous operations such as deleting.
