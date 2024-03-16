@@ -1,438 +1,491 @@
 <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item">
-        <nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-            <p class="bd-links__title" role="heading" aria-level="1">
-                Navigation Menu
+   <div class="sidebar-start-items__item">
+      <nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+         <p class="bd-links__title" role="heading" aria-level="1">
+            Navigation Menu
+         </p>
+         <div class="bd-toc-item navbar-nav">
+            <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Architecture Reference</span></p>
+            <ul class="current nav bd-sidenav">
+               <li class="toctree-l1 current active"><a class="current reference internal"
+                  href="#">Introduction</a></li>
+               <li class="toctree-l1"><a class="reference internal" href="docs/reference/glossary.html">Glossary</a></li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/reference/blockchain.html">Blockchain</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-1"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/blockchain.html#block-headers">Block
+                        Headers</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/blockchain.html#serialized-blocks">Serialized
+                        Blocks</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/reference/transactions.html">Transactions</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-2"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/transactions.html#opcodes">Opcodes</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/transactions.html#address-conversion">Address
+                        Conversion</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/transactions.html#raw-transaction-format">Raw
+                        Transaction Format</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/transactions.html#compactsize-unsigned-integers">CompactSize Unsigned
+                        Integers</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1"><a class="reference internal" href="docs/reference/wallets.html">Wallets</a></li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal" href="docs/reference/p2p-network.html">P2P
+                  Networks</a><input class="toctree-checkbox" id="toctree-checkbox-3"
+                     name="toctree-checkbox-3" type="checkbox" /><label class="toctree-toggle"
+                     for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/p2p-network.html#constants-and-defaults">Constants and Defaults</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/p2p-network.html#protocol-versions">Protocol
+                        Versions</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/p2p-network.html#message-headers">Message
+                        Headers</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/p2p-network.html#control-messages">Control
+                        Messages</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/p2p-network.html#data-messages">Data
+                        Messages</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/reference/p2p-network.html#masternode-messages">Masternode Messages</a></li>
+                  </ul>
+               </li>
+            </ul>
+            <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core API Reference</span>
             </p>
-            <div class="bd-toc-item navbar-nav">
-                <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Architecture Reference</span></p>
-                <ul class="current nav bd-sidenav">
-                    <li class="toctree-l1 current active"><a class="current reference internal"
-                            href="#">Introduction</a></li>
-                    <li class="toctree-l1"><a class="reference internal" href="docs/reference/glossary.html">Glossary</a></li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/reference/blockchain.html">Blockchain</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-1"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/blockchain.html#block-headers">Block
-                                    Headers</a></li>  
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/blockchain.html#serialized-blocks">Serialized
-                                    Blocks</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/reference/transactions.html">Transactions</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-2"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/transactions.html#opcodes">Opcodes</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/transactions.html#address-conversion">Address
-                                    Conversion</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/transactions.html#raw-transaction-format">Raw
-                                    Transaction Format</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/transactions.html#special-transactions">Special
-                                    Transactions</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/transactions.html#compactsize-unsigned-integers">CompactSize Unsigned
-                                    Integers</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="docs/reference/wallets.html">Wallets</a></li>
-                    <li class="toctree-l1 has-children"><a class="reference internal" href="docs/reference/p2p-network.html">P2P
-                            Networks</a><input class="toctree-checkbox" id="toctree-checkbox-3"
-                            name="toctree-checkbox-3" type="checkbox" /><label class="toctree-toggle"
-                            for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/p2p-network.html#constants-and-defaults">Constants and Defaults</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/p2p-network.html#protocol-versions">Protocol
-                                    Versions</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/p2p-network.html#message-headers">Message
-                                    Headers</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/p2p-network.html#control-messages">Control
-                                    Messages</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/p2p-network.html#data-messages">Data
-                                    Messages</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/reference/p2p-network.html#masternode-messages">Masternode Messages</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core API Reference</span>
-                </p>
-                <ul class="nav bd-sidenav">
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/api/rpc-api-overview.html">RPC API Functions</a><input
-                            class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4"
-                            type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-4"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-quick-reference.html">Quick Reference</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-blockchain.html">Blockchain RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-control.html">Control RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-dime.html">Dimecoin
-                                    RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-generating.html">Generating RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-mining.html">Mining RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-network.html">Network RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-raw-transactions.html">Raw Transactions</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-utility.html">Util
-                                    RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-wallet.html">Wallet RPCs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-wallet-deprecated.html">Wallet RPCs
-                                    (Deprecated)</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/rpc-zmq.html">ZeroMQ
-                                    (ZMQ) RPCs</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal" href="docs/api/http-rest.html">HTTP
-                            REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5"
-                            type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-5"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/http-rest-quick-reference.html">Quick
-                                    Reference</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/api/http-rest-requests.html">Requests</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="">ZeroMQ (ZMQ)
-                            Notifications</a>
-                    </li>
-                </ul>
-                <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Guides</span></p>
-                <ul class="nav bd-sidenav">
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/guide/guide-introduction.html">Introduction</a></li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/guide/blockchain-overview.html">Blockchain</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-6"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/blockchain-consensus.html">Proof of Work (PoW)/Proof of Stake 
-                                    (PoS) Hybrid</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/blockchain-block-height-and-forking.html">Block Height and
-                                    Forking</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/blockchain-transaction-data.html">Transaction Data</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/blockchain-consensus-rule-changes.html">Consensus Rule Changes</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/guide/transactions.html">Transactions</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-7"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-p2pkh-script-validation">P2PKH Script
-                                    Validation</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-p2sh-scripts.html">P2SH
-                                    Scripts</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-standard-transactions.html">Standard Transactions</a>
-                            </li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-non-standard-transactions.html">Non-Standard
-                                    Transactions</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-signature-hash-types.html">Signature Hash Types</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-locktime-and-sequence-number.html">Locktime and Sequence
-                                    Number</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-transaction-fees-and-change.html">Transaction Fees and
-                                    Change</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-avoiding-key-reuse.html">Avoiding Key Reuse</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/transactions-transaction-malleability.html">Transaction
-                                    Malleability</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                        href="docs/guide/contracts.html">Contracts</a><input class="toctree-checkbox"
-                        id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox" /><label
-                        class="toctree-toggle" for="toctree-checkbox-8"><i
-                            class="fa-solid fa-chevron-down"></i></label>
-                    <ul>
-                        <li class="toctree-l2"><a class="reference internal"
-                                href="docs/guide/contracts-escrow-and-arbitration.html">Escrow and Arbitration</a>
-                        </li>
-                        <li class="toctree-l2"><a class="reference internal"
-                                href="docs/guide/contracts-micropayment-channel.html">Micropayment Channel</a></li>
-                        <li class="toctree-l2"><a class="reference internal"
-                            href="docs/guide/contracts-deposit.html">Deposit</a></li>
-                        <li class="toctree-l2"><a class="reference internal"
-                            href="docs/guide/contracts-crosschain-trading.html">Cross-Chain Trading</a></li>                                    
-                    </ul>
-                </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/guide/wallets.html">Wallet</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-9"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/wallets.html#wallet-programs">Wallet
-                                    Programs</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/wallets.html#wallet-files">Wallet
-                                    Files</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/guide/operating-modes.html">Operating Modes</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-10"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/operating-modes.html#full-node">Full
-                                    Node</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/operating-modes.html#simplified-payment-verification-spv">Simplified
-                                    Payment
-                                    Verification (SPV)</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/operating-modes.html#future-proposals">Future Proposals</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                        href="docs/guide/masternodes.html">Masternodes</a><input class="toctree-checkbox"
-                        id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox" /><label
-                        class="toctree-toggle" for="toctree-checkbox-11"><i
-                            class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                                <li class="toctree-l2"><a class="reference internal"
-                                        href="docs/guide/masternodes-pow-pos.html">POW/POS vs Masternodes</a></li>
-                                <li class="toctree-l2"><a class="reference internal"
-                                        href="docs/guide/masternodes-paylogic-quorums.html">Pay Logic &amp; Quorums</a></li>
-                                <li class="toctree-l2"><a class="reference internal"
-                                        href="docs/guide/masternodes-setup-requirements.html">Setup &amp; Requirements</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/guide/p2p-network.html">P2P
-                            Network</a><input class="toctree-checkbox" id="toctree-checkbox-12"
-                            name="toctree-checkbox-12" type="checkbox" /><label class="toctree-toggle"
-                            for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/p2p-network-peer-discovery.html">Peer
-                                    Discovery</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/p2p-network-connecting-to-peers.html">Connecting to Peers</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/p2p-network-initial-block-download.html">Initial Block Download</a>
-                            </li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/p2p-network-block-broadcasting.html">Block Broadcasting</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/p2p-network-transaction-broadcasting.html">Transaction
-                                    Broadcasting</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                        href="docs/guide/mining.html">Mining
-                        </a><input class="toctree-checkbox" id="toctree-checkbox-13"
-                        name="toctree-checkbox-13" type="checkbox" /><label class="toctree-toggle"
-                        for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/mining.html#solo-mining">Solo
-                                    Mining</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/mining.html#pool-mining">Pool Mining</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/guide/mining.html#block-prototypes">Block Prototypes</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal"
-                        href="docs/guide/staking.html">Staking</a></li>
-                </ul>
-                <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Examples</span></p>
-                <ul class="nav bd-sidenav">
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/examples/examples-introduction.html">Introduction</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/examples/configuration-file.html">Configuration
-                            File</a></li>
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/examples/testing-applications.html">Testing
-                            Applications</a></li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/examples/transaction-tutorial.html">Transaction Tutorial</a><input
-                            class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14"
-                            type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-14"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/transaction-tutorial-simple-spending.html">Simple Spending</a>
-                            </li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/transaction-tutorial-simple-raw-transaction.html">Simple Raw
-                                    Transaction</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/transaction-tutorial-complex-raw-transaction.html">Complex Raw
-                                    Transaction</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/transaction-tutorial-offline-signing.html">Offline Signing</a>
-                            </li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/transaction-tutorial-p2sh-multisig.html">P2SH Multisig</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/examples/p2p-network.html">P2P
-                            Network</a><input class="toctree-checkbox" id="toctree-checkbox-15"
-                            name="toctree-checkbox-15" type="checkbox" /><label class="toctree-toggle"
-                            for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/p2p-network-creating-a-bloom-filter.html">Creating a Bloom
-                                    Filter</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/p2p-network-evaluating-a-bloom-filter.html">Evaluating a Bloom
-                                    Filter</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/p2p-network-bloom-filter-script.html">Bloom Filter Script</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/p2p-network-retrieving-a-merkleblock.html">Retrieving a
-                                    MerkleBlock</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/examples/p2p-network-parsing-a-merkleblock.html">Parsing a MerkleBlock</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/examples/receiving-zmq-notifications.html">Receiving ZMQ Notifications</a></li>
-                </ul>
-                <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dimecoin Core Wallet</span></p>
-                <ul class="nav bd-sidenav">
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/dimecore/wallet-arguments-and-commands.html">Arguments and Commands</a><input
-                            class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16"
-                            type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-16"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/dimecore/wallet-arguments-and-commands-dimecoind.html">dimecoind</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/dimecore/wallet-arguments-and-commands-dimecoin-qt.html">dimecoin-qt</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/dimecore/wallet-arguments-and-commands-dimecoin-cli.html">dimecoin-cli</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/dimecore/wallet-arguments-and-commands-dimecoin-tx.html">dimecoin-tx</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="">Configuration Files</a></li>
-                </ul>
-                <p aria-level="2" class="caption" role="heading"><span class="caption-text">General User Guide</span></p>
-                <ul class="nav bd-sidenav">
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/userguide/userguide-introduction.html">Introduction</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/userguide/receiving-coins.html">Receiving Coins</a></li>
-                    <li class="toctree-l1"><a class="reference internal"
-                            href="docs/userguide/sending-coins.html">Sending Coins</a></li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/userguide/wallet-operations.html">Wallet and Database Management</a><input
-                            class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17"
-                            type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-17"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/userguide/wallet-operations.html#wallet-recovery-using-salvagewallet">Wallet Recovery</a>
-                            </li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                href="docs/userguide/wallet-operations.html#rescan">Rescan</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                href="docs/userguide/wallet-operations.html#reindex">Reindex</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
-                <ul class="current nav bd-sidenav">
-                    <li class="toctree-l1"><a class="reference internal" href="https://chainz.cryptoid.info/dime/">Mainnet Block Explorer</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="">Dimecoin Legacy Paper</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="https://bitcoin.org/bitcoin.pdf">Bitcoin Whitepaper</a>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/resources/chain-analysis-tokenomics.html">Chain Analysis &amp; Tokenomics</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-18"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/resources/chain-analysis-tokenomics.html#dimecoins-total-supply">Total Supply</a></li>  
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/resources/chain-analysis-tokenomics.html#dimecoins-circulating-supply">Circulating Supply</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal"
-                            href="docs/resources/legacy-android.html">Legacy Android Wallet</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-19"><i
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/resources/legacy-android.html">Recovery</a></li>
-                        </ul>
-                    </li>
-                    <li class="toctree-l1 has-children"><a class="reference internal" 
-                            href="docs/resources/paper-wallet.html">Paper Wallet</a><input class="toctree-checkbox"
-                            id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox" /><label
-                            class="toctree-toggle" for="toctree-checkbox-20"><i 
-                                class="fa-solid fa-chevron-down"></i></label>
-                        <ul>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/resources/paper-wallet.html#setup">Creation and Use</a></li>
-                            <li class="toctree-l2"><a class="reference internal"
-                                    href="docs/resources/paper-wallet.html#spending-coins-from-a-paper-wallet">Spending Coins</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>    
-        </nav>
-    </div>
+            <ul class="nav bd-sidenav">
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/api/rpc-api-overview.html">RPC API Functions</a><input
+                     class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4"
+                     type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-4"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-quick-reference.html">Quick Reference</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-blockchain.html">Blockchain RPCs</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-control.html">Control RPCs</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-dime.html">Dimecoin
+                        RPCs</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-generating.html">Generating RPCs</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-mining.html">Mining RPCs</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-network.html">Network RPCs</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-raw-transactions.html">Raw Transactions</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-utility.html">Util
+                        RPCs</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-wallet.html">Wallet RPCs</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-wallet-deprecated.html">Wallet RPCs
+                        (Deprecated)</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/rpc-zmq.html">ZeroMQ
+                        (ZMQ) RPCs</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal" href="docs/api/http-rest.html">HTTP
+                  REST</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5"
+                     type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-5"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/http-rest-quick-reference.html">Quick
+                        Reference</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/api/http-rest-requests.html">Requests</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1"><a class="reference internal" href="">ZeroMQ (ZMQ)
+                  Notifications</a>
+               </li>
+            </ul>
+            <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Guides</span></p>
+            <ul class="nav bd-sidenav">
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/guide/guide-introduction.html">Introduction</a></li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/blockchain-overview.html">Blockchain</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-6"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/blockchain-consensus.html">Proof of Work (PoW)/Proof of Stake 
+                        (PoS) Hybrid</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/blockchain-block-height-and-forking.html">Block Height and
+                        Forking</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/blockchain-transaction-data.html">Transaction Data</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/blockchain-consensus-rule-changes.html">Consensus Rule Changes</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/transactions.html">Transactions</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-7"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-p2pkh-script-validation">P2PKH Script
+                        Validation</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-p2sh-scripts.html">P2SH
+                        Scripts</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-standard-transactions.html">Standard Transactions</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-non-standard-transactions.html">Non-Standard
+                        Transactions</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-signature-hash-types.html">Signature Hash Types</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-locktime-and-sequence-number.html">Locktime and Sequence
+                        Number</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-transaction-fees-and-change.html">Transaction Fees and
+                        Change</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-avoiding-key-reuse.html">Avoiding Key Reuse</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/transactions-transaction-malleability.html">Transaction
+                        Malleability</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/contracts.html">Contracts</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-8"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/contracts-escrow-and-arbitration.html">Escrow and Arbitration</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/contracts-micropayment-channel.html">Micropayment Channel</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/contracts-deposit.html">Deposit</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/contracts-crosschain-trading.html">Cross-Chain Trading</a></li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/wallets.html">Wallet</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-9"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/wallets.html#wallet-programs">Wallet
+                        Programs</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/wallets.html#wallet-files">Wallet
+                        Files</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/operating-modes.html">Operating Modes</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-10"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/operating-modes.html#full-node">Full
+                        Node</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/operating-modes.html#simplified-payment-verification-spv">Simplified
+                        Payment
+                        Verification (SPV)</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/operating-modes.html#future-proposals">Future Proposals</a></li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/masternodes.html">Masternodes</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-11"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/masternodes-pow-pos.html">POW/POS vs Masternodes</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/masternodes-paylogic-quorums.html">Pay Logic &amp; Quorums</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/masternodes-setup-requirements.html">Setup &amp; Requirements</a></li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/p2p-network.html">P2P
+                  Network</a><input class="toctree-checkbox" id="toctree-checkbox-12"
+                     name="toctree-checkbox-12" type="checkbox" /><label class="toctree-toggle"
+                     for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/p2p-network-peer-discovery.html">Peer
+                        Discovery</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/p2p-network-connecting-to-peers.html">Connecting to Peers</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/p2p-network-initial-block-download.html">Initial Block Download</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/p2p-network-block-broadcasting.html">Block Broadcasting</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/p2p-network-transaction-broadcasting.html">Transaction
+                        Broadcasting</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/guide/mining.html">Mining
+                  </a><input class="toctree-checkbox" id="toctree-checkbox-13"
+                     name="toctree-checkbox-13" type="checkbox" /><label class="toctree-toggle"
+                     for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/mining.html#solo-mining">Solo
+                        Mining</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/mining.html#pool-mining">Pool Mining</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/guide/mining.html#block-prototypes">Block Prototypes</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/guide/staking.html">Staking</a></li>
+            </ul>
+            <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Examples</span></p>
+            <ul class="nav bd-sidenav">
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/examples/examples-introduction.html">Introduction</a>
+               </li>
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/examples/configuration-file.html">Configuration
+                  File</a>
+               </li>
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/examples/testing-applications.html">Testing
+                  Applications</a>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/examples/transaction-tutorial.html">Transaction Tutorial</a><input
+                     class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14"
+                     type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-14"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/transaction-tutorial-simple-spending.html">Simple Spending</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/transaction-tutorial-simple-raw-transaction.html">Simple Raw
+                        Transaction</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/transaction-tutorial-complex-raw-transaction.html">Complex Raw
+                        Transaction</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/transaction-tutorial-offline-signing.html">Offline Signing</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/transaction-tutorial-p2sh-multisig.html">P2SH Multisig</a></li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/examples/p2p-network.html">P2P
+                  Network</a><input class="toctree-checkbox" id="toctree-checkbox-15"
+                     name="toctree-checkbox-15" type="checkbox" /><label class="toctree-toggle"
+                     for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/p2p-network-creating-a-bloom-filter.html">Creating a Bloom
+                        Filter</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/p2p-network-evaluating-a-bloom-filter.html">Evaluating a Bloom
+                        Filter</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/p2p-network-bloom-filter-script.html">Bloom Filter Script</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/p2p-network-retrieving-a-merkleblock.html">Retrieving a
+                        MerkleBlock</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/examples/p2p-network-parsing-a-merkleblock.html">Parsing a MerkleBlock</a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/examples/receiving-zmq-notifications.html">Receiving ZMQ Notifications</a></li>
+            </ul>
+            <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dimecoin Core Wallet</span></p>
+            <ul class="nav bd-sidenav">
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/dimecore/wallet-arguments-and-commands.html">Arguments and Commands</a><input
+                     class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16"
+                     type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-16"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/dimecore/wallet-arguments-and-commands-dimecoind.html">dimecoind</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/dimecore/wallet-arguments-and-commands-dimecoin-qt.html">dimecoin-qt</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/dimecore/wallet-arguments-and-commands-dimecoin-cli.html">dimecoin-cli</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/dimecore/wallet-arguments-and-commands-dimecoin-tx.html">dimecoin-tx</a></li>
+                  </ul>
+               </li>
+               <li class="toctree-l1"><a class="reference internal"
+                  href="">Configuration Files</a></li>
+            </ul>
+            <p aria-level="2" class="caption" role="heading"><span class="caption-text">General User Guide</span></p>
+            <ul class="nav bd-sidenav">
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/userguide/userguide-introduction.html">Introduction</a>
+               </li>
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/userguide/receiving-coins.html">Receiving Coins</a></li>
+               <li class="toctree-l1"><a class="reference internal"
+                  href="docs/userguide/sending-coins.html">Sending Coins</a></li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/userguide/wallet-operations.html">Wallet and Database Management</a><input
+                     class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17"
+                     type="checkbox" /><label class="toctree-toggle" for="toctree-checkbox-17"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/userguide/wallet-operations.html#wallet-recovery-using-salvagewallet">Wallet Recovery</a>
+                     </li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/userguide/wallet-operations.html#rescan">Rescan</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/userguide/wallet-operations.html#reindex">Reindex</a></li>
+                  </ul>
+               </li>
+            </ul>
+            <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
+            <ul class="current nav bd-sidenav">
+               <li class="toctree-l1"><a class="reference internal" target="_blank" href="https://chainz.cryptoid.info/dime/">Mainnet Block Explorer</a>
+               </li>
+               <li class="toctree-l1"><a class="reference internal" target="_blank" href="">Dimecoin Legacy Paper</a>
+               </li>
+               <li class="toctree-l1"><a class="reference internal" target="_blank" href="https://bitcoin.org/bitcoin.pdf">Bitcoin Whitepaper</a>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/resources/chain-analysis-tokenomics.html">Chain Analysis &amp; Tokenomics</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-18"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/resources/chain-analysis-tokenomics.html#dimecoins-total-supply">Total Supply</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/resources/chain-analysis-tokenomics.html#dimecoins-circulating-supply">Circulating Supply</a></li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal"
+                     href="docs/resources/legacy-android.html">Legacy Android Wallet</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-19"><i
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/resources/legacy-android.html">Recovery</a></li>
+                  </ul>
+               </li>
+               <li class="toctree-l1 has-children">
+                  <a class="reference internal" 
+                     href="docs/resources/paper-wallet.html">Paper Wallet</a><input class="toctree-checkbox"
+                     id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox" /><label
+                     class="toctree-toggle" for="toctree-checkbox-20"><i 
+                     class="fa-solid fa-chevron-down"></i></label>
+                  <ul>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/resources/paper-wallet.html#setup">Creation and Use</a></li>
+                     <li class="toctree-l2"><a class="reference internal"
+                        href="docs/resources/paper-wallet.html#spending-coins-from-a-paper-wallet">Spending Coins</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </nav>
+   </div>
 </div>
