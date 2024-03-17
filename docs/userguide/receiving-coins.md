@@ -9,13 +9,13 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-So you have installed the desktop wallet and it has finished syncing. However, you have not been able to figure out how to generate a (receiving) address to be able to send coins to your wallet. This guide will show how to generate a receiving address in your wallet so you can receive coins.
+## Receiving Coins with Dimecoin-QT
+
+So you have installed the desktop wallet and it has finished syncing. However, you have not been able to figure out how to generate an address to be able to send coins to your wallet. This guide will show how to generate a `receiving address` in your wallet so you can receive coins.
 
 ```{note}
 It is recommended, although not required, to generate a new address each time you send coins to the wallet. For a detailed explanation as to why, see the section on [avoiding key reuse](../guide/transactions-avoiding-key-reuse.md#avoiding-key-reuse)
 ```
-
-## How-To Create a Receiving Address
 
 ### Step 1: Start Dimecoin Core
 

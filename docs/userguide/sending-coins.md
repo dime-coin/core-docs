@@ -9,6 +9,8 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
+## Sending Coins with Dimecoin-QT
+
 Sending coins with Dimecoin-qt (the Dimecoin Core graphical user interface) is a straightforward process. Here's a step-by-step guide to help you send coins using Dimecoin-qt. Please note that the steps and interface may slightly vary based on your operating system (Windows, macOS, Linux) and subsequent updates to Dimecoin-qt, but the core process remains consistent.
 
 ### Step 1: Open Your Wallet
