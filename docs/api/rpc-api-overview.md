@@ -321,7 +321,7 @@ When using the JSON-RPC interface in programming, ensure your application proper
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 rpc-quick-reference

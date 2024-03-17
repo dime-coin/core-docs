@@ -19,7 +19,7 @@ Dimecoin Core provides an **unauthenticated** HTTP REST interface.  The interfac
 The interface is not intended for public access and is only accessible from localhost by default. The interface uses standard [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) and returns a plain-text description of errors for debugging.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 http-rest-quick-reference

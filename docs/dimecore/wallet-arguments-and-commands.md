@@ -80,7 +80,7 @@ Usage:
 ```
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 wallet-arguments-and-commands-dimecoind

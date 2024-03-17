@@ -17,7 +17,7 @@ Consensus rules do *not* cover networking, so Dimecoin programs may use alternat
 To provide practical examples of the Dimecoin peer-to-peer network, this section uses Dimecoin Core as a representative full node and [DimecoinJ](https://github.com/dime-coin/dimecoinj) as a representative SPV client. Both programs are flexible, so only default behavior is described. Also, for privacy, actual IP addresses in the example output below have been replaced with [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP addresses.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 p2p-network-peer-discovery
@@ -27,4 +27,3 @@ p2p-network-block-broadcasting
 p2p-network-transaction-broadcasting
 p2p-network-misbehaving-nodes
 ```
-

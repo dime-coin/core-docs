@@ -27,7 +27,7 @@ This documentation serves to educate users and developers about how Dimecoin wor
 In addition, we also warn you that this documentation is continually evolving and is often not heavily reviewed, so it likely contains numerous errors.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 blockchain-overview

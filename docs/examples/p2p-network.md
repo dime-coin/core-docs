@@ -19,7 +19,7 @@
 * [Parsing a MerkleBlock](../examples/p2p-network-parsing-a-merkleblock.md)
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 p2p-network-creating-a-bloom-filter

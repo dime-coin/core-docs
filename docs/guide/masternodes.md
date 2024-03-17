@@ -22,7 +22,7 @@ Masternodes, [miners](../reference/glossary.md#miner)/[stakers](../reference/glo
 As the network grows with more masternodes, the interval between payments for each masternode increases. While the selection process contains an element of chance, over time, all masternode operators can expect to receive comparable rewards. Masternodes that spend their collateral or fail to serve the network for over an hour are temporarily removed from the selection pool until they are operational again. This system ensures masternodes are motivated to maintain high levels of performance and reliability for the network.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 masternodes-pow-pos

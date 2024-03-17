@@ -17,7 +17,7 @@ The following subsections will describe a variety of contracts that can be used 
 Besides the contract types described later in this section, many other contract types have been proposed, the examples provided are just a short list of potential contracts that can be forked using the Dimecoin ecosystem.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 contracts-escrow-and-arbitration

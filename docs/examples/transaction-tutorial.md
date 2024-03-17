@@ -17,7 +17,7 @@ Your applications may use something besides Dimecoin Core to create transactions
 In order to use this tutorial, you will need to setup [Dimecoin Core](https://github.com/dime-coin/dimecoin/releases/latest) and create a [regression test mode](../reference/glossary.md#regression-test-mode) environment with 500 DIME in your test wallet.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 transaction-tutorial-simple-spending

@@ -62,7 +62,7 @@ As illustrated in the figure above, the data Bob signs includes the txid and out
 After putting his signature and public key in the signature script, Bob broadcasts the transaction to Dimecion validators through the peer-to-peer network. Each peer and miner/staker independently validates the transaction before broadcasting it further or attempting to include it in a new block of transactions.
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 2
 :titlesonly:
 
 transactions-p2pkh-script-validation
@@ -74,4 +74,4 @@ transactions-locktime-and-sequence-number
 transactions-transaction-fees-and-change
 transactions-avoiding-key-reuse
 transactions-transaction-malleability
-```
+``
