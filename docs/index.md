@@ -162,6 +162,9 @@ userguide/rescan-reindex
 :caption: Additional Resources
 :hidden:
 
+Mainnet Block Explorer <https://chainz.cryptoid.info/dime/>
+Bitcoin Whitepaper <https://bitcoin.org/bitcoin.pdf>
+Legacy Dimecoin Whitepaper <https://www.dimecoinnetwork.com/wp-content/uploads/2021/01/Dimecoinv1.05.pdf>
 resources/chain-analysis-tokenomics
 resources/legacy-android
 resources/paper-wallet
