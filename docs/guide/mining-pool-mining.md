@@ -37,7 +37,7 @@ Please note that the examples provided below are mainly for informational purpos
 **CPUMiner Multi Setup**
 
 ```{admonition} Please Note
-CPUMiner Multi by tpruvot is no longer maintained. More optimized mining software does exist. If you are interested in exploring software which is actively maintained, check out cpuminer-opt by JayDDee: https://github.com/JayDDee/cpuminer-opt
+CPUMiner Multi by tpruvot is no longer maintained. More optimized mining software does exist. If you are interested in exploring software which is actively maintained, check out cpuminer-opt by [JayDDee](https://github.com/JayDDee/cpuminer-opt)
 ```
 
 **Step 1:** Download Software: You will need software in order to utilize your CPU to mine Dimecoin. Grab a copy of [CPUMiner Multi](https://github.com/tpruvot/cpuminer-multi/releases)
@@ -99,7 +99,7 @@ The anti-virus software program on your computer may block the execution of CPUM
 Like CPU mining, a range of software exists that allows you to utilize the GPU on your computer to mine Dimecoin. GPU mining will generate quite a bit more hashing power when compared to CPU mining; however, it will not generate near the amount an ASIC miner will produce. Given the nature of today’s higher-end GPUs, you may successfully mine Dimecoin at a decent rate.
 
 ```{admonition} Please Note
-The examples provided below are mainly for informational purposes only. GPU hardware and software are constantly evolving. However, through this guide, you should be able to configure your setup and optimize your settings based upon your hardware and software requirements. The fundamental principles this guide offers will still apply. This guide will utilize AikaPool coupled with using CCMiner by djm34 to mine with an NVIDIA GPU.
+The examples provided below are mainly for informational purposes only. GPU hardware and software are constantly evolving. However, through this guide, you should be able to configure your setup and optimize your settings based upon your hardware and software requirements. The fundamental principles this guide offers will still apply. This guide will utilize TheBeePool coupled with using CCMiner by djm34 to mine with an NVIDIA GPU.
 ```
 
 There are multiple mining pools which allow you to mine Dimecoin. Our example will utilize TheBeePool. See the link above in the CPU mining section for additional mining pool stats and pools. Feel free to use any one of them.
