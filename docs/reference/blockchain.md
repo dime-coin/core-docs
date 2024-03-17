@@ -153,3 +153,11 @@ The following table details how the block subsidy and fees are allocated between
 | Foundation   | 10% |-        | Payment for growth of the network (core dev, marketing, integration, etc.)
 | Miner/Staker | 45% |-        | Payment for creating new blocks
 | Masternode   | 45% |-        | Payment for masternode services
+
+```{toctree}
+:maxdepth: 3
+:titlesonly:
+
+blockchain#block-headers
+blockchain#serialized-blocks
+```

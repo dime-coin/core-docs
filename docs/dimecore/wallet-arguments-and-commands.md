@@ -86,6 +86,6 @@ Usage:
 wallet-arguments-and-commands-dimecoind
 wallet-arguments-and-commands-dimecoin-qt
 wallet-arguments-and-commands-dimecoin-cli
-/wallet-arguments-and-commands-dimecoin-tx
+wallet-arguments-and-commands-dimecoin-tx
 wallet-arguments-and-commands-dimecoin-wallet
 ```
