@@ -58,9 +58,7 @@ html_css_files = [
 
 html_sidebars = {
     "index": ["sidebar-main.html"],
-    "**": ["sidebar-sub-nav.html"],
-    "docs/index": ["sidebar-sub-nav2.html"],
-  
+    "**": ["sidebar-nav-bs"],
 }
 
 html_theme_options = {
