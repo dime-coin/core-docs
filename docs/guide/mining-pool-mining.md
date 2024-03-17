@@ -26,7 +26,7 @@ The [block reward](../reference/glossary.md#block-reward) and transaction fees t
 
 There are multiple mining pools which allow you to mine Dimecoin. Our example will utilize [TheBeePool](https://thebeepool.com/). However, here is a link to [Mining Pool Stats](https://miningpoolstats.stream/dimecoin) which details mining stats on the network and a list of current pools currently mining Dimecoin. Feel free to use any one of them.
 
-### Example: CPU Pool Mining via TheBeePool (Coming Soon)
+### Example: CPU Pool Mining via TheBeePool
 
 This guide will explain how to mine Dimecoin using a Windows operating system and the CPU on your computer. It is important to note that GPU and ASIC miners dominate the hashing power on Dimecoin’s network. What does this mean? If you are trying to mine with CPU, you will not be very likely to realize many block rewards.
 
@@ -34,7 +34,7 @@ This guide will explain how to mine Dimecoin using a Windows operating system an
 Please note that the examples provided below are mainly for informational purposes only. CPU mining is not relevant to the network currently. This guide will utilize TheBeePool coupled with using tpruvot’s CPUMiner Multi. No registration is required for TheBeePool, however, some mining pools will require you to register.
 ```
 
-#### CPUMiner Multi Setup
+**CPUMiner Multi Setup**
 
 ```{admonition} Please Note
 CPUMiner Multi by tpruvot is no longer maintained. More optimized mining software does exist. If you are interested in exploring software which is actively maintained, check out cpuminer-opt by JayDDee: https://github.com/JayDDee/cpuminer-opt
@@ -144,11 +144,11 @@ Make sure to replace the dummy address `7AihhXXXXXXXXXXXXXXXXXXXXBJiWMSLdN` abov
 
 If you are running a Linux, MAC or FreeBSD operating system, you need to download the [source code here](https://github.com/djm34/ccminer-lyra/releases)
 
-**Step 6** Connecting to TheBeePool: Now double click on the file shortcut we had just created, step 5. It may take a a few minutes to establish a connection.
+**Step 6:** Connecting to TheBeePool: Now double click on the file shortcut we had just created, step 5. It may take a a few minutes to establish a connection.
 
 ![GPU Miner Connection](../../img/dev/GPU-Connection.png)
 
-**Step 7** Monitor Your Connection: Monitor your connection and check for rewards. You will receive you rewards to the dimecoin receiving address you used in step 4.
+**Step 7:** Monitor Your Connection and check for rewards: You will receive you rewards to the dimecoin receiving address you used in step 4.
 
 Congratulations, you now are an essential part of the Dimecoin community!
 
