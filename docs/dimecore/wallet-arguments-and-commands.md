@@ -82,6 +82,7 @@ Usage:
 ```{toctree}
 :maxdepth: 2
 :titlesonly:
+:hidden:
 
 wallet-arguments-and-commands-dimecoind
 wallet-arguments-and-commands-dimecoin-qt

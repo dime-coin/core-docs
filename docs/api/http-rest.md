@@ -21,6 +21,7 @@ The interface is not intended for public access and is only accessible from loca
 ```{toctree}
 :maxdepth: 2
 :titlesonly:
+:hidden:
 
 http-rest-quick-reference
 http-rest-requests
