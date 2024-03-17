@@ -11,7 +11,11 @@
 
 Welcome to the Wallet and Database Management section. This section is designed help you navigate through the various operations you might need to perform with your wallet and database while using Dimecoin-qt. Understanding and managing your wallet and its associated database is important. This includes knowing how to recover your wallet in case of corruption or loss, clean your transaction list for clarity, rebuild your database, and more to fix potential issues and improve performance.
 
-## Wallet & Database Operation Quick Reference
+## Wallet & Database Operations
+
+Each of these operations serve a unique purpose and can be instrumental in maintaining the health and accuracy of your wallet. Whether you're a new user encountering these terms for the first time or an experienced user looking to refresh your knowledge, this section will provide you with the detailed, step-by-step guidance.
+
+### Quick Reference
 
 * **[Wallet Recovery](#wallet-recovery-using-salvagewallet)**: Learn how to recover your wallet in case it becomes corrupted with salvagewallet, ensuring you can regain access to your dimecoins. Also effective for cleaning transactions. Understand how to clear unconfirmed or problematic transactions from your wallet, helping to resolve issues and declutter your transaction history.
   
@@ -19,8 +23,6 @@ Welcome to the Wallet and Database Management section. This section is designed 
 * **[Rebuild](#reindex)** the Blockchain: Find out how to rebuild the blockchain database, which can be necessary if you encounter database corruption or synchronization problems.
 
 * **[Wallet Tips - Do's/Don'ts](#wallet-tips)** : Learn some useful tips on operating the Dimecoin-QT wallet safely and effectively. Also, discover some things you should avoid during use of Dimecoin-QT.
-
-Each of these operations serves a unique purpose and can be instrumental in maintaining the health and accuracy of your wallet. Whether you're a new user encountering these terms for the first time or an experienced user looking to refresh your knowledge, this section will provide you with the detailed, step-by-step guidance.
 
 ### Reindex vs Rescan
 

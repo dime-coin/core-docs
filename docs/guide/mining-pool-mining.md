@@ -94,7 +94,7 @@ Congratulations, you now are an essential part of the Dimecoin community!
 The anti-virus software program on your computer may block the execution of CPUMiner Multi if the file protection option is “ON” in the settings of your anti-virus program. You can find the files that were removed under your quarantine settings. If this happens, add an exception for the folder where you created the .bat file. Once the exception is created, rerun your .bat file.
 ```
 
-### Example GPU Pool Mining via TheBeePool
+### Example: GPU Pool Mining via TheBeePool
 
 Like CPU mining, a range of software exists that allows you to utilize the GPU on your computer to mine Dimecoin. GPU mining will generate quite a bit more hashing power when compared to CPU mining; however, it will not generate near the amount an ASIC miner will produce. Given the nature of today’s higher-end GPUs, you may successfully mine Dimecoin at a decent rate.
 
