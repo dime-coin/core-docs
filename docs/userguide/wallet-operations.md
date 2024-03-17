@@ -13,10 +13,12 @@ Welcome to the Wallet and Database Management section. This section is designed 
 
 ## Wallet & Database Operation Quick Reference
 
-* Wallet Recovery: Learn how to recover your wallet in case it becomes corrupted with [salvagewallet](#wallet-recovery-using-salvagewallet), ensuring you can regain access to your dimecoins.
-* Cleaning Transactions: Understand how to clear unconfirmed or problematic transactions from your wallet, helping to resolve issues and declutter your transaction history.
-* Rescan the Dimecoin Blockchain: Discover how to [rescan](#rescan) the [blockchain](../reference/glossary.md#blockchain) to ensure that your [wallet](../reference/glossary.md#wallet) accurately reflects your transactions and balances.
-* Rebuild the Blockchain: Find out how to [reindex](#reindex) the blockchain database, which can be necessary if you encounter database corruption or synchronization problems.
+* **[Wallet Recovery](#wallet-recovery-using-salvagewallet)**: Learn how to recover your wallet in case it becomes corrupted with salvagewallet, ensuring you can regain access to your dimecoins. Also effective for cleaning transactions. Understand how to clear unconfirmed or problematic transactions from your wallet, helping to resolve issues and declutter your transaction history.
+  
+* **[Rescan](#rescan)** the Dimecoin Blockchain: Discover how to [rescan](#rescan) the [blockchain](../reference/glossary.md#blockchain) to ensure that your [wallet](../reference/glossary.md#wallet) accurately reflects your transactions and balances.
+* **[Rebuild](#reindex)** the Blockchain: Find out how to rebuild the blockchain database, which can be necessary if you encounter database corruption or synchronization problems.
+
+* **[Wallet Tips - Do's/Don'ts](#wallet-tips)** : Learn some useful tips on operating the Dimecoin-QT wallet safely and effectively. Also, discover some things you should avoid during use of Dimecoin-QT.
 
 Each of these operations serves a unique purpose and can be instrumental in maintaining the health and accuracy of your wallet. Whether you're a new user encountering these terms for the first time or an experienced user looking to refresh your knowledge, this section will provide you with the detailed, step-by-step guidance.
 
@@ -62,7 +64,7 @@ Now start the wallet. The rescan process will start, you will see a progress bar
 Don’t forget to remove -rescan from the shortcut once the wallet loads up. If you don’t, the next time you start the wallet it will go through the rescan process again.
 ```
 
-###### Mac
+###### macOS
 
 **Step 1: Run Terminal Application**
 
@@ -106,7 +108,7 @@ Rebuild the blockchain database from scratch.
 The first thing you will need to do is backup your wallet! Before performing any sort of maintenance or making changes to your wallets data files, it should always be the first thing you do. Please follow this link to learn how to backup your wallet properly!
 ```
 
-##### Windows
+##### Windows OS
 
 **Step 1: Create Shortcut**
 
@@ -134,7 +136,7 @@ Goto your wallet folder and drag the wallet file to the terminal.
 
 Type `-reindex` and hit enter. The rescan process will start, you will see a progress bar come up on your screen. Do not exit the program while it is processing the rescan. Let it completely finish.
 
-##### Linux
+##### Linux OS
 
 **Step 1: Open Terminal**
 
@@ -201,3 +203,45 @@ Be careful not to remove or modify any files under this directory unless you kno
 ```
 
 ![Dimecoin Data Directory - Windows](../../img/dev/data-dir-windows.png)
+
+### Wallet Tips
+
+Venturing into using cryptocurrency wallets can be a daunting task for new users. Here are some tips, do’s, and don’ts for general use to help ease users’ concerns. Visit our glossary page if you are unfamiliar with any terms used below.
+
+#### General Wallet Use
+
+| **Do** | **Don't** |
+| --- | --- |
+| Double-check address, type, and amount. | Send coins without verification. |
+| Send a small transaction first. | Send a large amount of coins at once. |
+| Use a QR code or copy/paste the address. | Never manually type a receiving address. |
+| Close or lock your wallet when finished. | Leave your wallet unlocked and open. |
+| Verify the download is from a trusted source. | Trust a link to download a wallet. |
+| Use a trusted wallet for long-term storage. | Use an exchange to store coins. |
+| Keep small amounts for use on mobile wallets. | Store large amounts of coins on mobile wallets. |
+| Use strong passwords—alphanumeric phrases are best. | Use weak passphrases. |
+| Make proper backups of your wallet, external to your device. | Assume your wallet will backup automatically. |
+
+```{tip}
+Scams and impersonation attempts are common in the crypto industry. They are often used steal your private keys or identity. Don’t be a victim!
+```
+
+#### Managing Private Keys/Seed Phrases
+
+| Do | Don't |
+| --- | --- |
+| Store seed phrases and passwords offline. | Store seed phrases or passwords online. |
+| Keep them private. Anyone with access can spend your coins! | Share your seed phrases or passwords. |
+| Write them down and store in a safe place where they will not be lost!! | Forget your seed phrases or passwords. |
+| Make multiple copies! | Make one copy of your seed phrases or passwords. |
+| Store seed phrases or passwords in a weatherproof and fireproof storage container. | Keep seed phrases or passwords on paper. |
+
+#### Securing Internet and Devices
+
+| Do | Don't |
+| --- | --- |
+| Verify web addresses. Use a service like virustotal. | Click unknown links. |
+| Use a secure network. | Use public WIFI. |
+| Always utilize 2FA authentication. | Ignore 2FA authentication. |
+| Keep devices up-to-date with the latest patches. | Use old devices. |
+| Use a separate dedicated email address for all crypto-related activity. | Use work/personal email. |
