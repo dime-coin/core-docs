@@ -78,3 +78,14 @@ Usage:
   dimecoin-tx [options] <hex-tx> [commands]  Update hex-encoded dimecoin transaction
   dimecoin-tx [options] -create [commands]   Create hex-encoded dimecoin transaction
 ```
+
+```{toctree}
+:maxdepth: 3
+:titlesonly:
+
+wallet-arguments-and-commands-dimecoind
+wallet-arguments-and-commands-dimecoin-qt
+wallet-arguments-and-commands-dimecoin-cli
+/wallet-arguments-and-commands-dimecoin-tx
+wallet-arguments-and-commands-dimecoin-wallet
+```

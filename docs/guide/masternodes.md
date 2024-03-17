@@ -20,3 +20,12 @@ Masternodes are open for anyone to operate with the aim of achieving sufficient 
 Masternodes, [miners](../reference/glossary.md#miner)/[stakers](../reference/glossary.md#staker), and the foundation share the block reward in the following proportions: 45% for masternodes, 45% for miners/stakers, and 10% for the foundation. Payments to masternodes are made on a quasi-random basis, rouglhy every 50 seconds, selected from the top 10% in the masternode list. Once a masternode receives payment, it moves to the end of the queue.
 
 As the network grows with more masternodes, the interval between payments for each masternode increases. While the selection process contains an element of chance, over time, all masternode operators can expect to receive comparable rewards. Masternodes that spend their collateral or fail to serve the network for over an hour are temporarily removed from the selection pool until they are operational again. This system ensures masternodes are motivated to maintain high levels of performance and reliability for the network.
+
+```{toctree}
+:maxdepth: 3
+:titlesonly:
+
+masternodes-pow-pos
+masternodes-paylogic-quorums
+masternodes-setup-requirements
+```

@@ -15,3 +15,16 @@ The Dimecoin network protocol allows full [nodes](../reference/glossary.md#node)
 Consensus rules do *not* cover networking, so Dimecoin programs may use alternative networks and protocols, such as Bitcoin's [high-speed block relay network](https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg03189.html) used by some miners and the [dedicated transaction information servers](https://github.com/dime-coin/electrum-dimecoin) used by some wallets that provide SPV-level security.
 
 To provide practical examples of the Dimecoin peer-to-peer network, this section uses Dimecoin Core as a representative full node and [DimecoinJ](https://github.com/dime-coin/dimecoinj) as a representative SPV client. Both programs are flexible, so only default behavior is described. Also, for privacy, actual IP addresses in the example output below have been replaced with [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP addresses.
+
+```{toctree}
+:maxdepth: 3
+:titlesonly:
+
+p2p-network-peer-discovery
+p2p-network-connecting-to-peers
+p2p-network-initial-block-download
+p2p-network-block-broadcasting
+p2p-network-transaction-broadcasting
+p2p-network-misbehaving-nodes
+```
+

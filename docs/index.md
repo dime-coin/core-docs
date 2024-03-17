@@ -99,18 +99,6 @@ reference/p2p-network
 :hidden:
 
 api/rpc-api-overview
-api/rpc-quick-reference
-api/rpc-blockchain
-api/rpc-control
-api/rpc-dime
-api/rpc-generating
-api/rpc-mining
-api/rpc-network
-api/rpc-raw-transactions
-api/rpc-utility
-api/rpc-wallet
-api/rpc-wallet-deprecated
-api/rpc-zmq
 api/http-rest
 api/zmq
 ```
@@ -122,39 +110,12 @@ api/zmq
 :hidden:
 
 guide/guide-introduction
-guide/blockchain-overview
-guide/blockchain-consensus
-guide/blockchain-block-height-and-forking
-guide/blockchain-transaction-data
-guide/blockchain-consensus-rule-changes
 guide/transactions
-guide/transactions-p2pkh-script-validation
-guide/transactions-p2sh-scripts
-guide/transactions-standard-transactions
-guide/transactions-non-standard-transactions
-guide/transactions-signature-hash-types
-guide/transactions-locktime-and-sequence-number
-guide/transactions-transaction-fees-and-change
-guide/transactions-avoiding-key-reuse
-guide/transactions-transaction-malleability
 guide/contracts
-guide/contracts-escrow-and-arbitration
-guide/contracts-micropayment-channel
-guide/contracts-deposit
-guide/contracts-crosschain-trading
 guide/wallets
 guide/operating-modes
 guide/masternodes
-guide/masternodes-pow-pos
-guide/masternodes-paylogic-quorums
-guide/masternodes-setup-requirements
 guide/p2p-network
-guide/p2p-network-peer-discovery
-guide/p2p-network-connecting-to-peers
-guide/p2p-network-initial-block-download
-guide/p2p-network-block-broadcasting
-guide/p2p-network-transaction-broadcasting
-guide/p2p-network-misbehaving-nodes
 guide/mining
 guide/staking
 ```
@@ -168,17 +129,7 @@ examples/examples-introduction
 examples/configuration-file
 examples/testing-applications
 examples/transaction-tutorial
-examples/transaction-tutorial-simple-spending
-examples/transaction-tutorial-simple-raw-transaction
-examples/transaction-tutorial-complex-raw-transaction
-examples/transaction-tutorial-offline-signing
-examples/transaction-tutorial-p2sh-multisig
 examples/p2p-network
-examples/p2p-network-creating-a-bloom-filter
-examples/p2p-network-evaluating-a-bloom-filter
-examples/p2p-network-bloom-filter-script
-examples/p2p-network-retrieving-a-merkleblock
-examples/p2p-network-parsing-a-merkleblock
 examples/receiving-zmq-notifications
 ```
 
@@ -189,11 +140,6 @@ examples/receiving-zmq-notifications
 :hidden:
 
 dimecore/wallet-arguments-and-commands
-dimecore/wallet-arguments-and-commands-dimecoind
-dimecore/wallet-arguments-and-commands-dimecoin-qt
-dimecore/wallet-arguments-and-commands-dimecoin-cli
-dimecore/wallet-arguments-and-commands-dimecoin-tx
-dimecore/wallet-arguments-and-commands-dimecoin-wallet
 dimecore/wallet-configuration-file
 ```
 

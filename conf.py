@@ -70,7 +70,7 @@ html_theme_options = {
     "use_edit_page_button": True,
     "github_url": "https://github.com/dime-coin/core-docs",
     "show_toc_level": 2,
-    "show_nav_level": 1,
+    "show_nav_level": 2,
     "favicons": [
       {
          "rel": "icon",

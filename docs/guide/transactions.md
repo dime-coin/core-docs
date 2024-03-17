@@ -60,3 +60,18 @@ Bob's secp256k1 signature doesn't just prove Bob controls his private key; it al
 As illustrated in the figure above, the data Bob signs includes the txid and output index of the previous transaction, the previous output's pubkey script, the pubkey script Bob creates which will let the next recipient spend this transaction's output, and the amount of dimecoins to spend to the next recipient. In essence, the entire transaction is signed except for any signature scripts, which hold the full public keys and secp256k1 signatures.
 
 After putting his signature and public key in the signature script, Bob broadcasts the transaction to Dimecion validators through the peer-to-peer network. Each peer and miner/staker independently validates the transaction before broadcasting it further or attempting to include it in a new block of transactions.
+
+```{toctree}
+:maxdepth: 3
+:titlesonly:
+
+transactions-p2pkh-script-validation
+transactions-p2sh-scripts
+transactions-standard-transactions
+transactions-non-standard-transactions
+transactions-signature-hash-types
+transactions-locktime-and-sequence-number
+transactions-transaction-fees-and-change
+transactions-avoiding-key-reuse
+transactions-transaction-malleability
+```

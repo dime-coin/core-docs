@@ -15,3 +15,13 @@ Contracts are [transactions](../reference/glossary.md#transaction) which use the
 The following subsections will describe a variety of contracts that can be used levaraging the Dimecoin ecosystem, in theory. Since contracts deal with real people, not just transactions, they are framed in story format and are purely fictional.
 
 Besides the contract types described later in this section, many other contract types have been proposed, the examples provided are just a short list of potential contracts that can be forked using the Dimecoin ecosystem.
+
+```{toctree}
+:maxdepth: 3
+:titlesonly:
+
+contracts-escrow-and-arbitration
+contracts-micropayment-channel
+contracts-deposit
+contracts-crosschain-trading
+```

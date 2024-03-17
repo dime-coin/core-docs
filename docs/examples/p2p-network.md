@@ -17,3 +17,14 @@
 * [Bloom Filter Script](../examples/p2p-network-bloom-filter-script.md)
 * [Retrieving a MerkleBlock](../examples/p2p-network-retrieving-a-merkleblock.md)
 * [Parsing a MerkleBlock](../examples/p2p-network-parsing-a-merkleblock.md)
+
+```{toctree}
+:maxdepth: 3
+:titlesonly:
+
+p2p-network-creating-a-bloom-filter
+p2p-network-evaluating-a-bloom-filter
+p2p-network-bloom-filter-script
+p2p-network-retrieving-a-merkleblock
+p2p-network-parsing-a-merkleblock
+```
