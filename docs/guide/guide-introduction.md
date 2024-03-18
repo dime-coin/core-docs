@@ -15,7 +15,7 @@ The Core Guide section is designed to serve as a comprehensive resource for user
 
 It is important to remember that this documentation does not serve as a specification; rather, it serves as a guide to understanding the fundamental operations and mechanisms of Dimecoin, aiming to educate and facilitate development within the Dimecoin ecosystem.
 
-Any questions about Dimecoin development are best asked in one of the [Dimecoin's communites](https://www.dimecoinnetwork.com/socials/). There you will be able to find active contributors to the project. Find an error or have suggestions related to this documentation? You can submit change requests via the "Edit this Page" button at the top-right of each page.
+Any questions about Dimecoin development are best asked in one of the [Dimecoin's communites](https://www.dimecoinnetwork.com/#socials/). There you will be able to find active contributors to the project. Find an error or have suggestions related to this documentation? You can submit change requests via the "Edit this Page" button at the top-right of each page.
 
 In the following documentation, some strings have been shortened or wrapped:
 "`[...]`" indicates extra data was removed, and lines ending in a single backslash "`\\`" are continued below.

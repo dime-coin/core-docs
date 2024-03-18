@@ -88,7 +88,7 @@ Once it is downloaded, you will need to compile it on your local machine.
 
 **Step 8:** Check Your Rewards: As stated earlier, your shares will be fairly limited due to GPU and CPU mining on the network. After some time, you will receive rewards to your Dimecoin address when there is a pool payout.
 
-Congratulations, you now are an essential part of the Dimecoin community!
+Congratulations, you now are an important part of the Dimecoin community!
 
 ```{hint}
 The anti-virus software program on your computer may block the execution of CPUMiner Multi if the file protection option is “ON” in the settings of your anti-virus program. You can find the files that were removed under your quarantine settings. If this happens, add an exception for the folder where you created the .bat file. Once the exception is created, rerun your .bat file.
@@ -150,7 +150,7 @@ If you are running a Linux, MAC or FreeBSD operating system, you need to downloa
 
 **Step 7:** Monitor Your Connection and check for rewards: You will receive you rewards to the dimecoin receiving address you used in step 4.
 
-Congratulations, you now are an essential part of the Dimecoin community!
+Congratulations, you now are an important part of the Dimecoin community!
 
 ```{hint}
 The anti-virus software program on your computer may block the execution of CPUMiner Multi if the file protection option is “ON” in the settings of your anti-virus program. You can find the files that were removed under your quarantine settings. If this happens, add an exception for the folder where you created the .bat file. Once the exception is created, rerun your .bat file.

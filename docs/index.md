@@ -164,14 +164,14 @@ userguide/rescan-reindex
 
 Mainnet Block Explorer <https://chainz.cryptoid.info/dime/>
 Bitcoin Whitepaper <https://bitcoin.org/bitcoin.pdf>
-Legacy Dimecoin Whitepaper <https://www.dimecoinnetwork.com/wp-content/uploads/2021/01/Dimecoinv1.05.pdf>
+Legacy Dimecoin Whitepaper <https://www.dimecoinnetwork.com/docs/Dimecoinv1.05.pdf>
 resources/chain-analysis-tokenomics
 resources/legacy-android
 resources/paper-wallet
 ```
 
 Questions about Dimecoin development are best asked in one of the [Dimecoin Social
-Communities](https://dimecoinnetwork.com/socials). Errors or suggestions related to
+Communities](https://dimecoinnetwork.com/#socials). Errors or suggestions related to
 documentation can be submitted as via the "Edit this page" button on the top,
 right of each page. For basic operation and general use guidance for Dimecoin-QT, see the [User Guide Section](docs/userguide/guide-introduction.md).
 
