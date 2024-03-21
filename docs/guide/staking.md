@@ -21,7 +21,7 @@ Key Requirements:
 * Minimum threshold of DIME with enough confirmations in your wallet, as required for staking.
 * A continuous, stable internet connection.
 
-To get a more technical breakdown of the staking process for Dimecoin, read the reference section on [staking](../guide/blockchain-consensus.html#proof-of-stake).
+To get a more technical breakdown of the staking process for Dimecoin, read the consensus section on [staking](../guide/blockchain-consensus.md#proof-of-stake).
 
 ### Staking via Dimecoin QT
 
