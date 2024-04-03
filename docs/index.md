@@ -153,8 +153,6 @@ userguide/userguide-introduction
 userguide/receiving-coins
 userguide/sending-coins
 userguide/wallet-operations
-userguide/recovery
-userguide/rescan-reindex
 userguide/wallet-backup
 ```
 
