@@ -1,8 +1,8 @@
 ```{eval-rst}
 .. _resources-legacy-android:
 .. meta::
-  :title: Wallet & Database Operations
-  :description: Learn how to perform various operations while using various functions to maintain, recover and optimize your wallet.
+  :title: Android Legacy Recovery
+  :description: Learn how to recover your dimecions from the android legacy application.
 ```
 
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***

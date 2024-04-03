@@ -9,6 +9,8 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
+## Wallet Backup Guide
+
 One of the most important aspects of maintaining a wallet is to keep a proper wallet.dat backup. If anything happens to the PC you are using, you lose a hard-drive, or the PC is damaged where you cannot gain access, this will be the only way you can recover your coins.
 
 Backing up your wallet is easy to do with the desktop wallet. It is recommended you use an external device, such as a USB flash drive or similar device, to store your backup files safely. Make sure to keep your storage devices in a safe place and free from elements that may cause damage.
