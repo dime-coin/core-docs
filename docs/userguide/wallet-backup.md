@@ -9,7 +9,7 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-## Wallet Backup Guide
+## Wallet Backup
 
 One of the most important aspects of maintaining a wallet is to keep a proper wallet.dat backup. If anything happens to the PC you are using, you lose a hard-drive, or the PC is damaged where you cannot gain access, this will be the only way you can recover your coins.
 
