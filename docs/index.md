@@ -150,10 +150,6 @@ dimecore/wallet-configuration-file
 :hidden:
 
 userguide/userguide-introduction
-userguide/receiving-coins
-userguide/sending-coins
-userguide/wallet-operations
-userguide/wallet-backup
 ```
 
 ```{toctree}
