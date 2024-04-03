@@ -22,3 +22,4 @@ No one contributing to the Dimecoin project will message you first, ask for mone
 * [Receiving Coins](../userguide/receiving-coins.md) : A tutorial on how to generate a receiving address so you can send coins to your wallet.
 * [Sending Coins]( ../userguide/sending-coins.md) : A tutorial on how to send coins from your wallet.
 * [Wallet Operations](../userguide/wallet-operations.md) : An overview and how-to explaining common wallet database operations such as rescanning or reindexing the blockchain.
+* [Backup Wallet](../userguide/wallet-backup.md) : A quick guide explaining how to backup the Dimecoin Core wallet.
