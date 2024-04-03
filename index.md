@@ -67,13 +67,13 @@ The Dimecoin project has built and improved upon the achievements and features o
 
 **Namecoin**: As the first fork of Bitcoin, Namecoin introduced key innovations in blockchain technology that extend beyond being a digital currency. We commend Namecoin for its pioneering work in using blockchain for domain name registration and other non-financial applications, which has opened our eyes to the broader potential of blockchain technology.
 
-**Feathercoin**: With its innovative advancements in blockchain security protocols and community engagement, Feathercoin has demonstrated the importance of adaptability and resilience in the cryptocurrency space. We value Feathercoin's contributions to fostering a more inclusive and secure digital ecosystem.
+**Feathercoin**: With its innovative advancements in blockchain security protocols and community engagement, Feathercoin has demonstrated the importance of adaptability and resilience in the cryptocurrency space. We appreciate the efforts made by Feathercoin to promote a more secure digital ecosystem.
 
-In addition to the project above's contribution to our codebase, we also recognize the wealth of information and documentation provided by the Bitcoin and Dash communities. Their extensive resources have been invaluable in our research, development, and education efforts, enabling us to better understand the intricacies of blockchain technology and cryptocurrency.
+In addition to the project above's contribution to our codebase, we also recognize the wealth of information and documentation provided by the Bitcoin and Dash communities. Their resources have been invaluable in our research, development, and education efforts, enabling us to better understand blockchain technology and cryptocurrency.
 
 As we continue developing Dimecoin and contributing to the cryptocurrency landscape, we remain committed to open-source development, collaboration, and innovation principles. We look forward to continuing to build upon the work of our peers and sharing our own contributions with the community.
 
-Thank you to all the developers, researchers, and enthusiasts who have paved the way for projects like ours. Your hard work and dedication continue to inspire and drive the evolution of blockchain technology.
+Thank you to all the developers, researchers, and enthusiasts who have helped pave the way for projects like ours. Your hard work and dedication continue to inspire and drive the advancement of blockchain technology.
 
 .. raw:: html
 
