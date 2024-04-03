@@ -57,7 +57,7 @@ Remember this location as you will need it to set the path for environment varia
 
 Copy to Windows System Directory (Optional): The installer may offer an option to copy OpenSSL DLLs to the Windows system directory. This can simplify path configuration but is optional.
 
-Complete the Installation: Follow the rest of the prompts to complete the installation. No special configuration should be necessary. 
+Complete the Installation: Follow the rest of the prompts to complete the installation. No special configuration should be necessary.
 
 #### Step 3: Add OpenSSL to the Windows PATH
 
@@ -111,7 +111,7 @@ Now you should be able to use your devices File manager to locate your keys. Aga
 
 Now that you have located your backup / keys that were used for the Android device. They need to be converted into WIF format so the desktop or electrum-dime wallet can import them by decrypting them.
 
-Place your backup file on your desktop location of your PC. 
+Place your backup file on your desktop location of your PC.
 
 Open a Command Prompt window. In the search field on the taskbar type: `cmd` and hit enter.
 
@@ -173,9 +173,10 @@ Using the debug console of the desktop wallet you do the following:
 
 If encrypted, unlock it by entering
 
-```bash 
+```bash
 walletpassphrase "YourPassphrase" 600
 ```
+
 This will unlock the wallet for 600 seconds (for example). You can input anytime you want (in seconds). Then use the command:
 
 ```bash
@@ -185,10 +186,9 @@ importprivkey yourprivatekey
 ```{note}
 Be sure to replace `yourprivatekey` with one of the private keys you derived from the steps above.
 ```
+
 A rescan has to occur for your balance to reflect properly, which should occur automatically.
 
-As soon as you see your whole balance again, empty your entire wallet to the desired destination wallet. You will need to import each private key from your Android wallet individually. 
-
-
+As soon as you see your whole balance again, empty your entire wallet to the desired destination wallet. You will need to import each private key from your Android wallet individually.
 
 If you are still having issues with your recovering your coins, please do not hesitate to contact us in our [Telegram Support Channel](https://t.me/Dimecoin/163982), or via [email](mailto:support@dimecoinnetwork.com).
