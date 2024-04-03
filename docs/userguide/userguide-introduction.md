@@ -23,13 +23,3 @@ No one contributing to the Dimecoin project will message you first, ask for mone
 * [Sending Coins]( ../userguide/sending-coins.md) : A tutorial on how to send coins from your wallet.
 * [Wallet Operations](../userguide/wallet-operations.md) : An overview and how-to explaining common wallet database operations such as rescanning or reindexing the blockchain.
 * [Backup Wallet](../userguide/wallet-backup.md) : A quick guide explaining how to backup the Dimecoin Core wallet.
-
-```{toctree}
-:maxdepth: 2
-:titlesonly:
-
-receiving-coins
-sending-coins
-wallet-operations
-wallet-backup
-```
