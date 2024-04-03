@@ -2,7 +2,7 @@
 .. _userguide-wallet-backup:
 .. meta::
   :title: Wallet Backup Guide
-  :description: How to backup the Dimecoin Core Wallet.
+  :description: A simple guide demonstrating how to backup the Dimecoin Core Wallet.
 ```
 
 > ***We put our best effort into covering all topics related to Dimecoin. Each section will cover a different category. Not all documentation may be 100% accurate, if you spot an error, please report it or submit a PR request on GitHub.***
