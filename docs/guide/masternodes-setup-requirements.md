@@ -9,7 +9,9 @@
 >
 > ***REMINDER: This documentation is always evolving. If you have not been here for a while, perhaps check again. Things may have been added or updated since your last visit!***
 
-## Requirements
+## Requirements & Setup
+
+### Requirements
 
 * Collateral/Bond: 500,000,000 DIME
 * Server or VPS Running Linux
@@ -24,11 +26,11 @@ Hardware Requirements
 |Disk| 10GB | 25GB |
 |Bandwidth| 400 GB/mth | 800 GB/mth|
 
-## Setup
+### Setup
 
 In order to setup a [masternode](../reference/glossary.md#masternode), it is recommended that users have a basic understanding of Linux and [blockchain](../reference/glossary.md#blockchain) technology. However, if you are able to follow instructions closely, you should be able to setup a masternode with zero issue. Keep in mind, additional maintenance and security checks will be required.
 
-### Getting Started
+#### Getting Started
 
 This guide will make a few assumptions — mainly that you are setting up a masternode for the first time on a new server. These instructions are not intended to be used as a how-to for updating your masternode. If you are looking to update your masternode, see [updating masternode]. When finished with this guide, you will have successfully set up a masternode using a local controller wallet on your PC for your coins’ [cold storage](../reference/glossary.md#cold-storage); and a hot wallet as your masternode on your Virtual Private Server (VPS).
 
@@ -42,7 +44,7 @@ While you may be able to use a minimal hardware setup to successfully run a mast
 
 This documentation describes the commands as if they were entered in the Dimecoin Core GUI by opening the console from `Tools > Debug console`. The same result can be achieved on a masternode by entering the same commands and adding the prefix `~/.dimecoin/dimecoin-cli` to each command.
 
-### Creating a Reference File
+#### Creating a Reference File
 
 **Step 1.** Create a reference file in Notepad on your local PC.
 
@@ -50,9 +52,9 @@ This reference document will make it easier to generate your configuration files
 
 ![Refernce File](../../img/dev/reference-file.png)
 
-### Local Wallet Setup (Cold/Controller Wallet)
+#### Local Wallet Setup (Cold/Controller Wallet)
 
-#### Wallet Installation & Initial Setup
+##### Wallet Installation & Initial Setup
 
 **Step 2.** Download a wallet for your local computer.
 
@@ -64,7 +66,7 @@ Install the wallet you downloaded from the previous step by *double clicking* on
 
 You will also be prompted to choose the location for the Dimecoin data directory, choose *default*. You are free to choose any location you desire; however, this guide will assume you choose the default directory location during installation.
 
-#### Sync
+##### Sync
 
 **Step 4.** Sync the blockchain.
 
@@ -72,7 +74,7 @@ Once the client starts, let it sync to the network. You need to let he blockchai
 
 ![Client Sync](../../img/dev/client-sync.png)
 
-#### Secure Wallet
+##### Secure Wallet
 
 **Step 5.** Secure your funds and backup your wallet.
 
@@ -84,7 +86,7 @@ Please make sure to remember this passphrase, write it down, and keep it in a se
 
 Next, backup your wallet by selecting `File > Backup Wallet` from the top bar menu of the client. Choose a secure file location to store your backup. It would be best to store this separate from your PC where your coins are being stored (i.e., on a flash drive or similar external device). If something were to happen to your computer, this would be the only way to recover your funds.
 
-#### Access Debug Console
+##### Access Debug Console
 
 **Step 6**. Access the debug console.
 
@@ -92,7 +94,7 @@ Next, enter the `Debug Console`. On the top bar menu select `Tools > Debug Conso
 
 ![Console Access](../../img/dev/console-access.png)
 
-#### Generate Masternode Private Key
+##### Generate Masternode Private Key
 
 **Step 7.** Generate the Masternode Private Key.
 
@@ -103,7 +105,7 @@ masternode genkey
 ```
 This generates the masternode private key. `Copy` and `Paste` the output into your reference file.
 
-#### Generate Receiving Address
+##### Generate Receiving Address
 
 **Step 8.** Generate a new address.
 
@@ -117,11 +119,11 @@ getnewaddress label
 
 ![Console Menu](../../img/dev/console-menu.png)
 
-#### Collateral
+##### Collateral
 
 You will need to send the **EXACT** amount needed for collateral (500,000,000). An address with a single unspent transaction output (UTXO) will be required to run a masternode. Once this transaction has been sent, you will be able to extract the various bits of info that are needed for entry in the configuration file.
 
-#### Sending the Collateral
+##### Sending the Collateral
 
 **Step 9.** Sending the collateral
 
@@ -150,7 +152,7 @@ The output_txid and output_index can be obtained by viewing the output’s trans
 
 ![Collateral Outputs](../../img/dev/collateral-outputs.png)
 
-### VPS Server Setup
+#### VPS Server Setup
 
 A virtual private server (VPS) runs its own copy of an operating system (OS), and users may have superuser-level access to that operating system instance, so they can install almost any software that runs on that OS. For many purposes, they are functionally equivalent to a dedicated physical server, and being software-defined, are considered easier to customize and configure.
 
@@ -195,7 +197,7 @@ When your installation is complete, click on the `Products` page. Locate your se
 
 ![Server Details](../../img/dev/server-details.png)
 
-#### Setting up your OS
+##### Setting up your OS
 
 **Step 17.** Connecting to your VPS for the first time.'
 
@@ -255,7 +257,7 @@ apt upgrade
 
 Your system will display a list of upgrade-able packages. Pressing `Y and Enter` will install the packages. 
 
-#### Install Packages
+##### Install Packages
 
 **Step 22.** Install packages.
 
@@ -267,7 +269,7 @@ apt install ufw python virtualenv git unzip pv
 
 Input `Y`, then hit `Enter` to confirm
 
-#### Configure UFW
+##### Configure UFW
 
 `Copy` and `Paste` the following line by line:
 
@@ -292,7 +294,7 @@ Firewall is active and enabled on system startup
 
 Now, reboot the server to apply the necessary kernel update. Once rebooted, login as the new user.
 
-#### Add Swap Memory
+##### Add Swap Memory
 
 **Step 23**. Add swap memory
 
@@ -312,7 +314,7 @@ Add the following line at the end of the file (press tab to separate each word/n
 /swapfile none swap sw 0 0
 ```
 
-#### Additional VPS Security (Optional)
+##### Additional VPS Security (Optional)
 
 These steps (24-25) are optional but highly recommended. The packages provided are only basic steps that can be used to protect your server; additional steps can be taken to secure your setup. However, since you will not be storing any of your Dimecoin private keys on the server hosting the masternode, these additional steps are considered outside the framework of this guide. However, it is encouraged to enable automatic security updates on your server.
 
@@ -366,7 +368,7 @@ reboot now
 
 PuTTY or your terminal will become disconnected when the server reboots.
 
-#### Installing the Core Wallet
+##### Installing the Core Wallet
 
 Dimecoin Core is the software behind both the Dimecoin Core GUI wallet and Dimecoin masternodes. If you are not using a GUI, it will run as a headless daemon on your server `dimecoind`. The dimecoind daemon is controlled by a simple command interface `dimecoin-cli`. Similar to Bitcoin, it uses RPC commands to interact with the daemon and change various settings
 
@@ -389,12 +391,12 @@ Extract the compressed archive and copy the necessary files to the directory:
 
 ```bash
 mkdir ~/.dimecoin
-tar -xvf https://github.com/dime-coin/dimecoin/releases/download/2.3.0.0/dimecoin-qt-v2.3.0.0-ubuntu22.04.tar.gz
+tar -xvf dimecoin-qt-v2.3.0.0-ubuntu22.04.tar.gz
 cp -f dimecoin-2.3.0.0/bin/dimecoind ~/.dimecoin/
 cp -f dimecoin-2.3.0.0/bin/dimecoin-cli ~/.dimecoin/
 ```
 
-#### Create the Dimecoin Configuration File
+##### Create the Dimecoin Configuration File
 
 **Step 29.** Create the configuration file:
 
@@ -431,7 +433,7 @@ Replace the fields as follows:
   
 After finishing editing the configuration file with all your details, Press `Ctrl + X` to close the editor, then `Y and Enter` to save the file.
 
-#### Start the Daemon
+##### Start the Daemon
 
 **Step 30.** Start the daemon.
 
@@ -445,11 +447,11 @@ You will see a message reading: dimecoind starting
 
 The Dimecoin client will start downloading the blockchain and synchronizing to the network. It will need time to sync. In the interim, we will continue with the final configuration of the local wallet on Windows.
 
-### Starting the Masternode
+#### Starting the Masternode
 
 The data in the the `masternode.conf` on the Windows wallet must be supplied with the correct data for controlling the masternode daemon (hot wallet).
 
-#### Create the Masternode Configuration File
+##### Create the Masternode Configuration File
 
 **Step 31:** Creating the masternode.conf File.
 
@@ -476,7 +478,7 @@ You must restart the wallet for this change to take effect. Exit out. Make sure 
 
 ![Shutting Down](../../img/dev/core-wallet-shutting-down.png)
 
-#### Check Masternode Status on VPS
+##### Check Masternode Status on VPS
 
 The masternode wallet has to be fully synced and up to date before proceeding.
 
@@ -502,7 +504,7 @@ The output should look like this:
 }
 ```
 
-#### Starting Your Masternode
+##### Starting Your Masternode
 
 **Step 33.** Starting your masternode.
 
