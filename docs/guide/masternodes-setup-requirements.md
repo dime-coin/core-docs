@@ -382,7 +382,7 @@ Visit our Github page and `Copy` the link to the latest Linux binary. Go into yo
 
 ```bash
 cd /tmp
-wget https://github.com/dime-coin/dimecoin/releases/download/2.3.0.0/dimecoin-qt-v2.3.0.0-ubuntu22.04.tar.gz
+wget https://github.com/dime-coin/dimecoin/releases/download/2.3.0.0/dimecoin-v2.3.0.0-ubuntu22.04.tar.gz
 ```
 
 **Step 28.** Create a working directory for Dimecoin.
@@ -391,7 +391,7 @@ Extract the compressed archive and copy the necessary files to the directory:
 
 ```bash
 mkdir ~/.dimecoin
-tar -xvf dimecoin-qt-v2.3.0.0-ubuntu22.04.tar.gz
+tar -xvf dimecoin-v2.3.0.0-ubuntu22.04.tar.gz
 cp -f dimecoin-2.3.0.0/bin/dimecoind ~/.dimecoin/
 cp -f dimecoin-2.3.0.0/bin/dimecoin-cli ~/.dimecoin/
 ```
