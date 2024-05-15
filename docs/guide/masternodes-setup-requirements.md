@@ -103,6 +103,7 @@ In the `Debug Console`, enter the command:
 ```bash
 masternode genkey
 ```
+
 This generates the masternode private key. `Copy` and `Paste` the output into your reference file.
 
 ##### Generate Receiving Address
@@ -144,6 +145,7 @@ To obtain the transaction out (txOUT) data, the proof that the masternode has th
 ```bash
 masternode outputs
 ```
+
 `Copy` the *collateral_output_txid* (long string between quotes) and the *collateral_output_index* (typically 1 or 0) that is generated and paste it into your Notepad reference file.
 
 ```{note}
@@ -165,6 +167,7 @@ As of December 2023, StakeCube, offers hot and cold masternode hosting services.
 ```{caution}
 Keeping Dimecoin (DIME) or any cryptocurrency on deposit with a third-party in a custodial connection has inherent risks. These risks can include security breaches and risk of loss. Participants should be aware of the dangers associated with third-party custodianship (hot wallet MN in the example above) of their property for any reason.
 ```
+
 **Step 11.** Create an account.
 
 If you do not already have one, register and then login.
@@ -201,7 +204,7 @@ When your installation is complete, click on the `Products` page. Locate your se
 
 **Step 17.** Connecting to your VPS for the first time.'
 
-You will need to connect to your newly deployed server. You can do this by using the console provided in the Vultr dashboard or through the use of a service like PuTTY. We will use PuTTY as our example during this part of the setup. If you would like to use PuTTY, go to their download page and choose your system’s corresponding installer. 
+You will need to connect to your newly deployed server. You can do this by using the console provided in the Vultr dashboard or through the use of a service like PuTTY. We will use PuTTY as our example during this part of the setup. If you would like to use PuTTY, go to their download page and choose your system’s corresponding installer.
 
 Alternatively, Mac, Windows 10, or Linux give you the option to ssh directly into your VPS from the terminal. Just type `ssh root@<server_ip>` without the angle brackets. Enter your password when prompted. You will not see any characters showing up on the screen when you input your password — that is by design and a security feature!
 
@@ -246,6 +249,7 @@ You will be prompted to input a password. Use a password that is different from 
 ```bash
 usermod -aG sudo <username>
 ```
+
 **Step 21.** Update the system.
 
 While you are still logged in as root, update the system from the Ubuntu repository:
@@ -255,7 +259,7 @@ apt update
 apt upgrade
 ```
 
-Your system will display a list of upgrade-able packages. Pressing `Y and Enter` will install the packages. 
+Your system will display a list of upgrade-able packages. Pressing `Y and Enter` will install the packages.
 
 ##### Install Packages
 
@@ -392,8 +396,8 @@ Extract the compressed archive and copy the necessary files to the directory:
 ```bash
 mkdir ~/.dimecoin
 tar -xvf dimecoin-v2.3.0.0-ubuntu22.04.tar.gz
-cp -f dimecoin-2.3.0.0/bin/dimecoind ~/.dimecoin/
-cp -f dimecoin-2.3.0.0/bin/dimecoin-cli ~/.dimecoin/
+cp -f dimecoin-v2.3.0.0-ubuntu22.04/dimecoind ~/.dimecoin/
+cp -f dimecoin-v2.3.0.0-ubuntu22.04/dimecoin-cli ~/.dimecoin/
 ```
 
 ##### Create the Dimecoin Configuration File
